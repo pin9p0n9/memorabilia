@@ -97,7 +97,7 @@ watchdog: render em 03_RENDER/02_OFF/ → dispara
 [Agent 6b]   SEO Metadata               ✅  gemma4:26b · 32 seg
              → legendas + descrições · 6 plataformas
 
-[Agent 8]    Glasswing Closer            ✅  gemma4:26b · 3.5 min
+[Agent 8]    Memória Projetual Viva — Closer            ✅  gemma4:26b · 3.5 min
              → postmortem.md · client_summary.md
              → compress_aaak() 7 types → ChromaDB
              → registra: sugerido vs escolhido vs divergência
@@ -110,7 +110,7 @@ watchdog: render em 03_RENDER/02_OFF/ → dispara
 
 Total máquina: ~50 min · Edição criativa: humano
 
-♻️  Glasswing loop → episodic_memory → próximo projeto
+♻️  Memória Projetual Viva → episodic_memory → próximo projeto
 ```
 
 ---
@@ -193,7 +193,7 @@ Filtro: path:Projetos para ver só projetos
 
 ---
 
-## Glasswing Memory — 7 Types
+## Memória Projetual Viva — 7 Types
 
 ```
 episodic_memory ChromaDB (768 dims)

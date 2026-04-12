@@ -7,7 +7,7 @@ Operador: pingpong (Leo) · solo · Montreal
 
 ## Princípio de implementação
 
-Cada camada só é construída depois que a anterior está funcionando em produção com projetos reais. O pipeline entrega infraestrutura de navegação — o material fala por si. O editor decide. O sistema é desenhado em torno de 7 princípios (Design Philosophy v1.0) e dois agentes centrais: Agent 3c (leitura com tensão calibrada) e Agent 8 (Glasswing Closer com contexto relacional).
+Cada camada só é construída depois que a anterior está funcionando em produção com projetos reais. O pipeline entrega infraestrutura de navegação — o material fala por si. O editor decide. O sistema é desenhado em torno de 7 princípios (Design Philosophy v1.0) e dois agentes centrais: Agent 3c (leitura com tensão calibrada) e Agent 8 (Memória Projetual Viva — Closer com contexto relacional).
 
 ---
 
@@ -26,7 +26,7 @@ FUNCIONA EM PRODUÇÃO:
   knowledge_montagem: 4260 chunks · Eisenstein/Tarkovsky/Bresson/Murch
   montagem RAG integrado: Cinematographer + Agent 3c + rag_api
   episodic_memory: ~105 entries · 768 dims · 7 types
-  Glasswing confidence 0.75
+  Confiança MPV 0.75
   Obsidian vault: /media/pingpong/DATA/memorabilia-vault
     Template briefing YAML → pipeline · Graph View · Linux + Windows
   Visual Search API: systemd + enable-linger · auto_tags · extract_tags()
@@ -36,7 +36,7 @@ FUNCIONA EM PRODUÇÃO:
 DESIGN:
   Design Philosophy v1.0 — 7 princípios documentados
   Agent 3c redesenhado — tensão calibrada (canônico vs episódico)
-  Agent 8 redesenhado — Glasswing Closer (sugerido vs escolhido vs divergência)
+  Agent 8 redesenhado — Memória Projetual Viva — Closer (sugerido vs escolhido vs divergência)
   CEP v3 Spec — second brain do projeto (tags, links, bookmarks, aliases)
   MEMORABILIA v9 — documento compilado 2 páginas
 
@@ -66,7 +66,7 @@ Concluído. 260406 com 7 types. Wake-up context verificado.
 Concluído. musicgen_guide.py v1.1.
 
 ### AP-10 ✅ — Design Philosophy + Agent redesign
-Concluído April 12. 7 princípios. Agent 3c tensão calibrada. Agent 8 Glasswing Closer.
+Concluído April 12. 7 princípios. Agent 3c tensão calibrada. Agent 8 Memória Projetual Viva — Closer.
 
 ### AP-11 ✅ — CEP Graph View + auto_tags
 Concluído April 12. Graph no Premiere. extract_tags() no API. Sidebar Obsidian-style.
@@ -182,7 +182,7 @@ LoRA por cliente
 AP-9 — PINGPONG OS Dashboard
 Agent 9 — auto-publish YouTube + Vimeo
 Validação end-to-end (Cenário 1 + Cenário 3)
-Glasswing com 5+ projetos: medir calibração
+MPV com 5+ projetos: medir calibração
 ```
 
 ---
@@ -195,7 +195,7 @@ Glasswing com 5+ projetos: medir calibração
 | Maio | LightRAG · Memory Bible · Visual Library · CEP v3 | Second brain funcional · assistants calibrados |
 | Junho | OpenSpace · Motion RAG · CEP assistants | Recovery automático · assistants no Premiere |
 | Julho | Flamenco · Technical Director | Render farm · compositing pipeline (se demanda) |
-| Agosto | Dashboard · validação end-to-end | Pipeline completo · Glasswing calibrado |
+| Agosto | Dashboard · validação end-to-end | Pipeline completo · MPV calibrada |
 
 ---
 

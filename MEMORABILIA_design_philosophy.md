@@ -38,7 +38,7 @@ Isso é o oposto de um pipeline linear que produz um resultado e descarta o inte
 
 O Pinterest mostra uma imagem por meio segundo e acabou — sem contexto, sem sequência, sem entendimento de linhagem. O valor de um clip não está apenas no que ele é, mas em como se relaciona com os outros. "Este clip dialoga com aquele." "Esta entrevista contradiz aquela." "Este B-roll ilustra este conceito."
 
-A memória projetual do MEMORABILIA não indexa clips isolados. Indexa relações. O Agent 3c não descreve um plano — posiciona-o dentro da estrutura narrativa do material inteiro. O Glasswing loop não registra "paleta quente" — registra "paleta quente escolhida em vez de dessaturada, divergindo da sugestão canônica, para projeto de diáspora com estrutura aberta."
+A memória projetual do MEMORABILIA não indexa clips isolados. Indexa relações. O Agent 3c não descreve um plano — posiciona-o dentro da estrutura narrativa do material inteiro. O Memória Projetual Viva não registra "paleta quente" — registra "paleta quente escolhida em vez de dessaturada, divergindo da sugestão canônica, para projeto de diáspora com estrutura aberta."
 
 **Implicação para os agents:** todo depósito de memória deve incluir o contexto relacional — o que veio antes, o que divergiu, o que o operador escolheu diferente da sugestão. A memória sem relação é arquivo morto.
 
@@ -70,7 +70,7 @@ Velocidade todo mundo vai ter. O diferencial é julgamento acumulado: saber o qu
 
 A memória episódica é o mecanismo técnico dessa acumulação. Mas a filosofia vai além da técnica: o sistema inteiro é desenhado para que cada decisão do operador — aceitar, rejeitar, adaptar — fique registrada de forma que calibre as próximas sugestões. O projeto 10 é mais preciso que o projeto 1 não porque o algoritmo melhorou, mas porque o sistema acumulou 9 projetos de contexto real.
 
-**Implicação para os agents:** o Glasswing loop não é um passo final — é a razão de existência do pipeline inteiro. Todo agent deve ser desenhado pensando: "o que este agent deposita que torna o próximo projeto mais preciso?"
+**Implicação para os agents:** o Memória Projetual Viva não é um passo final — é a razão de existência do pipeline inteiro. Todo agent deve ser desenhado pensando: "o que este agent deposita que torna o próximo projeto mais preciso?"
 
 * * *
 
@@ -129,7 +129,7 @@ A memória episódica é o mecanismo técnico dessa acumulação. Mas a filosofi
 - Esse é o agent de tradução por excelência. Não descreve — traduz o material bruto para vocabulário cinematográfico. "Este plano-sequência de 47s cria tensão que Tarkovsky chamaria de sculpting in time" — isso é tradução, não descrição.
 - Posicionar cada observação dentro de duas perspectivas: o que o canônico diria (livros) e o que o vivido registra (projetos anteriores do operador).
 - Quando a divergência entre canônico e vivido for significativa, explicitar com distância numérica: "Confiança canônica: 0.85. Confiança episódica: 0.42. Divergência: alta — o operador historicamente rejeita esta abordagem para este tipo de projeto."
-- Depositar observações que alimentam o Glasswing: não só "o que o material é", mas "o que o material poderia ser segundo dois mapas diferentes."
+- Depositar observações que alimentam a Memória Projetual Viva: não só "o que o material é", mas "o que o material poderia ser segundo dois mapas diferentes."
 
 ### Agent 7 — Análise de Cor
 
@@ -147,7 +147,7 @@ A memória episódica é o mecanismo técnico dessa acumulação. Mas a filosofi
 
 **Refinamento (Princípios 4, 7):**
 
-- Este é o agent que fecha o Glasswing loop. O depósito de memória deve incluir os 7 tipos com contexto relacional completo:
+- Este é o agent que fecha o Memória Projetual Viva. O depósito de memória deve incluir os 7 tipos com contexto relacional completo:
     - O que foi sugerido vs. o que foi escolhido (divergências explícitas)
     - Quais assistants foram consultados e quais sugestões foram aceitas/rejeitadas
     - Metadata do projeto: duração, tipo, cliente, audiência, paleta final, BPM, estrutura narrativa

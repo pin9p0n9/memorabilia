@@ -113,7 +113,7 @@ pingpong · Montreal · Janeiro–Abril 2026
 
 ## Abril 2026 — Semana 2: Pipeline Audiovisual completo
 
-**07 Apr** — Agent 3 (Narrativa + RAG), Agent 4 (Vision Color), Agent 8 (Post Mortem + Glasswing) funcionais. Pipeline completo rodou: 22m20s. Confiança Glasswing: 0.5 → 0.62. MemPalace instalado (138 drawers). Decisão: pipeline entrega navegação, não prescrição. Nome MEMORABILIA nasceu. Manifesto "O Pipeline como Organismo Vivo."
+**07 Apr** — Agent 3 (Narrativa + RAG), Agent 4 (Vision Color), Agent 8 (Post Mortem + MPV) funcionais. Pipeline completo rodou: 22m20s. Confiança Memória Projetual Viva: 0.5 → 0.62. MemPalace instalado (138 drawers). Decisão: pipeline entrega navegação, não prescrição. Nome MEMORABILIA nasceu. Manifesto "O Pipeline como Organismo Vivo."
 
 **08 Apr** — Agent 8: compress_aaak() com 7 types. client_summary.md por cenário. MEMORABILIA Status Card v5. Roadmap completo.
 
@@ -131,7 +131,7 @@ pingpong · Montreal · Janeiro–Abril 2026
 
 **11 Apr** — Agent 3c redesenhado: Leitura Narrativa com Tensão Calibrada. Query dupla canônico/episódico, score de confiança, divergência explícita.
 
-**11 Apr** — Agent 8 redesenhado: Glasswing Closer. Sugerido vs escolhido vs divergência, contexto relacional completo.
+**11 Apr** — Agent 8 redesenhado: Memória Projetual Viva — Closer. Sugerido vs escolhido vs divergência, contexto relacional completo.
 
 **11 Apr** — CEP v3 Spec: second brain do projeto (hyperlinks, tags editor, backlinks, aliases, embeds, bookmarks).
 
@@ -166,7 +166,7 @@ pingpong · Montreal · Janeiro–Abril 2026
 | 4 | Mar 23–28 | Pipeline v1 + SMB + Windows hardening |
 | 5 | Mar 29–31 | RAG Pipeline (ChromaDB + 6.814 docs) |
 | 6 | Apr 2–6 | RAG Full Library (48k chunks + 11 pipelines) |
-| 7 | Apr 7–10 | Pipeline 11 agents + MEMORABILIA + Glasswing |
+| 7 | Apr 7–10 | Pipeline 11 agents + MEMORABILIA + MPV |
 | 8 | Apr 11–12 | Design Philosophy + CEP Graph + Obsidian vault |
 
 ### Números finais (12 Abril 2026)
