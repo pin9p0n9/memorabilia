@@ -171,13 +171,6 @@ function checkPw(){
     <div class="stat"><div class="num" style="color:var(--blue)">34</div><div class="label">Dias p/ build</div></div>
   </div>
 
-  <div style="margin-top:32px;border-radius:12px;overflow:hidden;border:1px solid rgba(255,255,255,0.08)">
-    <video controls width="100%" style="display:block;background:#000">
-      <source src="Pingpong_HOMELAB_001.mp4" type="video/mp4">
-    </video>
-    <div style="padding:10px 14px;background:var(--bg2);font-size:0.8em;color:var(--text3)">Pingpong HOMELAB 001 — Demo pipeline audiovisual</div>
-  </div>
-
 </div>
 
 <!-- NAV -->
@@ -190,7 +183,9 @@ function checkPw(){
   <button onclick="showSection('knowledge')">Conhecimento</button>
   <button onclick="showSection('philosophy')">Filosofia</button>
   <button onclick="showSection('docs')">Documentos</button>
+  <button onclick="showSection('video')">Video</button>
   <button onclick="showSection('flowmap')">Mapa de Fluxo</button>
+
 </div>
 
 <!-- ═══ OVERVIEW ═══ -->
@@ -688,6 +683,51 @@ function checkPw(){
     <img src="memorabilia_pipeline_flow_map.svg" alt="MEMORABILIA Pipeline Flow Map" style="width:100%;height:auto;display:block">
   </div>
   <p style="font-size:0.8em;color:var(--text3);margin-top:12px;text-align:center">MEMORABILIA · Pipeline Audiovisual v8 · pingpong · Montreal · April 2026</p>
+</div>
+
+
+<!-- ═══ VIDEO ═══ -->
+<div class="section" id="sec-video">
+  <div class="section-title">Demo — Pipeline em Ação</div>
+  <div class="section-desc">Demonstração do pipeline audiovisual MEMORABILIA rodando em produção.</div>
+  <div style="border-radius:12px;overflow:hidden;border:1px solid rgba(255,255,255,0.08)">
+    <video controls width="100%" style="display:block;background:#000">
+      <source src="Pingpong_HOMELAB_001.mp4" type="video/mp4">
+    </video>
+    <div style="padding:12px 16px;background:var(--bg2);display:flex;justify-content:space-between;align-items:center">
+      <div>
+        <div style="font-size:0.9em;font-weight:600;color:var(--text)">Pingpong HOMELAB 001</div>
+        <div style="font-size:0.8em;color:var(--text3)">Pipeline audiovisual · HomeLab Montreal · April 2026</div>
+      </div>
+      <div style="font-size:0.75em;color:var(--text3);font-family:'JetBrains Mono',monospace">58 MB</div>
+    </div>
+  </div>
+  <div style="margin-top:16px;padding:16px;background:var(--bg2);border-radius:8px;border:1px solid rgba(255,255,255,0.08)">
+    <div style="font-size:0.85em;color:var(--text2)">
+      <span style="color:var(--accent);font-weight:600">Hardware:</span> HomeLab Linux (2× GTX 1080 Ti · 128GB RAM) + Windows PC (RTX 4080 · 64GB RAM)<br>
+      <span style="color:var(--accent);font-weight:600">Pipeline:</span> 9 agents · ~50 min · footage → memória projetual<br>
+      <span style="color:var(--accent);font-weight:600">Custo:</span> $0/mês · 100% self-hosted · privacidade total
+    </div>
+  </div>
+</div>
+
+<!-- ═══ FLOW MAP ═══ -->
+<div class="section" id="sec-flowmap">
+  <div class="section-title">Mapa de Fluxo do Pipeline</div>
+  <div class="section-desc">Visão completa: entrada → pré-edição → edição humana → pós-edição → memória. Agentes centrais (3c + 8) em destaque.</div>
+  <div style="border-radius:12px;overflow:hidden;border:1px solid rgba(255,255,255,0.08);background:var(--bg2);padding:24px">
+    <img src="memorabilia_pipeline_flow_map.svg" alt="MEMORABILIA Pipeline Flow Map" style="width:100%;height:auto;display:block">
+  </div>
+  <div style="margin-top:16px;display:grid;grid-template-columns:1fr 1fr;gap:12px">
+    <div style="padding:12px;background:var(--bg2);border-radius:8px;border:1px solid rgba(255,255,255,0.08)">
+      <div style="font-size:0.8em;color:var(--accent);font-weight:600;margin-bottom:4px">Agentes centrais</div>
+      <div style="font-size:0.85em;color:var(--text2)">Agent 3c (leitura com tensão) e Agent 8 (Glasswing Closer) formam o loop de aprendizado</div>
+    </div>
+    <div style="padding:12px;background:var(--bg2);border-radius:8px;border:1px solid rgba(255,255,255,0.08)">
+      <div style="font-size:0.8em;color:var(--accent);font-weight:600;margin-bottom:4px">O loop</div>
+      <div style="font-size:0.85em;color:var(--text2)">O que o Agent 8 deposita, o Agent 3c do próximo projeto consulta. Projeto 10 > Projeto 1.</div>
+    </div>
+  </div>
 </div>
 
 <!-- FOOTER -->
