@@ -615,76 +615,1334 @@ function checkPw(){
 <!-- ═══ DOCS ═══ -->
 <div class="section" id="sec-docs">
   <div class="section-title">Documentos do Projeto</div>
-  <div class="section-desc">Toda a documentação do MEMORABILIA. Clique para abrir no GitHub (renderizado).</div>
-
-  <div class="card" onclick="window.open('https://github.com/pin9p0n9/memorabilia/blob/main/MEMORABILIA_resumo_expandido.md','_blank')">
+  <div class="section-desc">Toda a documentação do MEMORABILIA. Clique para expandir.</div>
+  
+  <div class="card" onclick="toggleCard(this)">
     <div class="card-header">
       <div class="card-badge bg-accent">RE</div>
-      <div><div class="card-title">Resumo Expandido</div><div class="card-sub">One-pager acadêmico — o que é, como funciona, conclusão</div></div>
-      <div class="card-right"><span class="card-tag tag-accent">6 KB</span><span style="color:var(--text3)">↗</span></div>
+      <div><div class="card-title">Resumo Expandido</div><div class="card-sub">One-pager — o que é, como funciona, conclusão</div></div>
+      <div class="card-right"><span class="card-arrow">▸</span></div>
+    </div>
+    <div class="card-body" style="max-height:600px;overflow-y:auto">
+      <div style="height:8px"></div>
+<h1 style="font-size:1.3em;font-weight:700;color:var(--text);margin:24px 0 8px">MEMORABILIA — PIPELINE AUDIOVISUAL COM MEMÓRIA PROJETUAL</h1>
+<div style="height:8px"></div>
+<p style="font-size:0.88em;color:var(--text2);line-height:1.7;margin:4px 0">pingpong (Leo) · Montreal, Canada · Abril 2026</p>
+<div style="height:8px"></div>
+<h2 style="font-size:1.1em;font-weight:600;color:var(--accent);margin:20px 0 8px">RESUMO</h2>
+<div style="height:8px"></div>
+<p style="font-size:0.88em;color:var(--text2);line-height:1.7;margin:4px 0">MEMORABILIA é um pipeline audiovisual self-hosted que automatiza o trabalho repetitivo de pós-produção em 50 minutos e acumula memória contextualizada entre projetos. Opera com 9 agentes de inteligência artificial, 6 assistants especializados, 72 mil trechos de conhecimento cinematográfico e um painel integrado ao Premiere Pro com grafo relacional. A arquitetura segue 7 princípios de design centrados em tradução de tempo e julgamento acumulado. O sistema foi construído do zero em 34 dias por um operador solo, roda em hardware próprio com custo zero de operação, e substitui um stack comercial equivalente a $2.700–$8.000/mês em SaaS.</p>
+<div style="height:8px"></div>
+<p style="font-size:0.88em;color:var(--text2);line-height:1.7;margin:4px 0"><strong style="color:var(--text)">Palavras-chave:</strong> Pipeline audiovisual. Memória projetual. RAG cinematográfico. Busca semântica. Self-hosted AI.</p>
+<div style="height:8px"></div>
+<h2 style="font-size:1.1em;font-weight:600;color:var(--accent);margin:20px 0 8px">1. O QUE É</h2>
+<div style="height:8px"></div>
+<p style="font-size:0.88em;color:var(--text2);line-height:1.7;margin:4px 0">Ferramentas de AI para vídeo são poderosas mas genéricas — não sabem que o editor prefere estrutura aberta, que um cliente detesta cortes rápidos, ou que documentários sobre diáspora funcionam melhor com paleta quente. Cada projeto recomeça a curva de aprendizado. Quando o profissional sai, o conhecimento vai junto.</p>
+<div style="height:8px"></div>
+<p style="font-size:0.88em;color:var(--text2);line-height:1.7;margin:4px 0">MEMORABILIA resolve esse problema com um princípio de design chamado tradução de tempo: cada agente do pipeline não processa footage — traduz. Vídeo em áudio, áudio em texto buscável, footage em frames navegáveis, material bruto em observações narrativas com vocabulário cinematográfico. Nenhum agente decide. Todos traduzem. O designer decide. O sistema é desenhado em torno de 7 princípios (Tradução de Tempo, Anti-Biblioteca, Desdobramento em Camadas, Contexto Relacional, Amplificação, Paralelismo, Julgamento Acumulado) e opera com dois agentes centrais que formam um loop de aprendizado: o Agent 3c lê o material com dupla perspectiva — o que os livros dizem e o que os projetos anteriores viveram — e o Agent 8 fecha o ciclo depositando cada decisão do operador com contexto relacional completo. O projeto 1 tem zero memória. O projeto 10 tem 9 projetos de contexto real. A diversidade colaborativa é nativa: novos nós expandem o cluster via VPN criptografada sem expor dados — ilustradores, motion designers e editores acessam a mesma memória projetual, cada um no domínio relevante. Privacidade total, hardware próprio, nenhum dado sai da rede.</p>
+<div style="height:8px"></div>
+<h2 style="font-size:1.1em;font-weight:600;color:var(--accent);margin:20px 0 8px">2. COMO FUNCIONA</h2>
+<div style="height:8px"></div>
+<p style="font-size:0.88em;color:var(--text2);line-height:1.7;margin:4px 0">O pipeline opera em três blocos. Antes da edição (~30 min automático): o watchdog detecta footage e dispara transcrição em PT/EN/FR, índice visual com 4 modos adaptativos ao ritmo do material (contemplativo, documentário, staccato, frenético), e leitura narrativa com score de confiança e divergência explícita entre conhecimento canônico e episódico. Durante a edição (100% humano): o designer trabalha no Premiere Pro com o painel MEMORABILIA ao lado da timeline — busca semântica, thumbnails com timecode, marcadores de divergência, e Source Monitor no frame exato. Depois da edição (~7 min automático): análise de cor por cena, legendas para 6 plataformas em 32 segundos, depósito de memória relacional, e publicação. Cinco cenários cobrem do documentário ao compositing híbrido com AI generativa. O ganho real é direto: o designer que trabalhava 3 dias trabalha 1. A automação não substitui o julgamento criativo — libera tempo para exercê-lo.</p>
+<div style="height:8px"></div>
+<h2 style="font-size:1.1em;font-weight:600;color:var(--accent);margin:20px 0 8px">3. O PAINEL — SECOND BRAIN DO PROJETO</h2>
+<div style="height:8px"></div>
+<p style="font-size:0.88em;color:var(--text2);line-height:1.7;margin:4px 0">O CEP Panel roda como extensão no Premiere Pro com três views: List para escanear com transcrição inline, Grid para explorar thumbnails arrastáveis, e Graph — um grafo relacional force-directed inspirado no Graph View do Obsidian. No Graph, cada clip é um nó circular com a imagem real do frame. Temas extraídos automaticamente (sunset, crowd, medium shot) aparecem como nós menores conectando clips relacionados. A sidebar esquerda controla filtros, grupos e física do grafo. A sidebar direita mostra detalhes do clip selecionado com 4 botões de ação direta na timeline. A barra de busca é input de busca e de criação: <code style="background:var(--bg3);padding:1px 5px;border-radius:3px;font-size:0.85em;font-family:JetBrains Mono,monospace;color:var(--accent)">#tag</code> filtra ou cria tags, <code style="background:var(--bg3);padding:1px 5px;border-radius:3px;font-size:0.85em;font-family:JetBrains Mono,monospace;color:var(--accent)">!select</code> marca bookmarks, <code style="background:var(--bg3);padding:1px 5px;border-radius:3px;font-size:0.85em;font-family:JetBrains Mono,monospace;color:var(--accent)">@clip</code> filtra por links. O editor externaliza relações narrativas que só existem na cabeça dele — e o Glasswing preserva tudo para o próximo projeto. Isso transforma um painel de navegação num second brain do projeto onde a intenção do editor vira dado consultável.</p>
+<div style="height:8px"></div>
+<h2 style="font-size:1.1em;font-weight:600;color:var(--accent);margin:20px 0 8px">4. O CONHECIMENTO</h2>
+<div style="height:8px"></div>
+<p style="font-size:0.88em;color:var(--text2);line-height:1.7;margin:4px 0">O sistema opera com dois tipos de conhecimento em tensão permanente. O canônico: 72.263 trechos indexados de 174 livros, 21 livros de cinematografia, 14 cursos em vídeo, e corpus de montagem de Eisenstein a Glauber Rocha. O episódico: 105 entradas de decisões reais com contexto de o que foi sugerido vs. escolhido vs. divergência. Seis assistants especializados consultam essas bases antes de cada resposta: Cinematographer para luz e câmera (11.261 trechos), Creative Director para estrutura narrativa, Motion e 3D RAG para técnicas de produção (7.868 trechos de 14 cursos), Technical Artist para problemas técnicos, e Montagem RAG para teoria aplicada (4.260 trechos de Eisenstein, Tarkovsky, Bresson, Murch). Quando canônico e episódico concordam, sugere com confiança. Quando divergem, apresenta os dois mapas com score numérico. Observações posicionadas, nunca prescrições.</p>
+<div style="height:8px"></div>
+<h2 style="font-size:1.1em;font-weight:600;color:var(--accent);margin:20px 0 8px">5. CONCLUSÃO</h2>
+<div style="height:8px"></div>
+<p style="font-size:0.88em;color:var(--text2);line-height:1.7;margin:4px 0">Uma empresa que opera sem memória projetual repete o mesmo ciclo: cada designer novo perde o conhecimento do anterior, cada projeto recomeça a curva de aprendizado. O custo invisível excede qualquer assinatura. MEMORABILIA substitui com custo zero de operação e privacidade total — 9 agentes, 6 assistants, 20 serviços, tudo em hardware próprio. A filosofia de design que sustenta o pipeline vai além da automação: o princípio de tradução de tempo garante que cada agente transforma o material em vez de copiá-lo; o julgamento acumulado transforma decisões isoladas em padrões consultáveis; a arquitetura colaborativa permite diversidade de profissionais sem expor dados. O diferencial competitivo é a memória projetual — saber o que cortar, que tom serve aquela audiência, que look combina com aquele projeto. Velocidade todo mundo vai ter. Esse conhecimento não se compra, não se copia, não se reseta. Cresce projeto a projeto. Silenciosamente. Inevitavelmente.</p>
+<div style="height:8px"></div>
+<p style="font-size:0.88em;color:var(--text2);line-height:1.7;margin:4px 0">---</p>
+<div style="height:8px"></div>
+<p style="font-size:0.88em;color:var(--text2);line-height:1.7;margin:4px 0">*pingpong · Montreal · April 12, 2026 · MEMORABILIA · Resumo Expandido v1*</p>
+<div style="height:8px"></div>
     </div>
   </div>
 
-  <div class="card" onclick="window.open('https://github.com/pin9p0n9/memorabilia/blob/main/status_card_v8.md','_blank')">
+  <div class="card" onclick="toggleCard(this)">
     <div class="card-header">
       <div class="card-badge bg-teal">SC</div>
-      <div><div class="card-title">Status Card v8</div><div class="card-sub">Estado real do pipeline — serviços, agents, gotchas, infra</div></div>
-      <div class="card-right"><span class="card-tag tag-teal">12 KB</span><span style="color:var(--text3)">↗</span></div>
+      <div><div class="card-title">Status Card v8</div><div class="card-sub">Estado real do pipeline — serviços, agents, gotchas</div></div>
+      <div class="card-right"><span class="card-arrow">▸</span></div>
+    </div>
+    <div class="card-body" style="max-height:600px;overflow-y:auto">
+      <h1 style="font-size:1.3em;font-weight:700;color:var(--text);margin:24px 0 8px">MEMORABILIA — Status Card v8</h1>
+<div style="height:8px"></div>
+<p style="font-size:0.88em;color:var(--text2);line-height:1.7;margin:4px 0">HomeLab pingpong · Montreal · April 12, 2026</p>
+<div style="height:8px"></div>
+<p style="font-size:0.88em;color:var(--text2);line-height:1.7;margin:4px 0">---</p>
+<div style="height:8px"></div>
+<h2 style="font-size:1.1em;font-weight:600;color:var(--accent);margin:20px 0 8px">PINGPONG OS — 5 Módulos</h2>
+<div style="height:8px"></div>
+<tr><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Módulo</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Status</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Existe hoje</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Falta</td></tr>
+<p style="font-size:0.88em;color:var(--text2);line-height:1.7;margin:4px 0">|---|---|---|---|</p>
+<tr><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">SYSTEM</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">⚠️ parcial</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">pipeline_launcher · watchdog_v2 · Frame.io CC · CEP panel · Obsidian vault</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">PocketBase · kanban · dashboard</td></tr>
+<tr><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">DATA FLOW</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">✅ funcional</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Agents 1+2+3a+3b+3c+7+8+9 · watchdog 3 gatilhos</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Flamenco</td></tr>
+<tr><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">VISUAL LIBRARY</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">❌ novo</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">spec documentada</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">PocketBase · frontend · /deck-brief</td></tr>
+<tr><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">CINEMATOGRAPHER</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">✅ funcional</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">ProblemSolver_v01 · RAG 11k chunks · montagem 4260 chunks · gemma4:26b</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">qwen3-vl UI integrada</td></tr>
+<tr><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">TECHNICAL DIRECTOR</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">✅ funcional</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">technical_director.py · RAG AI+Tech+Blender</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Unity/Unreal/Math_VFX pendentes</td></tr>
+<div style="height:8px"></div>
+<p style="font-size:0.88em;color:var(--text2);line-height:1.7;margin:4px 0">---</p>
+<div style="height:8px"></div>
+<h2 style="font-size:1.1em;font-weight:600;color:var(--accent);margin:20px 0 8px">Pipeline v8 — Fluxo Completo</h2>
+<div style="height:8px"></div>
+<pre style="background:var(--bg3);padding:16px;border-radius:8px;overflow-x:auto;font-size:0.8em;font-family:JetBrains Mono,monospace;color:var(--text);border:1px solid var(--border);margin:12px 0;white-space:pre-wrap">
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+ENTRADA — VISUAL BIBLE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+[project_brief.md]       Obsidian/Joplin · YAML frontmatter → pipeline
+                         Template com campos mapeados aos agents
+                         Vault: /media/pingpong/DATA/memorabilia-vault
+[visual_library.py]      referências → deck_brief.json       ✅  4.5 min
+[musicgen_guide.py]      brief + deck → audio_guide.wav      ✅  12 min
+                         → copiado para 02_AUDIO/01_MIX/ automaticamente
+[Cinematographer]        plano técnico iluminação             ✅  gemma4:26b + montagem RAG
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+BLOCO 1 — PRÉ-EDIÇÃO (infraestrutura de navegação)
+watchdog: footage AND brief → dispara
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+[Agent 1+2]  Ingest + Whisper large-v3     ✅  Windows RTX 4080
+             → transcrição completa com timecodes
+             → type:audio depositado
+
+[Agent 3a]   Índice textual               ✅  HomeLab gemma4:26b · 1.5 min
+             → full_transcript_index.md
+
+[Agent 3b]   Visual Index — scene_frame_indexer v2.0
+             ✅  Windows qwen3-vl
+             → 4 modos adaptativos: arc / dual / single / window
+             → raw (02_CAPTURES) e edited (03_EDITED) separados
+             → 384 entries · material_type · rhythm_mode · cuts_per_minute
+
+[Agent 3c]   Leitura Narrativa com Tensão Calibrada
+             ✅  HomeLab gemma4:26b · 3 min
+             → query dupla: canônico (livros) + episódico (projetos)
+             → score de confiança por perspectiva (0.0–1.0)
+             → divergência explícita quando &gt; 0.3
+             → referência a projetos anteriores similares
+             → observações posicionadas, nunca prescrições
+             REDESENHADO: v8.5 — duas perspectivas em tensão
+
+DECISÃO ARQUITETURAL:
+  Sem rough cut. Sem candidate_segments. Sem suggested_cuts.
+  O pipeline entrega infraestrutura de navegação, não decisão criativa.
+  O editor decide. O material é o autor.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+HUMANO — Edição
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Premiere Pro + CEP MEMORABILIA
+  → 3 views: List · Grid · Graph
+  → busca visual semântica (384 frames · PT→EN · auto_tags)
+  → busca textual (transcrição com timecodes)
+  → marcadores de divergência (informação técnica · não prescrição)
+  → thumbnails com timecodes clicáveis
+  → Graph view: force-directed SVG com thumbnails reais
+    sidebar esquerda estilo Obsidian (Filters/Groups/Display/Forces)
+    sidebar direita (thumbnail, tags, descrição, 4 botões ação)
+    zoom in/out (scroll wheel) · pan (Shift+drag)
+    drag nodes · auto_tags extraídas da descrição
+  → Grid/List: drag-and-drop swap para reordenar
+
+C1  Edição imagens + MusicGen
+C2  Edição + Motion Graphics (AE) + MusicGen
+C3  Edição + Motion + 3D + ComfyUI híbrido + MusicGen
+C4  Motion Graphics puro + MusicGen
+C5  Motion + ComfyUI AI híbrido + MusicGen
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+BLOCO 2 — PÓS-EDIÇÃO
+watchdog: render em 03_RENDER/02_OFF/ → dispara
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+[Agent 7]    Vision + Color              ✅  qwen3-vl + gemma4:26b · 3 min
+             → type:vision depositado
+
+[Agent 6b]   SEO Metadata               ✅  gemma4:26b · 32 seg
+             → legendas + descrições · 6 plataformas
+
+[Agent 8]    Glasswing Closer            ✅  gemma4:26b · 3.5 min
+             → postmortem.md · client_summary.md
+             → compress_aaak() 7 types → ChromaDB
+             → registra: sugerido vs escolhido vs divergência
+             → por assistant, com confiança e condições do projeto
+             → resumo para o cliente como subproduto
+             → depósito relacional como produto principal
+             REDESENHADO: v8.5 — contexto relacional completo
+
+[Agent 9]    To Publish                  ✅  n8n webhook
+
+Total máquina: ~50 min · Edição criativa: humano
+
+♻️  Glasswing loop → episodic_memory → próximo projeto
+</pre>
+<div style="height:8px"></div>
+<p style="font-size:0.88em;color:var(--text2);line-height:1.7;margin:4px 0">---</p>
+<div style="height:8px"></div>
+<h2 style="font-size:1.1em;font-weight:600;color:var(--accent);margin:20px 0 8px">Design Philosophy — 7 Princípios</h2>
+<div style="height:8px"></div>
+<tr><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">#</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Princípio</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Teste</td></tr>
+<p style="font-size:0.88em;color:var(--text2);line-height:1.7;margin:4px 0">|---|---|---|</p>
+<tr><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">1</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Tradução de Tempo</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">O agent transforma ou apenas copia?</td></tr>
+<tr><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">2</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Anti-Biblioteca</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">O output é encontrável por significado?</td></tr>
+<tr><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">3</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Desdobramento</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">O output gera múltiplas camadas de valor?</td></tr>
+<tr><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">4</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Contexto Relacional</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">O output carrega relação com o resto?</td></tr>
+<tr><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">5</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Amplificação</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">O output navega ou prescreve?</td></tr>
+<tr><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">6</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Paralelismo</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">O agent declara dependências e roda quando pode?</td></tr>
+<tr><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">7</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Julgamento Acumulado</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">O agent deposita algo que calibra o futuro?</td></tr>
+<div style="height:8px"></div>
+<p style="font-size:0.88em;color:var(--text2);line-height:1.7;margin:4px 0">---</p>
+<div style="height:8px"></div>
+<h2 style="font-size:1.1em;font-weight:600;color:var(--accent);margin:20px 0 8px">CEP Panel — 3 Views</h2>
+<div style="height:8px"></div>
+<tr><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">View</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Função</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Interação</td></tr>
+<p style="font-size:0.88em;color:var(--text2);line-height:1.7;margin:4px 0">|---|---|---|</p>
+<tr><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">List</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Flat, texto, metadata cruzada</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Click para selecionar · drag swap para reordenar</td></tr>
+<tr><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Grid</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Thumbnails lado a lado</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Click para selecionar · drag swap para reordenar</td></tr>
+<tr><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Graph</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Grafo relacional force-directed</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Click=select · drag=move nó · scroll=zoom · Shift+drag=pan</td></tr>
+<div style="height:8px"></div>
+<div style="font-weight:600;color:var(--text);margin:8px 0 4px">Graph sidebar esquerda (estilo Obsidian):</div>
+<div style="font-size:0.85em;color:var(--text2);padding:2px 0 2px 16px">· Filters: busca + toggles (Temas/Links/Órfãos)</div>
+<div style="font-size:0.85em;color:var(--text2);padding:2px 0 2px 16px">· Groups: campo @tag para filtrar por tags</div>
+<div style="font-size:0.85em;color:var(--text2);padding:2px 0 2px 16px">· Display: sliders (Text fade/Node size/Link thickness)</div>
+<div style="font-size:0.85em;color:var(--text2);padding:2px 0 2px 16px">· Forces: sliders (Center/Repel/Link/Distance)</div>
+<div style="height:8px"></div>
+<div style="font-weight:600;color:var(--text);margin:8px 0 4px">Graph sidebar direita (clip info):</div>
+<div style="font-size:0.85em;color:var(--text2);padding:2px 0 2px 16px">· Thumbnail · timecode · score · tags auto_tags</div>
+<div style="font-size:0.85em;color:var(--text2);padding:2px 0 2px 16px">· Descrição visual · transcrição Whisper · observação Agent 3c</div>
+<div style="font-size:0.85em;color:var(--text2);padding:2px 0 2px 16px">· Botões: Open in Source Monitor · Go to TC · + Marker · Copy TC</div>
+<div style="height:8px"></div>
+<div style="font-weight:600;color:var(--text);margin:8px 0 4px">CEP v3 Spec (second brain):</div>
+<div style="font-size:0.85em;color:var(--text2);padding:2px 0 2px 16px">· Tags do editor (#tag na busca) — nós coloridos no grafo</div>
+<div style="font-size:0.85em;color:var(--text2);padding:2px 0 2px 16px">· Bookmarks (!select, !descarte) — anel dourado / opacidade 20%</div>
+<div style="font-size:0.85em;color:var(--text2);padding:2px 0 2px 16px">· Links manuais (@clip) — arestas brancas com label</div>
+<div style="font-size:0.85em;color:var(--text2);padding:2px 0 2px 16px">· Backlinks — tamanho do nó escala com conexões</div>
+<div style="font-size:0.85em;color:var(--text2);padding:2px 0 2px 16px">· Aliases — múltiplos nomes por clip</div>
+<div style="font-size:0.85em;color:var(--text2);padding:2px 0 2px 16px">· Embeds — hover preview inline</div>
+<div style="height:8px"></div>
+<p style="font-size:0.88em;color:var(--text2);line-height:1.7;margin:4px 0">---</p>
+<div style="height:8px"></div>
+<h2 style="font-size:1.1em;font-weight:600;color:var(--accent);margin:20px 0 8px">Obsidian Vault — Second Brain Global</h2>
+<div style="height:8px"></div>
+<pre style="background:var(--bg3);padding:16px;border-radius:8px;overflow-x:auto;font-size:0.8em;font-family:JetBrains Mono,monospace;color:var(--text);border:1px solid var(--border);margin:12px 0;white-space:pre-wrap">
+/media/pingpong/DATA/memorabilia-vault/
+├── Templates/project_brief.md    ← template YAML → pipeline
+├── Projetos/DOC_VIDIGAL_2026.md  ← primeiro briefing
+├── Referências/                  ← notas Samsung migradas
+│   ├── Borges.md · MFA.md · Motion design perspective.md
+│   └── TIME/
+├── Arquivo/                      ← projetos finalizados (futuro)
+└── Home.md                       ← índice do vault
+
+Plugins: Templater · Dataview · Calendar
+Acesso: Linux (AppImage --no-sandbox) · Windows (via Samba \\192.168.68.113\DATA)
+Graph View: 3 nós conectados (Project brief → Montreal → Home)
+Filtro: path:Projetos para ver só projetos
+</pre>
+<div style="height:8px"></div>
+<p style="font-size:0.88em;color:var(--text2);line-height:1.7;margin:4px 0">---</p>
+<div style="height:8px"></div>
+<h2 style="font-size:1.1em;font-weight:600;color:var(--accent);margin:20px 0 8px">Knowledge RAG — Collections</h2>
+<div style="height:8px"></div>
+<tr><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Collection</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Chunks</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Dims</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Conteúdo</td></tr>
+<p style="font-size:0.88em;color:var(--text2);line-height:1.7;margin:4px 0">|---|---|---|---|</p>
+<tr><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">knowledge_montagem</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">4.260</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">768</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Eisenstein · Tarkovsky · Bresson · Murch · Truffaut · Henri · Eco · Rocha</td></tr>
+<tr><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">knowledge</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">~48.401</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">768</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">174+ livros gerais</td></tr>
+<tr><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">knowledge_cinematography_v2</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">11.261</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">768</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">21 livros reais de cinematografia</td></tr>
+<tr><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">knowledge_cinematography</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">649</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">384</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Brejon CG — NÃO MODIFICAR</td></tr>
+<tr><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">tutorials</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">~7.868</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">768</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">14 cursos</td></tr>
+<tr><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">visual_library</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">6</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">768</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">imagens referência</td></tr>
+<tr><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">visual_index</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">384</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">768</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">frames · scene_frame_indexer v2.0 · 4 modos</td></tr>
+<tr><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">episodic_memory</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">~105</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">768</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">memória HomeLab + projetos · 7 types</td></tr>
+<div style="height:8px"></div>
+<p style="font-size:0.88em;color:var(--text2);line-height:1.7;margin:4px 0">---</p>
+<div style="height:8px"></div>
+<h2 style="font-size:1.1em;font-weight:600;color:var(--accent);margin:20px 0 8px">Glasswing Memory — 7 Types</h2>
+<div style="height:8px"></div>
+<pre style="background:var(--bg3);padding:16px;border-radius:8px;overflow-x:auto;font-size:0.8em;font-family:JetBrains Mono,monospace;color:var(--text);border:1px solid var(--border);margin:12px 0;white-space:pre-wrap">
+episodic_memory ChromaDB (768 dims)
+    ├── type: narrative
+    ├── type: audio
+    ├── type: vision
+    ├── type: motion      ← Cenários 2, 3, 4, 5
+    ├── type: generative  ← Cenários 3, 5
+    ├── type: 3d          ← Cenário 3
+    └── type: project
+</pre>
+<div style="height:8px"></div>
+<p style="font-size:0.88em;color:var(--text2);line-height:1.7;margin:4px 0">---</p>
+<div style="height:8px"></div>
+<h2 style="font-size:1.1em;font-weight:600;color:var(--accent);margin:20px 0 8px">Infraestrutura</h2>
+<div style="height:8px"></div>
+<tr><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Serviço</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Porta</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Status</td></tr>
+<p style="font-size:0.88em;color:var(--text2);line-height:1.7;margin:4px 0">|---|---|---|</p>
+<tr><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Ollama HomeLab</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">11434</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">✅ 0.20.4 · gemma4:26b · 53 t/s</td></tr>
+<tr><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Ollama Windows</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">11434</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">✅ 0.6.8 · qwen3-vl:8b · 100% GPU</td></tr>
+<tr><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">ChromaDB</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">8000</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">✅ 8 collections · 105 episodic entries</td></tr>
+<tr><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">RAG API</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">8500</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">✅ McKee · Field · Block · /search_montagem</td></tr>
+<tr><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Visual Search API</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">8700</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">✅ systemd + enable-linger · dual-lang PT→EN · auto_tags</td></tr>
+<tr><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Open WebUI</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">3000</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">✅ 14 pipelines</td></tr>
+<tr><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">n8n</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">5678</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">✅ Docker</td></tr>
+<tr><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">memory_manager</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">8502</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">✅</td></tr>
+<tr><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">SMB win_tools</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">/mnt/win_tools</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">✅ D:\TOOLS\ montado via CIFS</td></tr>
+<tr><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">SMB DATA</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">/media/pingpong/DATA</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">✅ Samba share · Obsidian vault</td></tr>
+<tr><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Obsidian</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">AppImage</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">✅ Linux + Windows via Samba</td></tr>
+<tr><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">PocketBase</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">8090</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">❌ instalar</td></tr>
+<tr><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Flamenco Manager</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">8080</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">⏳ Julho 2026</td></tr>
+<div style="height:8px"></div>
+<p style="font-size:0.88em;color:var(--text2);line-height:1.7;margin:4px 0">---</p>
+<div style="height:8px"></div>
+<h2 style="font-size:1.1em;font-weight:600;color:var(--accent);margin:20px 0 8px">Documentação produzida — April 11-12</h2>
+<div style="height:8px"></div>
+<tr><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Documento</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Conteúdo</td></tr>
+<p style="font-size:0.88em;color:var(--text2);line-height:1.7;margin:4px 0">|---|---|</p>
+<tr><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">MEMORABILIA v9</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Documento compilado 2 páginas — pipeline + filosofia</td></tr>
+<tr><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Design Philosophy v1.0</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">7 princípios + refinamento agents + prioridades</td></tr>
+<tr><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">CEP v3 Spec</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Second brain — hyperlinks, tags, bookmarks, aliases, embeds</td></tr>
+<tr><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">project_brief_template.md</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Template Obsidian/Joplin com YAML → pipeline</td></tr>
+<div style="height:8px"></div>
+<p style="font-size:0.88em;color:var(--text2);line-height:1.7;margin:4px 0">---</p>
+<div style="height:8px"></div>
+<h2 style="font-size:1.1em;font-weight:600;color:var(--accent);margin:20px 0 8px">Gotchas Críticos</h2>
+<div style="height:8px"></div>
+<pre style="background:var(--bg3);padding:16px;border-radius:8px;overflow-x:auto;font-size:0.8em;font-family:JetBrains Mono,monospace;color:var(--text);border:1px solid var(--border);margin:12px 0;white-space:pre-wrap">
+🔴 evalScript Premiere 2025+ REQUER callback (sync retorna undefined)
+🔴 createMarker aceita SEGUNDOS direto, não ticks
+🔴 Após update Ollama: verificar override.conf (OLLAMA_MODELS/HOST/NO_CLOUD)
+🔴 Videos editados → 03_EDITED · Videos brutos → 02_CAPTURES (separação obrigatória)
+🔴 Obsidian AppImage requer --no-sandbox no Ubuntu 24 (SUID sandbox error)
+🔴 visual_search_api.py: timestamp_sec vem como float string — usar int(float())
+🔴 extract_tags() DEVE estar definida ANTES da função search() no arquivo
+🔴 SVG opacity no &lt;g&gt; afeta TODOS os filhos — backgrounds sólidos em layer separada
+🔴 Docker bypassa UFW — DOCKER-USER chain em /etc/ufw/after.rules
+
+🟡 gemma4:26b precisa num_predict 4000 (thinking tokens contam)
+🟡 RAG queries em inglês — nomic-embed treinado em EN
+🟡 qwen3-vl NÃO suporta num_predict — retorna vazio silenciosamente
+🟡 Imagens &gt; 1280px causam timeout no vision model
+🟡 ollama.embeddings() não aceita host= — usar ollama.Client(host=)
+🟡 ChromaDB visual_index não tem rhythm_mode/material_type — usar extract_tags()
+🟡 Obsidian vault via Samba: plugins podem dar "failed to load" — ignorar
+🟡 Grid/List drag: splice+insert faz cascade — usar swap para troca direta
+🟡 Mistral tradução é gargalo da busca (~5-10s) — considerar skip para EN
+🟡 Graph: onClick do SVG bg cancela seleção do node — usar ref flag
+</pre>
+<div style="height:8px"></div>
+<p style="font-size:0.88em;color:var(--text2);line-height:1.7;margin:4px 0">---</p>
+<div style="height:8px"></div>
+<p style="font-size:0.88em;color:var(--text2);line-height:1.7;margin:4px 0">*pingpong · Montreal · April 12, 2026*</p>
+<p style="font-size:0.88em;color:var(--text2);line-height:1.7;margin:4px 0">*MEMORABILIA · Pipeline Audiovisual v8 · Status Card*</p>
+<div style="height:8px"></div>
     </div>
   </div>
 
-  <div class="card" onclick="window.open('https://github.com/pin9p0n9/memorabilia/blob/main/memorabilia_roadmap_v6.md','_blank')">
+  <div class="card" onclick="toggleCard(this)">
     <div class="card-header">
       <div class="card-badge bg-amber">RM</div>
       <div><div class="card-title">Roadmap v6</div><div class="card-sub">Implementado + pendente — Apr a Aug 2026</div></div>
-      <div class="card-right"><span class="card-tag tag-amber">8 KB</span><span style="color:var(--text3)">↗</span></div>
+      <div class="card-right"><span class="card-arrow">▸</span></div>
+    </div>
+    <div class="card-body" style="max-height:600px;overflow-y:auto">
+      <h1 style="font-size:1.3em;font-weight:700;color:var(--text);margin:24px 0 8px">MEMORABILIA — Roadmap v5.0</h1>
+<div style="height:8px"></div>
+<p style="font-size:0.88em;color:var(--text2);line-height:1.7;margin:4px 0">HomeLab pingpong · Montreal · April 12, 2026</p>
+<p style="font-size:0.88em;color:var(--text2);line-height:1.7;margin:4px 0">Operador: pingpong (Leo) · solo · Montreal</p>
+<div style="height:8px"></div>
+<p style="font-size:0.88em;color:var(--text2);line-height:1.7;margin:4px 0">---</p>
+<div style="height:8px"></div>
+<h2 style="font-size:1.1em;font-weight:600;color:var(--accent);margin:20px 0 8px">Princípio de implementação</h2>
+<div style="height:8px"></div>
+<p style="font-size:0.88em;color:var(--text2);line-height:1.7;margin:4px 0">Cada camada só é construída depois que a anterior está funcionando em produção com projetos reais. O pipeline entrega infraestrutura de navegação — o material fala por si. O editor decide. O sistema é desenhado em torno de 7 princípios (Design Philosophy v1.0) e dois agentes centrais: Agent 3c (leitura com tensão calibrada) e Agent 8 (Glasswing Closer com contexto relacional).</p>
+<div style="height:8px"></div>
+<p style="font-size:0.88em;color:var(--text2);line-height:1.7;margin:4px 0">---</p>
+<div style="height:8px"></div>
+<h2 style="font-size:1.1em;font-weight:600;color:var(--accent);margin:20px 0 8px">Estado real hoje</h2>
+<div style="height:8px"></div>
+<pre style="background:var(--bg3);padding:16px;border-radius:8px;overflow-x:auto;font-size:0.8em;font-family:JetBrains Mono,monospace;color:var(--text);border:1px solid var(--border);margin:12px 0;white-space:pre-wrap">
+FUNCIONA EM PRODUÇÃO:
+  Pipeline ~50 min · 1 comando
+  Agents 1+2+3a+3b+3c+7+8+9
+  CEP panel: 3 views (List · Grid · Graph)
+    Graph: force-directed SVG · thumbnails reais · auto_tags
+    Sidebar esquerda Obsidian-style · sidebar direita clip info
+    Zoom/pan · drag nodes · busca funcional todas as views
+    Grid/List: drag swap reorder
+  visual_index: 384 entries · scene_frame_indexer v2.0 · 4 modos adaptativos
+  knowledge_montagem: 4260 chunks · Eisenstein/Tarkovsky/Bresson/Murch
+  montagem RAG integrado: Cinematographer + Agent 3c + rag_api
+  episodic_memory: ~105 entries · 768 dims · 7 types
+  Glasswing confidence 0.75
+  Obsidian vault: /media/pingpong/DATA/memorabilia-vault
+    Template briefing YAML → pipeline · Graph View · Linux + Windows
+  Visual Search API: systemd + enable-linger · auto_tags · extract_tags()
+  Samba: DATA share adicionado · Obsidian acessível Windows
+  session memory loop: session_start · log_episodic · session_close
+
+DESIGN:
+  Design Philosophy v1.0 — 7 princípios documentados
+  Agent 3c redesenhado — tensão calibrada (canônico vs episódico)
+  Agent 8 redesenhado — Glasswing Closer (sugerido vs escolhido vs divergência)
+  CEP v3 Spec — second brain do projeto (tags, links, bookmarks, aliases)
+  MEMORABILIA v9 — documento compilado 2 páginas
+
+DECISÕES ARQUITETURAIS:
+  ❌ Sem rough cut — Agent 4 + Agent 6 removidos
+  ✅ Pipeline = infraestrutura de navegação
+  ✅ scene_frame_indexer v2.0 — ritmo adaptativo · raw vs edited
+  ✅ Separação 02_CAPTURES (raw) vs 03_EDITED obrigatória
+  ✅ Graph view no CEP com auto_tags (sem metadata rico no ChromaDB)
+  ✅ Obsidian como second brain global (entre projetos)
+  ✅ CEP Cluster como second brain local (dentro do projeto)
+
+TESTADO COM PROJETOS REAIS:
+  260406_V_HOMELAB — documentário · PT · Vidigal + MTL
+  DDV game trailer — Disney · motion graphics
+  Béla Tarr Werckmeister — Cinematographer test
+</pre>
+<div style="height:8px"></div>
+<p style="font-size:0.88em;color:var(--text2);line-height:1.7;margin:4px 0">---</p>
+<div style="height:8px"></div>
+<h2 style="font-size:1.1em;font-weight:600;color:var(--accent);margin:20px 0 8px">Action Points — por horizonte</h2>
+<div style="height:8px"></div>
+<h3 style="font-size:0.95em;font-weight:600;color:var(--teal);margin:16px 0 6px">AP-3 ✅ — episodic_entry + Memory Bible</h3>
+<p style="font-size:0.88em;color:var(--text2);line-height:1.7;margin:4px 0">Concluído. 260406 com 7 types. Wake-up context verificado.</p>
+<div style="height:8px"></div>
+<h3 style="font-size:0.95em;font-weight:600;color:var(--teal);margin:16px 0 6px">AP-2 ✅ — audio_guide.wav → pasta correta</h3>
+<p style="font-size:0.88em;color:var(--text2);line-height:1.7;margin:4px 0">Concluído. musicgen_guide.py v1.1.</p>
+<div style="height:8px"></div>
+<h3 style="font-size:0.95em;font-weight:600;color:var(--teal);margin:16px 0 6px">AP-10 ✅ — Design Philosophy + Agent redesign</h3>
+<p style="font-size:0.88em;color:var(--text2);line-height:1.7;margin:4px 0">Concluído April 12. 7 princípios. Agent 3c tensão calibrada. Agent 8 Glasswing Closer.</p>
+<div style="height:8px"></div>
+<h3 style="font-size:0.95em;font-weight:600;color:var(--teal);margin:16px 0 6px">AP-11 ✅ — CEP Graph View + auto_tags</h3>
+<p style="font-size:0.88em;color:var(--text2);line-height:1.7;margin:4px 0">Concluído April 12. Graph no Premiere. extract_tags() no API. Sidebar Obsidian-style.</p>
+<div style="height:8px"></div>
+<h3 style="font-size:0.95em;font-weight:600;color:var(--teal);margin:16px 0 6px">AP-12 ✅ — Obsidian vault + briefing template</h3>
+<p style="font-size:0.88em;color:var(--text2);line-height:1.7;margin:4px 0">Concluído April 12. Vault no DATA. Template YAML. Acessível Linux + Windows.</p>
+<div style="height:8px"></div>
+<p style="font-size:0.88em;color:var(--text2);line-height:1.7;margin:4px 0">---</p>
+<div style="height:8px"></div>
+<h3 style="font-size:0.95em;font-weight:600;color:var(--teal);margin:16px 0 6px">AP-5 — wake-up context nos assistants RAG</h3>
+<p style="font-size:0.88em;color:var(--text2);line-height:1.7;margin:4px 0">Esforço: 3-4h · Impacto: alto · Prazo: Maio 2026</p>
+<div style="height:8px"></div>
+<h3 style="font-size:0.95em;font-weight:600;color:var(--teal);margin:16px 0 6px">AP-13 — Re-indexar visual_index com metadata rico</h3>
+<p style="font-size:0.88em;color:var(--text2);line-height:1.7;margin:4px 0">Esforço: 2-3h · Impacto: alto · Prazo: Esta semana</p>
+<pre style="background:var(--bg3);padding:16px;border-radius:8px;overflow-x:auto;font-size:0.8em;font-family:JetBrains Mono,monospace;color:var(--text);border:1px solid var(--border);margin:12px 0;white-space:pre-wrap">
+Adicionar rhythm_mode, material_type, scene_duration ao ChromaDB na indexação.
+Elimina necessidade de extract_tags() como fallback.
+Graph do CEP ganha links reais baseados em metadata.
+</pre>
+<div style="height:8px"></div>
+<h3 style="font-size:0.95em;font-weight:600;color:var(--teal);margin:16px 0 6px">AP-14 — Agent 3c tensão calibrada no pipeline real</h3>
+<p style="font-size:0.88em;color:var(--text2);line-height:1.7;margin:4px 0">Esforço: 4-6h · Impacto: alto · Prazo: Abril</p>
+<pre style="background:var(--bg3);padding:16px;border-radius:8px;overflow-x:auto;font-size:0.8em;font-family:JetBrains Mono,monospace;color:var(--text);border:1px solid var(--border);margin:12px 0;white-space:pre-wrap">
+Implementar query dupla canônico/episódico com score.
+Divergência explícita &gt; 0.3.
+Referência a projetos anteriores similares.
+</pre>
+<div style="height:8px"></div>
+<h3 style="font-size:0.95em;font-weight:600;color:var(--teal);margin:16px 0 6px">AP-15 — Agent 8 depósito relacional no pipeline real</h3>
+<p style="font-size:0.88em;color:var(--text2);line-height:1.7;margin:4px 0">Esforço: 3-4h · Impacto: alto · Prazo: Abril</p>
+<pre style="background:var(--bg3);padding:16px;border-radius:8px;overflow-x:auto;font-size:0.8em;font-family:JetBrains Mono,monospace;color:var(--text);border:1px solid var(--border);margin:12px 0;white-space:pre-wrap">
+Sugerido vs escolhido vs divergência.
+Condições do projeto (tipo, cliente, audiência, paleta, BPM).
+Padrões detectados a partir de 3 ocorrências.
+</pre>
+<div style="height:8px"></div>
+<h3 style="font-size:0.95em;font-weight:600;color:var(--teal);margin:16px 0 6px">AP-16 — CEP v3 second brain features</h3>
+<p style="font-size:0.88em;color:var(--text2);line-height:1.7;margin:4px 0">Esforço: 1-2 semanas · Prazo: Maio</p>
+<pre style="background:var(--bg3);padding:16px;border-radius:8px;overflow-x:auto;font-size:0.8em;font-family:JetBrains Mono,monospace;color:var(--text);border:1px solid var(--border);margin:12px 0;white-space:pre-wrap">
+P0: Tags do editor na busca (#tag) + multi-select
+P1: Bookmarks (!select, !descarte) + nó colorido no grafo
+P2: Links manuais entre clips (@) + labels
+P3: Zoom hierárquico por tags
+</pre>
+<div style="height:8px"></div>
+<p style="font-size:0.88em;color:var(--text2);line-height:1.7;margin:4px 0">---</p>
+<div style="height:8px"></div>
+<h2 style="font-size:1.1em;font-weight:600;color:var(--accent);margin:20px 0 8px">🔴 Esta semana — Abril 12–18</h2>
+<div style="height:8px"></div>
+<pre style="background:var(--bg3);padding:16px;border-radius:8px;overflow-x:auto;font-size:0.8em;font-family:JetBrains Mono,monospace;color:var(--text);border:1px solid var(--border);margin:12px 0;white-space:pre-wrap">
+[ ] AP-13 — Re-indexar visual_index com metadata rico
+[ ] AP-14 — Agent 3c tensão calibrada (implementar no pipeline)
+[ ] AP-15 — Agent 8 depósito relacional (implementar no pipeline)
+[ ] AP-5 — wake-up context nos assistants RAG
+[ ] Whisper batch: Unity · Unreal · Math for VFX
+[ ] Reindexar Blender_GameAssets_Udemy
+[ ] Syncthing no Windows para vault offline
+</pre>
+<div style="height:8px"></div>
+<p style="font-size:0.88em;color:var(--text2);line-height:1.7;margin:4px 0">---</p>
+<div style="height:8px"></div>
+<h2 style="font-size:1.1em;font-weight:600;color:var(--accent);margin:20px 0 8px">🟡 Resto de Abril — semanas 3–4</h2>
+<div style="height:8px"></div>
+<pre style="background:var(--bg3);padding:16px;border-radius:8px;overflow-x:auto;font-size:0.8em;font-family:JetBrains Mono,monospace;color:var(--text);border:1px solid var(--border);margin:12px 0;white-space:pre-wrap">
+Visual Bible — Sprint 1
+  Sprint 1A — MusicGen integrado ao watchdog
+  Sprint 1B — Visual Library MVP (PocketBase + FastAPI + frontend)
+  Sprint 1C — Deck por projeto (/decks · deck_brief.json)
+
+CEP Graph — testar nodes opacos (SVG layers fix)
+Dataview dashboard no Obsidian
+</pre>
+<div style="height:8px"></div>
+<p style="font-size:0.88em;color:var(--text2);line-height:1.7;margin:4px 0">---</p>
+<div style="height:8px"></div>
+<h2 style="font-size:1.1em;font-weight:600;color:var(--accent);margin:20px 0 8px">🟢 Maio 2026</h2>
+<div style="height:8px"></div>
+<pre style="background:var(--bg3);padding:16px;border-radius:8px;overflow-x:auto;font-size:0.8em;font-family:JetBrains Mono,monospace;color:var(--text);border:1px solid var(--border);margin:12px 0;white-space:pre-wrap">
+AP-4 — LightRAG para knowledge RAG
+AP-5 — Memory Bible em todos os assistants (com 3+ projetos)
+AP-7 — Visual Library MVP
+AP-16 — CEP v3 second brain (tags editor + bookmarks)
+CEP Panel — Assistants no Premiere (FastAPI :8800)
+Metadata + Remotion
+</pre>
+<div style="height:8px"></div>
+<p style="font-size:0.88em;color:var(--text2);line-height:1.7;margin:4px 0">---</p>
+<div style="height:8px"></div>
+<h2 style="font-size:1.1em;font-weight:600;color:var(--accent);margin:20px 0 8px">🟢 Junho 2026</h2>
+<div style="height:8px"></div>
+<pre style="background:var(--bg3);padding:16px;border-radius:8px;overflow-x:auto;font-size:0.8em;font-family:JetBrains Mono,monospace;color:var(--text);border:1px solid var(--border);margin:12px 0;white-space:pre-wrap">
+AP-6 — OpenSpace como runtime (se 2 projetos rodados)
+Memory Bible com 3+ projetos — medir calibração
+Creative Director RAG com motion completo (AE + C4D)
+</pre>
+<div style="height:8px"></div>
+<p style="font-size:0.88em;color:var(--text2);line-height:1.7;margin:4px 0">---</p>
+<div style="height:8px"></div>
+<h2 style="font-size:1.1em;font-weight:600;color:var(--accent);margin:20px 0 8px">🔵 Julho 2026</h2>
+<div style="height:8px"></div>
+<pre style="background:var(--bg3);padding:16px;border-radius:8px;overflow-x:auto;font-size:0.8em;font-family:JetBrains Mono,monospace;color:var(--text);border:1px solid var(--border);margin:12px 0;white-space:pre-wrap">
+AP-8 — Flamenco render farm (se demanda Cenário 3+5)
+Technical Director module — Blender + AE orquestração
+ComfyUI integrado ao watchdog
+LoRA por cliente
+</pre>
+<div style="height:8px"></div>
+<p style="font-size:0.88em;color:var(--text2);line-height:1.7;margin:4px 0">---</p>
+<div style="height:8px"></div>
+<h2 style="font-size:1.1em;font-weight:600;color:var(--accent);margin:20px 0 8px">🟣 Agosto 2026</h2>
+<div style="height:8px"></div>
+<pre style="background:var(--bg3);padding:16px;border-radius:8px;overflow-x:auto;font-size:0.8em;font-family:JetBrains Mono,monospace;color:var(--text);border:1px solid var(--border);margin:12px 0;white-space:pre-wrap">
+AP-9 — PINGPONG OS Dashboard
+Agent 9 — auto-publish YouTube + Vimeo
+Validação end-to-end (Cenário 1 + Cenário 3)
+Glasswing com 5+ projetos: medir calibração
+</pre>
+<div style="height:8px"></div>
+<p style="font-size:0.88em;color:var(--text2);line-height:1.7;margin:4px 0">---</p>
+<div style="height:8px"></div>
+<h2 style="font-size:1.1em;font-weight:600;color:var(--accent);margin:20px 0 8px">Resumo por mês</h2>
+<div style="height:8px"></div>
+<tr><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Mês</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Foco</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Entrega real</td></tr>
+<p style="font-size:0.88em;color:var(--text2);line-height:1.7;margin:4px 0">|---|---|---|</p>
+<tr><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Abril</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Agent 3c/8 refinados + visual_index metadata</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Pipeline com tensão calibrada · Graph com links reais</td></tr>
+<tr><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Maio</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">LightRAG · Memory Bible · Visual Library · CEP v3</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Second brain funcional · assistants calibrados</td></tr>
+<tr><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Junho</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">OpenSpace · Motion RAG · CEP assistants</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Recovery automático · assistants no Premiere</td></tr>
+<tr><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Julho</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Flamenco · Technical Director</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Render farm · compositing pipeline (se demanda)</td></tr>
+<tr><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Agosto</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Dashboard · validação end-to-end</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Pipeline completo · Glasswing calibrado</td></tr>
+<div style="height:8px"></div>
+<p style="font-size:0.88em;color:var(--text2);line-height:1.7;margin:4px 0">---</p>
+<div style="height:8px"></div>
+<h2 style="font-size:1.1em;font-weight:600;color:var(--accent);margin:20px 0 8px">O que não está no roadmap e por quê</h2>
+<div style="height:8px"></div>
+<div style="font-size:0.85em;color:var(--text2);padding:2px 0 2px 16px">· Rough cut XML — decisão arquitetural: pipeline não prescreve sequência</div>
+<div style="font-size:0.85em;color:var(--text2);padding:2px 0 2px 16px">· Agent 4 candidate_segments — removido</div>
+<div style="font-size:0.85em;color:var(--text2);padding:2px 0 2px 16px">· Agent 6 suggested_cuts — removido</div>
+<div style="font-size:0.85em;color:var(--text2);padding:2px 0 2px 16px">· Brazil Mac Mini — sem hardware confirmado</div>
+<div style="font-size:0.85em;color:var(--text2);padding:2px 0 2px 16px">· LoRA por cliente — Julho</div>
+<div style="font-size:0.85em;color:var(--text2);padding:2px 0 2px 16px">· Hetzner VPS + site — Setembro, marketing</div>
+<div style="font-size:0.85em;color:var(--text2);padding:2px 0 2px 16px">· Jitsi self-hosted — meet.jit.si cobre 100%</div>
+<div style="font-size:0.85em;color:var(--text2);padding:2px 0 2px 16px">· DeerFlow — avaliado, decisão Junho</div>
+<div style="height:8px"></div>
+<p style="font-size:0.88em;color:var(--text2);line-height:1.7;margin:4px 0">---</p>
+<div style="height:8px"></div>
+<h2 style="font-size:1.1em;font-weight:600;color:var(--accent);margin:20px 0 8px">Dependências críticas</h2>
+<div style="height:8px"></div>
+<pre style="background:var(--bg3);padding:16px;border-radius:8px;overflow-x:auto;font-size:0.8em;font-family:JetBrains Mono,monospace;color:var(--text);border:1px solid var(--border);margin:12px 0;white-space:pre-wrap">
+AP-13 re-index      → independente (roda agora)
+AP-14 Agent 3c      → independente (roda agora)
+AP-15 Agent 8       → independente (roda agora)
+AP-5 wake-up        → depende de 2 projetos no ChromaDB
+AP-16 CEP v3        → depende AP-13 (metadata rico)
+AP-4 LightRAG       → depende AP-3 + dados reais
+
+Sprint 1B            → independente
+  └→ Sprint 1C       → depende Sprint 1B
+
+FastAPI :8800        → independente
+  └→ CEP assistants  → depende :8800
+
+Flamenco             → depende de demanda real (Cenário 3+5)
+Dashboard            → depende de tudo acima
+</pre>
+<div style="height:8px"></div>
+<p style="font-size:0.88em;color:var(--text2);line-height:1.7;margin:4px 0">---</p>
+<div style="height:8px"></div>
+<h2 style="font-size:1.1em;font-weight:600;color:var(--accent);margin:20px 0 8px">Hardware prioritário</h2>
+<div style="height:8px"></div>
+<pre style="background:var(--bg3);padding:16px;border-radius:8px;overflow-x:auto;font-size:0.8em;font-family:JetBrains Mono,monospace;color:var(--text);border:1px solid var(--border);margin:12px 0;white-space:pre-wrap">
+RTX 3090 24GB used ~$1.000 CAD → gemma4 full speed · ComfyUI 3x
+Samsung 990 Pro 4TB ~$400 CAD  → resolve 2TB Windows HOT
+IronWolf 8TB ~$120 CAD         → HomeLab DATA backup (SPOF · SMART 26.947h)
+</pre>
+<div style="height:8px"></div>
+<p style="font-size:0.88em;color:var(--text2);line-height:1.7;margin:4px 0">---</p>
+<div style="height:8px"></div>
+<p style="font-size:0.88em;color:var(--text2);line-height:1.7;margin:4px 0">*pingpong · Montreal · April 12, 2026*</p>
+<p style="font-size:0.88em;color:var(--text2);line-height:1.7;margin:4px 0">*MEMORABILIA · Roadmap v5.0 · solo operator*</p>
+<div style="height:8px"></div>
     </div>
   </div>
 
-  <div class="card" onclick="window.open('https://github.com/pin9p0n9/memorabilia/blob/main/Timeline_Implementacao.md','_blank')">
+  <div class="card" onclick="toggleCard(this)">
     <div class="card-header">
       <div class="card-badge bg-coral">TL</div>
-      <div><div class="card-title">Timeline de Implementação</div><div class="card-sub">34 dias do zero ao pipeline — cronologia completa</div></div>
-      <div class="card-right"><span class="card-tag tag-coral">10 KB</span><span style="color:var(--text3)">↗</span></div>
+      <div><div class="card-title">Timeline de Implementação</div><div class="card-sub">34 dias do zero ao pipeline</div></div>
+      <div class="card-right"><span class="card-arrow">▸</span></div>
+    </div>
+    <div class="card-body" style="max-height:600px;overflow-y:auto">
+      <div style="height:8px"></div>
+<h1 style="font-size:1.3em;font-weight:700;color:var(--text);margin:24px 0 8px">MEMORABILIA — Timeline de Implementação</h1>
+<div style="height:8px"></div>
+<p style="font-size:0.88em;color:var(--text2);line-height:1.7;margin:4px 0">Do zero ao pipeline audiovisual com memória viva.</p>
+<p style="font-size:0.88em;color:var(--text2);line-height:1.7;margin:4px 0">pingpong · Montreal · Janeiro–Abril 2026</p>
+<div style="height:8px"></div>
+<p style="font-size:0.88em;color:var(--text2);line-height:1.7;margin:4px 0">---</p>
+<div style="height:8px"></div>
+<h2 style="font-size:1.1em;font-weight:600;color:var(--accent);margin:20px 0 8px">Janeiro 2026 — Primeiras notas</h2>
+<div style="height:8px"></div>
+<p style="font-size:0.88em;color:var(--text2);line-height:1.7;margin:4px 0"><strong style="color:var(--text)">28 Jan</strong> — Primeira nota no Joplin: "Some mistakes take you to the right place." Início do registro digital.</p>
+<div style="height:8px"></div>
+<p style="font-size:0.88em;color:var(--text2);line-height:1.7;margin:4px 0"><strong style="color:var(--text)">01 Feb</strong> — Graphic Design: The New Basics. Primeiras referências de design indexadas.</p>
+<div style="height:8px"></div>
+<p style="font-size:0.88em;color:var(--text2);line-height:1.7;margin:4px 0"><strong style="color:var(--text)">07–09 Feb</strong> — Motion Brand Design System · Brand Design with Grids · Layout Design · MASTER AI · Motion Design MASTER. Fundação teórica do repertório visual.</p>
+<div style="height:8px"></div>
+<p style="font-size:0.88em;color:var(--text2);line-height:1.7;margin:4px 0">---</p>
+<div style="height:8px"></div>
+<h2 style="font-size:1.1em;font-weight:600;color:var(--accent);margin:20px 0 8px">Março 2026 — Semana 1: Linux do zero</h2>
+<div style="height:8px"></div>
+<p style="font-size:0.88em;color:var(--text2);line-height:1.7;margin:4px 0"><strong style="color:var(--text)">09 Mar</strong> — Ubuntu 24.04 LTS instalado no HomeLab (ASUS X99-A II · i7-6800K · 2× GTX 1080 Ti · 128GB RAM). Dia zero da infraestrutura.</p>
+<div style="height:8px"></div>
+<p style="font-size:0.88em;color:var(--text2);line-height:1.7;margin:4px 0"><strong style="color:var(--text)">09–14 Mar</strong> — 12 lições Linux completadas: terminal, arquivos, permissões, processos, pacotes, redes, .bashrc, scripts, cron, SSH. Driver NVIDIA 580 instalado. Wi-Fi RTL8812AU configurado. HD DATA 1.8TB formatado ext4.</p>
+<div style="height:8px"></div>
+<p style="font-size:0.88em;color:var(--text2);line-height:1.7;margin:4px 0"><strong style="color:var(--text)">14 Mar</strong> — Primeiro documento de referência: <code style="background:var(--bg3);padding:1px 5px;border-radius:3px;font-size:0.85em;font-family:JetBrains Mono,monospace;color:var(--accent)">homelab_guia_LINUX_10</code>. Joplin instalado como sistema de notas.</p>
+<div style="height:8px"></div>
+<p style="font-size:0.88em;color:var(--text2);line-height:1.7;margin:4px 0">---</p>
+<div style="height:8px"></div>
+<h2 style="font-size:1.1em;font-weight:600;color:var(--accent);margin:20px 0 8px">Março 2026 — Semana 2: Cloud + VPN + AI</h2>
+<div style="height:8px"></div>
+<p style="font-size:0.88em;color:var(--text2);line-height:1.7;margin:4px 0"><strong style="color:var(--text)">15 Mar</strong> — Docker + Nextcloud deployed. MariaDB + Redis. Dados no DATA 1.8TB.</p>
+<div style="height:8px"></div>
+<p style="font-size:0.88em;color:var(--text2);line-height:1.7;margin:4px 0"><strong style="color:var(--text)">15 Mar</strong> — Jellyfin deployed (:8096). 292GB mídia transferida do BLACKBOX. 4 dispositivos: Linux, Windows, Roku, Android.</p>
+<div style="height:8px"></div>
+<p style="font-size:0.88em;color:var(--text2);line-height:1.7;margin:4px 0"><strong style="color:var(--text)">15 Mar</strong> — WireGuard VPN operacional. HomeLab (10.0.0.1) · Windows (10.0.0.2) · Samsung (10.0.0.3). Split tunneling mobile.</p>
+<div style="height:8px"></div>
+<p style="font-size:0.88em;color:var(--text2);line-height:1.7;margin:4px 0"><strong style="color:var(--text)">15 Mar</strong> — Nginx Proxy Manager + DuckDNS + Let's Encrypt SSL wildcard. HTTPS Nextcloud + Jellyfin.</p>
+<div style="height:8px"></div>
+<p style="font-size:0.88em;color:var(--text2);line-height:1.7;margin:4px 0"><strong style="color:var(--text)">15 Mar</strong> — Segurança: SSH key-only ED25519 · GPG backups · KeePassXC · Joplin E2E · 2FA Nextcloud · UFW firewall.</p>
+<div style="height:8px"></div>
+<p style="font-size:0.88em;color:var(--text2);line-height:1.7;margin:4px 0"><strong style="color:var(--text)">15 Mar</strong> — Ollama instalado. Dual GPU tensor split (22GB VRAM). qwen2.5:32b @ 8.82 t/s. Open WebUI com HTTPS.</p>
+<div style="height:8px"></div>
+<p style="font-size:0.88em;color:var(--text2);line-height:1.7;margin:4px 0"><strong style="color:var(--text)">15 Mar</strong> — Persona "Jeremias" criada no Open WebUI. AI 100% offline (OLLAMA_NO_CLOUD=true).</p>
+<div style="height:8px"></div>
+<p style="font-size:0.88em;color:var(--text2);line-height:1.7;margin:4px 0"><strong style="color:var(--text)">17 Mar</strong> — Fases 1 (Linux), 2 (Nextcloud), 2.5 (Jellyfin+VPN), 2.6 (HTTPS+Security), 3 (AI) — todas COMPLETAS. Python venv configurado.</p>
+<div style="height:8px"></div>
+<p style="font-size:0.88em;color:var(--text2);line-height:1.7;margin:4px 0">---</p>
+<div style="height:8px"></div>
+<h2 style="font-size:1.1em;font-weight:600;color:var(--accent);margin:20px 0 8px">Março 2026 — Semana 3: Arquitetura + Pipeline design</h2>
+<div style="height:8px"></div>
+<p style="font-size:0.88em;color:var(--text2);line-height:1.7;margin:4px 0"><strong style="color:var(--text)">18 Mar</strong> — Pipeline híbrido desenhado: Luma Labs + HomeLab. Creative AI Learning Path documentado.</p>
+<div style="height:8px"></div>
+<p style="font-size:0.88em;color:var(--text2);line-height:1.7;margin:4px 0"><strong style="color:var(--text)">19 Mar</strong> — Roadmap de implementação. Análise honesta: "hardware profissional, pipeline 90% documentado, 10% implementado."</p>
+<div style="height:8px"></div>
+<p style="font-size:0.88em;color:var(--text2);line-height:1.7;margin:4px 0"><strong style="color:var(--text)">21 Mar</strong> — Pipeline Audiovisual especificado (Brazil 1970/1982 como analogia). K3s avaliado e descartado — Docker Compose suficiente por agora. Hardware inventory completo (3 machines + Mac Mini futuro).</p>
+<div style="height:8px"></div>
+<p style="font-size:0.88em;color:var(--text2);line-height:1.7;margin:4px 0"><strong style="color:var(--text)">22 Mar</strong> — Knowledge Pipeline desenhado: RAG + QLoRA. Visual Library Pipeline especificado. Interface RAG desenhada.</p>
+<div style="height:8px"></div>
+<p style="font-size:0.88em;color:var(--text2);line-height:1.7;margin:4px 0"><strong style="color:var(--text)">23 Mar</strong> — Master Summary: 3 peers VPN ativos, benchmarks documentados, modelos pingpong-* criados (full, motion, pm, 3d, mid, quick).</p>
+<div style="height:8px"></div>
+<p style="font-size:0.88em;color:var(--text2);line-height:1.7;margin:4px 0"><strong style="color:var(--text)">24 Mar</strong> — GPU stabilization. Plano de manutenção HomeLab. Runbook SRE criado.</p>
+<div style="height:8px"></div>
+<p style="font-size:0.88em;color:var(--text2);line-height:1.7;margin:4px 0"><strong style="color:var(--text)">25 Mar</strong> — Roadmap completo atualizado. BLACKBOX formatado NTFS. Decisão: Docker Compose por agora, K3s quando 3+ nodes.</p>
+<div style="height:8px"></div>
+<p style="font-size:0.88em;color:var(--text2);line-height:1.7;margin:4px 0">---</p>
+<div style="height:8px"></div>
+<h2 style="font-size:1.1em;font-weight:600;color:var(--accent);margin:20px 0 8px">Março 2026 — Semana 4: Pipeline v1 + SMB + Windows</h2>
+<div style="height:8px"></div>
+<p style="font-size:0.88em;color:var(--text2);line-height:1.7;margin:4px 0"><strong style="color:var(--text)">27 Mar</strong> — Windows PC hardening completo: BIOS atualizado, drivers verificados, Power Plan High Performance, startup limpo. Checklist de implementação criado.</p>
+<div style="height:8px"></div>
+<p style="font-size:0.88em;color:var(--text2);line-height:1.7;margin:4px 0"><strong style="color:var(--text)">27 Mar</strong> — SMB share configurado bidirecional. HomeLab ↔ Windows via Samba + CIFS. DaVinci Resolve conectado ao HomeLab.</p>
+<div style="height:8px"></div>
+<p style="font-size:0.88em;color:var(--text2);line-height:1.7;margin:4px 0"><strong style="color:var(--text)">27 Mar</strong> — D:\TOOLS\ criado. project_launcher.py (GUI), pipeline_v1.py (5 etapas), new_project.ps1. Primeiro projeto testado: 260328_V_MAGELLA.</p>
+<div style="height:8px"></div>
+<p style="font-size:0.88em;color:var(--text2);line-height:1.7;margin:4px 0"><strong style="color:var(--text)">28 Mar</strong> — Pipeline v1 completo: FFmpeg extrai áudio → Whisper large-v3 transcreve → proxy 720p NVENC → CSV Premiere. Cache inteligente, detecção automática de idioma, fallback CPU.</p>
+<div style="height:8px"></div>
+<p style="font-size:0.88em;color:var(--text2);line-height:1.7;margin:4px 0">---</p>
+<div style="height:8px"></div>
+<h2 style="font-size:1.1em;font-weight:600;color:var(--accent);margin:20px 0 8px">Março 2026 — Semana 5: RAG Pipeline</h2>
+<div style="height:8px"></div>
+<p style="font-size:0.88em;color:var(--text2);line-height:1.7;margin:4px 0"><strong style="color:var(--text)">29 Mar</strong> — ChromaDB deployed (:8000). LLaVA frame indexing (685 docs). Whisper medium dual GPU chunking. Triple GPU pipeline. RAG query funcionando. NETFLICS Roku app 70% (BrightScript + Jellyfin backend). Navidrome deployed (:4533).</p>
+<div style="height:8px"></div>
+<p style="font-size:0.88em;color:var(--text2);line-height:1.7;margin:4px 0"><strong style="color:var(--text)">30 Mar</strong> — RAG Pipeline v2.0: SRT parsing (1.545 chunks Alive! Animation em 5 min vs 3-6h Whisper). ChromaDB: 3.378 → 6.814 docs.</p>
+<div style="height:8px"></div>
+<p style="font-size:0.88em;color:var(--text2);line-height:1.7;margin:4px 0"><strong style="color:var(--text)">31 Mar</strong> — Creative Director RAG pipeline criado.</p>
+<div style="height:8px"></div>
+<p style="font-size:0.88em;color:var(--text2);line-height:1.7;margin:4px 0">---</p>
+<div style="height:8px"></div>
+<h2 style="font-size:1.1em;font-weight:600;color:var(--accent);margin:20px 0 8px">Abril 2026 — Semana 1: RAG Full Library</h2>
+<div style="height:8px"></div>
+<p style="font-size:0.88em;color:var(--text2);line-height:1.7;margin:4px 0"><strong style="color:var(--text)">02 Apr</strong> — Fix Ollama connection (192.168.68.112 → 172.17.0.1). RAG API multi-collection. Creative Director dual mode (CD + TD). Anti-alucinação implementada. Decisão: qwen2.5:32b é modelo de produção.</p>
+<div style="height:8px"></div>
+<p style="font-size:0.88em;color:var(--text2);line-height:1.7;margin:4px 0"><strong style="color:var(--text)">03 Apr</strong> — 174 livros organizados em 13 categorias. 48.401 chunks indexados com category. 65k chunks antigos deletados. Kiwix Wikipedia 49GB deployed (:8888). 11 pipelines RAG operacionais. Knowledge RAG Full Library funcional (cita fontes reais). English Tutor + Design Tutor funcionais.</p>
+<div style="height:8px"></div>
+<p style="font-size:0.88em;color:var(--text2);line-height:1.7;margin:4px 0"><strong style="color:var(--text)">04 Apr</strong> — Cinematography RAG dedicado. Vision RAG (frame → análise → RAG técnico). Frame Star Wars testado → tutorial Blender EEVEE gerado. 10 pipelines testados e documentados.</p>
+<div style="height:8px"></div>
+<p style="font-size:0.88em;color:var(--text2);line-height:1.7;margin:4px 0"><strong style="color:var(--text)">05 Apr</strong> — knowledge_cinematography_v2: 11.261 chunks de 21 livros. RAG Matriz de Acesso documentada.</p>
+<div style="height:8px"></div>
+<p style="font-size:0.88em;color:var(--text2);line-height:1.7;margin:4px 0"><strong style="color:var(--text)">06 Apr</strong> — GitHub repos criados (homelab-core + homelab-ai-pipeline). Pipeline Guide documentado. Agent 01 + Agent 02 especificados. CEP Panel conceito.</p>
+<div style="height:8px"></div>
+<p style="font-size:0.88em;color:var(--text2);line-height:1.7;margin:4px 0">---</p>
+<div style="height:8px"></div>
+<h2 style="font-size:1.1em;font-weight:600;color:var(--accent);margin:20px 0 8px">Abril 2026 — Semana 2: Pipeline Audiovisual completo</h2>
+<div style="height:8px"></div>
+<p style="font-size:0.88em;color:var(--text2);line-height:1.7;margin:4px 0"><strong style="color:var(--text)">07 Apr</strong> — Agent 3 (Narrativa + RAG), Agent 4 (Vision Color), Agent 8 (Post Mortem + Glasswing) funcionais. Pipeline completo rodou: 22m20s. Confiança Glasswing: 0.5 → 0.62. MemPalace instalado (138 drawers). Decisão: pipeline entrega navegação, não prescrição. Nome MEMORABILIA nasceu. Manifesto "O Pipeline como Organismo Vivo."</p>
+<div style="height:8px"></div>
+<p style="font-size:0.88em;color:var(--text2);line-height:1.7;margin:4px 0"><strong style="color:var(--text)">08 Apr</strong> — Agent 8: compress_aaak() com 7 types. client_summary.md por cenário. MEMORABILIA Status Card v5. Roadmap completo.</p>
+<div style="height:8px"></div>
+<p style="font-size:0.88em;color:var(--text2);line-height:1.7;margin:4px 0"><strong style="color:var(--text)">09 Apr</strong> — Ollama atualizado para 0.20.4. gemma4:26b a 53 t/s (vs 9.35 antes com qwen2.5:32b). 11 agents implementados. Visual Library v1.0. MusicGen audio guide. CEP Panel no Premiere Pro. DDV game trailer testado. Namespace architecture. Agent 4 + Agent 6 removidos — decisão arquitetural sem rough cut.</p>
+<div style="height:8px"></div>
+<p style="font-size:0.88em;color:var(--text2);line-height:1.7;margin:4px 0"><strong style="color:var(--text)">10 Apr</strong> — scene_frame_indexer v2.0: 4 modos adaptativos (arc/dual/single/window). 384 frames indexados. raw vs edited automático. knowledge_montagem: 4.260 chunks (Eisenstein, Tarkovsky, Bresson, Murch). Montagem RAG integrado. Memory Bible verificada. win_tools SMB montado. Decisão: Agent 4 candidate_segments e Agent 6 suggested_cuts removidos permanentemente.</p>
+<div style="height:8px"></div>
+<p style="font-size:0.88em;color:var(--text2);line-height:1.7;margin:4px 0">---</p>
+<div style="height:8px"></div>
+<h2 style="font-size:1.1em;font-weight:600;color:var(--accent);margin:20px 0 8px">Abril 2026 — Semana 2: Design + CEP Graph + Obsidian</h2>
+<div style="height:8px"></div>
+<p style="font-size:0.88em;color:var(--text2);line-height:1.7;margin:4px 0"><strong style="color:var(--text)">11 Apr</strong> — Auditoria de segurança: 27 fixes. UFW full sweep, DOCKER-USER chain, SSH MaxAuth 3, fail2ban. Risco ALTO → BAIXO.</p>
+<div style="height:8px"></div>
+<p style="font-size:0.88em;color:var(--text2);line-height:1.7;margin:4px 0"><strong style="color:var(--text)">11 Apr</strong> — Design Philosophy v1.0: 7 princípios documentados (Tradução de Tempo, Anti-Biblioteca, Desdobramento, Contexto Relacional, Amplificação, Paralelismo, Julgamento Acumulado). Inspiração: entrevista Andrea Trabuko (Pentagram).</p>
+<div style="height:8px"></div>
+<p style="font-size:0.88em;color:var(--text2);line-height:1.7;margin:4px 0"><strong style="color:var(--text)">11 Apr</strong> — Agent 3c redesenhado: Leitura Narrativa com Tensão Calibrada. Query dupla canônico/episódico, score de confiança, divergência explícita.</p>
+<div style="height:8px"></div>
+<p style="font-size:0.88em;color:var(--text2);line-height:1.7;margin:4px 0"><strong style="color:var(--text)">11 Apr</strong> — Agent 8 redesenhado: Glasswing Closer. Sugerido vs escolhido vs divergência, contexto relacional completo.</p>
+<div style="height:8px"></div>
+<p style="font-size:0.88em;color:var(--text2);line-height:1.7;margin:4px 0"><strong style="color:var(--text)">11 Apr</strong> — CEP v3 Spec: second brain do projeto (hyperlinks, tags editor, backlinks, aliases, embeds, bookmarks).</p>
+<div style="height:8px"></div>
+<p style="font-size:0.88em;color:var(--text2);line-height:1.7;margin:4px 0"><strong style="color:var(--text)">11 Apr</strong> — CEP Panel real (index.html): Graph View adicionado com force-directed SVG, thumbnails reais da API, sidebar esquerda estilo Obsidian (Filters/Groups/Display/Forces), sidebar direita com clip info + 4 botões de ação.</p>
+<div style="height:8px"></div>
+<p style="font-size:0.88em;color:var(--text2);line-height:1.7;margin:4px 0"><strong style="color:var(--text)">11 Apr</strong> — Obsidian instalado no Linux (AppImage --no-sandbox). Vault criado em /media/pingpong/DATA/memorabilia-vault. Plugins: Templater, Dataview, Calendar. Template briefing YAML com campos mapeados aos agents. Primeiro projeto: DOC_VIDIGAL_2026.</p>
+<div style="height:8px"></div>
+<p style="font-size:0.88em;color:var(--text2);line-height:1.7;margin:4px 0"><strong style="color:var(--text)">11 Apr</strong> — Samba: share DATA adicionado. Obsidian acessível no Windows via \\192.168.68.113\DATA\memorabilia-vault.</p>
+<div style="height:8px"></div>
+<p style="font-size:0.88em;color:var(--text2);line-height:1.7;margin:4px 0"><strong style="color:var(--text)">12 Apr</strong> — API fix: int(float()) no timestamp_sec. extract_tags() para gerar tags da descrição em runtime. auto_tags na resposta de busca.</p>
+<div style="height:8px"></div>
+<p style="font-size:0.88em;color:var(--text2);line-height:1.7;margin:4px 0"><strong style="color:var(--text)">12 Apr</strong> — memorabilia-api.service: systemd + enable-linger (sobrevive reboot).</p>
+<div style="height:8px"></div>
+<p style="font-size:0.88em;color:var(--text2);line-height:1.7;margin:4px 0"><strong style="color:var(--text)">12 Apr</strong> — CEP Panel: 3 views finais (List, Grid, Graph). Cluster removido. SVG 4 layers (edges → themes → clip-bg → clips). Zoom/pan. Drag nodes. Busca principal funcional em todas as views. Grid/List drag swap.</p>
+<div style="height:8px"></div>
+<p style="font-size:0.88em;color:var(--text2);line-height:1.7;margin:4px 0"><strong style="color:var(--text)">12 Apr</strong> — 333 notas do Joplin exportadas para Obsidian vault em 10 categorias organizadas.</p>
+<div style="height:8px"></div>
+<p style="font-size:0.88em;color:var(--text2);line-height:1.7;margin:4px 0"><strong style="color:var(--text)">12 Apr</strong> — MEMORABILIA v9 compilado: documento de 2 páginas com filosofia integrada.</p>
+<div style="height:8px"></div>
+<p style="font-size:0.88em;color:var(--text2);line-height:1.7;margin:4px 0"><strong style="color:var(--text)">12 Apr</strong> — HomeLab Cluster Inventory: todos os devices da rede identificados (13 devices, 4 HomeLab, 4 mesh, 4 casa, 1 offline).</p>
+<div style="height:8px"></div>
+<p style="font-size:0.88em;color:var(--text2);line-height:1.7;margin:4px 0">---</p>
+<div style="height:8px"></div>
+<h2 style="font-size:1.1em;font-weight:600;color:var(--accent);margin:20px 0 8px">Resumo — do zero em 34 dias</h2>
+<div style="height:8px"></div>
+<tr><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Semana</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Período</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Marco</td></tr>
+<p style="font-size:0.88em;color:var(--text2);line-height:1.7;margin:4px 0">|---|---|---|</p>
+<tr><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">0</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Jan 28</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Primeira nota digital</td></tr>
+<tr><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">1</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Mar 9–14</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Linux do zero (12 lições)</td></tr>
+<tr><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">2</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Mar 15–17</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Cloud + VPN + AI local (Fases 1-3 completas)</td></tr>
+<tr><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">3</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Mar 18–22</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Arquitetura + Pipeline design</td></tr>
+<tr><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">4</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Mar 23–28</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Pipeline v1 + SMB + Windows hardening</td></tr>
+<tr><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">5</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Mar 29–31</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">RAG Pipeline (ChromaDB + 6.814 docs)</td></tr>
+<tr><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">6</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Apr 2–6</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">RAG Full Library (48k chunks + 11 pipelines)</td></tr>
+<tr><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">7</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Apr 7–10</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Pipeline 11 agents + MEMORABILIA + Glasswing</td></tr>
+<tr><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">8</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Apr 11–12</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Design Philosophy + CEP Graph + Obsidian vault</td></tr>
+<div style="height:8px"></div>
+<h3 style="font-size:0.95em;font-weight:600;color:var(--teal);margin:16px 0 6px">Números finais (12 Abril 2026)</h3>
+<div style="height:8px"></div>
+<pre style="background:var(--bg3);padding:16px;border-radius:8px;overflow-x:auto;font-size:0.8em;font-family:JetBrains Mono,monospace;color:var(--text);border:1px solid var(--border);margin:12px 0;white-space:pre-wrap">
+Pipeline:        9 agents · 50 min · 1 comando
+Conhecimento:    72.263 trechos indexados
+Memória:         105 entradas episódicas · 7 types
+Visual Index:    384 frames · 4 modos adaptativos
+Serviços:        20+ serviços ativos
+Collections:     8 ChromaDB
+Assistants:      6 especializados + 14 pipelines Open WebUI
+CEP Panel:       3 views (List · Grid · Graph) no Premiere Pro
+Obsidian:        333 notas organizadas · vault Linux + Windows
+Segurança:       27 fixes · SSH key-only · fail2ban · UFW hardened
+Hardware:        3 GPUs · 38GB VRAM · 208GB RAM · 20TB storage
+Custo mensal:    $0
+</pre>
+<div style="height:8px"></div>
+<p style="font-size:0.88em;color:var(--text2);line-height:1.7;margin:4px 0">---</p>
+<div style="height:8px"></div>
+<p style="font-size:0.88em;color:var(--text2);line-height:1.7;margin:4px 0">*pingpong · Montreal · April 12, 2026*</p>
+<p style="font-size:0.88em;color:var(--text2);line-height:1.7;margin:4px 0">*MEMORABILIA · Timeline de Implementação v1 · 34 dias do zero ao pipeline*</p>
+<div style="height:8px"></div>
     </div>
   </div>
 
-  <div class="card" onclick="window.open('https://github.com/pin9p0n9/memorabilia/blob/main/homelab_cluster_inventory.md','_blank')">
+  <div class="card" onclick="toggleCard(this)">
     <div class="card-header">
       <div class="card-badge bg-green">HW</div>
-      <div><div class="card-title">HomeLab Cluster Inventory</div><div class="card-sub">Hardware, rede, devices, diagrama — tudo identificado</div></div>
-      <div class="card-right"><span class="card-tag tag-green">12 KB</span><span style="color:var(--text3)">↗</span></div>
+      <div><div class="card-title">HomeLab Cluster Inventory</div><div class="card-sub">Hardware, rede, devices, diagrama</div></div>
+      <div class="card-right"><span class="card-arrow">▸</span></div>
+    </div>
+    <div class="card-body" style="max-height:600px;overflow-y:auto">
+      <h1 style="font-size:1.3em;font-weight:700;color:var(--text);margin:24px 0 8px">MEMORABILIA — HomeLab Cluster Inventory</h1>
+<div style="height:8px"></div>
+<p style="font-size:0.88em;color:var(--text2);line-height:1.7;margin:4px 0">pingpong · Montreal · April 12, 2026</p>
+<div style="height:8px"></div>
+<p style="font-size:0.88em;color:var(--text2);line-height:1.7;margin:4px 0">---</p>
+<div style="height:8px"></div>
+<h2 style="font-size:1.1em;font-weight:600;color:var(--accent);margin:20px 0 8px">Rede Local — 192.168.68.0/24 · SSID: XIMBICA (TP-Link Deco Mesh)</h2>
+<div style="height:8px"></div>
+<tr><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">IP</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Nome</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Device</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Conexão</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Role</td></tr>
+<p style="font-size:0.88em;color:var(--text2);line-height:1.7;margin:4px 0">|---|---|---|---|---|</p>
+<tr><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">.1</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Router</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">TP-Link Deco (principal)</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Gateway</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Mesh controller</td></tr>
+<tr><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">.100</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Ximbica</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Samsung Galaxy</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Wi-Fi 5G</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Mobile · Joplin · VPN 10.0.0.3</td></tr>
+<tr><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">.101</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">TY_WR</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">TP-Link Deco (satélite)</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">—</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Mesh node</td></tr>
+<tr><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">.102</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">TY_WR</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">TP-Link Deco (satélite)</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Wi-Fi 2.4G</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Mesh node</td></tr>
+<tr><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">.103</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">MacBookPro</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">MacBook Pro M1</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Wi-Fi 5G</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Field · mobile · ⏳ pendente VPN</td></tr>
+<tr><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">.104</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">iPhone</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">iPhone (alguém da casa)</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Wi-Fi 5G</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Não faz parte do HomeLab</td></tr>
+<tr><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">.105</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">SAMBA</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Windows PC</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Wi-Fi 5G</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Edição · render · RTX 4080</td></tr>
+<tr><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">.106</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">wlan0</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">TP-Link Deco (interface)</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Wi-Fi 2.4G</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Mesh backhaul</td></tr>
+<tr><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">.107</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Galaxy-A54-5G</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Celular da casa</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Wi-Fi 5G</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Não faz parte do HomeLab</td></tr>
+<tr><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">.108</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">HP6F8240</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">HP DeskJet 3755</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Wi-Fi 2.4G</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Impressora</td></tr>
+<tr><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">.110</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">iRobot</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Roomba</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Wi-Fi 2.4G</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Aspirador</td></tr>
+<tr><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">.111</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">wlan0</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">TP-Link Deco (interface)</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Wi-Fi 2.4G</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Mesh backhaul</td></tr>
+<tr><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">.113</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">pingpong-All-Series</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">HomeLab Linux</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Wired (Ethernet)</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">AI server · pipeline</td></tr>
+<div style="height:8px"></div>
+<p style="font-size:0.88em;color:var(--text2);line-height:1.7;margin:4px 0">---</p>
+<div style="height:8px"></div>
+<h2 style="font-size:1.1em;font-weight:600;color:var(--accent);margin:20px 0 8px">WireGuard VPN — 10.0.0.0/24</h2>
+<div style="height:8px"></div>
+<tr><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">IP</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Peer</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Endpoint</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Status</td></tr>
+<p style="font-size:0.88em;color:var(--text2);line-height:1.7;margin:4px 0">|---|---|---|---|</p>
+<tr><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">10.0.0.1</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">HomeLab Linux</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">(server)</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Sempre on</td></tr>
+<tr><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">10.0.0.2</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Windows PC</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">192.168.68.105:60354</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">9 dias atrás</td></tr>
+<tr><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">10.0.0.3</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Samsung / MacBook</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">198.200.124.199:41601</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">6h atrás</td></tr>
+<div style="height:8px"></div>
+<p style="font-size:0.88em;color:var(--text2);line-height:1.7;margin:4px 0">---</p>
+<div style="height:8px"></div>
+<h2 style="font-size:1.1em;font-weight:600;color:var(--accent);margin:20px 0 8px">HomeLab Linux — 192.168.68.113</h2>
+<div style="height:8px"></div>
+<h3 style="font-size:0.95em;font-weight:600;color:var(--teal);margin:16px 0 6px">Hardware</h3>
+<div style="height:8px"></div>
+<tr><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Componente</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Spec</td></tr>
+<p style="font-size:0.88em;color:var(--text2);line-height:1.7;margin:4px 0">|---|---|</p>
+<tr><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Motherboard</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">ASUS X99-A II</td></tr>
+<tr><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">CPU</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Intel Core i7-6800K @ 3.40GHz (6 cores / 12 threads)</td></tr>
+<tr><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">RAM</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">128GB DDR4 2400 MT/s · Quad-Channel · 8/8 slots</td></tr>
+<tr><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">RAM modules</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">4× 16GB Kingston + 4× 16GB Samsung</td></tr>
+<tr><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">GPU 1</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">NVIDIA GeForce GTX 1080 Ti — 11GB VRAM</td></tr>
+<tr><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">GPU 2</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">NVIDIA GeForce GTX 1080 Ti — 11GB VRAM</td></tr>
+<tr><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Boot</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">NVMe 465GB ext4 — system + Docker + active work</td></tr>
+<tr><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">DATA</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">SATA HDD 1.8TB ext4 — Ollama models + projects + vault</td></tr>
+<tr><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">BLACKBOX</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Seagate Expansion 14.9TB USB NTFS — cold archive (shared with Windows E:)</td></tr>
+<tr><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Wi-Fi</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">ASUS USB-AC56 Dual Band (Realtek RTL8812AU)</td></tr>
+<tr><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Monitor</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">ASUS PB279Q 27" 4K UHD · DisplayPort 1.2 · 60Hz</td></tr>
+<tr><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">OS</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Ubuntu 24.04 LTS</td></tr>
+<div style="height:8px"></div>
+<h3 style="font-size:0.95em;font-weight:600;color:var(--teal);margin:16px 0 6px">Samba Shares (exportados)</h3>
+<div style="height:8px"></div>
+<tr><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Share</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Path</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Uso</td></tr>
+<p style="font-size:0.88em;color:var(--text2);line-height:1.7;margin:4px 0">|---|---|---|</p>
+<tr><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">blackbox</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">/media/pingpong/BLACKBOX</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Arquivo 16TB</td></tr>
+<tr><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">tutorials</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">?</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Cursos</td></tr>
+<tr><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">DATA</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">/media/pingpong/DATA</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Vault Obsidian · projetos · pipeline</td></tr>
+<div style="height:8px"></div>
+<h3 style="font-size:0.95em;font-weight:600;color:var(--teal);margin:16px 0 6px">CIFS Mounts (importados do Windows)</h3>
+<div style="height:8px"></div>
+<tr><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Mount</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Share Windows</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Uso</td></tr>
+<p style="font-size:0.88em;color:var(--text2);line-height:1.7;margin:4px 0">|---|---|---|</p>
+<tr><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">/mnt/win_projects</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">//192.168.68.105/projects</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">D:\01_PROJECTS</td></tr>
+<tr><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">/mnt/win_hot</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">//192.168.68.105/footage_hot</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Footage quente</td></tr>
+<tr><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">/mnt/win_tools</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">//192.168.68.105/tools</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">D:\TOOLS\</td></tr>
+<tr><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">/mnt/win_chromadb</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">//192.168.68.105/RAG_chromadb</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">ChromaDB backup Windows</td></tr>
+<div style="height:8px"></div>
+<h3 style="font-size:0.95em;font-weight:600;color:var(--teal);margin:16px 0 6px">Docker Networks</h3>
+<div style="height:8px"></div>
+<tr><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Network</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Bridge</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Containers</td></tr>
+<p style="font-size:0.88em;color:var(--text2);line-height:1.7;margin:4px 0">|---|---|---|</p>
+<tr><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">docker0</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">172.17.0.0/16</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">4 containers (.2, .3, .4, .5)</td></tr>
+<tr><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">br-afec3095fff3</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">172.18.0.0/16</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">2 containers</td></tr>
+<tr><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">br-7daa2145de48</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">172.19.0.0/16</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">1 container</td></tr>
+<tr><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">br-b929ba06e087</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">172.21.0.0/16</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">1 container</td></tr>
+<tr><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">br-165ba85cf521</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">172.24.0.0/16</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">1 container</td></tr>
+<tr><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">br-76b57ee77431</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">172.27.0.0/16</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">1 container</td></tr>
+<div style="height:8px"></div>
+<h3 style="font-size:0.95em;font-weight:600;color:var(--teal);margin:16px 0 6px">Serviços Ativos</h3>
+<div style="height:8px"></div>
+<tr><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Serviço</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Porta</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Stack</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Status</td></tr>
+<p style="font-size:0.88em;color:var(--text2);line-height:1.7;margin:4px 0">|---|---|---|---|</p>
+<tr><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Ollama</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">11434</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Nativo</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">✅ gemma4:26b · 53 t/s · 2× 1080 Ti</td></tr>
+<tr><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">ChromaDB</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">8000</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Docker</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">✅ 8 collections · 384 visual + 105 episodic</td></tr>
+<tr><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">RAG API</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">8500</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Python</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">✅ McKee · Field · Block · /search_montagem</td></tr>
+<tr><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Visual Search API</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">8700</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">systemd</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">✅ auto_tags · enable-linger</td></tr>
+<tr><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">memory_manager</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">8502</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Python</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">✅</td></tr>
+<tr><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Open WebUI</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">3000</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Docker</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">✅ 14 pipelines</td></tr>
+<tr><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">n8n</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">5678</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Docker</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">✅</td></tr>
+<tr><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Nextcloud</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">8080</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Docker</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">✅</td></tr>
+<tr><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Jellyfin</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">8096</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Docker</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">✅</td></tr>
+<tr><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Navidrome</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">4533</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Docker</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">✅</td></tr>
+<tr><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Kiwix</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">8888</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Docker</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">✅ Wikipedia offline</td></tr>
+<tr><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">CyberChef</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">8100</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Docker</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">✅</td></tr>
+<tr><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Syncthing</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">22000</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Nativo</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">✅</td></tr>
+<tr><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">WireGuard</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">51820</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Nativo</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">✅ 3 peers</td></tr>
+<tr><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">NPM</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">80/443/81</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Docker</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">✅ SSL Let's Encrypt</td></tr>
+<tr><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">SSH</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">22</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Nativo</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">✅ key-only + fail2ban</td></tr>
+<tr><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Open WebUI (root)</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">8080</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Docker</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">✅</td></tr>
+<div style="height:8px"></div>
+<h3 style="font-size:0.95em;font-weight:600;color:var(--teal);margin:16px 0 6px">Apps Locais</h3>
+<div style="height:8px"></div>
+<tr><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">App</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Path</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Uso</td></tr>
+<p style="font-size:0.88em;color:var(--text2);line-height:1.7;margin:4px 0">|---|---|---|</p>
+<tr><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Obsidian</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">~/apps/Obsidian-1.12.7.AppImage --no-sandbox</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Vault MEMORABILIA</td></tr>
+<tr><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Joplin</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">~/.config/joplin-desktop/</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">333 notas · histórico completo</td></tr>
+<tr><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Firefox</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">snap</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Browser</td></tr>
+<div style="height:8px"></div>
+<h3 style="font-size:0.95em;font-weight:600;color:var(--teal);margin:16px 0 6px">Modelos Ollama</h3>
+<div style="height:8px"></div>
+<tr><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Modelo</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Uso</td></tr>
+<p style="font-size:0.88em;color:var(--text2);line-height:1.7;margin:4px 0">|---|---|</p>
+<tr><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">gemma4:26b</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Agents 3a/3c/6b/7/8 · 53 t/s</td></tr>
+<tr><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">llava:7b</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Vision fallback</td></tr>
+<tr><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">nomic-embed-text</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Embeddings 768 dims</td></tr>
+<tr><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">mistral:latest</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Tradução · pipelines leves</td></tr>
+<tr><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">pingpong-story:latest</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Custom model</td></tr>
+<tr><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">pingpong-trailer:latest</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Custom model</td></tr>
+<tr><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">pingpong-3d:latest</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Custom model</td></tr>
+<div style="height:8px"></div>
+<p style="font-size:0.88em;color:var(--text2);line-height:1.7;margin:4px 0">---</p>
+<div style="height:8px"></div>
+<h2 style="font-size:1.1em;font-weight:600;color:var(--accent);margin:20px 0 8px">Windows PC — 192.168.68.105</h2>
+<div style="height:8px"></div>
+<h3 style="font-size:0.95em;font-weight:600;color:var(--teal);margin:16px 0 6px">Hardware</h3>
+<div style="height:8px"></div>
+<tr><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Componente</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Spec</td></tr>
+<p style="font-size:0.88em;color:var(--text2);line-height:1.7;margin:4px 0">|---|---|</p>
+<tr><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Motherboard</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">MSI MAG B660 TOMAHAWK WIFI DDR4 (MS-7D41)</td></tr>
+<tr><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">GPU</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">ASUS TUF Gaming RTX 4080 — 16GB VRAM · Ada Lovelace</td></tr>
+<tr><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">RAM</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">64GB DDR4 2133 · 2× 32GB Corsair</td></tr>
+<tr><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">PSU</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Seasonic Vertex GX-1200 · 1200W 80+ Gold</td></tr>
+<tr><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Storage C:</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Samsung SSD 980 PRO 1TB NVMe — OS + software</td></tr>
+<tr><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Storage D:</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Samsung SSD 980 PRO 2TB NVMe — active render + projects</td></tr>
+<tr><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Storage E:</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Seagate Expansion 14.9TB USB HDD — cold archive (shared with Linux BLACKBOX)</td></tr>
+<tr><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">OS</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Windows 11 Pro</td></tr>
+<div style="height:8px"></div>
+<h3 style="font-size:0.95em;font-weight:600;color:var(--teal);margin:16px 0 6px">Role</h3>
+<div style="height:8px"></div>
+<div style="font-size:0.85em;color:var(--text2);padding:2px 0 2px 16px">· Edição: Premiere Pro + CEP MEMORABILIA panel</div>
+<div style="font-size:0.85em;color:var(--text2);padding:2px 0 2px 16px">· Render: RTX 4080</div>
+<div style="font-size:0.85em;color:var(--text2);padding:2px 0 2px 16px">· Vision: qwen3-vl:8b (Ollama 0.6.8)</div>
+<div style="font-size:0.85em;color:var(--text2);padding:2px 0 2px 16px">· Whisper: large-v3</div>
+<div style="height:8px"></div>
+<h3 style="font-size:0.95em;font-weight:600;color:var(--teal);margin:16px 0 6px">Shares exportados</h3>
+<div style="height:8px"></div>
+<tr><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Share</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Path Windows</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Montado no Linux</td></tr>
+<p style="font-size:0.88em;color:var(--text2);line-height:1.7;margin:4px 0">|---|---|---|</p>
+<tr><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">projects</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">D:\01_PROJECTS</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">/mnt/win_projects</td></tr>
+<tr><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">footage_hot</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">?</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">/mnt/win_hot</td></tr>
+<tr><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">tools</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">D:\TOOLS</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">/mnt/win_tools</td></tr>
+<tr><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">RAG_chromadb</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">?</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">/mnt/win_chromadb</td></tr>
+<div style="height:8px"></div>
+<h3 style="font-size:0.95em;font-weight:600;color:var(--teal);margin:16px 0 6px">Software</h3>
+<div style="height:8px"></div>
+<tr><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">App</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Uso</td></tr>
+<p style="font-size:0.88em;color:var(--text2);line-height:1.7;margin:4px 0">|---|---|</p>
+<tr><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Premiere Pro 2026</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Edição + CEP MEMORABILIA</td></tr>
+<tr><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">After Effects</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Motion Graphics (Cenários 2-5)</td></tr>
+<tr><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">DaVinci Resolve</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Color</td></tr>
+<tr><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Blender</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">3D (Cenário 3)</td></tr>
+<tr><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Cinema 4D</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">3D (Cenário 3)</td></tr>
+<tr><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Obsidian</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Vault via Samba \\192.168.68.113\DATA\memorabilia-vault</td></tr>
+<tr><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Ollama 0.6.8</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">qwen3-vl:8b · ⚠️ NÃO atualizar (bug CUDA #12618)</td></tr>
+<div style="height:8px"></div>
+<p style="font-size:0.88em;color:var(--text2);line-height:1.7;margin:4px 0">---</p>
+<div style="height:8px"></div>
+<h2 style="font-size:1.1em;font-weight:600;color:var(--accent);margin:20px 0 8px">Samsung Galaxy — 192.168.68.100</h2>
+<div style="height:8px"></div>
+<tr><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Item</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Detalhe</td></tr>
+<p style="font-size:0.88em;color:var(--text2);line-height:1.7;margin:4px 0">|---|---|</p>
+<tr><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">IP local</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">192.168.68.100</td></tr>
+<tr><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">VPN</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">10.0.0.3 (WireGuard — último handshake 6h atrás)</td></tr>
+<tr><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Apps</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Joplin mobile · Syncthing</td></tr>
+<tr><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Uso</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Notas em campo · referências visuais</td></tr>
+<div style="height:8px"></div>
+<p style="font-size:0.88em;color:var(--text2);line-height:1.7;margin:4px 0">---</p>
+<div style="height:8px"></div>
+<h2 style="font-size:1.1em;font-weight:600;color:var(--accent);margin:20px 0 8px">Roku — offline</h2>
+<div style="height:8px"></div>
+<tr><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Item</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Detalhe</td></tr>
+<p style="font-size:0.88em;color:var(--text2);line-height:1.7;margin:4px 0">|---|---|</p>
+<tr><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Status</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Não aparece na rede — provavelmente desligado</td></tr>
+<tr><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Uso</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Streaming Jellyfin · Navidrome</td></tr>
+<div style="height:8px"></div>
+<p style="font-size:0.88em;color:var(--text2);line-height:1.7;margin:4px 0">---</p>
+<div style="height:8px"></div>
+<h2 style="font-size:1.1em;font-weight:600;color:var(--accent);margin:20px 0 8px">HP DeskJet 3755 — 192.168.68.108</h2>
+<div style="height:8px"></div>
+<tr><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Item</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Detalhe</td></tr>
+<p style="font-size:0.88em;color:var(--text2);line-height:1.7;margin:4px 0">|---|---|</p>
+<tr><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">IP local</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">192.168.68.108</td></tr>
+<tr><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Nome no router</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">HP6F8240</td></tr>
+<tr><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Conexão</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Wi-Fi 2.4G</td></tr>
+<tr><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Uso</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Impressora</td></tr>
+<div style="height:8px"></div>
+<p style="font-size:0.88em;color:var(--text2);line-height:1.7;margin:4px 0">---</p>
+<div style="height:8px"></div>
+<h2 style="font-size:1.1em;font-weight:600;color:var(--accent);margin:20px 0 8px">iRobot Roomba — 192.168.68.110</h2>
+<div style="height:8px"></div>
+<tr><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Item</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Detalhe</td></tr>
+<p style="font-size:0.88em;color:var(--text2);line-height:1.7;margin:4px 0">|---|---|</p>
+<tr><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">IP local</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">192.168.68.110</td></tr>
+<tr><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Conexão</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Wi-Fi 2.4G</td></tr>
+<tr><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Uso</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Aspirador robô</td></tr>
+<div style="height:8px"></div>
+<p style="font-size:0.88em;color:var(--text2);line-height:1.7;margin:4px 0">---</p>
+<div style="height:8px"></div>
+<h2 style="font-size:1.1em;font-weight:600;color:var(--accent);margin:20px 0 8px">TP-Link Deco Mesh</h2>
+<div style="height:8px"></div>
+<tr><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">IP</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Nome</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Conexão</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Role</td></tr>
+<p style="font-size:0.88em;color:var(--text2);line-height:1.7;margin:4px 0">|---|---|---|---|</p>
+<tr><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">.1</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Router (principal)</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Gateway</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">SSID: XIMBICA</td></tr>
+<tr><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">.101</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">TY_WR</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">—</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Satélite</td></tr>
+<tr><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">.102</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">TY_WR</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Wi-Fi 2.4G</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Satélite</td></tr>
+<tr><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">.106</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">wlan0</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Wi-Fi 2.4G</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Interface wireless</td></tr>
+<tr><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">.111</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">wlan0</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Wi-Fi 2.4G</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Interface wireless</td></tr>
+<div style="height:8px"></div>
+<p style="font-size:0.88em;color:var(--text2);line-height:1.7;margin:4px 0">---</p>
+<div style="height:8px"></div>
+<h2 style="font-size:1.1em;font-weight:600;color:var(--accent);margin:20px 0 8px">MacBook Pro M1 — Montreal / Field</h2>
+<div style="height:8px"></div>
+<tr><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Item</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Detalhe</td></tr>
+<p style="font-size:0.88em;color:var(--text2);line-height:1.7;margin:4px 0">|---|---|</p>
+<tr><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Chip</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Apple M1 — 16GB unified memory</td></tr>
+<tr><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Ollama</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">7B via Metal · ~20 t/s</td></tr>
+<tr><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Role</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Human editing · field capture · remote access</td></tr>
+<tr><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">VPN</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">⏳ Pendente — precisa integrar ao WireGuard (10.0.0.4)</td></tr>
+<tr><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Status</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">**NÃO INTEGRADO ao HomeLab**</td></tr>
+<div style="height:8px"></div>
+<p style="font-size:0.88em;color:var(--text2);line-height:1.7;margin:4px 0">---</p>
+<div style="height:8px"></div>
+<h2 style="font-size:1.1em;font-weight:600;color:var(--accent);margin:20px 0 8px">Mac Mini M4/M5 — Brazil Unit (a adquirir)</h2>
+<div style="height:8px"></div>
+<tr><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Item</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Detalhe</td></tr>
+<p style="font-size:0.88em;color:var(--text2);line-height:1.7;margin:4px 0">|---|---|</p>
+<tr><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Chip recomendado</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Apple M4 Pro · 12-core CPU · 16-core GPU</td></tr>
+<tr><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">RAM</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">24GB unified memory</td></tr>
+<tr><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Storage</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">512GB SSD</td></tr>
+<tr><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Role</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Ingest · local Whisper · 1080p proxy · Brazil cluster node</td></tr>
+<tr><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">VPN</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">10.0.0.5 (a configurar)</td></tr>
+<tr><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Status</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">**Aguardar Mac Mini M5 — esperado WWDC Junho 2026**</td></tr>
+<tr><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Preço</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">~$1,399 CAD</td></tr>
+<tr><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Razão espera</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">4× faster Neural Engine · 2× faster SSD · Wi-Fi 7 · mesmo preço</td></tr>
+<div style="height:8px"></div>
+<p style="font-size:0.88em;color:var(--text2);line-height:1.7;margin:4px 0">---</p>
+<div style="height:8px"></div>
+<h2 style="font-size:1.1em;font-weight:600;color:var(--accent);margin:20px 0 8px">Devices não-HomeLab na rede</h2>
+<div style="height:8px"></div>
+<tr><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">IP</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Nome</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Device</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Nota</td></tr>
+<p style="font-size:0.88em;color:var(--text2);line-height:1.7;margin:4px 0">|---|---|---|---|</p>
+<tr><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">.104</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">iPhone</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">iPhone de alguém da casa</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Wi-Fi 5G</td></tr>
+<tr><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">.107</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Galaxy-A54-5G</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Celular da casa</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Wi-Fi 5G</td></tr>
+<tr><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">.110</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">iRobot</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Roomba</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Wi-Fi 2.4G</td></tr>
+<tr><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">.108</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">HP6F8240</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">HP DeskJet 3755</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Wi-Fi 2.4G</td></tr>
+<div style="height:8px"></div>
+<p style="font-size:0.88em;color:var(--text2);line-height:1.7;margin:4px 0">---</p>
+<div style="height:8px"></div>
+<h2 style="font-size:1.1em;font-weight:600;color:var(--accent);margin:20px 0 8px">Cluster Summary</h2>
+<div style="height:8px"></div>
+<tr><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Machine</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Location</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">GPU</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">VRAM</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">RAM</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Role</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Status</td></tr>
+<p style="font-size:0.88em;color:var(--text2);line-height:1.7;margin:4px 0">|---|---|---|---|---|---|---|</p>
+<tr><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">HomeLab Linux</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Montreal</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">2× GTX 1080 Ti</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">22GB</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">128GB</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">AI server · pipeline</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">✅ Active · Wired</td></tr>
+<tr><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Windows PC</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Montreal</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">RTX 4080</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">16GB</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">64GB</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Editing · render · vision</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">✅ Active · Wi-Fi 5G</td></tr>
+<tr><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">MacBook Pro M1</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Montreal/field</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">M1 GPU</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">16GB unified</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">16GB</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Mobile · field</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">⏳ Pendente VPN</td></tr>
+<tr><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Samsung Galaxy</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Montreal/field</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">—</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">—</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">—</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Notes · field</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">✅ Active · VPN 10.0.0.3</td></tr>
+<tr><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Roku</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Montreal</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">—</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">—</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">—</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Streaming</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">⚠️ Offline</td></tr>
+<tr><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Mac Mini M5</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Brazil</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">M5 Pro GPU</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">24GB unified</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">24GB</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Ingest · Whisper</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">❌ A adquirir</td></tr>
+<div style="height:8px"></div>
+<tr><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Métrica</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Valor atual</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Com Mac Mini</td></tr>
+<p style="font-size:0.88em;color:var(--text2);line-height:1.7;margin:4px 0">|---|---|---|</p>
+<tr><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Total GPUs</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">3 (2× NVIDIA + 1× Apple)</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">4</td></tr>
+<tr><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Total VRAM</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">38GB (22 + 16)</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">62GB</td></tr>
+<tr><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Total RAM</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">208GB (128 + 64 + 16)</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">232GB</td></tr>
+<tr><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Storage ativo</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">~5.2TB NVMe/SSD</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">~5.7TB</td></tr>
+<tr><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Cold archive</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">14.9TB (Seagate shared)</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">14.9TB</td></tr>
+<div style="height:8px"></div>
+<p style="font-size:0.88em;color:var(--text2);line-height:1.7;margin:4px 0">---</p>
+<div style="height:8px"></div>
+<h2 style="font-size:1.1em;font-weight:600;color:var(--accent);margin:20px 0 8px">Diagrama de rede — SSID: XIMBICA</h2>
+<div style="height:8px"></div>
+<pre style="background:var(--bg3);padding:16px;border-radius:8px;overflow-x:auto;font-size:0.8em;font-family:JetBrains Mono,monospace;color:var(--text);border:1px solid var(--border);margin:12px 0;white-space:pre-wrap">
+              ┌─────────────────────────┐
+              │   TP-Link Deco (mesh)   │
+              │   SSID: XIMBICA         │
+              │   192.168.68.1          │
+              │                         │
+              │   Satélites:            │
+              │   .101 · .102           │
+              └────────────┬────────────┘
+                           │
+    ┌──────────────────────┼──────────────────────┐
+    │ Wired                │ Wi-Fi 5G             │ Wi-Fi 2.4G
+    │                      │                      │
+┌───┴─────────┐  ┌─────────┴─────────┐  ┌────────┴────────┐
+│ HomeLab     │  │ SAMBA .105        │  │ HP6F8240 .108   │
+│ .113        │  │ Windows PC        │  │ Impressora      │
+│ 2× 1080 Ti  │  │ RTX 4080 · 64GB  │  ├─────────────────┤
+│ 128GB RAM   │  │ Premiere · CEP    │  │ iRobot .110     │
+│ 20 services │  │ Obsidian (Samba)  │  │ Roomba          │
+│ Pipeline    │  ├───────────────────┤  ├─────────────────┤
+│ Obsidian    │  │ Ximbica .100      │  │ Roku (offline)  │
+└──────┬──────┘  │ Samsung Galaxy    │  │ Jellyfin client │
+       │         │ VPN 10.0.0.3      │  └─────────────────┘
+       │         ├───────────────────┤
+       │         │ MacBookPro .103   │
+       │         │ M1 · 16GB         │
+       │         │ VPN ⏳ pendente    │
+       │         ├───────────────────┤
+       │         │ iPhone .104       │
+       │         │ Galaxy-A54 .107   │
+       │         │ (não-HomeLab)     │
+       │         └───────────────────┘
+       │
+       │ SMB exports: blackbox · DATA · tutorials
+       │ CIFS mounts: win_projects · win_tools · win_hot
+       │
+       │ WireGuard VPN 10.0.0.0/24
+       │  .1 HomeLab (server)
+       │  .2 Windows PC
+       │  .3 Samsung Galaxy
+       │  .4 MacBook M1 ⏳ pendente
+       │  .5 Mac Mini Brazil ❌ futuro
+       │
+       └────────── ┌──────────────────┐
+                   │ Mac Mini M5      │
+                   │ ❌ Brazil · 2026  │
+                   │ 24GB unified     │
+                   │ ingest · Whisper │
+                   └──────────────────┘
+</pre>
+<div style="height:8px"></div>
+<p style="font-size:0.88em;color:var(--text2);line-height:1.7;margin:4px 0">---</p>
+<div style="height:8px"></div>
+<p style="font-size:0.88em;color:var(--text2);line-height:1.7;margin:4px 0">*pingpong · Montreal · April 12, 2026*</p>
+<p style="font-size:0.88em;color:var(--text2);line-height:1.7;margin:4px 0">*MEMORABILIA · HomeLab Cluster Inventory v1*</p>
+<div style="height:8px"></div>
     </div>
   </div>
 
-  <div class="card" onclick="window.open('https://github.com/pin9p0n9/memorabilia/blob/main/MEMORABILIA_design_philosophy.md','_blank')">
+  <div class="card" onclick="toggleCard(this)">
     <div class="card-header">
       <div class="card-badge bg-pink">DP</div>
-      <div><div class="card-title">Design Philosophy v1.0</div><div class="card-sub">7 princípios + refinamento de cada agent + prioridades</div></div>
-      <div class="card-right"><span class="card-tag tag-pink">15 KB</span><span style="color:var(--text3)">↗</span></div>
+      <div><div class="card-title">Design Philosophy v1.0</div><div class="card-sub">7 princípios + refinamento agents</div></div>
+      <div class="card-right"><span class="card-arrow">▸</span></div>
+    </div>
+    <div class="card-body" style="max-height:600px;overflow-y:auto">
+      <h1 style="font-size:1.3em;font-weight:700;color:var(--text);margin:24px 0 8px">MEMORABILIA — Design Philosophy</h1>
+<div style="height:8px"></div>
+<div style="font-weight:600;color:var(--text);margin:8px 0 4px">O sistema como produtor de história</div>
+<div style="height:8px"></div>
+<p style="font-size:0.88em;color:var(--text2);line-height:1.7;margin:4px 0">pingpong · Montreal · April 2026</p>
+<div style="height:8px"></div>
+<p style="font-size:0.88em;color:var(--text2);line-height:1.7;margin:4px 0">* * *</p>
+<div style="height:8px"></div>
+<h2 style="font-size:1.1em;font-weight:600;color:var(--accent);margin:20px 0 8px">1\. Princípio Central — Tradução de Tempo</h2>
+<div style="height:8px"></div>
+<p style="font-size:0.88em;color:var(--text2);line-height:1.7;margin:4px 0">O pipeline não processa footage. Traduz. Pega material que existe num estado bruto — linear, caótico, sem estrutura — e rearticulá-lo para que funcione em outro contexto: narrativo, emocional, comunicacional. Essa operação de tradução é o que define o profissional que dura versus o que aparece e desaparece num ciclo.</p>
+<div style="height:8px"></div>
+<p style="font-size:0.88em;color:var(--text2);line-height:1.7;margin:4px 0">Cada agent do pipeline executa uma camada dessa tradução. O Agent 1 traduz vídeo em áudio extraído. O Agent 2 traduz áudio em texto buscável. O Agent 3b traduz footage em 384 frames navegáveis. O Agent 3c traduz material bruto em observações narrativas. Nenhum deles decide — todos traduzem. O designer decide.</p>
+<div style="height:8px"></div>
+<p style="font-size:0.88em;color:var(--text2);line-height:1.7;margin:4px 0">* * *</p>
+<div style="height:8px"></div>
+<h2 style="font-size:1.1em;font-weight:600;color:var(--accent);margin:20px 0 8px">2\. Anti-Biblioteca Digital</h2>
+<div style="height:8px"></div>
+<p style="font-size:0.88em;color:var(--text2);line-height:1.7;margin:4px 0">A diferença entre um arquivo morto e uma memória viva é a capacidade de consulta no momento certo. Um arquivo guarda e esquece. Uma anti-biblioteca guarda, organiza por acesso, e permite recuperar no instante exato em que o conhecimento é necessário.</p>
+<div style="height:8px"></div>
+<p style="font-size:0.88em;color:var(--text2);line-height:1.7;margin:4px 0">MEMORABILIA é a anti-biblioteca do operador audiovisual. Não organizada por data ou nome de arquivo — organizada por significado. A busca semântica no ChromaDB permite "mulher falando perto do mar" em vez de "clip_047_take3.mov". O profissional que tem essa biblioteca não precisa rever 20 horas de footage linearmente. Ele acessa o que precisa, quando precisa — exatamente como um designer que sabe em qual prateleira está o espécime tipográfico do século XIX que resolve o problema de hoje.</p>
+<div style="height:8px"></div>
+<p style="font-size:0.88em;color:var(--text2);line-height:1.7;margin:4px 0"><strong style="color:var(--text)">Implicação para os agents:</strong> todo agent que produz um artefato deve depositá-lo na base vetorial com metadata semântica rica o suficiente para recuperação futura. Não basta gerar — é preciso gerar de forma encontrável.</p>
+<div style="height:8px"></div>
+<p style="font-size:0.88em;color:var(--text2);line-height:1.7;margin:4px 0">* * *</p>
+<div style="height:8px"></div>
+<h2 style="font-size:1.1em;font-weight:600;color:var(--accent);margin:20px 0 8px">3\. Desdobramento em Camadas</h2>
+<div style="height:8px"></div>
+<p style="font-size:0.88em;color:var(--text2);line-height:1.7;margin:4px 0">Um conceito não é um output. É uma semente que se desdobra em múltiplas materializações. O mesmo footage gera: proxy para preview rápido, transcrição para busca textual, frames para busca visual, análise narrativa para contexto, metadata para catalogação, thumbnails para navegação. Cada camada é um ângulo diferente sobre o mesmo material.</p>
+<div style="height:8px"></div>
+<p style="font-size:0.88em;color:var(--text2);line-height:1.7;margin:4px 0">Isso é o oposto de um pipeline linear que produz um resultado e descarta o intermediário. Aqui, cada camada intermediária tem valor próprio e alimenta os outros agents. A transcrição do Agent 2 alimenta o Agent 3a. Os frames do Agent 3b alimentam o Agent 3c. A análise do Agent 3c alimenta a memória episódica. Nada é descartável.</p>
+<div style="height:8px"></div>
+<p style="font-size:0.88em;color:var(--text2);line-height:1.7;margin:4px 0"><strong style="color:var(--text)">Implicação para os agents:</strong> nenhum artefato é criado se não alimenta o próximo agent. A pergunta antes de qualquer output é: quem consome isso? Se ninguém consome, não produz.</p>
+<div style="height:8px"></div>
+<p style="font-size:0.88em;color:var(--text2);line-height:1.7;margin:4px 0">* * *</p>
+<div style="height:8px"></div>
+<h2 style="font-size:1.1em;font-weight:600;color:var(--accent);margin:20px 0 8px">4\. Contexto Relacional</h2>
+<div style="height:8px"></div>
+<p style="font-size:0.88em;color:var(--text2);line-height:1.7;margin:4px 0">O Pinterest mostra uma imagem por meio segundo e acabou — sem contexto, sem sequência, sem entendimento de linhagem. O valor de um clip não está apenas no que ele é, mas em como se relaciona com os outros. "Este clip dialoga com aquele." "Esta entrevista contradiz aquela." "Este B-roll ilustra este conceito."</p>
+<div style="height:8px"></div>
+<p style="font-size:0.88em;color:var(--text2);line-height:1.7;margin:4px 0">A memória projetual do MEMORABILIA não indexa clips isolados. Indexa relações. O Agent 3c não descreve um plano — posiciona-o dentro da estrutura narrativa do material inteiro. O Glasswing loop não registra "paleta quente" — registra "paleta quente escolhida em vez de dessaturada, divergindo da sugestão canônica, para projeto de diáspora com estrutura aberta."</p>
+<div style="height:8px"></div>
+<p style="font-size:0.88em;color:var(--text2);line-height:1.7;margin:4px 0"><strong style="color:var(--text)">Implicação para os agents:</strong> todo depósito de memória deve incluir o contexto relacional — o que veio antes, o que divergiu, o que o operador escolheu diferente da sugestão. A memória sem relação é arquivo morto.</p>
+<div style="height:8px"></div>
+<p style="font-size:0.88em;color:var(--text2);line-height:1.7;margin:4px 0">* * *</p>
+<div style="height:8px"></div>
+<h2 style="font-size:1.1em;font-weight:600;color:var(--accent);margin:20px 0 8px">5\. Amplificação, Não Substituição</h2>
+<div style="height:8px"></div>
+<p style="font-size:0.88em;color:var(--text2);line-height:1.7;margin:4px 0">O designer é o autor. O sistema amplifica a capacidade do autor sem substituir o julgamento. Isso significa: observações, nunca prescrições. Dois mapas em tensão (canônico vs. vivido), nunca uma resposta única. Navegação pelo material, nunca montagem automática.</p>
+<div style="height:8px"></div>
+<p style="font-size:0.88em;color:var(--text2);line-height:1.7;margin:4px 0">Com AI, qualquer pessoa pode produzir qualquer coisa — se souber descrever o que quer. Saber descrever é a parte difícil. Exige repertório, estudo, compreensão de que cada referência visual carrega valores históricos diferentes. MEMORABILIA amplia a capacidade de descrever — porque o operador que acessa 72 mil trechos e 100 entradas de memória descreve com mais precisão do que o operador que começa do zero.</p>
+<div style="height:8px"></div>
+<p style="font-size:0.88em;color:var(--text2);line-height:1.7;margin:4px 0"><strong style="color:var(--text)">Implicação para os agents:</strong> nenhum agent deve produzir um resultado final. Todo agent produz infraestrutura de navegação para o humano decidir. A pergunta não é "o que o sistema recomenda?" — é "o que o sistema mostra para que o operador decida melhor?"</p>
+<div style="height:8px"></div>
+<p style="font-size:0.88em;color:var(--text2);line-height:1.7;margin:4px 0">* * *</p>
+<div style="height:8px"></div>
+<h2 style="font-size:1.1em;font-weight:600;color:var(--accent);margin:20px 0 8px">6\. Paralelismo e Cadeia de Valor</h2>
+<div style="height:8px"></div>
+<p style="font-size:0.88em;color:var(--text2);line-height:1.7;margin:4px 0">Nenhum agent espera o anterior terminar quando podem rodar em paralelo. Nenhum artefato é criado se não alimenta o próximo agent. O pipeline não é uma fila — é uma rede onde cada nó opera assim que suas dependências estão satisfeitas.</p>
+<div style="height:8px"></div>
+<p style="font-size:0.88em;color:var(--text2);line-height:1.7;margin:4px 0">O briefing se propaga como calibração simultânea: o Cinematographer recebe o tom, o Creative Director recebe a intenção narrativa, o Agent 3c recebe a audiência — todos ao mesmo tempo. O que conecta todos é a base vetorial compartilhada, não uma sequência linear de handoffs.</p>
+<div style="height:8px"></div>
+<p style="font-size:0.88em;color:var(--text2);line-height:1.7;margin:4px 0"><strong style="color:var(--text)">Implicação para os agents:</strong> cada agent deve declarar explicitamente suas dependências (o que precisa estar pronto) e seus outputs (o que deposita). O orquestrador dispara tudo que pode rodar em paralelo e só sequencia o que tem dependência real.</p>
+<div style="height:8px"></div>
+<p style="font-size:0.88em;color:var(--text2);line-height:1.7;margin:4px 0">* * *</p>
+<div style="height:8px"></div>
+<h2 style="font-size:1.1em;font-weight:600;color:var(--accent);margin:20px 0 8px">7\. Julgamento Acumulado como Diferencial</h2>
+<div style="height:8px"></div>
+<p style="font-size:0.88em;color:var(--text2);line-height:1.7;margin:4px 0">Velocidade todo mundo vai ter. O diferencial é julgamento acumulado: saber o que cortar, que tom serve aquela audiência, que look combina com aquele projeto. Esse julgamento não se compra, não se copia, não se reseta. Cresce projeto a projeto.</p>
+<div style="height:8px"></div>
+<p style="font-size:0.88em;color:var(--text2);line-height:1.7;margin:4px 0">A memória episódica é o mecanismo técnico dessa acumulação. Mas a filosofia vai além da técnica: o sistema inteiro é desenhado para que cada decisão do operador — aceitar, rejeitar, adaptar — fique registrada de forma que calibre as próximas sugestões. O projeto 10 é mais preciso que o projeto 1 não porque o algoritmo melhorou, mas porque o sistema acumulou 9 projetos de contexto real.</p>
+<div style="height:8px"></div>
+<p style="font-size:0.88em;color:var(--text2);line-height:1.7;margin:4px 0"><strong style="color:var(--text)">Implicação para os agents:</strong> o Glasswing loop não é um passo final — é a razão de existência do pipeline inteiro. Todo agent deve ser desenhado pensando: "o que este agent deposita que torna o próximo projeto mais preciso?"</p>
+<div style="height:8px"></div>
+<p style="font-size:0.88em;color:var(--text2);line-height:1.7;margin:4px 0">* * *</p>
+<div style="height:8px"></div>
+<h2 style="font-size:1.1em;font-weight:600;color:var(--accent);margin:20px 0 8px">Resumo — Os 7 Princípios</h2>
+<div style="height:8px"></div>
+<tr><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">#</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Princípio</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Teste</td></tr>
+<tr><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">1</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Tradução de Tempo</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">O agent transforma ou apenas copia?</td></tr>
+<tr><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">2</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Anti-Biblioteca</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">O output é encontrável por significado?</td></tr>
+<tr><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">3</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Desdobramento</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">O output gera múltiplas camadas de valor?</td></tr>
+<tr><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">4</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Contexto Relacional</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">O output carrega relação com o resto?</td></tr>
+<tr><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">5</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Amplificação</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">O output navega ou prescreve?</td></tr>
+<tr><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">6</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Paralelismo</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">O agent declara dependências e roda quando pode?</td></tr>
+<tr><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">7</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Julgamento Acumulado</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">O agent deposita algo que calibra o futuro?</td></tr>
+<div style="height:8px"></div>
+<p style="font-size:0.88em;color:var(--text2);line-height:1.7;margin:4px 0">* * *</p>
+<div style="height:8px"></div>
+<h2 style="font-size:1.1em;font-weight:600;color:var(--accent);margin:20px 0 8px">Aplicação — Refinamento dos Agents</h2>
+<div style="height:8px"></div>
+<h3 style="font-size:0.95em;font-weight:600;color:var(--teal);margin:16px 0 6px">Agent 1+2 — Ingest + Whisper</h3>
+<div style="height:8px"></div>
+<p style="font-size:0.88em;color:var(--text2);line-height:1.7;margin:4px 0"><strong style="color:var(--text)">Hoje:</strong> Extrai áudio, transcreve, deposita texto.</p>
+<div style="height:8px"></div>
+<div style="font-weight:600;color:var(--text);margin:8px 0 4px">Refinamento (Princípios 2, 3, 4):</div>
+<div style="height:8px"></div>
+<div style="font-size:0.85em;color:var(--text2);padding:2px 0 2px 16px">· Depositar transcrição com metadata semântica no ChromaDB — não só texto, mas: idioma detectado, speaker diarization (quando implementado), tom emocional por segmento, timestamps alinhados com frames do Agent 3b.</div>
+<div style="font-size:0.85em;color:var(--text2);padding:2px 0 2px 16px">· Cada chunk de transcrição deve carregar referência cruzada com o visual index — "este trecho falado corresponde aos frames X-Y."</div>
+<div style="font-size:0.85em;color:var(--text2);padding:2px 0 2px 16px">· Output encontrável por significado: "momento em que o entrevistado hesita" deve ser buscável, não só "palavra X no minuto Y."</div>
+<div style="height:8px"></div>
+<h3 style="font-size:0.95em;font-weight:600;color:var(--teal);margin:16px 0 6px">Agent 3a — Índice Textual</h3>
+<div style="height:8px"></div>
+<p style="font-size:0.88em;color:var(--text2);line-height:1.7;margin:4px 0"><strong style="color:var(--text)">Hoje:</strong> Índice completo da transcrição.</p>
+<div style="height:8px"></div>
+<div style="font-weight:600;color:var(--text);margin:8px 0 4px">Refinamento (Princípios 2, 4, 7):</div>
+<div style="height:8px"></div>
+<div style="font-size:0.85em;color:var(--text2);padding:2px 0 2px 16px">· Indexar não apenas as palavras, mas os padrões narrativos: repetições, contradições, mudanças de tom, momentos de silêncio significativo.</div>
+<div style="font-size:0.85em;color:var(--text2);padding:2px 0 2px 16px">· Depositar tags relacionais: "este segmento contradiz o segmento X", "este tema aparece também no projeto Y (memória episódica)."</div>
+<div style="font-size:0.85em;color:var(--text2);padding:2px 0 2px 16px">· O índice alimenta o Agent 3c com estrutura pré-mapeada — o 3c não precisa reler tudo, recebe o mapa.</div>
+<div style="height:8px"></div>
+<h3 style="font-size:0.95em;font-weight:600;color:var(--teal);margin:16px 0 6px">Agent 3b — Visual Index</h3>
+<div style="height:8px"></div>
+<p style="font-size:0.88em;color:var(--text2);line-height:1.7;margin:4px 0"><strong style="color:var(--text)">Hoje:</strong> 384 frames catalogados com 4 modos adaptativos.</p>
+<div style="height:8px"></div>
+<div style="font-weight:600;color:var(--text);margin:8px 0 4px">Refinamento (Princípios 3, 4, 5):</div>
+<div style="height:8px"></div>
+<div style="font-size:0.85em;color:var(--text2);padding:2px 0 2px 16px">· Cada frame catalogado deve carregar: composição (terços, simetria, leading lines), paleta dominante, tipo de plano (close, wide, medium), movimento de câmera, relação com o frame anterior e posterior.</div>
+<div style="font-size:0.85em;color:var(--text2);padding:2px 0 2px 16px">· Gerar clusters visuais automáticos — frames que se parecem agrupados — para que o operador veja padrões que não veria linearmente.</div>
+<div style="font-size:0.85em;color:var(--text2);padding:2px 0 2px 16px">· Depositar no ChromaDB com embeddings visuais para busca multimodal: texto busca frames, frames buscam frames similares.</div>
+<div style="height:8px"></div>
+<h3 style="font-size:0.95em;font-weight:600;color:var(--teal);margin:16px 0 6px">Agent 3c — Leitura Narrativa</h3>
+<div style="height:8px"></div>
+<p style="font-size:0.88em;color:var(--text2);line-height:1.7;margin:4px 0"><strong style="color:var(--text)">Hoje:</strong> Observações sem prescrição baseadas em corpus de montagem.</p>
+<div style="height:8px"></div>
+<div style="font-weight:600;color:var(--text);margin:8px 0 4px">Refinamento (Princípios 1, 4, 5, 7):</div>
+<div style="height:8px"></div>
+<div style="font-size:0.85em;color:var(--text2);padding:2px 0 2px 16px">· Esse é o agent de tradução por excelência. Não descreve — traduz o material bruto para vocabulário cinematográfico. "Este plano-sequência de 47s cria tensão que Tarkovsky chamaria de sculpting in time" — isso é tradução, não descrição.</div>
+<div style="font-size:0.85em;color:var(--text2);padding:2px 0 2px 16px">· Posicionar cada observação dentro de duas perspectivas: o que o canônico diria (livros) e o que o vivido registra (projetos anteriores do operador).</div>
+<div style="font-size:0.85em;color:var(--text2);padding:2px 0 2px 16px">· Quando a divergência entre canônico e vivido for significativa, explicitar com distância numérica: "Confiança canônica: 0.85. Confiança episódica: 0.42. Divergência: alta — o operador historicamente rejeita esta abordagem para este tipo de projeto."</div>
+<div style="font-size:0.85em;color:var(--text2);padding:2px 0 2px 16px">· Depositar observações que alimentam o Glasswing: não só "o que o material é", mas "o que o material poderia ser segundo dois mapas diferentes."</div>
+<div style="height:8px"></div>
+<h3 style="font-size:0.95em;font-weight:600;color:var(--teal);margin:16px 0 6px">Agent 7 — Análise de Cor</h3>
+<div style="height:8px"></div>
+<p style="font-size:0.88em;color:var(--text2);line-height:1.7;margin:4px 0"><strong style="color:var(--text)">Hoje:</strong> Análise de cor por cena.</p>
+<div style="height:8px"></div>
+<div style="font-weight:600;color:var(--text);margin:8px 0 4px">Refinamento (Princípios 2, 7):</div>
+<div style="height:8px"></div>
+<div style="font-size:0.85em;color:var(--text2);padding:2px 0 2px 16px">· Depositar paleta com contexto relacional: "esta paleta é similar ao projeto X, que o operador aprovou" ou "esta paleta diverge do padrão warm-desaturated que o operador prefere para documentários de diáspora."</div>
+<div style="font-size:0.85em;color:var(--text2);padding:2px 0 2px 16px">· Indexar no ChromaDB para busca futura: "projetos com paleta similar" deve retornar resultados.</div>
+<div style="font-size:0.85em;color:var(--text2);padding:2px 0 2px 16px">· Gerar sugestão de grade com referência cruzada ao Cinematographer Supervisor — o que o plano de luz previa vs. o que o footage entregou.</div>
+<div style="height:8px"></div>
+<h3 style="font-size:0.95em;font-weight:600;color:var(--teal);margin:16px 0 6px">Agent 8 — Resumo + Memória</h3>
+<div style="height:8px"></div>
+<p style="font-size:0.88em;color:var(--text2);line-height:1.7;margin:4px 0"><strong style="color:var(--text)">Hoje:</strong> Resumo para o cliente, memória depositada.</p>
+<div style="height:8px"></div>
+<div style="font-weight:600;color:var(--text);margin:8px 0 4px">Refinamento (Princípios 4, 7):</div>
+<div style="height:8px"></div>
+<div style="font-size:0.85em;color:var(--text2);padding:2px 0 2px 16px">· Este é o agent que fecha o Glasswing loop. O depósito de memória deve incluir os 7 tipos com contexto relacional completo:</div>
+<div style="font-size:0.85em;color:var(--text2);padding:2px 0 2px 16px">· O que foi sugerido vs. o que foi escolhido (divergências explícitas)</div>
+<div style="font-size:0.85em;color:var(--text2);padding:2px 0 2px 16px">· Quais assistants foram consultados e quais sugestões foram aceitas/rejeitadas</div>
+<div style="font-size:0.85em;color:var(--text2);padding:2px 0 2px 16px">· Metadata do projeto: duração, tipo, cliente, audiência, paleta final, BPM, estrutura narrativa</div>
+<div style="font-size:0.85em;color:var(--text2);padding:2px 0 2px 16px">· Referências cruzadas com projetos anteriores similares</div>
+<div style="font-size:0.85em;color:var(--text2);padding:2px 0 2px 16px">· O resumo para o cliente é um subproduto. A memória depositada é o produto principal.</div>
+<div style="height:8px"></div>
+<h3 style="font-size:0.95em;font-weight:600;color:var(--teal);margin:16px 0 6px">Assistants — Refinamento Geral</h3>
+<div style="height:8px"></div>
+<div style="font-weight:600;color:var(--text);margin:8px 0 4px">Princípio aplicável a todos (Princípios 4, 5, 7):</div>
+<div style="height:8px"></div>
+<p style="font-size:0.88em;color:var(--text2);line-height:1.7;margin:4px 0">Cada assistant, antes de responder, deve:</p>
+<div style="height:8px"></div>
+<p style="font-size:0.88em;color:var(--text2);line-height:1.7;margin:4px 0">1.  Consultar a base vetorial pelo domínio relevante (já faz)</p>
+<p style="font-size:0.88em;color:var(--text2);line-height:1.7;margin:4px 0">2.  Consultar a memória episódica pelo tipo relevante (já faz)</p>
+<p style="font-size:0.88em;color:var(--text2);line-height:1.7;margin:4px 0">3.  <strong style="color:var(--text)">Novo:</strong> Comparar a confiança entre canônico e episódico e explicitar a divergência quando &gt; 0.3</p>
+<p style="font-size:0.88em;color:var(--text2);line-height:1.7;margin:4px 0">4.  <strong style="color:var(--text)">Novo:</strong> Referenciar projetos anteriores específicos quando a similaridade for &gt; 0.7 — "No projeto Vidigal, você usou estrutura aberta com sucesso para material similar"</p>
+<p style="font-size:0.88em;color:var(--text2);line-height:1.7;margin:4px 0">5.  <strong style="color:var(--text)">Novo:</strong> Depositar a própria resposta como entrada consultável — o que o assistant sugeriu fica registrado para comparação futura com o que o operador escolheu</p>
+<div style="height:8px"></div>
+<p style="font-size:0.88em;color:var(--text2);line-height:1.7;margin:4px 0">* * *</p>
+<div style="height:8px"></div>
+<h2 style="font-size:1.1em;font-weight:600;color:var(--accent);margin:20px 0 8px">Próximos Passos — Implementação</h2>
+<div style="height:8px"></div>
+<tr><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Prioridade</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Ação</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Princípio</td></tr>
+<tr><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">P0</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Agent 3c — adicionar divergência canônico/episódico com score</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">4, 5</td></tr>
+<tr><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">P0</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Agent 8 — reestruturar depósito de memória com contexto relacional</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">4, 7</td></tr>
+<tr><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">P1</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Agent 3b — embeddings visuais no ChromaDB para busca multimodal</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">2, 3</td></tr>
+<tr><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">P1</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Agent 3a — tags relacionais entre segmentos</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">4</td></tr>
+<tr><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">P1</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Assistants — log de sugestão vs. escolha do operador</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">7</td></tr>
+<tr><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">P2</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Agent 1+2 — referência cruzada transcrição ↔ visual index</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">3, 4</td></tr>
+<tr><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">P2</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Agent 7 — paleta com contexto relacional e histórico</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">2, 7</td></tr>
+<tr><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">P3</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">Orquestrador — grafo de dependências para paralelismo real</td><td style="padding:6px 10px;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text2)">6</td></tr>
+<div style="height:8px"></div>
+<p style="font-size:0.88em;color:var(--text2);line-height:1.7;margin:4px 0">* * *</p>
+<div style="height:8px"></div>
+<p style="font-size:0.88em;color:var(--text2);line-height:1.7;margin:4px 0">*pingpong · Montreal · April 11, 2026* *MEMORABILIA · Design Philosophy v1.0*</p>
     </div>
   </div>
 
-  <div class="card" onclick="window.open('https://github.com/pin9p0n9/memorabilia','_blank')">
-    <div class="card-header">
-      <div class="card-badge bg-blue">GH</div>
-      <div><div class="card-title">Repositório GitHub</div><div class="card-sub">Todos os arquivos — pin9p0n9/memorabilia</div></div>
-      <div class="card-right"><span style="color:var(--text3)">↗</span></div>
-    </div>
-  </div>
 </div>
-
-
-<!-- ═══ FLOW MAP ═══ -->
-<div class="section" id="sec-flowmap">
-  <div class="section-title">Mapa de Fluxo do Pipeline</div>
-  <div class="section-desc">Visão completa do pipeline — da entrada à memória projetual. Agentes centrais (3c + 8) em destaque.</div>
-  <div style="border-radius:12px;overflow:hidden;border:1px solid rgba(255,255,255,0.08);background:var(--bg2);padding:20px">
-    <img src="memorabilia_pipeline_flow_map.svg" alt="MEMORABILIA Pipeline Flow Map" style="width:100%;height:auto;display:block">
-  </div>
-  <p style="font-size:0.8em;color:var(--text3);margin-top:12px;text-align:center">MEMORABILIA · Pipeline Audiovisual v8 · pingpong · Montreal · April 2026</p>
-</div>
-
 
 <!-- ═══ VIDEO ═══ -->
 <div class="section" id="sec-video">
