@@ -652,6 +652,191 @@ function checkPw(){
       <div style="font-size:0.85em;color:var(--text2)">O que o Agent 8 deposita, o Agent 3c do próximo projeto consulta. Projeto 10 > Projeto 1.</div>
     </div>
   </div>
+
+  <div style="margin-top:32px;border-top:1px solid rgba(255,255,255,0.08);padding-top:24px">
+    <div style="font-size:1.2em;font-weight:600;color:var(--text);margin-bottom:8px">MEMORABILIA Graph — Plugin Standalone</div>
+    <div style="font-size:0.88em;color:var(--text2);margin-bottom:20px">O mesmo Graph View como produto independente — sem AI, sem cloud, sem setup. O editor é o motor semântico.</div>
+
+    <div class="card" onclick="toggleCard(this)">
+      <div class="card-header">
+        <div class="card-badge bg-teal">ED</div>
+        <div><div class="card-title">Edges automáticas — sem AI</div><div class="card-sub">Relações geradas pela metadata nativa da câmera</div></div>
+        <div class="card-right"><span class="card-arrow">▸</span></div>
+      </div>
+      <div class="card-body">
+        <p>Clips conectam-se automaticamente por proximidade real:</p>
+        <p>· Mesmo reel / mesmo take → aresta forte</p>
+        <p>· &lt; 5 min entre clips → aresta temporal</p>
+        <p>· Mesma câmera → aresta via nó tema</p>
+        <p>· Mesmo GPS &lt; 50m → aresta locação</p>
+        <p>· Mesmo frame rate → aresta técnica</p>
+        <p>FFprobe + ExifTool extraem tudo. Zero AI necessária.</p>
+      </div>
+    </div>
+
+    <div class="card" onclick="toggleCard(this)">
+      <div class="card-header">
+        <div class="card-badge bg-amber">SB</div>
+        <div><div class="card-title">Second Brain do Editor</div><div class="card-sub">#tag · !select · @link — busca = criação</div></div>
+        <div class="card-right"><span class="card-arrow">▸</span></div>
+      </div>
+      <div class="card-body">
+        <p>A barra de busca é input de busca e de criação:</p>
+        <p>· <code style="background:var(--bg3);padding:2px 6px;border-radius:3px;color:var(--teal)">#entrevista-maria</code> → cria ou filtra tag</p>
+        <p>· <code style="background:var(--bg3);padding:2px 6px;border-radius:3px;color:var(--amber)">!select</code> → marca como aprovado (anel dourado)</p>
+        <p>· <code style="background:var(--bg3);padding:2px 6px;border-radius:3px;color:var(--coral)">!descarte</code> → marca como rejeitado (opacidade 20%)</p>
+        <p>· <code style="background:var(--bg3);padding:2px 6px;border-radius:3px;color:var(--accent)">@clip-042</code> → cria link manual com label</p>
+        <p>Tags, links e bookmarks salvos num JSON ao lado do projeto. Reabre 3 meses depois — second brain intacto.</p>
+      </div>
+    </div>
+
+    <div style="margin-top:16px;display:grid;grid-template-columns:1fr 1fr;gap:16px">
+      <div style="padding:16px;background:var(--bg3);border-radius:8px;border-left:3px solid var(--teal)">
+        <div style="font-weight:600;color:var(--teal);margin-bottom:4px">MEMORABILIA Graph — $49</div>
+        <div style="font-size:0.85em;color:var(--text2)">Plugin standalone. Editor é o motor semântico. Metadata nativa + tags manuais. Zero setup, zero AI, zero cloud.</div>
+      </div>
+      <div style="padding:16px;background:var(--bg3);border-radius:8px;border-left:3px solid var(--accent)">
+        <div style="font-weight:600;color:var(--accent);margin-bottom:4px">MEMORABILIA — $199</div>
+        <div style="font-size:0.85em;color:var(--text2)">Pipeline completo. AI + memória projetual + 72k trechos + 9 agents + 6 assistants. Upgrade do Graph.</div>
+      </div>
+    </div>
+  </div>
+
+  <div style="margin-top:32px;border-top:1px solid rgba(255,255,255,0.08);padding-top:24px">
+    <div style="font-size:1.2em;font-weight:600;color:var(--text);margin-bottom:8px">Modelo de Negócio</div>
+    <div style="font-size:0.88em;color:var(--text2);margin-bottom:20px">Conceito, mercado, receita e go-to-market do plugin standalone.</div>
+
+    <div class="card" onclick="toggleCard(this)">
+      <div class="card-header">
+        <div class="card-badge bg-coral">PR</div>
+        <div><div class="card-title">O Problema</div><div class="card-sub">Timelines são lineares. Pensamento narrativo não.</div></div>
+        <div class="card-right"><span class="card-arrow">▸</span></div>
+      </div>
+      <div class="card-body">
+        <p>Um editor recebe 20 horas de footage. Precisa encontrar o momento em que a entrevistada hesita. Precisa lembrar que aquele B-roll do mercado dialoga com outro filmado 3 dias depois. Precisa marcar 40 clips aprovados entre 300.</p>
+        <p>Hoje, tudo mora na cabeça. Quando o projeto fecha, evapora. Quando o editor sai, o conhecimento vai junto. Quando reabre 6 meses depois, recomeça do zero.</p>
+        <p><strong style="color:var(--accent)">Ninguém organiza footage por significado.</strong> Bins por pasta. Metadata por campo técnico. Zero organização narrativa.</p>
+      </div>
+    </div>
+
+    <div class="card" onclick="toggleCard(this)">
+      <div class="card-header">
+        <div class="card-badge bg-teal">VS</div>
+        <div><div class="card-title">Antes vs Depois</div><div class="card-sub">O que muda na rotina do editor</div></div>
+        <div class="card-right"><span class="card-arrow">▸</span></div>
+      </div>
+      <div class="card-body">
+        <table class="info-table">
+          <thead><tr><th>Tarefa</th><th>Sem plugin</th><th>Com plugin</th></tr></thead>
+          <tbody>
+            <tr><td>Encontrar clip</td><td style="color:var(--text3)">Navega bins · assiste</td><td style="color:var(--teal)">Busca por tag/metadata</td></tr>
+            <tr><td>Relações entre clips</td><td style="color:var(--text3)">Memória pessoal</td><td style="color:var(--teal)">Grafo com links</td></tr>
+            <tr><td>Aprovados/rejeitados</td><td style="color:var(--text3)">Markers/bins</td><td style="color:var(--teal)">!select / !descarte</td></tr>
+            <tr><td>Agrupar por tema</td><td style="color:var(--text3)">Bins manuais</td><td style="color:var(--teal)">#tag instantâneo</td></tr>
+            <tr><td>Projeto antigo</td><td style="color:var(--text3)">Reassistir tudo</td><td style="color:var(--teal)">Second brain intacto</td></tr>
+            <tr><td>Outro editor</td><td style="color:var(--text3)">Briefing verbal</td><td style="color:var(--teal)">Grafo com contexto</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="card" onclick="toggleCard(this)">
+      <div class="card-header">
+        <div class="card-badge bg-pink">DC</div>
+        <div><div class="card-title">Diferencial competitivo</div><div class="card-sub">Espaço vazio no mercado — ninguém fez</div></div>
+        <div class="card-right"><span class="card-arrow">▸</span></div>
+      </div>
+      <div class="card-body">
+        <p style="font-weight:600;color:var(--text);margin-bottom:8px">Existem hoje:</p>
+        <p>· <strong style="color:var(--text)">Frame.io</strong> → review, não navegação narrativa</p>
+        <p>· <strong style="color:var(--text)">Kyno</strong> → ingest + preview, sem grafo</p>
+        <p>· <strong style="color:var(--text)">Silverstack</strong> → on-set, não edição</p>
+        <p>· <strong style="color:var(--text)">PostLab</strong> → colaboração, não second brain</p>
+        <p style="color:var(--accent);font-weight:600;margin-top:12px;margin-bottom:6px">Não existe:</p>
+        <p>· Graph View para NLE — zero produtos</p>
+        <p>· Second brain para footage — conceito novo</p>
+        <p>· Tags persistentes entre projetos</p>
+        <p>· Editor como motor semântico com grafo visual</p>
+      </div>
+    </div>
+
+    <div class="card" onclick="toggleCard(this)">
+      <div class="card-header">
+        <div class="card-badge bg-amber">MK</div>
+        <div><div class="card-title">Mercado</div><div class="card-sub">TAM 5.7M editores · SAM 855k · SOM 4.3k Year 1</div></div>
+        <div class="card-right"><span class="card-arrow">▸</span></div>
+      </div>
+      <div class="card-body">
+        <dl class="detail">
+          <dt>TAM</dt><dd>~5.7M editores (3.7M Premiere + 2M DaVinci)</dd>
+          <dt>SAM</dt><dd>~855k com projetos de 50+ clips</dd>
+          <dt>SOM Y1</dt><dd>~4.275 que buscam ferramentas de organização</dd>
+        </dl>
+        <p style="font-weight:600;color:var(--text);margin-top:12px;margin-bottom:6px">4 personas:</p>
+        <p>· <strong style="color:var(--teal)">Freelancer</strong> — 3-5 proj/mês · dor: reabrir sem contexto · FREE → PRO</p>
+        <p>· <strong style="color:var(--amber)">Documentarista</strong> — 200-2000 clips · dor: encontrar momentos · PRO</p>
+        <p>· <strong style="color:var(--coral)">Post House</strong> — 5-20 editores · dor: passagem sem perder contexto · PRO → MEMORABILIA</p>
+        <p>· <strong style="color:var(--blue)">YouTuber</strong> — alto volume · dor: templates reutilizáveis · FREE</p>
+      </div>
+    </div>
+
+    <div class="card" onclick="toggleCard(this)">
+      <div class="card-header">
+        <div class="card-badge bg-accent">$$</div>
+        <div><div class="card-title">Receita e Projeção</div><div class="card-sub">One-time · margem 87-95% · Year 1: $39k-79k USD</div></div>
+        <div class="card-right"><span class="card-arrow">▸</span></div>
+      </div>
+      <div class="card-body">
+        <p style="font-weight:600;color:var(--text);margin-bottom:6px">Por que one-time</p>
+        <p>· Editores odeiam subscriptions (Adobe backlash) — one-time é diferencial</p>
+        <p>· Switching cost orgânico: 200 tags + 50 links = editor não troca</p>
+        <p>· Upgrades pagos por major version (v1 → v2)</p>
+        <table class="info-table" style="margin-top:12px">
+          <thead><tr><th>Ano</th><th>Downloads</th><th>Licenças</th><th>Receita</th></tr></thead>
+          <tbody>
+            <tr><td style="color:var(--teal)">Year 1</td><td>5k-10k</td><td>400-800 PRO</td><td style="color:var(--teal)">$39k-79k</td></tr>
+            <tr><td style="color:var(--amber)">Year 2</td><td>15k-30k</td><td>1.2k-2.4k</td><td style="color:var(--amber)">$80k-160k</td></tr>
+            <tr><td style="color:var(--accent)">Year 3</td><td>40k-80k</td><td>+ Team tier</td><td style="color:var(--accent)">$150k-300k</td></tr>
+          </tbody>
+        </table>
+        <p style="margin-top:8px;font-size:0.82em;color:var(--text3)">Dev $0 (solo) · hosting $0 (GitHub Pages) · Stripe 2.9% · margem 87-95%</p>
+      </div>
+    </div>
+
+    <div class="card" onclick="toggleCard(this)">
+      <div class="card-header">
+        <div class="card-badge bg-blue">GO</div>
+        <div><div class="card-title">Go-to-Market</div><div class="card-sub">Seed → Launch → Growth · orgânico first</div></div>
+        <div class="card-right"><span class="card-arrow">▸</span></div>
+      </div>
+      <div class="card-body">
+        <p style="font-weight:600;color:var(--teal);margin-bottom:4px">Seed</p>
+        <p>· Landing page com demo video 30s · Reddit teaser · Twitter GIF 15s loop · 3 beta testers</p>
+        <p style="font-weight:600;color:var(--amber);margin-top:10px;margin-bottom:4px">Launch</p>
+        <p>· Product Hunt · YouTube tutorial 5 min · outreach channels edição · aescripts.com</p>
+        <p style="font-weight:600;color:var(--accent);margin-top:10px;margin-bottom:4px">Growth</p>
+        <p>· Case studies · blog SEO · Discord community · affiliate 20%</p>
+      </div>
+    </div>
+
+    <div class="card" onclick="toggleCard(this)">
+      <div class="card-header">
+        <div class="card-badge bg-green">EX</div>
+        <div><div class="card-title">Expansão Futura</div><div class="card-sub">v1.0 → v4.0 · do plugin ao ecossistema</div></div>
+        <div class="card-right"><span class="card-arrow">▸</span></div>
+      </div>
+      <div class="card-body">
+        <p>· <strong style="color:var(--text)">v1.0</strong> — Premiere Pro + DaVinci Resolve</p>
+        <p>· <strong style="color:var(--text)">v1.5</strong> — Final Cut Pro (se demanda)</p>
+        <p>· <strong style="color:var(--text)">v2.0</strong> — AI layer = upgrade MEMORABILIA</p>
+        <p>· <strong style="color:var(--text)">v2.5</strong> — Team features (shared graphs)</p>
+        <p>· <strong style="color:var(--text)">v3.0</strong> — Standalone app (sem NLE)</p>
+        <p>· <strong style="color:var(--text)">v3.5</strong> — Mobile companion</p>
+        <p>· <strong style="color:var(--text)">v4.0</strong> — API para DAMs</p>
+      </div>
+    </div>
+  </div>
+
 </div>
 
 <div class="section" id="sec-docs">
