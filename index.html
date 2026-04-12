@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MEMORABILIA — Pipeline Audiovisual</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+:root {
+  --bg: #0d0f12;
+  --bg2: #141820;
+  --bg3: #1a2030;
+  --bg4: #222a3a;
+  --text: #c8cdd8;
+  --text2: #8891a4;
+  --text3: #5a6478;
+  --accent: #a78bfa;
+  --accent2: #7c3aed;
+  --teal: #5eead4;
+  --teal2: #0d9488;
+  --coral: #fda4af;
+  --coral2: #e11d48;
+  --amber: #fbbf24;
+  --amber2: #d97706;
+  --blue: #93c5fd;
+  --blue2: #3b82f6;
+  --pink: #f0abfc;
+  --pink2: #c026d3;
+  --green: #86efac;
+  --green2: #16a34a;
+  --border: rgba(255,255,255,0.06);
+  --radius: 12px;
+  --radius-sm: 8px;
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+body { background: var(--bg); color: var(--text); font-family: 'DM Sans', sans-serif; line-height: 1.6; }
+::selection { background: var(--accent2); color: white; }
+
+.container { max-width: 900px; margin: 0 auto; padding: 20px; }
+
+/* Hero */
+.hero { padding: 60px 0 40px; text-align: center; border-bottom: 1px solid var(--border); margin-bottom: 40px; }
+.hero h1 { font-size: 2.4em; font-weight: 700; letter-spacing: -0.02em; background: linear-gradient(135deg, var(--accent), var(--teal)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 8px; }
+.hero .sub { color: var(--text2); font-size: 1.05em; margin-bottom: 24px; }
+.hero .stats { display: flex; justify-content: center; gap: 32px; flex-wrap: wrap; margin-top: 20px; }
+.hero .stat { text-align: center; }
+.hero .stat .num { font-size: 1.6em; font-weight: 700; font-family: 'JetBrains Mono', monospace; }
+.hero .stat .label { font-size: 0.75em; color: var(--text3); text-transform: uppercase; letter-spacing: 0.05em; }
+
+/* Navigation pills */
+.nav { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 32px; position: sticky; top: 0; z-index: 100; background: var(--bg); padding: 12px 0; border-bottom: 1px solid var(--border); }
+.nav button { background: var(--bg3); border: 1px solid var(--border); color: var(--text2); padding: 8px 16px; border-radius: 20px; cursor: pointer; font-family: inherit; font-size: 0.85em; transition: all 0.2s; }
+.nav button:hover, .nav button.active { background: var(--accent2); color: white; border-color: var(--accent); }
+
+/* Sections */
+.section { display: none; animation: fadeIn 0.3s ease; }
+.section.active { display: block; }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+
+.section-title { font-size: 1.5em; font-weight: 700; margin-bottom: 8px; }
+.section-desc { color: var(--text2); margin-bottom: 24px; }
+
+/* Cards */
+.card { background: var(--bg2); border: 1px solid var(--border); border-radius: var(--radius); margin-bottom: 12px; overflow: hidden; transition: border-color 0.2s; }
+.card:hover { border-color: rgba(255,255,255,0.12); }
+.card-header { display: flex; align-items: center; gap: 12px; padding: 16px 20px; cursor: pointer; user-select: none; }
+.card-header:hover { background: var(--bg3); }
+.card-badge { width: 36px; height: 36px; border-radius: var(--radius-sm); display: flex; align-items: center; justify-content: center; font-size: 0.75em; font-weight: 700; font-family: 'JetBrains Mono', monospace; flex-shrink: 0; }
+.card-title { font-weight: 600; font-size: 0.95em; }
+.card-sub { font-size: 0.8em; color: var(--text2); }
+.card-right { margin-left: auto; display: flex; align-items: center; gap: 8px; }
+.card-tag { font-size: 0.7em; padding: 2px 8px; border-radius: 10px; font-family: 'JetBrains Mono', monospace; }
+.card-arrow { color: var(--text3); transition: transform 0.2s; font-size: 0.9em; }
+.card.open .card-arrow { transform: rotate(90deg); }
+.card-body { display: none; padding: 0 20px 20px; border-top: 1px solid var(--border); }
+.card.open .card-body { display: block; }
+.card-body p { margin: 12px 0; font-size: 0.9em; color: var(--text2); line-height: 1.7; }
+.card-body .detail { display: grid; grid-template-columns: 120px 1fr; gap: 6px 16px; font-size: 0.85em; margin: 12px 0; }
+.card-body .detail dt { color: var(--text3); font-family: 'JetBrains Mono', monospace; font-size: 0.8em; }
+.card-body .detail dd { color: var(--text); }
+
+/* Color badges */
+.bg-teal { background: rgba(94,234,212,0.15); color: var(--teal); }
+.bg-coral { background: rgba(253,164,175,0.15); color: var(--coral); }
+.bg-amber { background: rgba(251,191,36,0.15); color: var(--amber); }
+.bg-blue { background: rgba(147,197,253,0.15); color: var(--blue); }
+.bg-pink { background: rgba(240,171,252,0.15); color: var(--pink); }
+.bg-accent { background: rgba(167,139,250,0.15); color: var(--accent); }
+.bg-green { background: rgba(134,239,172,0.15); color: var(--green); }
+
+.tag-teal { background: rgba(94,234,212,0.12); color: var(--teal); }
+.tag-coral { background: rgba(253,164,175,0.12); color: var(--coral); }
+.tag-amber { background: rgba(251,191,36,0.12); color: var(--amber); }
+.tag-blue { background: rgba(147,197,253,0.12); color: var(--blue); }
+.tag-pink { background: rgba(240,171,252,0.12); color: var(--pink); }
+.tag-accent { background: rgba(167,139,250,0.12); color: var(--accent); }
+
+/* Flow diagram */
+.flow { display: flex; flex-direction: column; gap: 4px; margin: 20px 0; }
+.flow-arrow { text-align: center; color: var(--text3); font-size: 1.2em; }
+.flow-block { background: var(--bg3); border: 1px solid var(--border); border-radius: var(--radius); padding: 16px 20px; }
+.flow-block.highlight { border-color: var(--amber); border-width: 2px; }
+.flow-block.human { border-color: var(--coral); border-width: 2px; }
+.flow-label { font-size: 0.7em; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 4px; }
+
+/* Table */
+.info-table { width: 100%; border-collapse: collapse; font-size: 0.85em; margin: 16px 0; }
+.info-table th { text-align: left; padding: 8px 12px; background: var(--bg3); color: var(--text2); font-weight: 500; font-size: 0.8em; text-transform: uppercase; letter-spacing: 0.04em; }
+.info-table td { padding: 8px 12px; border-bottom: 1px solid var(--border); }
+.info-table tr:last-child td { border-bottom: none; }
+
+/* Summary grid */
+.summary-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 20px 0; }
+.summary-item { background: var(--bg2); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 16px; }
+.summary-item h3 { font-size: 0.85em; color: var(--text3); text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 8px; }
+.summary-item p { font-size: 0.9em; }
+
+/* Principles */
+.principle { display: flex; gap: 12px; align-items: flex-start; margin: 12px 0; padding: 12px; background: var(--bg3); border-radius: var(--radius-sm); }
+.principle .num { width: 28px; height: 28px; background: var(--accent2); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.75em; font-weight: 700; flex-shrink: 0; }
+.principle .content { flex: 1; }
+.principle .name { font-weight: 600; font-size: 0.9em; }
+.principle .test { font-size: 0.8em; color: var(--text2); margin-top: 2px; }
+
+/* Footer */
+.footer { text-align: center; padding: 40px 0; color: var(--text3); font-size: 0.8em; border-top: 1px solid var(--border); margin-top: 40px; }
+
+@media (max-width: 640px) {
+  .hero h1 { font-size: 1.6em; }
+  .hero .stats { gap: 16px; }
+  .summary-grid { grid-template-columns: 1fr; }
+  .nav { gap: 4px; }
+  .nav button { padding: 6px 12px; font-size: 0.8em; }
+}
+</style>
+</head>
+<body>
+<div id="gate" style="position:fixed;top:0;left:0;width:100%;height:100%;background:#0d0f12;display:flex;align-items:center;justify-content:center;z-index:9999;flex-direction:column;font-family:'DM Sans',sans-serif">
+<div style="text-align:center">
+<h1 style="font-size:2em;background:linear-gradient(135deg,#a78bfa,#5eead4);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:8px">MEMORABILIA</h1>
+<p style="color:#5a6478;margin-bottom:24px">Pipeline Audiovisual · Acesso restrito</p>
+<input id="pw" type="password" placeholder="Senha" onkeypress="if(event.key==='Enter')checkPw()" style="padding:12px 20px;border-radius:8px;border:1px solid rgba(255,255,255,0.1);background:#1a2030;color:#c8cdd8;font-size:1em;width:240px;text-align:center;outline:none">
+<br><button onclick="checkPw()" style="margin-top:12px;padding:10px 32px;border-radius:8px;border:none;background:#7c3aed;color:white;cursor:pointer;font-size:0.9em">Entrar</button>
+<p id="err" style="color:#e11d48;margin-top:12px;font-size:0.85em;display:none">Senha incorreta</p>
+</div></div>
+<script>
+function checkPw(){
+  var p=document.getElementById("pw").value;
+  if(btoa(p)==="cGluZ3Bvbmc="){
+    document.getElementById("gate").style.display="none";
+  } else {
+    document.getElementById("err").style.display="block";
+    document.getElementById("pw").value="";
+  }
+}
+</script>
+<div class="container">
+
+<!-- HERO -->
+<div class="hero">
+  <h1>MEMORABILIA</h1>
+  <div class="sub">Pipeline audiovisual com memória projetual<br>pingpong · Montreal · April 2026</div>
+  <div class="stats">
+    <div class="stat"><div class="num" style="color:var(--teal)">9</div><div class="label">Agentes</div></div>
+    <div class="stat"><div class="num" style="color:var(--accent)">6</div><div class="label">Assistants</div></div>
+    <div class="stat"><div class="num" style="color:var(--amber)">72k</div><div class="label">Trechos</div></div>
+    <div class="stat"><div class="num" style="color:var(--coral)">50</div><div class="label">Min/projeto</div></div>
+    <div class="stat"><div class="num" style="color:var(--green)">$0</div><div class="label">Custo/mês</div></div>
+    <div class="stat"><div class="num" style="color:var(--blue)">34</div><div class="label">Dias p/ build</div></div>
+  </div>
+</div>
+
+<!-- NAV -->
+<div class="nav">
+  <button class="active" onclick="showSection('overview')">Resumo</button>
+  <button onclick="showSection('agents')">9 Agentes</button>
+  <button onclick="showSection('assistants')">6 Assistants</button>
+  <button onclick="showSection('models')">Modelos AI</button>
+  <button onclick="showSection('cep')">CEP Panel</button>
+  <button onclick="showSection('knowledge')">Conhecimento</button>
+  <button onclick="showSection('philosophy')">Filosofia</button>
+</div>
+
+<!-- ═══ OVERVIEW ═══ -->
+<div class="section active" id="sec-overview">
+  <div class="section-title">O que é MEMORABILIA</div>
+  <div class="section-desc">Um pipeline audiovisual self-hosted que automatiza o trabalho repetitivo e acumula memória entre projetos. O designer que trabalhava 3 dias trabalha 1.</div>
+
+  <div class="summary-grid">
+    <div class="summary-item"><h3>Tradução de tempo</h3><p>Cada agente não processa footage — traduz. Vídeo em áudio, áudio em texto buscável, footage em frames navegáveis, material bruto em observações narrativas. Nenhum agente decide. Todos traduzem. O designer decide.</p></div>
+    <div class="summary-item"><h3>Memória projetual</h3><p>O Agent 3c lê com dupla perspectiva (livros + projetos). O Agent 8 deposita cada decisão com contexto. O projeto 10 é mais preciso que o projeto 1 — porque acumulou 9 projetos de decisões reais.</p></div>
+    <div class="summary-item"><h3>Privacidade total</h3><p>3 GPUs · 38GB VRAM · 208GB RAM · 20TB storage. Tudo em hardware próprio. Nenhum dado sai da rede. VPN criptografada para acesso global. Custo mensal: zero.</p></div>
+    <div class="summary-item"><h3>Colaborativo por design</h3><p>Novos nós expandem o cluster via VPN sem expor dados. Ilustradores, motion designers e editores acessam a mesma memória projetual, cada um no domínio relevante.</p></div>
+  </div>
+
+  <div class="section-title" style="margin-top:32px;font-size:1.1em">Fluxo do pipeline</div>
+
+  <div class="flow">
+    <div class="flow-block">
+      <div class="flow-label" style="color:var(--accent)">Entrada — Visual Bible</div>
+      <div style="font-size:0.9em">Briefing YAML → 6 assistants calibram em paralelo: Cinematographer (luz), Creative Director (estrutura), MusicGen (audio guide 12 min)</div>
+    </div>
+    <div class="flow-arrow">↓ <span style="font-size:0.7em;color:var(--text3)">watchdog detecta footage</span></div>
+    <div class="flow-block">
+      <div class="flow-label" style="color:var(--teal)">Bloco 1 — Pré-edição · ~30 min automático</div>
+      <div style="font-size:0.9em">Agent 1+2 (Whisper) → Agent 3a (índice) + Agent 3b (384 frames) em paralelo → Agent 3c (leitura narrativa com tensão calibrada)</div>
+    </div>
+    <div class="flow-arrow">↓</div>
+    <div class="flow-block human">
+      <div class="flow-label" style="color:var(--coral)">Humano — Edição criativa · 100%</div>
+      <div style="font-size:0.9em">Premiere Pro + CEP MEMORABILIA (List · Grid · Graph). 5 cenários: C1 edição · C2 +motion · C3 +3D+ComfyUI · C4 motion puro · C5 +AI generativa</div>
+    </div>
+    <div class="flow-arrow">↓ <span style="font-size:0.7em;color:var(--text3)">watchdog detecta render</span></div>
+    <div class="flow-block">
+      <div class="flow-label" style="color:var(--teal)">Bloco 2 — Pós-edição · ~7 min automático</div>
+      <div style="font-size:0.9em">Agent 7 (cor) + Agent 6b (SEO 6 plataformas) → Agent 8 (Glasswing Closer) → Agent 9 (publish)</div>
+    </div>
+    <div class="flow-arrow">↓</div>
+    <div class="flow-block highlight">
+      <div class="flow-label" style="color:var(--amber)">Glasswing Loop — Memória</div>
+      <div style="font-size:0.9em">7 types (narrativa · áudio · visão · motion · generativo · 3D · projeto) → ChromaDB 768 dims → alimenta o Agent 3c do próximo projeto. Cresce projeto a projeto.</div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ AGENTS ═══ -->
+<div class="section" id="sec-agents">
+  <div class="section-title">9 Agentes do Pipeline</div>
+  <div class="section-desc">Cada agente traduz uma camada do material. Nenhum decide — todos traduzem. O designer decide.</div>
+
+  <div class="card" onclick="toggleCard(this)">
+    <div class="card-header">
+      <div class="card-badge bg-blue">1+2</div>
+      <div><div class="card-title">Ingest + Whisper</div><div class="card-sub">Transcrição multilíngue automática</div></div>
+      <div class="card-right"><span class="card-tag tag-blue">Windows RTX 4080</span><span class="card-arrow">▸</span></div>
+    </div>
+    <div class="card-body">
+      <p><strong>Função:</strong> Extrai áudio do footage via FFmpeg, transcreve com Whisper large-v3 em PT/EN/FR com detecção automática de idioma. Gera proxy 720p NVENC para preview rápido. CSV para ingest no Premiere.</p>
+      <dl class="detail">
+        <dt>Modelo</dt><dd>Whisper large-v3 (3.08GB) — Windows RTX 4080</dd>
+        <dt>Input</dt><dd>Footage bruto (qualquer formato: ProRes, H.264, H.265, N-RAW)</dd>
+        <dt>Output</dt><dd>.txt .srt .vtt .json (transcrição) + proxy 720p + CSV Premiere</dd>
+        <dt>Tempo</dt><dd>15-25 min (depende da duração do footage)</dd>
+        <dt>Gatilho</dt><dd>watchdog detecta footage + brief na pasta do projeto</dd>
+      </dl>
+    </div>
+  </div>
+
+  <div class="card" onclick="toggleCard(this)">
+    <div class="card-header">
+      <div class="card-badge bg-teal">3a</div>
+      <div><div class="card-title">Índice Textual</div><div class="card-sub">Decupagem completa da transcrição</div></div>
+      <div class="card-right"><span class="card-tag tag-teal">gemma4:26b</span><span class="card-arrow">▸</span></div>
+    </div>
+    <div class="card-body">
+      <p><strong>Função:</strong> Analisa a transcrição completa e gera um índice estruturado: temas abordados, momentos-chave, mudanças de tom, timestamps com descrição. O editor usa para navegação rápida sem assistir tudo.</p>
+      <dl class="detail">
+        <dt>Modelo</dt><dd>gemma4:26b — HomeLab 2× GTX 1080 Ti · 53 t/s</dd>
+        <dt>Input</dt><dd>Transcrição do Agent 1+2</dd>
+        <dt>Output</dt><dd>full_transcript_index.md — índice navegável com timestamps</dd>
+        <dt>Tempo</dt><dd>~1.5 min</dd>
+        <dt>Depende de</dt><dd>Agent 1+2 (transcrição pronta)</dd>
+      </dl>
+    </div>
+  </div>
+
+  <div class="card" onclick="toggleCard(this)">
+    <div class="card-header">
+      <div class="card-badge bg-teal">3b</div>
+      <div><div class="card-title">Visual Index</div><div class="card-sub">384 frames catalogados · 4 modos adaptativos</div></div>
+      <div class="card-right"><span class="card-tag tag-coral">qwen3-vl:8b</span><span class="card-arrow">▸</span></div>
+    </div>
+    <div class="card-body">
+      <p><strong>Função:</strong> Extrai frames representativos do footage e descreve cada um com vocabulário visual: composição, personagens, cenário, luz, tipo de plano. 4 modos adaptativos ao ritmo do material. Frames ficam buscáveis por descrição semântica ("mulher falando perto do mar").</p>
+      <dl class="detail">
+        <dt>Modelo</dt><dd>qwen3-vl:8b — Windows RTX 4080 (100% GPU)</dd>
+        <dt>Input</dt><dd>Footage bruto (02_CAPTURES) + editado (03_EDITED)</dd>
+        <dt>Output</dt><dd>384 entries no ChromaDB visual_index com embeddings</dd>
+        <dt>Tempo</dt><dd>~19 min</dd>
+        <dt>Modos</dt><dd>arc (&lt;2 cuts/min, 3 frames) · dual (2-8, 2 frames) · single (8-20, 1 frame) · window (&gt;20, 1/2s)</dd>
+        <dt>Metadata</dt><dd>rhythm_mode · cuts_per_minute · material_type (raw/edited) · scene_num</dd>
+      </dl>
+    </div>
+  </div>
+
+  <div class="card" onclick="toggleCard(this)">
+    <div class="card-header">
+      <div class="card-badge bg-amber">3c</div>
+      <div><div class="card-title">Leitura Narrativa — Tensão Calibrada</div><div class="card-sub">O agente central de leitura · dupla perspectiva</div></div>
+      <div class="card-right"><span class="card-tag tag-amber">CENTRAL</span><span class="card-arrow">▸</span></div>
+    </div>
+    <div class="card-body">
+      <p><strong>Função:</strong> O único agente que interpreta. Traduz o material bruto para vocabulário cinematográfico com duas perspectivas em tensão: o que os livros dizem (canônico) e o que os projetos anteriores viveram (episódico). Quando divergem, explicita com score numérico. Observações posicionadas, nunca prescrições.</p>
+      <dl class="detail">
+        <dt>Modelo</dt><dd>gemma4:26b — HomeLab · 53 t/s</dd>
+        <dt>RAG</dt><dd>knowledge_montagem (4.260 trechos) + episodic_memory (105 entradas)</dd>
+        <dt>Input</dt><dd>Transcrição + índice textual + visual index</dd>
+        <dt>Output</dt><dd>Observações com score canônico (0.0-1.0) + score episódico + divergência</dd>
+        <dt>Tempo</dt><dd>~3 min</dd>
+        <dt>Regras</dt><dd>Nunca prescreve. Score por perspectiva. Divergência explícita > 0.3. Referência a projetos anteriores quando similaridade > 0.7.</dd>
+      </dl>
+      <p style="color:var(--amber);font-size:0.85em">↻ O que o 3c observa → o Agent 8 compara com a decisão do editor → deposita → o 3c do próximo projeto consulta</p>
+    </div>
+  </div>
+
+  <div class="card" onclick="toggleCard(this)">
+    <div class="card-header">
+      <div class="card-badge bg-pink">7</div>
+      <div><div class="card-title">Vision + Color</div><div class="card-sub">Análise de cor por cena do render final</div></div>
+      <div class="card-right"><span class="card-tag tag-pink">qwen3-vl + gemma4</span><span class="card-arrow">▸</span></div>
+    </div>
+    <div class="card-body">
+      <p><strong>Função:</strong> Analisa o render final editado: paleta dominante por cena, consistência de cor, sugestões de grade com referência cruzada ao plano de luz do Cinematographer. Deposita type:vision na memória episódica.</p>
+      <dl class="detail">
+        <dt>Modelos</dt><dd>qwen3-vl:8b (Windows) para visão + gemma4:26b (HomeLab) para análise</dd>
+        <dt>Input</dt><dd>Render em 03_RENDER/02_OFF/</dd>
+        <dt>Output</dt><dd>Análise de cor + sugestões + type:vision no ChromaDB</dd>
+        <dt>Tempo</dt><dd>~3 min</dd>
+        <dt>Gatilho</dt><dd>watchdog detecta render na pasta OFF</dd>
+      </dl>
+    </div>
+  </div>
+
+  <div class="card" onclick="toggleCard(this)">
+    <div class="card-header">
+      <div class="card-badge bg-blue">6b</div>
+      <div><div class="card-title">SEO Metadata</div><div class="card-sub">Legendas e descrições para 6 plataformas</div></div>
+      <div class="card-right"><span class="card-tag tag-teal">gemma4:26b</span><span class="card-arrow">▸</span></div>
+    </div>
+    <div class="card-body">
+      <p><strong>Função:</strong> Gera legendas, títulos, descrições e hashtags otimizados para YouTube, Vimeo, Instagram, TikTok, LinkedIn e Twitter/X. Capítulos com timestamps para YouTube.</p>
+      <dl class="detail">
+        <dt>Modelo</dt><dd>gemma4:26b — HomeLab</dd>
+        <dt>Input</dt><dd>Transcrição + análise narrativa + metadata do projeto</dd>
+        <dt>Output</dt><dd>6 arquivos de metadata por plataforma</dd>
+        <dt>Tempo</dt><dd>~32 segundos</dd>
+      </dl>
+    </div>
+  </div>
+
+  <div class="card" onclick="toggleCard(this)">
+    <div class="card-header">
+      <div class="card-badge bg-amber">8</div>
+      <div><div class="card-title">Glasswing Closer</div><div class="card-sub">Memória relacional · fecha o loop</div></div>
+      <div class="card-right"><span class="card-tag tag-amber">CENTRAL</span><span class="card-arrow">▸</span></div>
+    </div>
+    <div class="card-body">
+      <p><strong>Função:</strong> O agente que fecha o Glasswing loop. Compara o que foi sugerido pelos agents com o que o editor escolheu. Registra a tríade: sugestão → escolha → divergência. Deposita memória com contexto relacional completo. O resumo para o cliente é subproduto — a memória depositada é o produto principal.</p>
+      <dl class="detail">
+        <dt>Modelo</dt><dd>gemma4:26b — HomeLab · 53 t/s</dd>
+        <dt>Input</dt><dd>Todas as saídas dos agents + decisões do editor na edição final</dd>
+        <dt>Output</dt><dd>postmortem.md + client_summary.md + 7 types no ChromaDB</dd>
+        <dt>Tempo</dt><dd>~3.5 min</dd>
+        <dt>Depósito</dt><dd>compress_aaak() → 7 types: narrativa, áudio, visão, motion, generativo, 3D, projeto</dd>
+        <dt>Registra</dt><dd>Sugerido vs escolhido · divergência · condições (tipo, cliente, audiência, paleta, BPM) · padrões detectados (3+ ocorrências)</dd>
+      </dl>
+      <p style="color:var(--amber);font-size:0.85em">↻ Sem o Agent 8, o Agent 3c do próximo projeto não tem material episódico. O 3c é o leitor. O 8 é o escritor.</p>
+    </div>
+  </div>
+
+  <div class="card" onclick="toggleCard(this)">
+    <div class="card-header">
+      <div class="card-badge bg-green">9</div>
+      <div><div class="card-title">Publish</div><div class="card-sub">Publicação automática via webhook</div></div>
+      <div class="card-right"><span class="card-tag tag-green">n8n</span><span class="card-arrow">▸</span></div>
+    </div>
+    <div class="card-body">
+      <p><strong>Função:</strong> Dispara publicação via n8n webhook. Conecta com YouTube, Vimeo e plataformas sociais. Usa os metadados do Agent 6b para preencher títulos, descrições e tags automaticamente.</p>
+      <dl class="detail">
+        <dt>Stack</dt><dd>n8n Docker :5678 → webhook → APIs de plataforma</dd>
+        <dt>Input</dt><dd>Render final + metadata do Agent 6b</dd>
+        <dt>Output</dt><dd>Publicação em múltiplas plataformas</dd>
+        <dt>Tempo</dt><dd>&lt;1 segundo (disparo)</dd>
+      </dl>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ ASSISTANTS ═══ -->
+<div class="section" id="sec-assistants">
+  <div class="section-title">6 Assistants Especializados</div>
+  <div class="section-desc">Consultam base de conhecimento + memória episódica antes de cada resposta. Disponíveis antes, durante e depois da edição.</div>
+
+  <div class="card" onclick="toggleCard(this)">
+    <div class="card-header">
+      <div class="card-badge bg-accent">CS</div>
+      <div><div class="card-title">Cinematographer Supervisor</div><div class="card-sub">Plano de iluminação a partir de referências</div></div>
+      <div class="card-right"><span class="card-arrow">▸</span></div>
+    </div>
+    <div class="card-body">
+      <p><strong>Função:</strong> Recebe duas imagens de referência (referência visual + locação real) e gera um plano de luz completo: análise de cena, plano de câmera, plano de luz, grip list, e tradução CG para Blender ACEScg.</p>
+      <dl class="detail">
+        <dt>Modelo</dt><dd>gemma4:26b + montagem RAG</dd>
+        <dt>Base</dt><dd>11.261 trechos cinematografia + 4.260 montagem + 649 CG</dd>
+        <dt>Input</dt><dd>Imagem referência + imagem locação</dd>
+        <dt>Output</dt><dd>Light plan + câmera + grip + CG translation</dd>
+        <dt>Memória</dt><dd>Sabe qual grade style e câmera foram aprovados antes</dd>
+      </dl>
+    </div>
+  </div>
+
+  <div class="card" onclick="toggleCard(this)">
+    <div class="card-header">
+      <div class="card-badge bg-accent">CP</div>
+      <div><div class="card-title">Cinematographer Problem Solver</div><div class="card-sub">Resolução de problemas técnicos de luz e câmera</div></div>
+      <div class="card-right"><span class="card-arrow">▸</span></div>
+    </div>
+    <div class="card-body">
+      <p><strong>Função:</strong> Analisa frames com problemas (subexposição, cor inconsistente, flare não intencional) e propõe soluções técnicas com referência à teoria. Opera como Cinematographer de emergência durante a edição.</p>
+      <dl class="detail">
+        <dt>Modelo</dt><dd>gemma4:26b + ProblemSolver_v01 pipeline</dd>
+        <dt>Base</dt><dd>knowledge_cinematography_v2 (11.261 chunks) + montagem RAG</dd>
+        <dt>Input</dt><dd>Frame com problema + descrição do issue</dd>
+        <dt>Output</dt><dd>Diagnóstico + solução técnica + referência teórica</dd>
+        <dt>Max tokens</dt><dd>2500 (para thinking tokens do gemma4)</dd>
+      </dl>
+    </div>
+  </div>
+
+  <div class="card" onclick="toggleCard(this)">
+    <div class="card-header">
+      <div class="card-badge bg-coral">CD</div>
+      <div><div class="card-title">Creative Director RAG</div><div class="card-sub">Estrutura narrativa com dupla perspectiva</div></div>
+      <div class="card-right"><span class="card-arrow">▸</span></div>
+    </div>
+    <div class="card-body">
+      <p><strong>Função:</strong> Consulta a biblioteca completa (48k trechos) + memória episódica para propor estrutura narrativa. Apresenta sempre duas perspectivas: o que McKee/Field/Block dizem vs. o que os projetos anteriores demonstraram. Score de confiança por perspectiva.</p>
+      <dl class="detail">
+        <dt>Modelo</dt><dd>gemma4:26b (modo 32B via pingpong-story)</dd>
+        <dt>Base</dt><dd>48.401 trechos de 174 livros + memória episódica</dd>
+        <dt>Memória</dt><dd>Sabe que o designer prefere estrutura aberta e rejeita três atos para diáspora (3/3 ocorrências)</dd>
+        <dt>Output</dt><dd>Duas perspectivas com divergência + score + referências</dd>
+      </dl>
+    </div>
+  </div>
+
+  <div class="card" onclick="toggleCard(this)">
+    <div class="card-header">
+      <div class="card-badge bg-teal">MR</div>
+      <div><div class="card-title">Motion RAG</div><div class="card-sub">Técnicas de motion design aplicadas ao projeto</div></div>
+      <div class="card-right"><span class="card-arrow">▸</span></div>
+    </div>
+    <div class="card-body">
+      <p><strong>Função:</strong> Ensina e aplica técnicas de After Effects e Cinema 4D ao projeto. Passo a passo com referência do curso, timecode da aula, e variações. Sabe quais técnicas funcionaram em projetos anteriores.</p>
+      <dl class="detail">
+        <dt>Modelo</dt><dd>gemma4:26b (motion_rag) / mistral (motion_quick)</dd>
+        <dt>Base</dt><dd>7.868 trechos de 14 cursos: Ben Marriott, School of Motion, Colombo, Blender</dd>
+        <dt>Memória</dt><dd>type:motion + type:audio do episodic_memory</dd>
+        <dt>Output</dt><dd>Tutorial aplicado + variações + referência de curso com timecode</dd>
+      </dl>
+    </div>
+  </div>
+
+  <div class="card" onclick="toggleCard(this)">
+    <div class="card-header">
+      <div class="card-badge bg-teal">3D</div>
+      <div><div class="card-title">3D RAG</div><div class="card-sub">Workflows Blender: modelagem, animação, render</div></div>
+      <div class="card-right"><span class="card-arrow">▸</span></div>
+    </div>
+    <div class="card-body">
+      <p><strong>Função:</strong> Workflows de modelagem, animação e render no Blender com setup ACES. Referência cruzada com cursos indexados. Sabe quais materiais e render engines foram usados antes.</p>
+      <dl class="detail">
+        <dt>Modelo</dt><dd>gemma4:26b (3d_rag) / mistral (3d_quick)</dd>
+        <dt>Base</dt><dd>574 aulas de 9 cursos Blender + livros técnicos</dd>
+        <dt>Memória</dt><dd>type:3d + type:generative do episodic_memory</dd>
+        <dt>Output</dt><dd>Workflow + render setup ACES + referência de curso</dd>
+      </dl>
+    </div>
+  </div>
+
+  <div class="card" onclick="toggleCard(this)">
+    <div class="card-header">
+      <div class="card-badge bg-pink">TA</div>
+      <div><div class="card-title">Technical Artist Director</div><div class="card-sub">Problemas técnicos: render, ACES, compositing, scripts</div></div>
+      <div class="card-right"><span class="card-arrow">▸</span></div>
+    </div>
+    <div class="card-body">
+      <p><strong>Função:</strong> Resolve problemas técnicos de CG/VFX: erros de render, setup ACES/OCIO, compositing, scripts Python/Expressions. Diagnóstico com solução em código e contexto do histórico.</p>
+      <dl class="detail">
+        <dt>Modelo</dt><dd>gemma4:26b (technical_director.py)</dd>
+        <dt>Base</dt><dd>10.172 trechos AI/ML + 5.026 Tech/Python + cinematografia CG</dd>
+        <dt>Course map</dt><dd>hard surface → Blender_HardSurface · sculpting → Blender_Sculpting · python → Tech · comfyui → AI</dd>
+        <dt>Output</dt><dd>Diagnóstico + código + referência técnica</dd>
+      </dl>
+    </div>
+  </div>
+
+  <div class="card" onclick="toggleCard(this)">
+    <div class="card-header">
+      <div class="card-badge bg-amber">MT</div>
+      <div><div class="card-title">Montagem RAG</div><div class="card-sub">Teoria de montagem cinematográfica aplicada</div></div>
+      <div class="card-right"><span class="card-arrow">▸</span></div>
+    </div>
+    <div class="card-body">
+      <p><strong>Função:</strong> Aplica teoria dos mestres da montagem ao material real. Eisenstein (montagem intelectual), Tarkovsky (tempo esculpido), Bresson (automatismo), Murch (regra dos 6). Score canônico vs episódico.</p>
+      <dl class="detail">
+        <dt>Modelo</dt><dd>gemma4:26b + rag_api /search_montagem</dd>
+        <dt>Base</dt><dd>4.260 trechos: Eisenstein · Tarkovsky · Bresson · Murch · Truffaut · Henri · Eco · Glauber Rocha</dd>
+        <dt>Memória</dt><dd>Contextualiza teoria com escolhas reais do designer</dd>
+        <dt>Output</dt><dd>Conceito aplicado + referência + score canônico/episódico</dd>
+      </dl>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ MODELS ═══ -->
+<div class="section" id="sec-models">
+  <div class="section-title">Modelos AI</div>
+  <div class="section-desc">Dois clusters: HomeLab Linux (2× GTX 1080 Ti · 22GB VRAM) e Windows (RTX 4080 · 16GB VRAM).</div>
+
+  <table class="info-table">
+    <thead><tr><th>Modelo</th><th>Onde roda</th><th>VRAM</th><th>Função</th></tr></thead>
+    <tbody>
+      <tr><td style="color:var(--teal);font-family:'JetBrains Mono',monospace;font-size:0.85em">gemma4:26b</td><td>HomeLab</td><td>~20GB</td><td>Agent 3a, 3c, 6b, 7, 8 + todos os assistants. Modelo principal. 53 t/s.</td></tr>
+      <tr><td style="color:var(--coral);font-family:'JetBrains Mono',monospace;font-size:0.85em">qwen3-vl:8b</td><td>Windows</td><td>~6GB</td><td>Agent 3b (Visual Index) + Agent 7 (Vision). Análise de imagem. 100% GPU.</td></tr>
+      <tr><td style="color:var(--blue);font-family:'JetBrains Mono',monospace;font-size:0.85em">whisper large-v3</td><td>Windows</td><td>~3GB</td><td>Agent 1+2. Transcrição PT/EN/FR. Detecção automática idioma.</td></tr>
+      <tr><td style="color:var(--accent);font-family:'JetBrains Mono',monospace;font-size:0.85em">mistral:latest</td><td>HomeLab</td><td>~4GB</td><td>Tradução PT→EN na busca visual. Pipelines _quick (resposta rápida).</td></tr>
+      <tr><td style="color:var(--green);font-family:'JetBrains Mono',monospace;font-size:0.85em">nomic-embed-text</td><td>HomeLab</td><td>~0.3GB</td><td>Embeddings 768 dims para ChromaDB. Todas as collections.</td></tr>
+      <tr><td style="color:var(--pink);font-family:'JetBrains Mono',monospace;font-size:0.85em">pingpong-story</td><td>HomeLab</td><td>~20GB</td><td>Custom model (base gemma4). Narrativa + tom publicitário.</td></tr>
+      <tr><td style="color:var(--pink);font-family:'JetBrains Mono',monospace;font-size:0.85em">pingpong-trailer</td><td>HomeLab</td><td>~20GB</td><td>Custom model (base gemma4). Análise de trailer e pacing.</td></tr>
+      <tr><td style="color:var(--pink);font-family:'JetBrains Mono',monospace;font-size:0.85em">pingpong-3d</td><td>HomeLab</td><td>~20GB</td><td>Custom model (base gemma4). Blender + 3D workflows.</td></tr>
+    </tbody>
+  </table>
+
+  <p style="font-size:0.85em;color:var(--text2);margin-top:16px">⚠️ Ollama Windows: 0.6.8 — NÃO atualizar (bug CUDA #12618). HomeLab: 0.20.4. Todos os modelos compartilham VRAM via tensor split nas 2× 1080 Ti.</p>
+</div>
+
+<!-- ═══ CEP PANEL ═══ -->
+<div class="section" id="sec-cep">
+  <div class="section-title">CEP Panel — Second Brain no Premiere</div>
+  <div class="section-desc">Extensão que roda ao lado da timeline. 3 views sobre o mesmo material. Busca = criação.</div>
+
+  <div class="card" onclick="toggleCard(this)">
+    <div class="card-header">
+      <div class="card-badge bg-blue">L</div>
+      <div><div class="card-title">List View</div><div class="card-sub">Texto compacto com transcrição inline</div></div>
+      <div class="card-right"><span class="card-arrow">▸</span></div>
+    </div>
+    <div class="card-body">
+      <p>Linha compacta com thumbnail, timecode, transcrição e score. Drag handle para reordenar por swap. Ideal para escanear resultados rapidamente.</p>
+    </div>
+  </div>
+
+  <div class="card" onclick="toggleCard(this)">
+    <div class="card-header">
+      <div class="card-badge bg-teal">G</div>
+      <div><div class="card-title">Grid View</div><div class="card-sub">Thumbnails arrastáveis lado a lado</div></div>
+      <div class="card-right"><span class="card-arrow">▸</span></div>
+    </div>
+    <div class="card-body">
+      <p>Thumbnails com frame real. Click para selecionar, drag para reordenar por swap. Badges com score e timecode. Ideal para explorar visualmente.</p>
+    </div>
+  </div>
+
+  <div class="card" onclick="toggleCard(this)">
+    <div class="card-header">
+      <div class="card-badge bg-amber">⬡</div>
+      <div><div class="card-title">Graph View — Estilo Obsidian</div><div class="card-sub">Grafo relacional force-directed com thumbnails reais</div></div>
+      <div class="card-right"><span class="card-tag tag-amber">NOVO</span><span class="card-arrow">▸</span></div>
+    </div>
+    <div class="card-body">
+      <p>Cada clip é um nó circular com a imagem real do frame. Temas extraídos automaticamente (sunset, crowd, medium shot) aparecem como nós menores pastel conectando clips relacionados. SVG com 4 layers: edges → themes → clip-bg → clips.</p>
+      <p><strong>Sidebar esquerda (estilo Obsidian):</strong> Filters (toggles Temas/Links/Órfãos) · Groups (@tag) · Display (sliders text fade/node size/link thickness) · Forces (sliders center/repel/link/distance)</p>
+      <p><strong>Sidebar direita (clip info):</strong> Thumbnail · timecode · score · auto_tags · descrição visual · transcrição Whisper · observação Agent 3c. 4 botões: Open in Source Monitor · Go to TC · + Marker · Copy TC</p>
+      <p><strong>Interação:</strong> Zoom (scroll wheel centrado no cursor, 20%-500%) · Pan (Shift+drag ou middle-click) · Drag nodes (click=select, drag=move, threshold 3px)</p>
+      <p><strong>Busca = criação:</strong> <span style="font-family:'JetBrains Mono',monospace;font-size:0.85em;color:var(--teal)">#tag</span> filtra ou cria · <span style="font-family:'JetBrains Mono',monospace;font-size:0.85em;color:var(--amber)">!select</span> marca bookmark · <span style="font-family:'JetBrains Mono',monospace;font-size:0.85em;color:var(--accent)">@clip</span> filtra por links</p>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ KNOWLEDGE ═══ -->
+<div class="section" id="sec-knowledge">
+  <div class="section-title">Base de Conhecimento</div>
+  <div class="section-desc">72.263 trechos canônicos + 105 entradas episódicas. Dois mapas em tensão permanente.</div>
+
+  <table class="info-table">
+    <thead><tr><th>Collection</th><th>Chunks</th><th>Dims</th><th>Conteúdo</th></tr></thead>
+    <tbody>
+      <tr><td style="color:var(--accent)">knowledge</td><td>48.401</td><td>768</td><td>174 livros: narrativa, design, film, AI, filosofia, música</td></tr>
+      <tr><td style="color:var(--teal)">knowledge_cinematography_v2</td><td>11.261</td><td>768</td><td>21 livros: Color Correction Handbook, Masters of Light, Digital Cinematography</td></tr>
+      <tr><td style="color:var(--coral)">knowledge_montagem</td><td>4.260</td><td>768</td><td>Eisenstein · Tarkovsky · Bresson · Murch · Truffaut · Henri · Eco · Rocha</td></tr>
+      <tr><td style="color:var(--blue)">tutorials</td><td>7.868</td><td>768</td><td>14 cursos: Ben Marriott, School of Motion, 9 cursos Blender</td></tr>
+      <tr><td style="color:var(--pink)">knowledge_cinematography</td><td>649</td><td>384</td><td>Chris Brejon: CG Cinematography — ACES, OCIO, lighting</td></tr>
+      <tr><td style="color:var(--green)">visual_index</td><td>384</td><td>768</td><td>Frames catalogados · scene_frame_indexer v2.0 · 4 modos</td></tr>
+      <tr><td style="color:var(--amber)">episodic_memory</td><td>105</td><td>768</td><td>7 types: narrativa · áudio · visão · motion · generativo · 3D · projeto</td></tr>
+      <tr><td style="color:var(--text3)">visual_library</td><td>6</td><td>768</td><td>Imagens referência catalogadas</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- ═══ PHILOSOPHY ═══ -->
+<div class="section" id="sec-philosophy">
+  <div class="section-title">Design Philosophy — 7 Princípios</div>
+  <div class="section-desc">O sistema como produtor de história. Cada princípio tem um teste que valida a implementação.</div>
+
+  <div class="principle"><div class="num">1</div><div class="content"><div class="name">Tradução de Tempo</div><div class="test">O agent transforma ou apenas copia?</div></div></div>
+  <div class="principle"><div class="num">2</div><div class="content"><div class="name">Anti-Biblioteca</div><div class="test">O output é encontrável por significado?</div></div></div>
+  <div class="principle"><div class="num">3</div><div class="content"><div class="name">Desdobramento em Camadas</div><div class="test">O output gera múltiplas camadas de valor?</div></div></div>
+  <div class="principle"><div class="num">4</div><div class="content"><div class="name">Contexto Relacional</div><div class="test">O output carrega relação com o resto?</div></div></div>
+  <div class="principle"><div class="num">5</div><div class="content"><div class="name">Amplificação</div><div class="test">O output navega ou prescreve?</div></div></div>
+  <div class="principle"><div class="num">6</div><div class="content"><div class="name">Paralelismo</div><div class="test">O agent declara dependências e roda quando pode?</div></div></div>
+  <div class="principle"><div class="num">7</div><div class="content"><div class="name">Julgamento Acumulado</div><div class="test">O agent deposita algo que calibra o futuro?</div></div></div>
+
+  <p style="margin-top:24px;font-size:0.9em;color:var(--text2)">Inspiração: entrevista Andrea Trabuko (Pentagram) — o designer como produtor de história, a anti-biblioteca como sistema de acesso, o repertório como diferencial intransferível.</p>
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+  MEMORABILIA · Pipeline Audiovisual v8 · pingpong · Montreal · April 2026<br>
+  34 dias do zero ao pipeline · custo $0/mês · privacidade total
+</div>
+
+</div>
+
+<script>
+function showSection(id) {
+  document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+  document.querySelectorAll('.nav button').forEach(b => b.classList.remove('active'));
+  document.getElementById('sec-' + id).classList.add('active');
+  event.target.classList.add('active');
+  window.scrollTo({ top: document.querySelector('.nav').offsetTop - 20, behavior: 'smooth' });
+}
+
+function toggleCard(el) {
+  el.classList.toggle('open');
+}
+</script>
+</body>
+</html>
