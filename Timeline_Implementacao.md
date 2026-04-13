@@ -117,7 +117,7 @@ pingpong · Montreal · Janeiro–Abril 2026
 
 **08 Apr** — Agent 8: compress_aaak() com 7 types. client_summary.md por cenário. MEMORABILIA Status Card v5. Roadmap completo.
 
-**09 Apr** — Ollama atualizado para 0.20.4. gemma4:26b a 53 t/s (vs 9.35 antes com qwen2.5:32b). 11 agents implementados. Visual Library v1.0. MusicGen audio guide. CEP Panel no Premiere Pro. DDV game trailer testado. Namespace architecture. Agent 4 + Agent 6 removidos — decisão arquitetural sem rough cut.
+**09 Apr** — Ollama atualizado para 0.20.4. gemma4:26b a 53 t/s (vs 9.35 antes com qwen2.5:32b). 11 agents implementados. Visual Library v1.0. MusicGen audio guide. CEP Panel no Premiere Pro. Game trailer AAA studio testado. Namespace architecture. Agent 4 + Agent 6 removidos — decisão arquitetural sem rough cut.
 
 **10 Apr** — scene_frame_indexer v2.0: 4 modos adaptativos (arc/dual/single/window). 384 frames indexados. raw vs edited automático. knowledge_montagem: 4.260 chunks (Eisenstein, Tarkovsky, Bresson, Murch). Montagem RAG integrado. Memory Bible verificada. win_tools SMB montado. Decisão: Agent 4 candidate_segments e Agent 6 suggested_cuts removidos permanentemente.
 
