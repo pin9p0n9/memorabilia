@@ -39,6 +39,27 @@ input[type=checkbox]{accent-color:#72c5b4;width:12px;height:12px}
 svg{flex:1;display:block;cursor:grab;touch-action:none}
 svg.grabbing{cursor:grabbing}
 
+.sb-toggle{display:none;position:fixed;top:8px;left:8px;z-index:300;width:34px;height:34px;border-radius:6px;border:1px solid rgba(255,255,255,.1);background:#1e2127;color:#878d9a;font-size:16px;cursor:pointer;align-items:center;justify-content:center;transition:all .2s}
+.sb-toggle.on{background:#e0926a;color:#15171b;border-color:#e0926a}
+
+@media(max-width:600px){
+.sb-toggle{display:flex}
+.sb{position:fixed;left:-180px;top:0;bottom:0;z-index:250;width:174px;transition:left .25s ease;box-shadow:none;height:100vh;overflow-y:auto}
+.sb.open{left:0;box-shadow:4px 0 20px rgba(0,0,0,.5)}
+.sb-top{display:block;padding:10px 12px}
+.sb-top .sh{display:block}
+
+.sb-top .sl{display:block}
+.sb-top input[type=range]{display:block}
+.sb-bot{display:block}
+}
+
+@media(max-width:480px){
+.sb{width:160px;left:-164px}
+.sb.open{left:0}
+}
+
+
 
 /* Tablet */
 @media(max-width:768px){
@@ -57,10 +78,7 @@ label{font-size:.67em}
 .w{flex-direction:column;height:100vh}
 .sb{width:100%;border-right:none;border-bottom:1px solid rgba(255,255,255,.06);flex-direction:row;overflow:hidden;height:auto;max-height:none}
 .sb-top{flex:1;padding:8px 10px;overflow-y:hidden;display:flex;gap:14px;flex-wrap:wrap;align-items:flex-start}
-.sb-top .sh{display:none}
 .sb-top label{margin-bottom:1px;font-size:.68em}
-.sb-top .sl{display:none}
-.sb-top input[type=range]{display:none}
 .sb-bot{padding:8px 10px;border-top:none;border-left:1px solid rgba(255,255,255,.06);min-height:auto;min-width:120px;max-width:140px}
 .sb-bot .sh{font-size:.6em;margin-bottom:3px}
 #info{font-size:.65em}
@@ -93,7 +111,7 @@ label{font-size:.67em}
 @media(max-width:380px){
 .sb{max-height:100px}
 .sb-top label{font-size:.62em}
-.sb-bot{display:none}
+
 .chip:nth-child(4){display:none}
 .bar input{font-size:.7em;padding:3px 6px}
 }
@@ -129,6 +147,7 @@ input[type=checkbox]{width:16px;height:16px}
 <div id="info" style="color:#444">Click a node</div>
 </div>
 </div>
+<button class="sb-toggle" onclick="document.querySelector('.sb').classList.toggle('open');this.classList.toggle('on')">&#9776;</button>
 <div class="mn">
 <div class="bar">
 <input id="q" type="text" placeholder="#tag  !select  @link  search..." oninput="doSearch(this.value)">
@@ -329,7 +348,7 @@ function cc(v){
 function s2w(sx,sy){var r=svg.getBoundingClientRect();return{x:(sx-r.left-vx)/vz,y:(sy-r.top-vy)/vz}}
 function findN(sx,sy){var p=s2w(sx,sy),best=null,bd=999;for(var i=0;i<N.length;i++){var n=N[i],d=Math.sqrt((n.x-p.x)*(n.x-p.x)+(n.y-p.y)*(n.y-p.y)),r2=n.tp==='theme'?nR*0.5+6:nR+6;if(d<r2&&d<bd){best=n;bd=d}};return best}
 
-function onDn(e){e.preventDefault();var n=findN(e.clientX,e.clientY);if(n){dragN=n;selN(n.id);simA=Math.max(simA,0.35)}else{panS={on:true,sx:e.clientX,sy:e.clientY,ox:vx,oy:vy};svg.classList.add('grabbing')}}
+function onDn(e){e.preventDefault();if(window.innerWidth<=600){document.querySelector(".sb").classList.remove("open");document.querySelector(".sb-toggle").classList.remove("on")};var n=findN(e.clientX,e.clientY);if(n){dragN=n;selN(n.id);simA=Math.max(simA,0.35)}else{panS={on:true,sx:e.clientX,sy:e.clientY,ox:vx,oy:vy};svg.classList.add('grabbing')}}
 function onMv(e){if(dragN){var p=s2w(e.clientX,e.clientY);dragN.x=p.x;dragN.y=p.y;dragN.vx=0;dragN.vy=0}else if(panS.on){vx=panS.ox+(e.clientX-panS.sx);vy=panS.oy+(e.clientY-panS.sy)}}
 function onUp(){dragN=null;panS.on=false;svg.classList.remove('grabbing')}
 function onWh(e){e.preventDefault();var r=svg.getBoundingClientRect(),mx=e.clientX-r.left,my=e.clientY-r.top,d=e.deltaY>0?0.85:1.18,nz=Math.max(0.2,Math.min(6,vz*d));vx=mx-(mx-vx)*(nz/vz);vy=my-(my-vy)*(nz/vz);vz=nz}
