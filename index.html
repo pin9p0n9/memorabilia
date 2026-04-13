@@ -88,9 +88,10 @@ iframe{height:400px !important}
 .stat .l{font-size:.65em}
 .lang-sw{top:-4px;right:-4px}
 .lang-btn{width:30px;height:30px;font-size:.7em}
-.nav{gap:4px;padding:8px 0;position:sticky;top:0;overflow-x:auto;flex-wrap:nowrap;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.nav{position:fixed;bottom:0;left:0;right:0;top:auto;z-index:200;background:var(--bg);border-top:1px solid var(--border);border-bottom:none;padding:8px 10px;gap:5px;flex-wrap:nowrap;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;justify-content:flex-start}
 .nav::-webkit-scrollbar{display:none}
-.nav button{padding:5px 10px;font-size:.75em;white-space:nowrap;flex-shrink:0}
+.nav button{padding:6px 11px;font-size:.75em;white-space:nowrap;flex-shrink:0}
+.ct{padding-bottom:60px}
 .st{font-size:1.15em}
 .sd{font-size:.86em;margin-bottom:16px}
 .sg{grid-template-columns:1fr;gap:8px}
@@ -121,6 +122,20 @@ div[style*="grid-template-columns:repeat(3"]{grid-template-columns:1fr !importan
 
 /* Flow map / network SVG */
 svg[viewBox]{max-width:100%;height:auto}
+}
+
+
+/* Demo iframe: allow page scroll on mobile */
+@media(max-width:540px){
+.demo-frame-wrap{position:relative}
+.demo-frame-wrap::after{content:'';position:absolute;top:0;left:0;right:0;bottom:0;pointer-events:none}
+iframe.demo-frame{pointer-events:auto;touch-action:pan-y}
+}
+
+/* Nav scroll hint gradient */
+@media(max-width:540px){
+.nav{box-shadow:0 -2px 8px rgba(0,0,0,.3)}
+.nav::after{content:'';position:sticky;right:0;width:30px;flex-shrink:0;background:linear-gradient(to right,transparent,var(--bg));pointer-events:none}
 }
 
 /* Small mobile */
@@ -398,7 +413,6 @@ const TABS=[
 {id:'assistants',pt:'6 Assistants',en:'6 Assistants'},
 {id:'models',pt:'Modelos AI',en:'AI Models'},
 {id:'knowledge',pt:'Conhecimento',en:'Knowledge'},
-{id:'panel',pt:'Second Brain',en:'Second Brain'},
 {id:'docs',pt:'Documentos',en:'Documents'},
 {id:'biz',pt:'Business Model',en:'Business Model'}
 ];
@@ -465,7 +479,7 @@ document.getElementById('panel-content').innerHTML=`
 <div class="card" onclick="T(this)"><div class="ch"><div class="cb bt">G</div><div><div class="ct1">Grid View</div><div class="ct2"><span class="pt">Thumbnails arrastáveis</span><span class="en">Draggable thumbnails</span></div></div><div class="cr"><span class="arrow">▸</span></div></div><div class="cbd"><p><span class="pt">Thumbnails com frame real. Click para selecionar, drag para reordenar.</span><span class="en">Thumbnails with real frame. Click to select, drag to reorder.</span></p></div></div>
 <div class="card" onclick="T(this)"><div class="ch"><div class="cb ba">⬡</div><div><div class="ct1">Graph View</div><div class="ct2"><span class="pt">Grafo relacional force-directed</span><span class="en">Force-directed relational graph</span></div></div><div class="cr"><span class="tag ta">NEW</span><span class="arrow">▸</span></div></div><div class="cbd"><p><span class="pt">Cada clip é um nó circular com imagem real. Temas como nós menores pastel. SVG 4 layers.</span><span class="en">Each clip is a circular node with real image. Themes as smaller pastel nodes. SVG 4 layers.</span></p><p><strong><span class="pt">Busca = criação:</span><span class="en">Search = creation:</span></strong> <code style="background:var(--bg3);padding:2px 5px;border-radius:3px;color:var(--teal)">#tag</code> <code style="background:var(--bg3);padding:2px 5px;border-radius:3px;color:var(--amber)">!select</code> <code style="background:var(--bg3);padding:2px 5px;border-radius:3px;color:var(--accent)">@clip</code></p></div></div>
 <div style="margin-top:18px;margin-bottom:24px;border-radius:12px;overflow:hidden;border:1px solid rgba(255,255,255,.07)">
-<iframe src="graph_demo.html" width="100%" height="460" class="demo-frame" style="border:none;display:block;border-radius:12px"></iframe>
+<div class="demo-frame-wrap"><iframe src="graph_demo.html" width="100%" height="460" class="demo-frame" loading="lazy" style="border:none;display:block;border-radius:12px"></iframe></div>
 </div>
 <div style="margin-top:28px;border-top:1px solid var(--border);padding-top:22px"><div style="font-size:1.15em;font-weight:600;color:var(--text);margin-bottom:6px">MEMORABILIA Graph — Plugin Standalone</div><div style="font-size:.86em;color:var(--text2);margin-bottom:18px"><span class="pt">O mesmo Graph View como produto independente — sem AI, sem cloud, sem setup. O criativo é o motor semântico.</span><span class="en">Same Graph View as standalone product — no AI, no cloud, no setup. The creative is the semantic engine.</span></div>
 <div class="card" onclick="T(this)"><div class="ch"><div class="cb bt">ED</div><div><div class="ct1"><span class="pt">Edges automáticas — sem AI</span><span class="en">Automatic edges — no AI</span></div><div class="ct2"><span class="pt">Relações pela metadata nativa</span><span class="en">Relations from native metadata</span></div></div><div class="cr"><span class="arrow">▸</span></div></div><div class="cbd"><p><span class="pt">Mesmo reel → aresta forte · &lt; 5 min → temporal · Mesma câmera → tema · GPS &lt; 50m → locação · FFprobe + ExifTool.</span><span class="en">Same reel → strong edge · &lt; 5 min → temporal · Same camera → theme · GPS &lt; 50m → location · FFprobe + ExifTool.</span></p></div></div>
