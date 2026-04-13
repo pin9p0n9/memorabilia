@@ -336,26 +336,32 @@ function onUp(){dragN=null;panS.on=false;svg.classList.remove('grabbing')}
 function onWh(e){e.preventDefault();var r=svg.getBoundingClientRect(),mx=e.clientX-r.left,my=e.clientY-r.top,d=e.deltaY>0?0.85:1.18,nz=Math.max(0.2,Math.min(6,vz*d));vx=mx-(mx-vx)*(nz/vz);vy=my-(my-vy)*(nz/vz);vz=nz}
 
 /* INTERACTION — Touch with long-press drag + pinch zoom */
-var touchTimer=null,touchNode=null,lastPinch=0,isTouchDrag=false,lastTap=0;
+var lastPinch=0,lastTap=0,touchSt=null;
 function onTS(e){
-  e.preventDefault();e.stopPropagation();
+  e.preventDefault();
   if(e.touches.length===2){lastPinch=Math.hypot(e.touches[0].clientX-e.touches[1].clientX,e.touches[0].clientY-e.touches[1].clientY);dragN=null;panS.on=false;return}
-  var t=e.touches[0],n=findN(t.clientX,t.clientY);
-  if(n){dragN=n;selN(n.id);simA=Math.max(simA,0.4)}
+  var t=e.touches[0];
+  touchSt={x:t.clientX,y:t.clientY,t:Date.now(),moved:false};
+  var n=findN(t.clientX,t.clientY);
+  if(n){dragN=n;simA=Math.max(simA,0.5)}
   else{var now=Date.now();if(now-lastTap<350){fitView();lastTap=0;return}lastTap=now;panS={on:true,sx:t.clientX,sy:t.clientY,ox:vx,oy:vy}}
 }
 function onTM(e){
-  e.preventDefault();e.stopPropagation();
+  e.preventDefault();
   if(e.touches.length===2){var d=Math.hypot(e.touches[0].clientX-e.touches[1].clientX,e.touches[0].clientY-e.touches[1].clientY);if(lastPinch>0){var f=d/lastPinch,nz=Math.max(0.2,Math.min(6,vz*f));var cx2=(e.touches[0].clientX+e.touches[1].clientX)/2,cy2=(e.touches[0].clientY+e.touches[1].clientY)/2;var r=svg.getBoundingClientRect(),mx2=cx2-r.left,my2=cy2-r.top;vx=mx2-(mx2-vx)*(nz/vz);vy=my2-(my2-vy)*(nz/vz);vz=nz}lastPinch=d;dragN=null;panS.on=false;return}
   var t=e.touches[0];
-  if(dragN){var p=s2w(t.clientX,t.clientY);dragN.x=p.x;dragN.y=p.y;dragN.vx=0;dragN.vy=0;simA=Math.max(simA,0.3)}
+  if(touchSt){var dx=t.clientX-touchSt.x,dy=t.clientY-touchSt.y;if(Math.abs(dx)>3||Math.abs(dy)>3)touchSt.moved=true}
+  if(dragN){var p=s2w(t.clientX,t.clientY);dragN.x=p.x;dragN.y=p.y;dragN.vx=0;dragN.vy=0;simA=Math.max(simA,0.4)}
   else if(panS.on){vx=panS.ox+(t.clientX-panS.sx);vy=panS.oy+(t.clientY-panS.sy)}
 }
 function onTE(e){
   e.preventDefault();
-  if(touchTimer){clearTimeout(touchTimer);touchTimer=null}
-  dragN=null;touchNode=null;isTouchDrag=false;panS.on=false;lastPinch=0;
+  /* Tap = select (short touch, no drag movement) */
+  if(touchSt&&!touchSt.moved&&Date.now()-touchSt.t<300&&dragN){selN(dragN.id)}
+  dragN=null;panS.on=false;lastPinch=0;touchSt=null;
 }
+
+
 
 /* ZOOM BUTTONS + RESET */
 
