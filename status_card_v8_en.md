@@ -244,7 +244,7 @@ episodic_memory Semantic Index (768 dims)
 ```
 🔴 evalScript Premiere 2025+ REQUER callback (sync retorna undefined)
 🔴 createMarker aceita SEGUNDOS direto, não ticks
-🔴 Após update AI Engine: verificar override.conf (OLLAMA_MODELS/HOST/NO_CLOUD)
+🔴 Após update AI Engine: verificar override.conf (AI_ENGINE config vars)
 🔴 Videos editados → 03_EDITED · Videos brutos → 02_CAPTURES (separação obrigatória)
 🔴 Obsidian AppImage requer --no-sandbox no Ubuntu 24 (SUID sandbox error)
 🔴 visual_search_api.py: timestamp_sec vem como float string — usar int(float())
@@ -253,7 +253,7 @@ episodic_memory Semantic Index (768 dims)
 🔴 Container bypassa UFW — DOCKER-USER chain em /etc/ufw/after.rules
 
 🟡 Language Model precisa num_predict 4000 (thinking tokens contam)
-🟡 RAG queries em inglês — nomic-embed treinado em EN
+🟡 RAG queries em inglês — embedding model trained in EN
 🟡 Vision Model NÃO suporta num_predict — retorna vazio silenciosamente
 🟡 Imagens > 1280px causam timeout no vision model
 🟡 ai engine.embeddings() não aceita host= — usar ai engine.Client(host=)

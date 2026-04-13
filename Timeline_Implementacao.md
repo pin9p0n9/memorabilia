@@ -51,7 +51,7 @@ pingpong · Montreal · Janeiro–Abril 2026
 
 **15 Mar** — AI Engine instalado. Dual GPU tensor split (22GB VRAM). previous model @ 8.82 t/s. Open WebUI com HTTPS.
 
-**15 Mar** — Persona "Jeremias" criada no Open WebUI. AI 100% offline (OLLAMA_NO_CLOUD=true).
+**15 Mar** — AI persona criada. Pipeline 100% offline — zero cloud.
 
 **17 Mar** — Fases 1 (Linux), 2 (Nextcloud), 2.5 (Jellyfin+VPN), 2.6 (HTTPS+Security), 3 (AI) — todas COMPLETAS. Python venv configurado.
 
