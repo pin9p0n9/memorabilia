@@ -116,7 +116,7 @@ JSON salvo ao lado do arquivo de projeto (.prproj / .drp):
 ### Fase 1 — Premiere Pro MVP (3 semanas)
 - Extension scaffold
 - Leitura de clips do projeto Premiere
-- Integrar FFprobe como processo externo
+- Integrar Metadata Engine como processo externo
 - JSON persistência ao lado do .prproj
 - Graph View engine (adaptar do CEP existente)
 - Sidebars (controles + clip info)
@@ -150,7 +150,7 @@ JSON salvo ao lado do arquivo de projeto (.prproj / .drp):
   ├──────────┼──────────┼──────────┼──────────┤
   │ Fase 0   │ Fase 1   │ Fase 2   │ Fase 3+4│
   │ Schema   │ Premiere │ Polish   │ DaVinci │
-  │ FFprobe  │ MVP      │ Smart    │ Product │
+  │ Metadata Engine  │ MVP      │ Smart    │ Product │
   │ 2 sem    │ 3 sem    │ 2 sem    │ 5 sem   │
   └──────────┴──────────┴──────────┴──────────┘
 ```
@@ -258,8 +258,8 @@ Custos: dev $0 (solo), hosting $0 (GitHub Pages), Stripe 2.9%. **Margem: 87-95%.
 - ✅ Sidebar esquerda Obsidian-style — implementado
 - ✅ Sidebar direita clip info + 4 botões — implementado
 - ✅ Zoom/pan/drag — implementado
-- ✅ CEP Extension structure — funcionando no Premiere
-- ✅ Premiere ExtendScript (Source Monitor, markers, timecodes)
+- ✅ NLE Extension structure — funcionando no Premiere
+- ✅ Premiere NLE scripting (Source Monitor, markers, timecodes)
 - ✅ Tag system (#tag) — especificado no CEP v3
 - ✅ Bookmark system (!select/!descarte) — especificado
 - ✅ Link system (@clip) — especificado
@@ -292,7 +292,7 @@ Custos: dev $0 (solo), hosting $0 (GitHub Pages), Stripe 2.9%. **Margem: 87-95%.
 
 ## 10. Propriedade Intelectual
 
-**Código proprietário:** Graph View engine, edge generator, JSON schema, tag/link system, CEP/UXP architecture, DaVinci companion app.
+**Código proprietário:** Graph View engine, edge generator, JSON schema, tag/link system, NLE Extension architecture, DaVinci companion app.
 
 **Design proprietário:** 3 views com busca = criação, sidebar Obsidian-style para NLE, conceito "editor como motor semântico", conceito "second brain para footage".
 

@@ -8,10 +8,10 @@ HomeLab pingpong · Montreal · April 12, 2026
 
 | Módulo | Status | Existe hoje | Falta |
 |---|---|---|---|
-| SYSTEM | ⚠️ parcial | pipeline_launcher · File Monitor_v2 · Frame.io CC · CEP panel · Obsidian vault | Client Portal · kanban · dashboard |
+| SYSTEM | ⚠️ parcial | pipeline_launcher · File Monitor_v2 · Frame.io CC · Extension panel · Obsidian vault | Client Portal · kanban · dashboard |
 | DATA FLOW | ✅ funcional | Agents 1+2+3a+3b+3c+7+8+9 · File Monitor 3 gatilhos | Flamenco |
 | VISUAL LIBRARY | ❌ novo | spec documentada | Client Portal · frontend · /deck-brief |
-| CINEMATOGRAPHER | ✅ funcional | ProblemSolver_v01 · RAG 11k chunks · montagem 4260 chunks · Language Model | qwen3-vl UI integrada |
+| CINEMATOGRAPHER | ✅ funcional | ProblemSolver_v01 · RAG 11k chunks · montagem 4260 chunks · Language Model | Vision Model UI integrada |
 | TECHNICAL DIRECTOR | ✅ funcional | technical_director.py · RAG AI+Tech+Blender | Unity/Unreal/Math_VFX pendings |
 
 ---
@@ -36,7 +36,7 @@ BLOCO 1 — PRÉ-EDIÇÃO (infraestrutura de navegação)
 File Monitor: footage AND brief → dispara
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-[Agent 1+2]  Ingest + Whisper large-v3     ✅  Windows RTX 4080
+[Agent 1+2]  Ingest + Speech Recognition     ✅  Windows RTX 4080
              → transcrição completa com timecodes
              → type:audio depositado
 
@@ -44,7 +44,7 @@ File Monitor: footage AND brief → dispara
              → full_transcript_index.md
 
 [Agent 3b]   Visual Index — scene_frame_indexer v2.0
-             ✅  Windows qwen3-vl
+             ✅  Windows Vision Model
              → 4 modos adaptactives: arc / dual / single / window
              → raw (02_CAPTURES) e edited (03_EDITED) separados
              → 384 entries · material_type · rhythm_mode · cuts_per_minute
@@ -91,7 +91,7 @@ BLOCO 2 — PÓS-EDIÇÃO
 File Monitor: render em 03_RENDER/02_OFF/ → dispara
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-[Agent 7]    Vision + Color              ✅  qwen3-vl + Language Model · 3 min
+[Agent 7]    Vision + Color              ✅  Vision Model + Language Model · 3 min
              → type:vision depositado
 
 [Agent 6b]   SEO Metadata               ✅  Language Model · 32 seg
@@ -129,7 +129,7 @@ Total máquina: ~50 min · Edição criativa: humano
 
 ---
 
-## CEP Panel — 3 Views
+## Extension Panel — 3 Views
 
 | View | Função | Interação |
 |---|---|---|
@@ -254,9 +254,9 @@ episodic_memory Semantic Index (768 dims)
 
 🟡 Language Model precisa num_predict 4000 (thinking tokens contam)
 🟡 RAG queries em inglês — nomic-embed treinado em EN
-🟡 qwen3-vl NÃO suporta num_predict — retorna vazio silenciosamente
+🟡 Vision Model NÃO suporta num_predict — retorna vazio silenciosamente
 🟡 Imagens > 1280px causam timeout no vision model
-🟡 ollama.embeddings() não aceita host= — usar ollama.Client(host=)
+🟡 ai engine.embeddings() não aceita host= — usar ai engine.Client(host=)
 🟡 Semantic Index visual_index não tem rhythm_mode/material_type — usar extract_tags()
 🟡 Obsidian vault via Samba: plugins podem dar "failed to load" — ignorar
 🟡 Grid/List drag: splice+insert faz cascade — usar swap para troca direta

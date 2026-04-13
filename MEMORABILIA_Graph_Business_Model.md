@@ -292,7 +292,7 @@ CÓDIGO:
   Edge generator baseado em metadata nativa
   JSON schema de persistência cross-project
   Tag/Link/Bookmark system integrado à busca
-  CEP/UXP Extension architecture
+  NLE Extension Extension architecture
   DaVinci companion app architecture
 
 DESIGN:
@@ -332,7 +332,7 @@ DESENVOLVIMENTO (Year 1):
   Desenvolvedor: $0 (tu — solo)
   Tempo: 12 semanas part-time (entre projetos)
   Hardware: já existe (HomeLab)
-  Software: grátis (VS Code, Git, FFprobe, ExifTool)
+  Software: grátis (VS Code, Git, Metadata Engine, Camera Metadata Reader)
   ────────────────────────────
   Total dev: $0
 

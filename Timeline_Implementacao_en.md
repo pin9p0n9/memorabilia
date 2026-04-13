@@ -39,11 +39,11 @@ pingpong · Montreal · Janeiro–Abril 2026
 
 ## Março 2026 — Week 2: Cloud + VPN + AI
 
-**15 Mar** — Docker + Nextcloud deployed. MariaDB + Redis. Dados no DATA 1.8TB.
+**15 Mar** — Container + Nextcloud deployed. MariaDB + Redis. Dados no DATA 1.8TB.
 
 **15 Mar** — Jellyfin deployed (:8096). 292GB mídia transferida do BLACKBOX. 4 dispositivos: Linux, Windows, Roku, Android.
 
-**15 Mar** — WireGuard VPN operacional. HomeLab (10.0.0.1) · Windows (10.0.0.2) · Samsung (10.0.0.3). Split tunneling mobile.
+**15 Mar** — VPN VPN operacional. HomeLab (10.0.0.1) · Windows (10.0.0.2) · Samsung (10.0.0.3). Split tunneling mobile.
 
 **15 Mar** — Nginx Proxy Manager + DuckDNS + Let's Encrypt SSL wildcard. HTTPS Nextcloud + Jellyfin.
 
@@ -63,7 +63,7 @@ pingpong · Montreal · Janeiro–Abril 2026
 
 **19 Mar** — Roadmap de implementação. Análise honesta: "hardware profissional, pipeline 90% documentado, 10% implementado."
 
-**21 Mar** — Pipeline Audiovisual especificado (Brazil 1970/1982 como analogia). K3s avaliado e descartado — Docker Compose suficiente por agora. Hardware inventory completo (3 machines + Mac Mini futuro).
+**21 Mar** — Pipeline Audiovisual especificado (Brazil 1970/1982 como analogia). K3s avaliado e descartado — Container Compose suficiente por agora. Hardware inventory completo (3 machines + Mac Mini futuro).
 
 **22 Mar** — Knowledge Pipeline desenhado: RAG + QLoRA. Visual Library Pipeline especificado. Interface RAG desenhada.
 
@@ -71,7 +71,7 @@ pingpong · Montreal · Janeiro–Abril 2026
 
 **24 Mar** — GPU stabilization. Plano de manutenção HomeLab. Runbook SRE criado.
 
-**25 Mar** — Roadmap completo atualizado. BLACKBOX formatado NTFS. Decision: Docker Compose por agora, K3s quando 3+ nodes.
+**25 Mar** — Roadmap completo atualizado. BLACKBOX formatado NTFS. Decision: Container Compose por agora, K3s quando 3+ nodes.
 
 ---
 
@@ -83,13 +83,13 @@ pingpong · Montreal · Janeiro–Abril 2026
 
 **27 Mar** — D:\TOOLS\ criado. project_launcher.py (GUI), pipeline_v1.py (5 etapas), new_project.ps1. Primeiro projeto testado: 260328_V_MAGELLA.
 
-**28 Mar** — Pipeline v1 completo: Media Engine extrai áudio → Whisper large-v3 transcreve → proxy 720p NVENC → CSV Premiere. Cache inteligente, detecção automática de idioma, fallback CPU.
+**28 Mar** — Pipeline v1 completo: Media Engine extrai áudio → Speech Recognition transcreve → proxy 720p NVENC → CSV Premiere. Cache inteligente, detecção automática de idioma, fallback CPU.
 
 ---
 
 ## Março 2026 — Week 5: RAG Pipeline
 
-**29 Mar** — Semantic Index deployed (:8000). LLaVA frame indexing (685 docs). Whisper medium dual GPU chunking. Triple GPU pipeline. RAG query funcionando. NETFLICS Roku app 70% (BrightScript + Jellyfin backend). Navidrome deployed (:4533).
+**29 Mar** — Semantic Index deployed (). LLaVA frame indexing (685 docs). Whisper medium dual GPU chunking. Triple GPU pipeline. RAG query funcionando. NETFLICS Roku app 70% (BrightScript + Jellyfin backend). Navidrome deployed (:4533).
 
 **30 Mar** — RAG Pipeline v2.0: SRT parsing (1.545 chunks Alive! Animation em 5 min vs 3-6h Whisper). Semantic Index: 3.378 → 6.814 docs.
 
@@ -99,7 +99,7 @@ pingpong · Montreal · Janeiro–Abril 2026
 
 ## Abril 2026 — Week 1: RAG Full Library
 
-**02 Apr** — Fix AI Engine connection (192.168.68.112 → 172.17.0.1). RAG API multi-collection. Creative Director dual mode (CD + TD). Anti-alucinação implementada. Decision: previous model é modelo de produção.
+**02 Apr** — Fix AI Engine connection (x.x.x.112 → 172.17.0.1). RAG API multi-collection. Creative Director dual mode (CD + TD). Anti-alucinação implementada. Decision: previous model é modelo de produção.
 
 **03 Apr** — 174 livros organizados em 13 categorias. 48.401 chunks indexados com category. 65k chunks antigos deletados. Kiwix Wikipedia 49GB deployed (:8888). 11 pipelines RAG operacionais. Knowledge RAG Full Library funcional (cita fontes reais). English Tutor + Design Tutor functional.
 
@@ -107,7 +107,7 @@ pingpong · Montreal · Janeiro–Abril 2026
 
 **05 Apr** — knowledge_cinematography_v2: 11.261 chunks de 21 livros. RAG Matriz de Acesso documentada.
 
-**06 Apr** — GitHub repos criados (homelab-core + homelab-ai-pipeline). Pipeline Guide documentado. Agent 01 + Agent 02 especificados. CEP Panel conceito.
+**06 Apr** — GitHub repos criados (homelab-core + homelab-ai-pipeline). Pipeline Guide documentado. Agent 01 + Agent 02 especificados. Extension Panel conceito.
 
 ---
 
@@ -117,7 +117,7 @@ pingpong · Montreal · Janeiro–Abril 2026
 
 **08 Apr** — Agent 8: compress_aaak() com 7 types. client_summary.md por cenário. MEMORABILIA Status Card v5. Roadmap completo.
 
-**09 Apr** — AI Engine atualizado para 0.20.4. Language Model a 53 t/s (vs 9.35 antes com previous model). 11 agents implementados. Visual Library v1.0. MusicGen audio guide. CEP Panel no Premiere Pro. Game trailer AAA studio tested. Namespace architecture. Agent 4 + Agent 6 removidos — decisão arquitetural sem rough cut.
+**09 Apr** — AI Engine atualizado para 0.20.4. Language Model a 53 t/s (vs 9.35 antes com previous model). 11 agents implementados. Visual Library v1.0. MusicGen audio guide. Extension Panel no Premiere Pro. Game trailer AAA studio tested. Namespace architecture. Agent 4 + Agent 6 removidos — decisão arquitetural sem rough cut.
 
 **10 Apr** — scene_frame_indexer v2.0: 4 modos adaptativos (arc/dual/single/window). 384 frames indexados. raw vs edited automático. knowledge_montagem: 4.260 chunks (Eisenstein, Tarkovsky, Bresson, Murch). Montagem RAG integrado. Memory Bible verificada. win_tools SMB montado. Decision: Agent 4 candidate_segments e Agent 6 suggested_cuts removidos permanentemente.
 
@@ -135,17 +135,17 @@ pingpong · Montreal · Janeiro–Abril 2026
 
 **11 Apr** — CEP v3 Spec: second brain do projeto (hyperlinks, tags editor, backlinks, aliases, embeds, bookmarks).
 
-**11 Apr** — CEP Panel real (index.html): Graph View adicionado com force-directed SVG, thumbnails reais da API, sidebar esquerda estilo Obsidian (Filters/Groups/Display/Forces), sidebar direita com clip info + 4 botões de ação.
+**11 Apr** — Extension Panel real (index.html): Graph View adicionado com force-directed SVG, thumbnails reais da API, sidebar esquerda estilo Obsidian (Filters/Groups/Display/Forces), sidebar direita com clip info + 4 botões de ação.
 
 **11 Apr** — Obsidian installed no Linux (AppImage --no-sandbox). Vault criado em /media/pingpong/DATA/memorabilia-vault. Plugins: Templater, Dataview, Calendar. Template briefing YAML com campos mapeados aos agents. Primeiro projeto: DOC_VIDIGAL_2026.
 
-**11 Apr** — Samba: share DATA adicionado. Obsidian acessível no Windows via \\192.168.68.113\DATA\memorabilia-vault.
+**11 Apr** — Samba: share DATA adicionado. Obsidian acessível no Windows via \\x.x.x.113\DATA\memorabilia-vault.
 
 **12 Apr** — API fix: int(float()) no timestamp_sec. extract_tags() para gerar tags da descrição em runtime. auto_tags na resposta de busca.
 
-**12 Apr** — memorabilia-api.service: systemd + enable-linger (sobrevive reboot).
+**12 Apr** — memorabilia-api.service: system service + enable-linger (sobrevive reboot).
 
-**12 Apr** — CEP Panel: 3 views finais (List, Grid, Graph). Cluster removido. SVG 4 layers (edges → themes → clip-bg → clips). Zoom/pan. Drag nodes. Busca principal funcional em todas as views. Grid/List drag swap.
+**12 Apr** — Extension Panel: 3 views finais (List, Grid, Graph). Cluster removido. SVG 4 layers (edges → themes → clip-bg → clips). Zoom/pan. Drag nodes. Busca principal funcional em todas as views. Grid/List drag swap.
 
 **12 Apr** — 333 notas do Joplin exportadas para Obsidian vault em 10 categorias organizadas.
 
@@ -179,7 +179,7 @@ Visual Index:    384 frames · 4 modos adaptativos
 Serviços:        20+ serviços ativos
 Collections:     8 Semantic Index
 Assistants:      6 especializados + 14 pipelines Open WebUI
-CEP Panel:       3 views (List · Grid · Graph) no Premiere Pro
+Extension Panel:       3 views (List · Grid · Graph) no Premiere Pro
 Obsidian:        333 notas organizadas · vault Linux + Windows
 Segurança:       27 fixes · SSH key-only · fail2ban · UFW hardened
 Hardware:        3 GPUs · 38GB VRAM · 208GB RAM · 20TB storage

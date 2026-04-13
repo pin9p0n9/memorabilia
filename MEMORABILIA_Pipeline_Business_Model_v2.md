@@ -22,15 +22,15 @@ O resultado é infraestrutura própria: sem dependência de cloud, sem dados de 
 ### O que é entregue
 
 - Pipeline de ingest automático — footage entra, estrutura é criada automaticamente
-- Transcrição automática Whisper large-v3 (PT, EN, FR + 90 idiomas)
+- Transcrição automática Speech Recognition (PT, EN, FR + 90 idiomas)
 - Geração de proxies 720p para edição fluida
-- Indexação semântica ChromaDB — busca por conteúdo em todo o arquivo
+- Indexação semântica Semantic Index — busca por conteúdo em todo o arquivo
 - Integração com Premiere Pro e DaVinci Resolve
 - Review e aprovação com timecode (Frame.io for Creative Cloud)
-- Portal do cliente com status em tempo real (PocketBase self-hosted)
+- Portal do cliente com status em tempo real (Client Portal self-hosted)
 - Entrega de arquivos ao cliente (Nextcloud self-hosted)
-- Acesso remoto seguro via WireGuard VPN
-- Publicação automática (YouTube, Vimeo) via n8n
+- Acesso remoto seguro via VPN VPN
+- Publicação automática (YouTube, Vimeo) via Automation Engine
 - Treinamento da equipe + documentação completa
 
 ---
@@ -48,21 +48,21 @@ Sem review integrada, o ciclo de aprovação é lento e confuso: cliente comenta
 3. **Frame.io** — envia link ao cliente (painel dentro do Premiere/AE)
 4. **Cliente** — acessa portal, assiste no browser, comenta com timecode exato, aprova ou solicita ajuste
 5. **Editor** — vê comentários dentro do Premiere, corrige, sobe nova versão
-6. **PocketBase** — registra aprovação (data + nome + versão)
+6. **Client Portal** — registra aprovação (data + nome + versão)
 7. **Nextcloud** — arquivo definitivo entregue com link permanente
-8. **n8n** — publicação automática YouTube / Vimeo com notificação
+8. **Automation Engine** — publicação automática YouTube / Vimeo com notificação
 
 ### Stack — 5 camadas integradas
 
 | Camada | Ferramenta | Função | Custo |
 |---|---|---|---|
 | Review com timecode | Frame.io for Creative Cloud | Comentários dentro do Premiere e AE | Incluído no Adobe CC |
-| Portal do cliente | PocketBase (self-hosted) | Status em tempo real · aprovações · histórico | $0 |
+| Portal do cliente | Client Portal (self-hosted) | Status em tempo real · aprovações · histórico | $0 |
 | Entrega de arquivos | Nextcloud (self-hosted) | Link de download · arquivo definitivo | $0 |
 | Videochamadas | Jitsi Meet (self-hosted) | Discovery · review · entrega final | $0 |
-| Automação | n8n (self-hosted) | Notificações · publicação YouTube/Vimeo | $0 |
+| Automação | Automation Engine (self-hosted) | Notificações · publicação YouTube/Vimeo | $0 |
 
-### PocketBase — o que gerencia por projeto
+### Client Portal — o que gerencia por projeto
 
 - Login seguro do cliente (sem senha compartilhada)
 - Status em tempo real: "Em edição" → "Aguardando aprovação" → "Aprovado"
@@ -77,11 +77,11 @@ Sem review integrada, o ciclo de aprovação é lento e confuso: cliente comenta
 |---|---|---|
 | Cliente comenta | E-mail · WhatsApp | Frame.io — timecode exato no browser |
 | Editor vê feedback | Cruza e-mails | Painel dentro do Premiere |
-| Status do projeto | Nenhum | PocketBase — tempo real |
+| Status do projeto | Nenhum | Client Portal — tempo real |
 | Versioning | final_v3_DEFINITIVO | Automático por versão |
-| Aprovação | Informal | PocketBase — data + nome + versão |
+| Aprovação | Informal | Client Portal — data + nome + versão |
 | Arquivo definitivo | Manual · disco local | Nextcloud — link permanente |
-| Publicação | Manual · 1-2h | n8n — automático em minutos |
+| Publicação | Manual · 1-2h | Automation Engine — automático em minutos |
 
 ---
 
@@ -89,7 +89,7 @@ Sem review integrada, o ciclo de aprovação é lento e confuso: cliente comenta
 
 ### Pipeline distribuído global
 
-O que transforma um pipeline local em infraestrutura planetária: WireGuard VPN criptografada ponta a ponta conecta todos os nós. RAW footage nunca trafega pela rede — apenas proxies 720p (~400MB/h) e transcrições (~50KB). Dados sensíveis nunca saem da rede privada.
+O que transforma um pipeline local em infraestrutura planetária: VPN VPN criptografada ponta a ponta conecta todos os nós. RAW footage nunca trafega pela rede — apenas proxies 720p (~400MB/h) e transcrições (~50KB). Dados sensíveis nunca saem da rede privada.
 
 ### Nós da rede
 
@@ -97,13 +97,13 @@ O que transforma um pipeline local em infraestrutura planetária: WireGuard VPN 
 |---|---|---|---|
 | Hub central | Sede (fixo) | AI · render · storage · portal | — |
 | Workstation edição | Sede (fixo) | Premiere/Resolve · render farm · Whisper | LAN |
-| Nó remoto | Filial (fixo) | Ingest · Whisper local · proxy | WireGuard |
-| Nó móvel | Campo (móvel) | Captação · edição proxy | WireGuard |
-| Cliente | Qualquer país | Portal PocketBase · Frame.io · Nextcloud | HTTPS |
+| Nó remoto | Filial (fixo) | Ingest · Whisper local · proxy | VPN |
+| Nó móvel | Campo (móvel) | Captação · edição proxy | VPN |
+| Cliente | Qualquer país | Portal Client Portal · Frame.io · Nextcloud | HTTPS |
 
 ### Stack de segurança
 
-- WireGuard VPN — túnel criptografado entre todos os nós
+- VPN VPN — túnel criptografado entre todos os nós
 - UFW Firewall — apenas portas necessárias
 - SSL/TLS (Nginx Proxy Manager) — HTTPS em todos os serviços
 - DuckDNS — DNS dinâmico (IP fixo não necessário)
@@ -127,7 +127,7 @@ Valores em CAD. Baseados no mercado canadense 2026.
 
 **Perfil:** 2-5 pessoas · 2-4 projetos/mês · sem servidor dedicado
 
-**Inclui:** Recomendação + configuração hardware · estrutura de projetos padronizada · pipeline ingest · Whisper transcrição PT/EN/FR · proxies 720p · integração Premiere · Frame.io (Adobe CC incluso) · PocketBase portal · storage tiers HOT/WARM/COLD · WireGuard VPN · treinamento meio dia · documentação completa.
+**Inclui:** Recomendação + configuração hardware · estrutura de projetos padronizada · pipeline ingest · Whisper transcrição PT/EN/FR · proxies 720p · integração Premiere · Frame.io (Adobe CC incluso) · Client Portal portal · storage tiers HOT/WARM/COLD · VPN VPN · treinamento meio dia · documentação completa.
 
 | Região | Implementação | Retainer mensal | Total Ano 1 |
 |---|---|---|---|
@@ -139,7 +139,7 @@ Valores em CAD. Baseados no mercado canadense 2026.
 
 **Perfil:** 5-15 pessoas · 5-12 projetos/mês · 1 servidor existente ou a instalar
 
-**Inclui tudo do Nível 1 +** Servidor dedicado GPU · ChromaDB indexação semântica · descrição visual por frame · trilha original MusicGen · watchdog ingest automático · tier manager HOT→WARM→COLD · Nextcloud entrega · PocketBase avançado (contratos + faturas) · VPN completa para equipe · FFmpeg exportação multi-plataforma · treinamento dia completo.
+**Inclui tudo do Nível 1 +** Servidor dedicado GPU · Semantic Index indexação semântica · descrição visual por frame · trilha original MusicGen · file monitor ingest automático · tier manager HOT→WARM→COLD · Nextcloud entrega · Client Portal avançado (contratos + faturas) · VPN completa para equipe · Media Processor exportação multi-plataforma · treinamento dia completo.
 
 | Região | Implementação | Retainer mensal | Total Ano 1 |
 |---|---|---|---|
@@ -151,7 +151,7 @@ Valores em CAD. Baseados no mercado canadense 2026.
 
 **Perfil:** 15+ pessoas · 12+ projetos/mês · render farm · operação global
 
-**Inclui tudo dos Níveis 1+2 +** Render farm distribuído · ComfyUI geração de imagens/thumbnails · AnimateDiff · pipeline multi-país · dashboard monitoramento tempo real · PocketBase multi-tenant · integração unidades móveis · treinamento 2 dias · SLA contratual.
+**Inclui tudo dos Níveis 1+2 +** Render farm distribuído · ComfyUI geração de imagens/thumbnails · AnimateDiff · pipeline multi-país · dashboard monitoramento tempo real · Client Portal multi-tenant · integração unidades móveis · treinamento 2 dias · SLA contratual.
 
 | Região | Implementação | Retainer mensal | Total Ano 1 |
 |---|---|---|---|
@@ -170,7 +170,7 @@ Escopo definido, prazo fixo, pagamento em 3 parcelas (30% início / 40% entrega 
 Implementação como projeto fixo, seguida de contrato mensal: manutenção, updates de modelos AI, suporte prioritário, melhorias incrementais. Modelo recomendado a partir do 2º cliente. Receita previsível + relacionamento longo prazo.
 
 ### SaaS on-site mensal
-Entrada reduzida seguida de assinatura mensal que cobre toda a infraestrutura como serviço vivo. O switching cost é altíssimo: uma vez integrado ao workflow do studio com PocketBase, Frame.io e n8n, o cliente nunca sai.
+Entrada reduzida seguida de assinatura mensal que cobre toda a infraestrutura como serviço vivo. O switching cost é altíssimo: uma vez integrado ao workflow do studio com Client Portal, Frame.io e Automation Engine, o cliente nunca sai.
 
 ---
 
@@ -185,7 +185,7 @@ Entrada reduzida seguida de assinatura mensal que cobre toda a infraestrutura co
 | Ciclo de review via Frame.io | 2-4h por projeto | $400-800 |
 | Busca semântica no arquivo | 2-4h por mês | $200-400 |
 | Exportação multi-plataforma | 1-3h por projeto | $200-600 |
-| Publicação automática n8n | 1-2h por projeto | $200-400 |
+| Publicação automática Automation Engine | 1-2h por projeto | $200-400 |
 | **Total** | **16-34h/mês** | **$1.800-3.800/mês** |
 
 **Payback:** Nível 1 em 4-8 meses · Nível 2 em 8-14 meses · Nível 3 em 16-24 meses.
@@ -200,7 +200,7 @@ O pipeline substitui um stack equivalente a $2.700-8.000/mês em serviços cloud
 | Portal do cliente | Custom dev ou SaaS | $2.400-6.000 |
 | Videoconferência | Zoom/Teams | $2.400-3.600 |
 | Transcrição | Rev.com / Sonix | $3.600-18.000 |
-| Automação | Zapier / n8n cloud | $2.400-6.000 |
+| Automação | Zapier / Automation Engine cloud | $2.400-6.000 |
 | VPN corporativa | Tailscale Business | $1.200-3.600 |
 | Storage cloud | Backblaze B2 | $2.400-9.600 |
 | Biblioteca de mídia | Iconik | $6.000-24.000 |
@@ -224,7 +224,7 @@ Custo do pipeline após setup: **$0/mês.**
 
 5. **Indexação semântica** — busca "mulher falando perto do mar" em vez de "clip_047_take3.mov". Nenhum NAS ou DAM tradicional faz busca por significado.
 
-6. **Client portal integrado** — Frame.io + PocketBase + Nextcloud + n8n formam um ciclo completo de entrega e aprovação que substitui 4-5 ferramentas separadas.
+6. **Client portal integrado** — Frame.io + Client Portal + Nextcloud + Automation Engine formam um ciclo completo de entrega e aprovação que substitui 4-5 ferramentas separadas.
 
 ---
 

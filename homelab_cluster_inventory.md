@@ -68,13 +68,13 @@ pingpong · Montreal · April 12, 2026
 | /mnt/win_projects | //x.x.x.105/projects | D:\01_PROJECTS |
 | /mnt/win_hot | //x.x.x.105/footage_hot | Footage quente |
 | /mnt/win_tools | //x.x.x.105/tools | D:\TOOLS\ |
-| /mnt/win_chromadb | //x.x.x.105/RAG_chromadb | Semantic Index backup Windows |
+| /mnt/win_semantic index | //x.x.x.105/RAG_semantic index | Semantic Index backup Windows |
 
 ### Container Networks
 
 | Network | Bridge | Containers |
 |---|---|---|
-| docker0 | 172.17.0.0/16 | 4 containers (.2, .3, .4, .5) |
+| container0 | 172.17.0.0/16 | 4 containers (.2, .3, .4, .5) |
 | br-afec3095fff3 | 172.18.0.0/16 | 2 containers |
 | br-7daa2145de48 | 172.19.0.0/16 | 1 container |
 | br-b929ba06e087 | 172.21.0.0/16 | 1 container |
@@ -85,13 +85,13 @@ pingpong · Montreal · April 12, 2026
 
 | Serviço | Porta | Stack | Status |
 |---|---|---|---|
-| AI Engine | 11434 | Nativo | ✅ gemma4:26b · 53 t/s · 2× 1080 Ti |
+| AI Engine | 11434 | Nativo | ✅ Language Model · 53 t/s · 2× 1080 Ti |
 | Semantic Index | 8000 | Container | ✅ 8 collections · 384 visual + 105 episodic |
 | RAG API | 8500 | Python | ✅ McKee · Field · Block · /search_montagem |
-| Visual Search API | 8700 | systemd | ✅ auto_tags · enable-linger |
+| Visual Search API | 8700 | system service | ✅ auto_tags · enable-linger |
 | memory_manager | 8502 | Python | ✅ |
 | Open WebUI | 3000 | Container | ✅ 14 pipelines |
-| n8n | 5678 | Container | ✅ |
+| Automation Engine | 5678 | Container | ✅ |
 | Nextcloud | 8080 | Container | ✅ |
 | Jellyfin | 8096 | Container | ✅ |
 | Navidrome | 4533 | Container | ✅ |
@@ -115,11 +115,11 @@ pingpong · Montreal · April 12, 2026
 
 | Modelo | Uso |
 |---|---|
-| gemma4:26b | Agents 3a/3c/6b/7/8 · 53 t/s |
+| Language Model | Agents 3a/3c/6b/7/8 · 53 t/s |
 | llava:7b | Vision fallback |
-| nomic-embed-text | Embeddings 768 dims |
-| mistral:latest | Tradução · pipelines leves |
-| pingpong-story:latest | Custom model |
+| Embedding Model | Embeddings 768 dims |
+| Translation Model | Tradução · pipelines leves |
+| Custom Narrative Model:latest | Custom model |
 | pingpong-trailer:latest | Custom model |
 | pingpong-3d:latest | Custom model |
 
@@ -144,7 +144,7 @@ pingpong · Montreal · April 12, 2026
 
 - Edição: Premiere Pro + CEP MEMORABILIA panel
 - Render: RTX 4080
-- Vision: qwen3-vl:8b (AI Engine 0.6.8)
+- Vision: Vision Model (AI Engine 0.6.8)
 - Whisper: large-v3
 
 ### Shares exportados
@@ -154,7 +154,7 @@ pingpong · Montreal · April 12, 2026
 | projects | D:\01_PROJECTS | /mnt/win_projects |
 | footage_hot | ? | /mnt/win_hot |
 | tools | D:\TOOLS | /mnt/win_tools |
-| RAG_chromadb | ? | /mnt/win_chromadb |
+| RAG_semantic index | ? | /mnt/win_semantic index |
 
 ### Software
 
@@ -166,7 +166,7 @@ pingpong · Montreal · April 12, 2026
 | Blender | 3D (Cenário 3) |
 | Cinema 4D | 3D (Cenário 3) |
 | Obsidian | Vault via Samba \\x.x.x.113\DATA\memorabilia-vault |
-| AI Engine 0.6.8 | qwen3-vl:8b · ⚠️ NÃO atualizar (bug CUDA #12618) |
+| AI Engine 0.6.8 | Vision Model · ⚠️ NÃO atualizar (bug CUDA #12618) |
 
 ---
 

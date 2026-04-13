@@ -18,7 +18,7 @@ Cada agent do pipeline executa uma camada dessa tradução. O Agent 1 traduz ví
 
 A diferença entre um arquivo morto e uma memória viva é a capacidade de consulta no momento certo. Um arquivo guarda e esquece. Uma anti-biblioteca guarda, organiza por acesso, e permite recuperar no instante exato em que o conhecimento é necessário.
 
-MEMORABILIA é a anti-biblioteca do operador audiovisual. Não organizada por data ou nome de arquivo — organizada por significado. A busca semântica no ChromaDB permite "mulher falando perto do mar" em vez de "clip_047_take3.mov". O profissional que tem essa biblioteca não precisa rever 20 horas de footage linearmente. Ele acessa o que precisa, quando precisa — exatamente como um designer que sabe em qual prateleira está o espécime tipográfico do século XIX que resolve o problema de hoje.
+MEMORABILIA é a anti-biblioteca do operador audiovisual. Não organizada por data ou nome de arquivo — organizada por significado. A busca semântica no Semantic Index permite "mulher falando perto do mar" em vez de "clip_047_take3.mov". O profissional que tem essa biblioteca não precisa rever 20 horas de footage linearmente. Ele acessa o que precisa, quando precisa — exatamente como um designer que sabe em qual prateleira está o espécime tipográfico do século XIX que resolve o problema de hoje.
 
 **Implicação para os agents:** todo agent que produz um artefato deve depositá-lo na base vetorial com metadata semântica rica o suficiente para recuperação futura. Não basta gerar — é preciso gerar de forma encontrável.
 
@@ -96,7 +96,7 @@ A memória episódica é o mecanismo técnico dessa acumulação. Mas a filosofi
 
 **Refinamento (Princípios 2, 3, 4):**
 
-- Depositar transcrição com metadata semântica no ChromaDB — não só texto, mas: idioma detectado, speaker diarization (quando implementado), tom emocional por segmento, timestamps alinhados com frames do Agent 3b.
+- Depositar transcrição com metadata semântica no Semantic Index — não só texto, mas: idioma detectado, speaker diarization (quando implementado), tom emocional por segmento, timestamps alinhados com frames do Agent 3b.
 - Cada chunk de transcrição deve carregar referência cruzada com o visual index — "este trecho falado corresponde aos frames X-Y."
 - Output encontrável por significado: "momento em que o entrevistado hesita" deve ser buscável, não só "palavra X no minuto Y."
 
@@ -118,7 +118,7 @@ A memória episódica é o mecanismo técnico dessa acumulação. Mas a filosofi
 
 - Cada frame catalogado deve carregar: composição (terços, simetria, leading lines), paleta dominante, tipo de plano (close, wide, medium), movimento de câmera, relação com o frame anterior e posterior.
 - Gerar clusters visuais automáticos — frames que se parecem agrupados — para que o operador veja padrões que não veria linearmente.
-- Depositar no ChromaDB com embeddings visuais para busca multimodal: texto busca frames, frames buscam frames similares.
+- Depositar no Semantic Index com embeddings visuais para busca multimodal: texto busca frames, frames buscam frames similares.
 
 ### Agent 3c — Leitura Narrativa
 
@@ -138,7 +138,7 @@ A memória episódica é o mecanismo técnico dessa acumulação. Mas a filosofi
 **Refinamento (Princípios 2, 7):**
 
 - Depositar paleta com contexto relacional: "esta paleta é similar ao projeto X, que o operador aprovou" ou "esta paleta diverge do padrão warm-desaturated que o operador prefere para documentários de diáspora."
-- Indexar no ChromaDB para busca futura: "projetos com paleta similar" deve retornar resultados.
+- Indexar no Semantic Index para busca futura: "projetos com paleta similar" deve retornar resultados.
 - Gerar sugestão de grade com referência cruzada ao Cinematographer Supervisor — o que o plano de luz previa vs. o que o footage entregou.
 
 ### Agent 8 — Resumo + Memória
@@ -174,7 +174,7 @@ Cada assistant, antes de responder, deve:
 | --- | --- | --- |
 | P0  | Agent 3c — adicionar divergência canônico/episódico com score | 4, 5 |
 | P0  | Agent 8 — reestruturar depósito de memória com contexto relacional | 4, 7 |
-| P1  | Agent 3b — embeddings visuais no ChromaDB para busca multimodal | 2, 3 |
+| P1  | Agent 3b — embeddings visuais no Semantic Index para busca multimodal | 2, 3 |
 | P1  | Agent 3a — tags relacionais entre segmentos | 4   |
 | P1  | Assistants — log de sugestão vs. escolha do operador | 7   |
 | P2  | Agent 1+2 — referência cruzada transcrição ↔ visual index | 3, 4 |

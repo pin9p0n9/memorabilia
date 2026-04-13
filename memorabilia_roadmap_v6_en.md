@@ -17,7 +17,7 @@ Cada camada só é construída depois que a anterior está working in production
 FUNCIONA EM PRODUÇÃO:
   Pipeline ~50 min · 1 comando
   Agents 1+2+3a+3b+3c+7+8+9
-  CEP panel: 3 views (List · Grid · Graph)
+  Extension panel: 3 views (List · Grid · Graph)
     Graph: force-directed SVG · thumbnails reais · auto_tags
     Sidebar esquerda Obsidian-style · sidebar direita clip info
     Zoom/pan · drag nodes · busca funcional todas as views
@@ -29,7 +29,7 @@ FUNCIONA EM PRODUÇÃO:
   Confiança MPV 0.75
   Obsidian vault: /media/pingpong/DATA/memorabilia-vault
     Template briefing YAML → pipeline · Graph View · Linux + Windows
-  Visual Search API: systemd + enable-linger · auto_tags · extract_tags()
+  Visual Search API: system service + enable-linger · auto_tags · extract_tags()
   Samba: DATA share adicionado · Obsidian acessível Windows
   session memory loop: session_start · log_episodic · session_close
 
@@ -132,7 +132,7 @@ P3: Zoom hierárquico por tags
 
 ```
 Visual Bible — Sprint 1
-  Sprint 1A — MusicGen integrado ao watchdog
+  Sprint 1A — MusicGen integrado ao file monitor
   Sprint 1B — Visual Library MVP (Client Portal + FastAPI + frontend)
   Sprint 1C — Deck por projeto (/decks · deck_brief.json)
 
@@ -149,7 +149,7 @@ AP-4 — LightRAG para knowledge RAG
 AP-5 — Memory Bible em todos os assistants (com 3+ projetos)
 AP-7 — Visual Library MVP
 AP-16 — CEP v3 second brain (tags editor + bookmarks)
-CEP Panel — Assistants no Premiere (FastAPI :8800)
+Extension Panel — Assistants no Premiere (FastAPI :8800)
 Metadata + Remotion
 ```
 
@@ -170,7 +170,7 @@ Creative Director RAG com motion completo (AE + C4D)
 ```
 AP-8 — Flamenco render farm (se demanda Cenário 3+5)
 Technical Director module — Blender + AE orquestração
-ComfyUI integrado ao watchdog
+ComfyUI integrado ao file monitor
 LoRA por cliente
 ```
 
@@ -237,7 +237,7 @@ Dashboard            → depende de tudo acima
 ## Hardware prioritário
 
 ```
-RTX 3090 24GB used ~$1.000 CAD → gemma4 full speed · ComfyUI 3x
+RTX 3090 24GB used ~$1.000 CAD → Language Model full speed · ComfyUI 3x
 Samsung 990 Pro 4TB ~$400 CAD  → resolve 2TB Windows HOT
 IronWolf 8TB ~$120 CAD         → HomeLab DATA backup (SPOF · SMART 26.947h)
 ```
