@@ -51,7 +51,7 @@ DECISÕES ARQUITETURAIS:
 
 TESTADO COM PROJETOS REAIS:
   260406_V_HOMELAB — documentário · PT · Vidigal + MTL
-  DDV game trailer — Disney · motion graphics
+  Game trailer — AAA studio · motion graphics
   Béla Tarr Werckmeister — Cinematographer test
 ```
 
