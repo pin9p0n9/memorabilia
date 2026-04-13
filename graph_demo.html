@@ -144,6 +144,7 @@ input[type=range]{height:6px;margin:4px 0 6px}
 <div class="zc">
 <button class="zb" onclick="zoomBy(1.3)">+</button>
 <button class="zb" onclick="zoomBy(0.75)">&minus;</button>
+<button class="zb" onclick="fitView()" title="Fit">&#x25A3;</button>
 <button class="zb" onclick="resetAll()">&#x27F2;</button>
 </div>
 </div>
@@ -245,11 +246,11 @@ function sim(){
       for(i=0;i<N.length;i++){
         if(dh.has(N[i].id)){N[i].vx+=(mx-N[i].x)*0.008*a;N[i].vy+=(my-N[i].y)*0.008*a}
         else if(vis.has(N[i].id)){N[i].vx+=(mx-N[i].x)*0.002*a;N[i].vy+=(my-N[i].y)*0.002*a}
-        else{var ddx=N[i].x-mx,ddy=N[i].y-my,dd=Math.sqrt(ddx*ddx+ddy*ddy)||1;N[i].vx+=ddx/dd*3*a;N[i].vy+=ddy/dd*3*a}
+        else{var ddx=N[i].x-mx,ddy=N[i].y-my,dd=Math.sqrt(ddx*ddx+ddy*ddy)||1;N[i].vx+=ddx/dd*1.0*a;N[i].vy+=ddy/dd*1.0*a}
       }
     }
   }
-  for(i=0;i<N.length;i++){if(N[i]===dragN)continue;N[i].vx*=fD;N[i].vy*=fD;N[i].x+=N[i].vx;N[i].y+=N[i].vy}
+  for(i=0;i<N.length;i++){if(N[i]===dragN)continue;N[i].vx*=fD;N[i].vy*=fD;N[i].x+=N[i].vx;N[i].y+=N[i].vy;N[i].x=Math.max(-150,Math.min(710,N[i].x));N[i].y=Math.max(-150,Math.min(550,N[i].y))}
 }
 
 function buildV(){
@@ -314,14 +315,14 @@ function doSearch(v){
   if(v.toLowerCase()==='!select')qs='select';
   if(v.toLowerCase()==='!descarte')qs='descarte';
   if(v.startsWith('#'))qs=v.replace('#','').trim();
-  buildV();simA=Math.max(simA,1.5);
+  buildV();simA=Math.max(simA,1.5);setTimeout(fitView,600);
   document.getElementById('ch1').className='chip'+(v==='#entrevista'?' on':'');
   document.getElementById('ch2').className='chip'+(v.toLowerCase()==='maria'?' on':'');
   document.getElementById('ch3').className='chip'+(v==='!select'?' on':'');
 }
 function cc(v){
   var input=document.getElementById('q');
-  if(input.value===v){input.value='';qs='';vis=new Set();dh=new Set();simA=1.5;
+  if(input.value===v){input.value='';qs='';vis=new Set();dh=new Set();simA=1.5;setTimeout(fitView,500);
     document.querySelectorAll('.chip').forEach(function(c){c.className='chip'});
   }else{input.value=v;doSearch(v)}
 }
@@ -335,42 +336,20 @@ function onUp(){dragN=null;panS.on=false;svg.classList.remove('grabbing')}
 function onWh(e){e.preventDefault();var r=svg.getBoundingClientRect(),mx=e.clientX-r.left,my=e.clientY-r.top,d=e.deltaY>0?0.85:1.18,nz=Math.max(0.2,Math.min(6,vz*d));vx=mx-(mx-vx)*(nz/vz);vy=my-(my-vy)*(nz/vz);vz=nz}
 
 /* INTERACTION — Touch with long-press drag + pinch zoom */
-var touchTimer=null,touchNode=null,lastPinch=0,isTouchDrag=false;
+var touchTimer=null,touchNode=null,lastPinch=0,isTouchDrag=false,lastTap=0;
 function onTS(e){
-  e.preventDefault();
-  if(e.touches.length===2){
-    lastPinch=Math.hypot(e.touches[0].clientX-e.touches[1].clientX,e.touches[0].clientY-e.touches[1].clientY);
-    return;
-  }
-  var t=e.touches[0];
-  var n=findN(t.clientX,t.clientY);
-  if(n){
-    touchNode=n;isTouchDrag=false;
-    /* Immediate drag — no long press needed */
-    dragN=n;selN(n.id);simA=Math.max(simA,0.4);isTouchDrag=true;
-  }else{
-    panS={on:true,sx:t.clientX,sy:t.clientY,ox:vx,oy:vy};
-  }
+  e.preventDefault();e.stopPropagation();
+  if(e.touches.length===2){lastPinch=Math.hypot(e.touches[0].clientX-e.touches[1].clientX,e.touches[0].clientY-e.touches[1].clientY);dragN=null;panS.on=false;return}
+  var t=e.touches[0],n=findN(t.clientX,t.clientY);
+  if(n){dragN=n;selN(n.id);simA=Math.max(simA,0.4)}
+  else{var now=Date.now();if(now-lastTap<350){fitView();lastTap=0;return}lastTap=now;panS={on:true,sx:t.clientX,sy:t.clientY,ox:vx,oy:vy}}
 }
 function onTM(e){
-  e.preventDefault();
-  /* Pinch zoom */
-  if(e.touches.length===2){
-    var d=Math.hypot(e.touches[0].clientX-e.touches[1].clientX,e.touches[0].clientY-e.touches[1].clientY);
-    if(lastPinch>0){
-      var f=d/lastPinch,nz=Math.max(0.2,Math.min(6,vz*f));
-      var cx2=(e.touches[0].clientX+e.touches[1].clientX)/2,cy2=(e.touches[0].clientY+e.touches[1].clientY)/2;
-      var r=svg.getBoundingClientRect(),mx2=cx2-r.left,my2=cy2-r.top;
-      vx=mx2-(mx2-vx)*(nz/vz);vy=my2-(my2-vy)*(nz/vz);vz=nz;
-    }
-    lastPinch=d;dragN=null;panS.on=false;return;
-  }
+  e.preventDefault();e.stopPropagation();
+  if(e.touches.length===2){var d=Math.hypot(e.touches[0].clientX-e.touches[1].clientX,e.touches[0].clientY-e.touches[1].clientY);if(lastPinch>0){var f=d/lastPinch,nz=Math.max(0.2,Math.min(6,vz*f));var cx2=(e.touches[0].clientX+e.touches[1].clientX)/2,cy2=(e.touches[0].clientY+e.touches[1].clientY)/2;var r=svg.getBoundingClientRect(),mx2=cx2-r.left,my2=cy2-r.top;vx=mx2-(mx2-vx)*(nz/vz);vy=my2-(my2-vy)*(nz/vz);vz=nz}lastPinch=d;dragN=null;panS.on=false;return}
   var t=e.touches[0];
-  if(dragN){
-    var p=s2w(t.clientX,t.clientY);dragN.x=p.x;dragN.y=p.y;dragN.vx=0;dragN.vy=0;
-  }else if(panS.on){
-    vx=panS.ox+(t.clientX-panS.sx);vy=panS.oy+(t.clientY-panS.sy);
-  }
+  if(dragN){var p=s2w(t.clientX,t.clientY);dragN.x=p.x;dragN.y=p.y;dragN.vx=0;dragN.vy=0;simA=Math.max(simA,0.3)}
+  else if(panS.on){vx=panS.ox+(t.clientX-panS.sx);vy=panS.oy+(t.clientY-panS.sy)}
 }
 function onTE(e){
   e.preventDefault();
@@ -379,6 +358,16 @@ function onTE(e){
 }
 
 /* ZOOM BUTTONS + RESET */
+
+function fitView(){
+  var minX=9999,maxX=-9999,minY=9999,maxY=-9999,c=0;
+  for(var i=0;i<N.length;i++){var n=N[i];if(qs.length>0&&!vis.has(n.id))continue;if(n.x<minX)minX=n.x;if(n.x>maxX)maxX=n.x;if(n.y<minY)minY=n.y;if(n.y>maxY)maxY=n.y;c++}
+  if(c<1)return;
+  var pad=60,bw=maxX-minX+pad*2,bh=maxY-minY+pad*2;
+  var cx3=(minX+maxX)/2,cy3=(minY+maxY)/2;
+  var nz2=Math.min(W/bw,H/bh,2);nz2=Math.max(0.3,nz2);
+  vz=nz2;vx=W/2-cx3*nz2;vy=H/2-cy3*nz2;
+}
 function zoomBy(f){var nz=Math.max(0.2,Math.min(6,vz*f)),cx=W/2,cy=H/2;vx=cx-(cx-vx)*(nz/vz);vy=cy-(cy-vy)*(nz/vz);vz=nz}
 function resetAll(){vx=0;vy=0;vz=1;simA=1.2;document.getElementById('q').value='';qs='';vis=new Set();dh=new Set();document.querySelectorAll('.chip').forEach(function(c){c.className='chip'});sel=null;document.getElementById('info').textContent='Click a node'}
 
@@ -401,7 +390,7 @@ function selN(id){
   }else info.textContent='Click a node';
 }
 
-init();
+init();setTimeout(fitView,800);
 </script>
 </body>
 </html>
