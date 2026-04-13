@@ -49,7 +49,7 @@ pingpong · Montreal · Janeiro–Abril 2026
 
 **15 Mar** — Segurança: SSH key-only ED25519 · GPG backups · KeePassXC · Joplin E2E · 2FA Nextcloud · UFW firewall.
 
-**15 Mar** — Ollama installed. Dual GPU tensor split (22GB VRAM). qwen2.5:32b @ 8.82 t/s. Open WebUI com HTTPS.
+**15 Mar** — AI Engine installed. Dual GPU tensor split (22GB VRAM). previous model @ 8.82 t/s. Open WebUI com HTTPS.
 
 **15 Mar** — Persona "Jeremias" criada no Open WebUI. AI 100% offline (OLLAMA_NO_CLOUD=true).
 
@@ -83,15 +83,15 @@ pingpong · Montreal · Janeiro–Abril 2026
 
 **27 Mar** — D:\TOOLS\ criado. project_launcher.py (GUI), pipeline_v1.py (5 etapas), new_project.ps1. Primeiro projeto testado: 260328_V_MAGELLA.
 
-**28 Mar** — Pipeline v1 completo: FFmpeg extrai áudio → Whisper large-v3 transcreve → proxy 720p NVENC → CSV Premiere. Cache inteligente, detecção automática de idioma, fallback CPU.
+**28 Mar** — Pipeline v1 completo: Media Engine extrai áudio → Whisper large-v3 transcreve → proxy 720p NVENC → CSV Premiere. Cache inteligente, detecção automática de idioma, fallback CPU.
 
 ---
 
 ## Março 2026 — Week 5: RAG Pipeline
 
-**29 Mar** — ChromaDB deployed (:8000). LLaVA frame indexing (685 docs). Whisper medium dual GPU chunking. Triple GPU pipeline. RAG query funcionando. NETFLICS Roku app 70% (BrightScript + Jellyfin backend). Navidrome deployed (:4533).
+**29 Mar** — Semantic Index deployed (:8000). LLaVA frame indexing (685 docs). Whisper medium dual GPU chunking. Triple GPU pipeline. RAG query funcionando. NETFLICS Roku app 70% (BrightScript + Jellyfin backend). Navidrome deployed (:4533).
 
-**30 Mar** — RAG Pipeline v2.0: SRT parsing (1.545 chunks Alive! Animation em 5 min vs 3-6h Whisper). ChromaDB: 3.378 → 6.814 docs.
+**30 Mar** — RAG Pipeline v2.0: SRT parsing (1.545 chunks Alive! Animation em 5 min vs 3-6h Whisper). Semantic Index: 3.378 → 6.814 docs.
 
 **31 Mar** — Creative Director RAG pipeline criado.
 
@@ -99,7 +99,7 @@ pingpong · Montreal · Janeiro–Abril 2026
 
 ## Abril 2026 — Week 1: RAG Full Library
 
-**02 Apr** — Fix Ollama connection (192.168.68.112 → 172.17.0.1). RAG API multi-collection. Creative Director dual mode (CD + TD). Anti-alucinação implementada. Decision: qwen2.5:32b é modelo de produção.
+**02 Apr** — Fix AI Engine connection (192.168.68.112 → 172.17.0.1). RAG API multi-collection. Creative Director dual mode (CD + TD). Anti-alucinação implementada. Decision: previous model é modelo de produção.
 
 **03 Apr** — 174 livros organizados em 13 categorias. 48.401 chunks indexados com category. 65k chunks antigos deletados. Kiwix Wikipedia 49GB deployed (:8888). 11 pipelines RAG operacionais. Knowledge RAG Full Library funcional (cita fontes reais). English Tutor + Design Tutor functional.
 
@@ -117,7 +117,7 @@ pingpong · Montreal · Janeiro–Abril 2026
 
 **08 Apr** — Agent 8: compress_aaak() com 7 types. client_summary.md por cenário. MEMORABILIA Status Card v5. Roadmap completo.
 
-**09 Apr** — Ollama atualizado para 0.20.4. gemma4:26b a 53 t/s (vs 9.35 antes com qwen2.5:32b). 11 agents implementados. Visual Library v1.0. MusicGen audio guide. CEP Panel no Premiere Pro. Game trailer AAA studio tested. Namespace architecture. Agent 4 + Agent 6 removidos — decisão arquitetural sem rough cut.
+**09 Apr** — AI Engine atualizado para 0.20.4. Language Model a 53 t/s (vs 9.35 antes com previous model). 11 agents implementados. Visual Library v1.0. MusicGen audio guide. CEP Panel no Premiere Pro. Game trailer AAA studio tested. Namespace architecture. Agent 4 + Agent 6 removidos — decisão arquitetural sem rough cut.
 
 **10 Apr** — scene_frame_indexer v2.0: 4 modos adaptativos (arc/dual/single/window). 384 frames indexados. raw vs edited automático. knowledge_montagem: 4.260 chunks (Eisenstein, Tarkovsky, Bresson, Murch). Montagem RAG integrado. Memory Bible verificada. win_tools SMB montado. Decision: Agent 4 candidate_segments e Agent 6 suggested_cuts removidos permanentemente.
 
@@ -164,7 +164,7 @@ pingpong · Montreal · Janeiro–Abril 2026
 | 2 | Mar 15–17 | Cloud + VPN + AI local (Phases 1-3 completas) |
 | 3 | Mar 18–22 | Arquitetura + Pipeline design |
 | 4 | Mar 23–28 | Pipeline v1 + SMB + Windows hardening |
-| 5 | Mar 29–31 | RAG Pipeline (ChromaDB + 6.814 docs) |
+| 5 | Mar 29–31 | RAG Pipeline (Semantic Index + 6.814 docs) |
 | 6 | Apr 2–6 | RAG Full Library (48k chunks + 11 pipelines) |
 | 7 | Apr 7–10 | Pipeline 11 agents + MEMORABILIA + MPV |
 | 8 | Apr 11–12 | Design Philosophy + CEP Graph + Obsidian vault |
@@ -177,7 +177,7 @@ Conhecimento:    72.263 trechos indexados
 Memória:         105 entradas episódicas · 7 types
 Visual Index:    384 frames · 4 modos adaptativos
 Serviços:        20+ serviços ativos
-Collections:     8 ChromaDB
+Collections:     8 Semantic Index
 Assistants:      6 especializados + 14 pipelines Open WebUI
 CEP Panel:       3 views (List · Grid · Graph) no Premiere Pro
 Obsidian:        333 notas organizadas · vault Linux + Windows

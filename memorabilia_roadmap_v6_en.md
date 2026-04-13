@@ -45,7 +45,7 @@ DECISÕES ARQUITETURAIS:
   ✅ Pipeline = infraestrutura de navegação
   ✅ scene_frame_indexer v2.0 — ritmo adaptativo · raw vs edited
   ✅ Separação 02_CAPTURES (raw) vs 03_EDITED obrigatória
-  ✅ Graph view no CEP com auto_tags (sem metadata rico no ChromaDB)
+  ✅ Graph view no CEP com auto_tags (sem metadata rico no Semantic Index)
   ✅ Obsidian como second brain global (entre projetos)
   ✅ CEP Cluster como second brain local (dentro do projeto)
 
@@ -82,7 +82,7 @@ Esforço: 3-4h · Impacto: alto · Prazo: Maio 2026
 ### AP-13 — Re-indexar visual_index com metadata rico
 Esforço: 2-3h · Impacto: alto · Prazo: Esta semana
 ```
-Adicionar rhythm_mode, material_type, scene_duration ao ChromaDB na indexação.
+Adicionar rhythm_mode, material_type, scene_duration ao Semantic Index na indexação.
 Elimina necessidade de extract_tags() como fallback.
 Graph do CEP ganha links reais baseados em metadata.
 ```
@@ -133,7 +133,7 @@ P3: Zoom hierárquico por tags
 ```
 Visual Bible — Sprint 1
   Sprint 1A — MusicGen integrado ao watchdog
-  Sprint 1B — Visual Library MVP (PocketBase + FastAPI + frontend)
+  Sprint 1B — Visual Library MVP (Client Portal + FastAPI + frontend)
   Sprint 1C — Deck por projeto (/decks · deck_brief.json)
 
 CEP Graph — testar nodes opacos (SVG layers fix)
@@ -218,7 +218,7 @@ MPV com 5+ projetos: measure calibration
 AP-13 re-index      → independente (roda agora)
 AP-14 Agent 3c      → independente (roda agora)
 AP-15 Agent 8       → independente (roda agora)
-AP-5 wake-up        → depende de 2 projetos no ChromaDB
+AP-5 wake-up        → depende de 2 projetos no Semantic Index
 AP-16 CEP v3        → depende AP-13 (metadata rico)
 AP-4 LightRAG       → depende AP-3 + dados reais
 

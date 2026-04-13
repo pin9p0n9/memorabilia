@@ -4,7 +4,7 @@ pingpong · Montreal · April 12, 2026
 
 ---
 
-## Network Local — 192.168.68.0/24 · SSID: XIMBICA (TP-Link Deco Mesh)
+## Network Local — x.x.x.0/24 · SSID: XIMBICA (TP-Link Deco Mesh)
 
 | IP | Nome | Device | Connection | Role |
 |---|---|---|---|---|
@@ -24,17 +24,17 @@ pingpong · Montreal · April 12, 2026
 
 ---
 
-## WireGuard VPN — 10.0.0.0/24
+## VPN VPN — 10.0.0.0/24
 
 | IP | Peer | Endpoint | Status |
 |---|---|---|---|
 | 10.0.0.1 | HomeLab Linux | (server) | Sempre on |
-| 10.0.0.2 | Windows PC | 192.168.68.105:60354 | 9 dias atrás |
+| 10.0.0.2 | Windows PC | x.x.x.105:60354 | 9 dias atrás |
 | 10.0.0.3 | Samsung / MacBook | 198.200.124.199:41601 | 6h atrás |
 
 ---
 
-## HomeLab Linux — 192.168.68.113
+## HomeLab Linux — x.x.x.113
 
 ### Hardware
 
@@ -46,8 +46,8 @@ pingpong · Montreal · April 12, 2026
 | RAM modules | 4× 16GB Kingston + 4× 16GB Samsung |
 | GPU 1 | NVIDIA GeForce GTX 1080 Ti — 11GB VRAM |
 | GPU 2 | NVIDIA GeForce GTX 1080 Ti — 11GB VRAM |
-| Boot | NVMe 465GB ext4 — system + Docker + active work |
-| DATA | SATA HDD 1.8TB ext4 — Ollama models + projects + vault |
+| Boot | NVMe 465GB ext4 — system + Container + active work |
+| DATA | SATA HDD 1.8TB ext4 — AI Engine models + projects + vault |
 | BLACKBOX | Seagate Expansion 14.9TB USB NTFS — cold archive (shared with Windows E:) |
 | Wi-Fi | ASUS USB-AC56 Dual Band (Realtek RTL8812AU) |
 | Monitor | ASUS PB279Q 27" 4K UHD · DisplayPort 1.2 · 60Hz |
@@ -65,12 +65,12 @@ pingpong · Montreal · April 12, 2026
 
 | Mount | Share Windows | Uso |
 |---|---|---|
-| /mnt/win_projects | //192.168.68.105/projects | D:\01_PROJECTS |
-| /mnt/win_hot | //192.168.68.105/footage_hot | Footage quente |
-| /mnt/win_tools | //192.168.68.105/tools | D:\TOOLS\ |
-| /mnt/win_chromadb | //192.168.68.105/RAG_chromadb | ChromaDB backup Windows |
+| /mnt/win_projects | //x.x.x.105/projects | D:\01_PROJECTS |
+| /mnt/win_hot | //x.x.x.105/footage_hot | Footage quente |
+| /mnt/win_tools | //x.x.x.105/tools | D:\TOOLS\ |
+| /mnt/win_chromadb | //x.x.x.105/RAG_chromadb | Semantic Index backup Windows |
 
-### Docker Networks
+### Container Networks
 
 | Network | Bridge | Containers |
 |---|---|---|
@@ -85,23 +85,23 @@ pingpong · Montreal · April 12, 2026
 
 | Serviço | Porta | Stack | Status |
 |---|---|---|---|
-| Ollama | 11434 | Nativo | ✅ gemma4:26b · 53 t/s · 2× 1080 Ti |
-| ChromaDB | 8000 | Docker | ✅ 8 collections · 384 visual + 105 episodic |
+| AI Engine | 11434 | Nativo | ✅ gemma4:26b · 53 t/s · 2× 1080 Ti |
+| Semantic Index | 8000 | Container | ✅ 8 collections · 384 visual + 105 episodic |
 | RAG API | 8500 | Python | ✅ McKee · Field · Block · /search_montagem |
 | Visual Search API | 8700 | systemd | ✅ auto_tags · enable-linger |
 | memory_manager | 8502 | Python | ✅ |
-| Open WebUI | 3000 | Docker | ✅ 14 pipelines |
-| n8n | 5678 | Docker | ✅ |
-| Nextcloud | 8080 | Docker | ✅ |
-| Jellyfin | 8096 | Docker | ✅ |
-| Navidrome | 4533 | Docker | ✅ |
-| Kiwix | 8888 | Docker | ✅ Wikipedia offline |
-| CyberChef | 8100 | Docker | ✅ |
+| Open WebUI | 3000 | Container | ✅ 14 pipelines |
+| n8n | 5678 | Container | ✅ |
+| Nextcloud | 8080 | Container | ✅ |
+| Jellyfin | 8096 | Container | ✅ |
+| Navidrome | 4533 | Container | ✅ |
+| Kiwix | 8888 | Container | ✅ Wikipedia offline |
+| CyberChef | 8100 | Container | ✅ |
 | Syncthing | 22000 | Nativo | ✅ |
-| WireGuard | 51820 | Nativo | ✅ 3 peers |
-| NPM | 80/443/81 | Docker | ✅ SSL Let's Encrypt |
+| VPN | 51820 | Nativo | ✅ 3 peers |
+| NPM | 80/443/81 | Container | ✅ SSL Let's Encrypt |
 | SSH | 22 | Nativo | ✅ key-only + fail2ban |
-| Open WebUI (root) | 8080 | Docker | ✅ |
+| Open WebUI (root) | 8080 | Container | ✅ |
 
 ### Apps Locais
 
@@ -111,7 +111,7 @@ pingpong · Montreal · April 12, 2026
 | Joplin | ~/.config/joplin-desktop/ | 333 notas · histórico completo |
 | Firefox | snap | Browser |
 
-### Modelos Ollama
+### Modelos AI Engine
 
 | Modelo | Uso |
 |---|---|
@@ -125,7 +125,7 @@ pingpong · Montreal · April 12, 2026
 
 ---
 
-## Windows PC — 192.168.68.105
+## Windows PC — x.x.x.105
 
 ### Hardware
 
@@ -144,7 +144,7 @@ pingpong · Montreal · April 12, 2026
 
 - Edição: Premiere Pro + CEP MEMORABILIA panel
 - Render: RTX 4080
-- Vision: qwen3-vl:8b (Ollama 0.6.8)
+- Vision: qwen3-vl:8b (AI Engine 0.6.8)
 - Whisper: large-v3
 
 ### Shares exportados
@@ -165,17 +165,17 @@ pingpong · Montreal · April 12, 2026
 | DaVinci Resolve | Color |
 | Blender | 3D (Cenário 3) |
 | Cinema 4D | 3D (Cenário 3) |
-| Obsidian | Vault via Samba \\192.168.68.113\DATA\memorabilia-vault |
-| Ollama 0.6.8 | qwen3-vl:8b · ⚠️ NÃO atualizar (bug CUDA #12618) |
+| Obsidian | Vault via Samba \\x.x.x.113\DATA\memorabilia-vault |
+| AI Engine 0.6.8 | qwen3-vl:8b · ⚠️ NÃO atualizar (bug CUDA #12618) |
 
 ---
 
-## Samsung Galaxy — 192.168.68.100
+## Samsung Galaxy — x.x.x.100
 
 | Item | Detalhe |
 |---|---|
-| IP local | 192.168.68.100 |
-| VPN | 10.0.0.3 (WireGuard — último handshake 6h atrás) |
+| IP local | x.x.x.100 |
+| VPN | 10.0.0.3 (VPN — último handshake 6h atrás) |
 | Apps | Joplin mobile · Syncthing |
 | Uso | Notas em campo · referências visuais |
 
@@ -190,22 +190,22 @@ pingpong · Montreal · April 12, 2026
 
 ---
 
-## HP DeskJet 3755 — 192.168.68.108
+## HP DeskJet 3755 — x.x.x.108
 
 | Item | Detalhe |
 |---|---|
-| IP local | 192.168.68.108 |
+| IP local | x.x.x.108 |
 | Nome no router | HP6F8240 |
 | Connection | Wi-Fi 2.4G |
 | Uso | Printer |
 
 ---
 
-## iRobot Roomba — 192.168.68.110
+## iRobot Roomba — x.x.x.110
 
 | Item | Detalhe |
 |---|---|
-| IP local | 192.168.68.110 |
+| IP local | x.x.x.110 |
 | Connection | Wi-Fi 2.4G |
 | Uso | Vacuum robô |
 
@@ -228,9 +228,9 @@ pingpong · Montreal · April 12, 2026
 | Item | Detalhe |
 |---|---|
 | Chip | Apple M1 — 16GB unified memory |
-| Ollama | 7B via Metal · ~20 t/s |
+| AI Engine | 7B via Metal · ~20 t/s |
 | Role | Human editing · field capture · remote access |
-| VPN | ⏳ Pendente — precisa integrar ao WireGuard (10.0.0.4) |
+| VPN | ⏳ Pendente — precisa integrar ao VPN (10.0.0.4) |
 | Status | **NÃO INTEGRADO ao HomeLab** |
 
 ---
@@ -288,7 +288,7 @@ pingpong · Montreal · April 12, 2026
               ┌─────────────────────────┐
               │   TP-Link Deco (mesh)   │
               │   SSID: XIMBICA         │
-              │   192.168.68.1          │
+              │   x.x.x.1          │
               │                         │
               │   Satélites:            │
               │   .101 · .102           │
@@ -320,7 +320,7 @@ pingpong · Montreal · April 12, 2026
        │ SMB exports: blackbox · DATA · tutorials
        │ CIFS mounts: win_projects · win_tools · win_hot
        │
-       │ WireGuard VPN 10.0.0.0/24
+       │ VPN VPN 10.0.0.0/24
        │  .1 HomeLab (server)
        │  .2 Windows PC
        │  .3 Samsung Galaxy

@@ -70,7 +70,7 @@ O plugin gera relações automaticamente a partir da metadata nativa — sem AI,
 - Mesmo frame rate → aresta técnica (weight 0.3)
 - Mesmo scene/take → aresta forte (weight 1.0)
 
-Fonte: FFprobe (container metadata) + ExifTool (camera EXIF/XMP). Formatos suportados: MP4, MOV, MXF, ProRes, DNxHD, H.264, H.265, RAW.
+Fonte: Native metadata extraction. Formatos suportados: MP4, MOV, MXF, ProRes, DNxHD, H.264, H.265, RAW.
 
 ### Busca = criação
 
@@ -87,16 +87,7 @@ A barra de busca é input de busca e de criação ao mesmo tempo:
 
 JSON salvo ao lado do arquivo de projeto (.prproj / .drp):
 
-```json
-{
-  "version": "1.0",
-  "project": { "name": "...", "path": "...", "created": "...", "modified": "..." },
-  "clips": [{ "id": "...", "filename": "...", "metadata": {}, "tags": [], "links": [], "bookmarks": [] }],
-  "tags": { "#mercado": { "color": "#5eead4", "clips": ["..."] } },
-  "links": [{ "from": "clip001", "to": "clip003", "label": "contra-ponto", "created": "..." }],
-  "bookmarks": { "select": [], "descarte": [], "custom": {} }
-}
-```
+*(JSON schema — proprietary)*
 
 - Reabre o projeto 6 meses depois → second brain intacto
 - Exporta tags de um projeto para outro (cross-project memory)
@@ -105,11 +96,11 @@ JSON salvo ao lado do arquivo de projeto (.prproj / .drp):
 
 ### Stack técnica
 
-**Premiere Pro:** CEP/UXP Extension (HTML + JS) · ExtendScript/UXP · FFprobe + ExifTool · D3.js ou vanilla JS force-directed · JSON local ao lado do .prproj
+**Premiere Pro:** NLE Extension · NLE integration layer · Metadata engine · Force-directed graph engine · JSON local ao lado do .prproj
 
-**DaVinci Resolve:** Companion app standalone (Electron/Tauri) · Resolve API Python/Lua · MediaPool + Timeline + Markers · Mesma engine de grafo · Mesmo JSON de persistência
+**DaVinci Resolve:** Companion app standalone (Desktop framework) · DaVinci API Python/Lua · MediaPool + Timeline + Markers · Mesma engine de grafo · Same persistence layer
 
-**Shared:** FFprobe (metadata universal) · ExifTool (camera EXIF/XMP) · JSON schema compartilhado · SVG force-directed graph engine
+**Shared:** Metadata extraction · Camera metadata extraction · JSON schema compartilhado · SVG force-directed graph engine
 
 ---
 
@@ -117,13 +108,13 @@ JSON salvo ao lado do arquivo de projeto (.prproj / .drp):
 
 ### Fase 0 — Fundação (2 semanas)
 - JSON schema v1.0
-- FFprobe parser (qualquer formato)
-- ExifTool parser (camera EXIF/XMP)
+- Metadata parser (qualquer formato)
+- Camera metadata parser (camera EXIF/XMP)
 - Edge generator automático v1.0 (6 regras baseadas em metadata)
 - Testes com footage real
 
 ### Fase 1 — Premiere Pro MVP (3 semanas)
-- CEP Extension scaffold
+- Extension scaffold
 - Leitura de clips do projeto Premiere
 - Integrar FFprobe como processo externo
 - JSON persistência ao lado do .prproj
@@ -142,13 +133,13 @@ JSON salvo ao lado do arquivo de projeto (.prproj / .drp):
 - Persistência cross-session com undo/redo
 
 ### Fase 3 — DaVinci Resolve (3 semanas)
-- Companion app standalone (Electron/Tauri)
+- Companion app standalone (Desktop framework)
 - Resolve ↔ Graph sync via Python script
 - Mesma UI adaptada para standalone (window management, hotkeys)
 - Testes com projetos reais + edge cases
 
 ### Fase 4 — Produto (2 semanas)
-- Installers (.zxp Premiere, .dmg/.exe/.AppImage DaVinci)
+- Installers (extension package Premiere, .dmg/.exe/.AppImage DaVinci)
 - Documentação (quick start, video tutorial, FAQ)
 - Landing page com demo video
 - Beta program (10 editores)
@@ -204,7 +195,7 @@ JSON salvo ao lado do arquivo de projeto (.prproj / .drp):
 
 **PRO ($49 USD one-time)** — Clips ilimitados · links manuais com labels · smart edges · import/export tags · cross-project memory · projetos ilimitados · Premiere + DaVinci · keyboard shortcuts · timeline markers sync. Objetivo: receita principal.
 
-**MEMORABILIA ($199 USD one-time)** — Tudo do PRO + integração AI pipeline · auto-tags via AI · busca semântica por descrição · memória projetual viva entre projetos · ChromaDB integration · 6 assistants especializados. Objetivo: upsell editor-técnico.
+**MEMORABILIA ($199 USD one-time)** — Tudo do PRO + integração AI pipeline · auto-tags via AI · busca semântica por descrição · memória projetual viva entre projetos · Semantic search integration · 6 assistants especializados. Objetivo: upsell editor-técnico.
 
 ### Por que one-time
 
@@ -277,7 +268,7 @@ Custos: dev $0 (solo), hosting $0 (GitHub Pages), Stripe 2.9%. **Margem: 87-95%.
 
 ### Falta construir
 
-- ⬜ FFprobe parser para metadata nativa
+- ⬜ Metadata parser para metadata nativa
 - ⬜ Edge generator baseado em metadata (não AI)
 - ⬜ JSON schema v1.0 + persistência cross-session
 - ⬜ Smart edges (regras aprendidas)

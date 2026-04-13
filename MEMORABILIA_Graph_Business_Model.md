@@ -75,7 +75,7 @@ O plugin gera relações automaticamente a partir da metadata nativa — sem AI,
 - Mesmo frame rate → aresta técnica
 - Mesmo codec / color space → aresta técnica
 
-Fonte: FFprobe (container metadata) + ExifTool (camera EXIF/XMP).
+Fonte: Native metadata extraction.
 
 ### Busca = criação
 
@@ -188,7 +188,7 @@ SOM (Serviceable Obtainable Market — Year 1):
 │ Auto-tags via AI (sunset, crowd, medium shot)                │
 │ Busca semântica por descrição natural                        │
 │ Memória projetual viva entre projetos                        │
-│ ChromaDB integration · 6 assistants especializados           │
+│ Semantic search integration · 6 assistants especializados           │
 │                                                              │
 │ Objetivo: upsell para editor-técnico, margem alta            │
 └─────────────────────────────────────────────────────────────┘

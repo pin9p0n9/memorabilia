@@ -8,10 +8,10 @@ HomeLab pingpong · Montreal · April 12, 2026
 
 | Módulo | Status | Existe hoje | Falta |
 |---|---|---|---|
-| SYSTEM | ⚠️ parcial | pipeline_launcher · watchdog_v2 · Frame.io CC · CEP panel · Obsidian vault | PocketBase · kanban · dashboard |
-| DATA FLOW | ✅ funcional | Agents 1+2+3a+3b+3c+7+8+9 · watchdog 3 gatilhos | Flamenco |
-| VISUAL LIBRARY | ❌ novo | spec documentada | PocketBase · frontend · /deck-brief |
-| CINEMATOGRAPHER | ✅ funcional | ProblemSolver_v01 · RAG 11k chunks · montagem 4260 chunks · gemma4:26b | qwen3-vl UI integrada |
+| SYSTEM | ⚠️ parcial | pipeline_launcher · File Monitor_v2 · Frame.io CC · CEP panel · Obsidian vault | Client Portal · kanban · dashboard |
+| DATA FLOW | ✅ funcional | Agents 1+2+3a+3b+3c+7+8+9 · File Monitor 3 gatilhos | Flamenco |
+| VISUAL LIBRARY | ❌ novo | spec documentada | Client Portal · frontend · /deck-brief |
+| CINEMATOGRAPHER | ✅ funcional | ProblemSolver_v01 · RAG 11k chunks · montagem 4260 chunks · Language Model | qwen3-vl UI integrada |
 | TECHNICAL DIRECTOR | ✅ funcional | technical_director.py · RAG AI+Tech+Blender | Unity/Unreal/Math_VFX pendings |
 
 ---
@@ -29,18 +29,18 @@ ENTRADA — VISUAL BIBLE
 [visual_library.py]      referências → deck_brief.json       ✅  4.5 min
 [musicgen_guide.py]      brief + deck → audio_guide.wav      ✅  12 min
                          → copiado para 02_AUDIO/01_MIX/ automaticamente
-[Cinematographer]        plano técnico iluminação             ✅  gemma4:26b + montagem RAG
+[Cinematographer]        plano técnico iluminação             ✅  Language Model + montagem RAG
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 BLOCO 1 — PRÉ-EDIÇÃO (infraestrutura de navegação)
-watchdog: footage AND brief → dispara
+File Monitor: footage AND brief → dispara
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 [Agent 1+2]  Ingest + Whisper large-v3     ✅  Windows RTX 4080
              → transcrição completa com timecodes
              → type:audio depositado
 
-[Agent 3a]   Índice textual               ✅  HomeLab gemma4:26b · 1.5 min
+[Agent 3a]   Índice textual               ✅  HomeLab Language Model · 1.5 min
              → full_transcript_index.md
 
 [Agent 3b]   Visual Index — scene_frame_indexer v2.0
@@ -50,7 +50,7 @@ watchdog: footage AND brief → dispara
              → 384 entries · material_type · rhythm_mode · cuts_per_minute
 
 [Agent 3c]   Leitura Narrativa com Tensão Calibrada
-             ✅  HomeLab gemma4:26b · 3 min
+             ✅  HomeLab Language Model · 3 min
              → query dupla: canônico (livros) + episódico (projetos)
              → score de confiança por perspectiva (0.0–1.0)
              → divergência explícita quando > 0.3
@@ -88,25 +88,25 @@ C5  Motion + ComfyUI AI híbrido + MusicGen
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 BLOCO 2 — PÓS-EDIÇÃO
-watchdog: render em 03_RENDER/02_OFF/ → dispara
+File Monitor: render em 03_RENDER/02_OFF/ → dispara
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-[Agent 7]    Vision + Color              ✅  qwen3-vl + gemma4:26b · 3 min
+[Agent 7]    Vision + Color              ✅  qwen3-vl + Language Model · 3 min
              → type:vision depositado
 
-[Agent 6b]   SEO Metadata               ✅  gemma4:26b · 32 seg
+[Agent 6b]   SEO Metadata               ✅  Language Model · 32 seg
              → legendas + descrições · 6 plataformas
 
-[Agent 8]    Memória Projetual Viva — Closer            ✅  gemma4:26b · 3.5 min
+[Agent 8]    Memória Projetual Viva — Closer            ✅  Language Model · 3.5 min
              → postmortem.md · client_summary.md
-             → compress_aaak() 7 types → ChromaDB
+             → compress_aaak() 7 types → Semantic Index
              → registra: sugerido vs escolhido vs divergência
              → por assistant, com confiança e condições do projeto
              → resumo para o cliente como subproduto
              → depósito relacional como produto principal
              REDESENHADO: v8.5 — contexto relacional completo
 
-[Agent 9]    To Publish                  ✅  n8n webhook
+[Agent 9]    To Publish                  ✅  Automation webhook
 
 Total máquina: ~50 min · Edição criativa: humano
 
@@ -171,7 +171,7 @@ Total máquina: ~50 min · Edição criativa: humano
 └── Home.md                       ← índice do vault
 
 Plugins: Templater · Dataview · Calendar
-Acesso: Linux (AppImage --no-sandbox) · Windows (via Samba \\192.168.68.113\DATA)
+Acesso: Linux (AppImage --no-sandbox) · Windows (via Samba \\x.x.x.113\DATA)
 Graph View: 3 nós conectados (Project brief → Montreal → Home)
 Filtro: path:Projetos para ver só projetos
 ```
@@ -196,7 +196,7 @@ Filtro: path:Projetos para ver só projetos
 ## Living Project Memory — 7 Types
 
 ```
-episodic_memory ChromaDB (768 dims)
+episodic_memory Semantic Index (768 dims)
     ├── type: narrative
     ├── type: audio
     ├── type: vision
@@ -212,18 +212,18 @@ episodic_memory ChromaDB (768 dims)
 
 | Serviço | Porta | Status |
 |---|---|---|
-| Ollama HomeLab | 11434 | ✅ 0.20.4 · gemma4:26b · 53 t/s |
-| Ollama Windows | 11434 | ✅ 0.6.8 · qwen3-vl:8b · 100% GPU |
-| ChromaDB | 8000 | ✅ 8 collections · 105 episodic entries |
+| AI Engine HomeLab | 11434 | ✅ 0.20.4 · Language Model · 53 t/s |
+| AI Engine Windows | 11434 | ✅ 0.6.8 · Vision Model · 100% GPU |
+| Semantic Index | 8000 | ✅ 8 collections · 105 episodic entries |
 | RAG API | 8500 | ✅ McKee · Field · Block · /search_montagem |
-| Visual Search API | 8700 | ✅ systemd + enable-linger · dual-lang PT→EN · auto_tags |
+| Visual Search API | 8700 | ✅ System Service + enable-linger · dual-lang PT→EN · auto_tags |
 | Open WebUI | 3000 | ✅ 14 pipelines |
-| n8n | 5678 | ✅ Docker |
+| Automation | 5678 | ✅ Container |
 | memory_manager | 8502 | ✅ |
 | SMB win_tools | /mnt/win_tools | ✅ D:\TOOLS\ montado via CIFS |
 | SMB DATA | /media/pingpong/DATA | ✅ Samba share · Obsidian vault |
 | Obsidian | AppImage | ✅ Linux + Windows via Samba |
-| PocketBase | 8090 | ❌ instalar |
+| Client Portal | 8090 | ❌ instalar |
 | Flamenco Manager | 8080 | ⏳ Julho 2026 |
 
 ---
@@ -244,20 +244,20 @@ episodic_memory ChromaDB (768 dims)
 ```
 🔴 evalScript Premiere 2025+ REQUER callback (sync retorna undefined)
 🔴 createMarker aceita SEGUNDOS direto, não ticks
-🔴 Após update Ollama: verificar override.conf (OLLAMA_MODELS/HOST/NO_CLOUD)
+🔴 Após update AI Engine: verificar override.conf (OLLAMA_MODELS/HOST/NO_CLOUD)
 🔴 Videos editados → 03_EDITED · Videos brutos → 02_CAPTURES (separação obrigatória)
 🔴 Obsidian AppImage requer --no-sandbox no Ubuntu 24 (SUID sandbox error)
 🔴 visual_search_api.py: timestamp_sec vem como float string — usar int(float())
 🔴 extract_tags() DEVE estar definida ANTES da função search() no arquivo
 🔴 SVG opacity no <g> afeta TODOS os filhos — backgrounds sólidos em layer separada
-🔴 Docker bypassa UFW — DOCKER-USER chain em /etc/ufw/after.rules
+🔴 Container bypassa UFW — DOCKER-USER chain em /etc/ufw/after.rules
 
-🟡 gemma4:26b precisa num_predict 4000 (thinking tokens contam)
+🟡 Language Model precisa num_predict 4000 (thinking tokens contam)
 🟡 RAG queries em inglês — nomic-embed treinado em EN
 🟡 qwen3-vl NÃO suporta num_predict — retorna vazio silenciosamente
 🟡 Imagens > 1280px causam timeout no vision model
 🟡 ollama.embeddings() não aceita host= — usar ollama.Client(host=)
-🟡 ChromaDB visual_index não tem rhythm_mode/material_type — usar extract_tags()
+🟡 Semantic Index visual_index não tem rhythm_mode/material_type — usar extract_tags()
 🟡 Obsidian vault via Samba: plugins podem dar "failed to load" — ignorar
 🟡 Grid/List drag: splice+insert faz cascade — usar swap para troca direta
 🟡 Mistral tradução é gargalo da busca (~5-10s) — considerar skip para EN
