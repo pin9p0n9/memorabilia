@@ -132,7 +132,7 @@ input[type=range]{height:6px;margin:4px 0 6px}
 </div>
 <span class="cnt" id="cnt">10 clips</span>
 </div>
-<svg id="svg"></svg>
+<svg id="svg" viewBox="0 0 560 400"></svg>
 <div class="legend">
 <span><span class="dot" style="background:#e0926a"></span> A7S III</span>
 <span><span class="dot" style="background:#84aed0"></span> Mavic 3</span>
@@ -216,7 +216,7 @@ function init(){
   svg.addEventListener('touchend',onTE,{passive:false});
   loop();
 }
-function onResize(){var r=svg.getBoundingClientRect();W=r.width;H=r.height}
+function onResize(){W=560;H=400}
 
 function loop(){if(slDrag)simA=2.0;if(simA>0.001){sim();simA*=0.999}draw();requestAnimationFrame(loop)}
 
@@ -328,38 +328,71 @@ function cc(v){
 }
 
 /* INTERACTION — Mouse */
-function s2w(sx,sy){var r=svg.getBoundingClientRect();return{x:(sx-r.left-vx)/vz,y:(sy-r.top-vy)/vz}}
+function s2w(sx,sy){
+  var r=svg.getBoundingClientRect();
+  var scaleX=560/r.width,scaleY=400/r.height;
+  var lx=(sx-r.left)*scaleX,ly=(sy-r.top)*scaleY;
+  return{x:(lx-vx)/vz,y:(ly-vy)/vz}
+}
 function findN(sx,sy){var p=s2w(sx,sy),best=null,bd=999;for(var i=0;i<N.length;i++){var n=N[i],d=Math.sqrt((n.x-p.x)*(n.x-p.x)+(n.y-p.y)*(n.y-p.y)),r2=n.tp==='theme'?nR*0.5+8:nR+8;if(d<r2&&d<bd){best=n;bd=d}};return best}
-function onDn(e){e.preventDefault();var n=findN(e.clientX,e.clientY);if(n){dragN=n;selN(n.id);simA=Math.max(simA,0.4)}else{panS={on:true,sx:e.clientX,sy:e.clientY,ox:vx,oy:vy};svg.classList.add('grabbing')}}
+function onDn(e){e.preventDefault();if(window.innerWidth<=600){closeSB()};var n=findN(e.clientX,e.clientY);if(n){dragN=n;selN(n.id);simA=Math.max(simA,0.4)}else{panS={on:true,sx:e.clientX,sy:e.clientY,ox:vx,oy:vy};svg.classList.add('grabbing')}}
 function onMv(e){if(dragN){var p=s2w(e.clientX,e.clientY);dragN.x=p.x;dragN.y=p.y;dragN.vx=0;dragN.vy=0}else if(panS.on){vx=panS.ox+(e.clientX-panS.sx);vy=panS.oy+(e.clientY-panS.sy)}}
 function onUp(){dragN=null;panS.on=false;svg.classList.remove('grabbing')}
-function onWh(e){e.preventDefault();var r=svg.getBoundingClientRect(),mx=e.clientX-r.left,my=e.clientY-r.top,d=e.deltaY>0?0.85:1.18,nz=Math.max(0.2,Math.min(6,vz*d));vx=mx-(mx-vx)*(nz/vz);vy=my-(my-vy)*(nz/vz);vz=nz}
+function onWh(e){e.preventDefault();var r=svg.getBoundingClientRect(),mx=(e.clientX-r.left)*560/r.width,my=(e.clientY-r.top)*400/r.height,d=e.deltaY>0?0.85:1.18,nz=Math.max(0.2,Math.min(6,vz*d));vx=mx-(mx-vx)*(nz/vz);vy=my-(my-vy)*(nz/vz);vz=nz}
 
 /* INTERACTION — Touch with long-press drag + pinch zoom */
 var lastPinch=0,lastTap=0,touchSt=null;
 function onTS(e){
-  e.preventDefault();
-  if(e.touches.length===2){lastPinch=Math.hypot(e.touches[0].clientX-e.touches[1].clientX,e.touches[0].clientY-e.touches[1].clientY);dragN=null;panS.on=false;return}
+  e.preventDefault();e.stopPropagation();
+  if(e.touches.length===2){lastPinch=Math.hypot(e.touches[0].clientX-e.touches[1].clientX,e.touches[0].clientY-e.touches[1].clientY);dragN=null;return}
   var t=e.touches[0];
-  touchSt={x:t.clientX,y:t.clientY,t:Date.now(),moved:false};
   var n=findN(t.clientX,t.clientY);
-  if(n){dragN=n;simA=Math.max(simA,0.5)}
-  else{var now=Date.now();if(now-lastTap<350){fitView();lastTap=0;return}lastTap=now;panS={on:true,sx:t.clientX,sy:t.clientY,ox:vx,oy:vy}}
+  touchSt={x:t.clientX,y:t.clientY,t:Date.now(),moved:false};
+  if(n){
+    dragN=n;
+    simA=Math.max(simA,0.5);
+    /* Visual feedback */
+    n.vx=0;n.vy=0;
+  }else{
+    var now=Date.now();if(now-lastTap<400){fitView();lastTap=0;return}
+    lastTap=now;
+    panS={on:true,sx:t.clientX,sy:t.clientY,ox:vx,oy:vy};
+  }
 }
 function onTM(e){
-  e.preventDefault();
-  if(e.touches.length===2){var d=Math.hypot(e.touches[0].clientX-e.touches[1].clientX,e.touches[0].clientY-e.touches[1].clientY);if(lastPinch>0){var f=d/lastPinch,nz=Math.max(0.2,Math.min(6,vz*f));var cx2=(e.touches[0].clientX+e.touches[1].clientX)/2,cy2=(e.touches[0].clientY+e.touches[1].clientY)/2;var r=svg.getBoundingClientRect(),mx2=cx2-r.left,my2=cy2-r.top;vx=mx2-(mx2-vx)*(nz/vz);vy=my2-(my2-vy)*(nz/vz);vz=nz}lastPinch=d;dragN=null;panS.on=false;return}
+  e.preventDefault();e.stopPropagation();
+  if(e.touches.length===2&&lastPinch>0){
+    var d=Math.hypot(e.touches[0].clientX-e.touches[1].clientX,e.touches[0].clientY-e.touches[1].clientY);
+    var f=d/lastPinch,nz=Math.max(0.2,Math.min(6,vz*f));
+    var cx2=(e.touches[0].clientX+e.touches[1].clientX)/2,cy2=(e.touches[0].clientY+e.touches[1].clientY)/2;
+    var r=svg.getBoundingClientRect(),mx2=cx2-r.left,my2=cy2-r.top;
+    var sx2=560/r.width,sy2=400/r.height;
+    mx2*=sx2;my2*=sy2;
+    vx=mx2-(mx2-vx)*(nz/vz);vy=my2-(my2-vy)*(nz/vz);vz=nz;
+    lastPinch=d;return;
+  }
+  if(!e.touches.length)return;
   var t=e.touches[0];
-  if(touchSt){var dx=t.clientX-touchSt.x,dy=t.clientY-touchSt.y;if(Math.abs(dx)>3||Math.abs(dy)>3)touchSt.moved=true}
-  if(dragN){var p=s2w(t.clientX,t.clientY);dragN.x=p.x;dragN.y=p.y;dragN.vx=0;dragN.vy=0;simA=Math.max(simA,0.4)}
-  else if(panS.on){vx=panS.ox+(t.clientX-panS.sx);vy=panS.oy+(t.clientY-panS.sy)}
+  if(touchSt){var dx=t.clientX-touchSt.x,dy=t.clientY-touchSt.y;if(dx*dx+dy*dy>9)touchSt.moved=true}
+  if(dragN){
+    var p=s2w(t.clientX,t.clientY);
+    dragN.x=p.x;dragN.y=p.y;
+    dragN.vx=0;dragN.vy=0;
+    simA=Math.max(simA,0.4);
+  }else if(panS.on){
+    var r2=svg.getBoundingClientRect();
+    var sx3=560/r2.width,sy3=400/r2.height;
+    vx=panS.ox+(t.clientX-panS.sx)*sx3;
+    vy=panS.oy+(t.clientY-panS.sy)*sy3;
+  }
 }
 function onTE(e){
   e.preventDefault();
-  /* Tap = select (short touch, no drag movement) */
   if(touchSt&&!touchSt.moved&&Date.now()-touchSt.t<300&&dragN){selN(dragN.id)}
   dragN=null;panS.on=false;lastPinch=0;touchSt=null;
 }
+
+
 
 
 
@@ -374,7 +407,7 @@ function fitView(){
   var nz2=Math.min(W/bw,H/bh,2);nz2=Math.max(0.3,nz2);
   vz=nz2;vx=W/2-cx3*nz2;vy=H/2-cy3*nz2;
 }
-function zoomBy(f){var nz=Math.max(0.2,Math.min(6,vz*f)),cx=W/2,cy=H/2;vx=cx-(cx-vx)*(nz/vz);vy=cy-(cy-vy)*(nz/vz);vz=nz}
+function zoomBy(f){var nz=Math.max(0.2,Math.min(6,vz*f)),cx=280,cy=200;vx=cx-(cx-vx)*(nz/vz);vy=cy-(cy-vy)*(nz/vz);vz=nz}
 function resetAll(){vx=0;vy=0;vz=1;simA=1.2;document.getElementById('q').value='';qs='';vis=new Set();dh=new Set();document.querySelectorAll('.chip').forEach(function(c){c.className='chip'});sel=null;document.getElementById('info').textContent='Click a node'}
 
 /* SELECT NODE */
