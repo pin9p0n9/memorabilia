@@ -54,7 +54,7 @@ svg.grabbing{cursor:grabbing}
 <div class="sl">Node size</div>
 <input type="range" min="6" max="28" value="14" oninput="nR=+this.value">
 <div class="sl">Energy</div>
-<input type="range" min="0" max="100" value="50" oninput="setE(+this.value)">
+<input type="range" min="0" max="100" value="50" oninput="setE(+this.value)" onmousedown="slDrag=true" onmouseup="slDrag=false">
 </div>
 <div class="sb-bot">
 <div class="sh">Clip info</div>
@@ -127,10 +127,10 @@ var gf={camera:true,temporal:true,tags:true,links:true};
 var nR=14,sel=null,qs='',lW=1.5;
 var fR=150,fD=0.82,fG=0.0004,fL=0.002;
 var vx=0,vy=0,vz=1,panS={on:false},dragN=null,simA=1.2;
-var svg,W=560,H=400;
+var svg,W=560,H=400,slDrag=false;
 var vis=new Set(),dh=new Set();
 
-function setE(v){fR=10+v*12;fD=0.96-v*0.004;fG=0.00005+v*0.00002;fL=0.0005+v*0.00008;simA=1.5}
+function setE(v){fR=5+v*v*0.15;fD=0.98-v*0.003;fG=0.0001*(100-v)/100;fL=0.0003+v*0.0001;simA=2.0}
 function kick(){simA=Math.max(simA,0.8)}
 
 function init(){
@@ -147,10 +147,10 @@ function init(){
   loop();
 }
 
-function loop(){if(simA>0.001){sim();simA*=0.997}draw();requestAnimationFrame(loop)}
+function loop(){if(slDrag)simA=2.0;if(simA>0.001){sim();simA*=0.999}draw();requestAnimationFrame(loop)}
 
 function sim(){
-  var a=simA*0.7,cx=280,cy=200,i,j;
+  var a=simA*1.2,cx=280,cy=200,i,j;
   for(i=0;i<N.length;i++){N[i].vx+=(cx-N[i].x)*fG*a;N[i].vy+=(cy-N[i].y)*fG*a}
   for(i=0;i<N.length;i++)for(j=i+1;j<N.length;j++){
     var dx=N[j].x-N[i].x,dy=N[j].y-N[i].y,d2=dx*dx+dy*dy||1,d=Math.sqrt(d2),f=fR/d2*a;
