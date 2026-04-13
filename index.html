@@ -270,6 +270,11 @@ function setLang(lang){
   document.getElementById('btn-en').classList.toggle('on', lang==='en');
   buildNav(lang);
   localStorage.setItem('ml',lang);
+  document.querySelectorAll('.sec').forEach(s=>s.classList.remove('active'));
+  document.getElementById('resumo').classList.add('active');
+  document.querySelectorAll('.nav button').forEach(b=>b.classList.remove('active'));
+  document.querySelector('.nav button').classList.add('active');
+  window.scrollTo({top:0,behavior:'smooth'});
   loadDocs();
 }
 
