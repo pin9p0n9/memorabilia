@@ -7,7 +7,7 @@
 <style>
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700&family=JetBrains+Mono:wght@400;500&display=swap');
 :root{--bg:#15171b;--bg2:#1b1e23;--bg3:#23262d;--bg4:#2c3038;--text:#cdd1da;--text2:#878d9a;--text3:#555b68;--accent:#e0926a;--accent2:#b86840;--teal:#72c5b4;--coral:#e0908a;--amber:#dbb868;--blue:#84aed0;--pink:#c89ab8;--green:#8cc08c;--border:rgba(255,255,255,0.07);--radius:12px}
-*{margin:0;padding:0;box-sizing:border-box}body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;line-height:1.6}::selection{background:var(--accent2);color:#fff}
+*{margin:0;padding:0;box-sizing:border-box}body{background:var(--bg);-webkit-text-size-adjust:100%;touch-action:manipulation;color:var(--text);font-family:'DM Sans',sans-serif;line-height:1.6}::selection{background:var(--accent2);color:#fff}
 .ct{max-width:900px;margin:0 auto;padding:20px}
 .hero{padding:56px 0 36px;text-align:center;border-bottom:1px solid var(--border);margin-bottom:36px;position:relative}
 .hero h1{font-size:2.3em;font-weight:700;letter-spacing:-.02em;background:linear-gradient(135deg,var(--accent),#d4a574);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:6px}
@@ -55,7 +55,85 @@
 div.pt{display:block}div.en{display:none}
 .lang-en span.en{display:inline}.lang-en span.pt{display:none}
 span.pt{display:inline}span.en{display:none}
-@media(max-width:640px){.hero h1{font-size:1.5em}.stats{gap:14px}.sg{grid-template-columns:1fr}.nav{gap:4px}.nav button{padding:5px 11px;font-size:.78em}}
+
+/* ═══ RESPONSIVE ═══ */
+
+/* Tablet landscape */
+@media(max-width:960px){
+.ct{padding:16px}
+}
+
+/* Tablet portrait */
+@media(max-width:768px){
+.ct{max-width:100%;padding:14px}
+.hero{padding:40px 0 28px}
+.hero h1{font-size:1.9em}
+.stats{gap:18px}
+.sg{grid-template-columns:1fr 1fr;gap:10px}
+.nav{gap:5px;padding:10px 0}
+.nav button{padding:6px 12px;font-size:.8em}
+.tbl{font-size:.78em}
+.tbl th,.tbl td{padding:5px 8px}
+iframe{height:400px !important}
+}
+
+/* Mobile */
+@media(max-width:540px){
+.ct{padding:10px}
+.hero{padding:28px 0 20px}
+.hero h1{font-size:1.5em}
+.hero .sub{font-size:.88em}
+.stats{gap:10px 16px;justify-content:center;flex-wrap:wrap}
+.stat .n{font-size:1.2em}
+.stat .l{font-size:.65em}
+.lang-sw{top:-4px;right:-4px}
+.lang-btn{width:30px;height:30px;font-size:.7em}
+.nav{gap:4px;padding:8px 0;position:sticky;top:0;overflow-x:auto;flex-wrap:nowrap;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.nav::-webkit-scrollbar{display:none}
+.nav button{padding:5px 10px;font-size:.75em;white-space:nowrap;flex-shrink:0}
+.st{font-size:1.15em}
+.sd{font-size:.86em;margin-bottom:16px}
+.sg{grid-template-columns:1fr;gap:8px}
+.si{padding:12px}
+.si h3{font-size:.76em}
+.si p{font-size:.82em}
+.card{margin-bottom:8px}
+.ch{padding:11px 14px;gap:8px}
+.cb{width:30px;height:30px;font-size:.68em}
+.ct1{font-size:.86em}
+.ct2{font-size:.73em}
+.cbd{padding:0 14px 14px}
+.cbd p{font-size:.82em}
+.detail{grid-template-columns:90px 1fr;font-size:.78em}
+.tbl{font-size:.73em;display:block;overflow-x:auto;white-space:nowrap}
+.tbl th,.tbl td{padding:4px 6px}
+.pr{padding:9px;gap:8px}
+.pr .num{width:22px;height:22px;font-size:.68em}
+.pr .nm{font-size:.82em}
+.pr .ts{font-size:.73em}
+.footer{padding:24px 0;font-size:.72em}
+.scn{padding:5px 10px;font-size:.73em}
+iframe{height:340px !important}
+
+/* Pricing boxes stack */
+div[style*="grid-template-columns:1fr 1fr"]{grid-template-columns:1fr !important}
+div[style*="grid-template-columns:repeat(3"]{grid-template-columns:1fr !important}
+
+/* Flow map / network SVG */
+svg[viewBox]{max-width:100%;height:auto}
+}
+
+/* Small mobile */
+@media(max-width:380px){
+.hero h1{font-size:1.3em}
+.stats{gap:8px 12px}
+.stat .n{font-size:1em}
+.nav button{padding:4px 8px;font-size:.7em}
+.st{font-size:1.05em}
+.ct1{font-size:.8em}
+iframe{height:280px !important}
+}
+
 </style>
 </head>
 <body>
@@ -63,7 +141,7 @@ span.pt{display:inline}span.en{display:none}
 <div style="text-align:center">
 <h1 style="font-size:2em;background:linear-gradient(135deg,#e0926a,#d4a574);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:8px">MEMORABILIA</h1>
 <p style="color:#555b68;margin-bottom:22px"><span class="pt">Pipeline Audiovisual · Acesso restrito</span><span class="en">Audiovisual Pipeline · Restricted access</span></p>
-<input id="pw" type="password" placeholder="Senha" onkeypress="if(event.key==='Enter')checkPw()" style="padding:11px 18px;border-radius:8px;border:1px solid rgba(255,255,255,.1);background:#23262d;color:#cdd1da;font-size:1em;width:220px;text-align:center;outline:none">
+<input id="pw" type="password" placeholder="Senha" onkeypress="if(event.key==='Enter')checkPw()" style="padding:11px 18px;border-radius:8px;border:1px solid rgba(255,255,255,.1);background:#23262d;color:#cdd1da;font-size:1em;width:min(220px,80vw);text-align:center;outline:none">
 <br><button onclick="checkPw()" style="margin-top:11px;padding:9px 30px;border-radius:8px;border:none;background:#b86840;color:#fff;cursor:pointer;font-size:.88em"><span class="pt">Entrar</span><span class="en">Enter</span></button>
 <p id="err" style="color:#e0908a;margin-top:10px;font-size:.83em;display:none"><span class="pt">Senha incorreta</span><span class="en">Wrong password</span></p>
 </div></div>
@@ -387,7 +465,7 @@ document.getElementById('panel-content').innerHTML=`
 <div class="card" onclick="T(this)"><div class="ch"><div class="cb bt">G</div><div><div class="ct1">Grid View</div><div class="ct2"><span class="pt">Thumbnails arrastáveis</span><span class="en">Draggable thumbnails</span></div></div><div class="cr"><span class="arrow">▸</span></div></div><div class="cbd"><p><span class="pt">Thumbnails com frame real. Click para selecionar, drag para reordenar.</span><span class="en">Thumbnails with real frame. Click to select, drag to reorder.</span></p></div></div>
 <div class="card" onclick="T(this)"><div class="ch"><div class="cb ba">⬡</div><div><div class="ct1">Graph View</div><div class="ct2"><span class="pt">Grafo relacional force-directed</span><span class="en">Force-directed relational graph</span></div></div><div class="cr"><span class="tag ta">NEW</span><span class="arrow">▸</span></div></div><div class="cbd"><p><span class="pt">Cada clip é um nó circular com imagem real. Temas como nós menores pastel. SVG 4 layers.</span><span class="en">Each clip is a circular node with real image. Themes as smaller pastel nodes. SVG 4 layers.</span></p><p><strong><span class="pt">Busca = criação:</span><span class="en">Search = creation:</span></strong> <code style="background:var(--bg3);padding:2px 5px;border-radius:3px;color:var(--teal)">#tag</code> <code style="background:var(--bg3);padding:2px 5px;border-radius:3px;color:var(--amber)">!select</code> <code style="background:var(--bg3);padding:2px 5px;border-radius:3px;color:var(--accent)">@clip</code></p></div></div>
 <div style="margin-top:18px;margin-bottom:24px;border-radius:12px;overflow:hidden;border:1px solid rgba(255,255,255,.07)">
-<iframe src="graph_demo.html" width="100%" height="460" style="border:none;display:block;border-radius:12px"></iframe>
+<iframe src="graph_demo.html" width="100%" height="460" class="demo-frame" style="border:none;display:block;border-radius:12px"></iframe>
 </div>
 <div style="margin-top:28px;border-top:1px solid var(--border);padding-top:22px"><div style="font-size:1.15em;font-weight:600;color:var(--text);margin-bottom:6px">MEMORABILIA Graph — Plugin Standalone</div><div style="font-size:.86em;color:var(--text2);margin-bottom:18px"><span class="pt">O mesmo Graph View como produto independente — sem AI, sem cloud, sem setup. O criativo é o motor semântico.</span><span class="en">Same Graph View as standalone product — no AI, no cloud, no setup. The creative is the semantic engine.</span></div>
 <div class="card" onclick="T(this)"><div class="ch"><div class="cb bt">ED</div><div><div class="ct1"><span class="pt">Edges automáticas — sem AI</span><span class="en">Automatic edges — no AI</span></div><div class="ct2"><span class="pt">Relações pela metadata nativa</span><span class="en">Relations from native metadata</span></div></div><div class="cr"><span class="arrow">▸</span></div></div><div class="cbd"><p><span class="pt">Mesmo reel → aresta forte · &lt; 5 min → temporal · Mesma câmera → tema · GPS &lt; 50m → locação · FFprobe + ExifTool.</span><span class="en">Same reel → strong edge · &lt; 5 min → temporal · Same camera → theme · GPS &lt; 50m → location · FFprobe + ExifTool.</span></p></div></div>
