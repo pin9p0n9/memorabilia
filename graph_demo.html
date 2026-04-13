@@ -130,7 +130,7 @@ var vx=0,vy=0,vz=1,panS={on:false},dragN=null,simA=1.2;
 var svg,W=560,H=400;
 var vis=new Set(),dh=new Set();
 
-function setE(v){fR=30+v*5;fD=0.92-v*0.002;fG=0.0001+v*0.00001;fL=0.001+v*0.00003;simA=Math.max(simA,0.6)}
+function setE(v){fR=10+v*12;fD=0.96-v*0.004;fG=0.00005+v*0.00002;fL=0.0005+v*0.00008;simA=1.5}
 function kick(){simA=Math.max(simA,0.8)}
 
 function init(){
@@ -147,10 +147,10 @@ function init(){
   loop();
 }
 
-function loop(){if(simA>0.001){sim();simA*=0.994}draw();requestAnimationFrame(loop)}
+function loop(){if(simA>0.001){sim();simA*=0.997}draw();requestAnimationFrame(loop)}
 
 function sim(){
-  var a=simA*0.5,cx=280,cy=200,i,j;
+  var a=simA*0.7,cx=280,cy=200,i,j;
   for(i=0;i<N.length;i++){N[i].vx+=(cx-N[i].x)*fG*a;N[i].vy+=(cy-N[i].y)*fG*a}
   for(i=0;i<N.length;i++)for(j=i+1;j<N.length;j++){
     var dx=N[j].x-N[i].x,dy=N[j].y-N[i].y,d2=dx*dx+dy*dy||1,d=Math.sqrt(d2),f=fR/d2*a;
