@@ -6,46 +6,34 @@
 <title>MEMORABILIA — Pipeline Audiovisual</title>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700&family=JetBrains+Mono:wght@400;500&display=swap');
-:root{
---bg:#15171b;--bg2:#1b1e23;--bg3:#23262d;--bg4:#2c3038;
---text:#cdd1da;--text2:#878d9a;--text3:#555b68;
---accent:#e0926a;--accent2:#b86840;
---teal:#72c5b4;--coral:#e0908a;--amber:#dbb868;
---blue:#84aed0;--pink:#c89ab8;--green:#8cc08c;
---border:rgba(255,255,255,0.07);--radius:12px;
-}
-*{margin:0;padding:0;box-sizing:border-box}
-body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;line-height:1.6}
-::selection{background:var(--accent2);color:#fff}
+:root{--bg:#15171b;--bg2:#1b1e23;--bg3:#23262d;--bg4:#2c3038;--text:#cdd1da;--text2:#878d9a;--text3:#555b68;--accent:#e0926a;--accent2:#b86840;--teal:#72c5b4;--coral:#e0908a;--amber:#dbb868;--blue:#84aed0;--pink:#c89ab8;--green:#8cc08c;--border:rgba(255,255,255,0.07);--radius:12px}
+*{margin:0;padding:0;box-sizing:border-box}body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;line-height:1.6}::selection{background:var(--accent2);color:#fff}
 .ct{max-width:900px;margin:0 auto;padding:20px}
-.hero{padding:56px 0 36px;text-align:center;border-bottom:1px solid var(--border);margin-bottom:36px}
+.hero{padding:56px 0 36px;text-align:center;border-bottom:1px solid var(--border);margin-bottom:36px;position:relative}
 .hero h1{font-size:2.3em;font-weight:700;letter-spacing:-.02em;background:linear-gradient(135deg,var(--accent),#d4a574);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:6px}
 .hero .sub{color:var(--text2);font-size:1.02em;margin-bottom:20px}
 .stats{display:flex;justify-content:center;gap:30px;flex-wrap:wrap;margin-top:18px}
 .stat{text-align:center}.stat .n{font-size:1.5em;font-weight:700;font-family:'JetBrains Mono',monospace}.stat .l{font-size:.72em;color:var(--text3);text-transform:uppercase;letter-spacing:.05em}
+.lang-sw{position:absolute;top:0;right:0;display:flex;gap:4px}
+.lang-btn{width:34px;height:34px;border-radius:6px;border:1px solid var(--border);background:var(--bg3);color:var(--text2);font-family:'JetBrains Mono',monospace;font-size:.78em;font-weight:700;cursor:pointer;transition:all .2s;display:flex;align-items:center;justify-content:center}
+.lang-btn.on{background:var(--accent2);color:#fff;border-color:var(--accent)}
 .nav{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:28px;position:sticky;top:0;z-index:100;background:var(--bg);padding:12px 0;border-bottom:1px solid var(--border)}
 .nav button{background:var(--bg3);border:1px solid var(--border);color:var(--text2);padding:7px 15px;border-radius:20px;cursor:pointer;font-family:inherit;font-size:.84em;transition:all .2s}
 .nav button:hover,.nav button.active{background:var(--accent2);color:#fff;border-color:var(--accent)}
 .sec{display:none;animation:fadeIn .3s ease}.sec.active{display:block}
 @keyframes fadeIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}
-.st{font-size:1.4em;font-weight:700;margin-bottom:6px}
-.sd{color:var(--text2);margin-bottom:22px;font-size:.95em}
-.card{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);margin-bottom:10px;overflow:hidden;transition:border-color .2s}
-.card:hover{border-color:rgba(255,255,255,.11)}
-.ch{display:flex;align-items:center;gap:11px;padding:14px 18px;cursor:pointer;user-select:none}
-.ch:hover{background:var(--bg3)}
+.st{font-size:1.4em;font-weight:700;margin-bottom:6px}.sd{color:var(--text2);margin-bottom:22px;font-size:.95em}
+.card{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);margin-bottom:10px;overflow:hidden;transition:border-color .2s}.card:hover{border-color:rgba(255,255,255,.11)}
+.ch{display:flex;align-items:center;gap:11px;padding:14px 18px;cursor:pointer;user-select:none}.ch:hover{background:var(--bg3)}
 .cb{width:34px;height:34px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:.73em;font-weight:700;font-family:'JetBrains Mono',monospace;flex-shrink:0}
 .ct1{font-weight:600;font-size:.93em}.ct2{font-size:.78em;color:var(--text2)}
 .cr{margin-left:auto;display:flex;align-items:center;gap:8px}
 .tag{font-size:.68em;padding:2px 7px;border-radius:10px;font-family:'JetBrains Mono',monospace}
-.arrow{color:var(--text3);transition:transform .2s;font-size:.85em}
-.card.open .arrow{transform:rotate(90deg)}
-.cbd{display:none;padding:0 18px 18px;border-top:1px solid var(--border)}
-.card.open .cbd{display:block}
+.arrow{color:var(--text3);transition:transform .2s;font-size:.85em}.card.open .arrow{transform:rotate(90deg)}
+.cbd{display:none;padding:0 18px 18px;border-top:1px solid var(--border)}.card.open .cbd{display:block}
 .cbd p{margin:10px 0;font-size:.88em;color:var(--text2);line-height:1.7}
 .detail{display:grid;grid-template-columns:110px 1fr;gap:5px 14px;font-size:.83em;margin:10px 0}
-.detail dt{color:var(--text3);font-family:'JetBrains Mono',monospace;font-size:.78em}
-.detail dd{color:var(--text)}
+.detail dt{color:var(--text3);font-family:'JetBrains Mono',monospace;font-size:.78em}.detail dd{color:var(--text)}
 .bt{background:rgba(114,197,180,.12);color:var(--teal)}.bc{background:rgba(224,144,138,.12);color:var(--coral)}
 .ba{background:rgba(219,184,104,.12);color:var(--amber)}.bb{background:rgba(132,174,208,.12);color:var(--blue)}
 .bp{background:rgba(200,154,184,.12);color:var(--pink)}.bo{background:rgba(224,146,106,.12);color:var(--accent)}
@@ -54,417 +42,221 @@ body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;lin
 .ta{background:rgba(219,184,104,.1);color:var(--amber)}.tb{background:rgba(132,174,208,.1);color:var(--blue)}
 .sg{display:grid;grid-template-columns:1fr 1fr;gap:11px;margin:18px 0}
 .si{background:var(--bg2);border:1px solid var(--border);border-radius:8px;padding:15px}
-.si h3{font-size:.82em;color:var(--text3);text-transform:uppercase;letter-spacing:.04em;margin-bottom:7px}
-.si p{font-size:.88em}
+.si h3{font-size:.82em;color:var(--text3);text-transform:uppercase;letter-spacing:.04em;margin-bottom:7px}.si p{font-size:.88em}
 .pr{display:flex;gap:11px;align-items:flex-start;margin:10px 0;padding:11px;background:var(--bg3);border-radius:8px}
 .pr .num{width:26px;height:26px;background:var(--accent2);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.73em;font-weight:700;flex-shrink:0}
 .pr .nm{font-weight:600;font-size:.88em}.pr .ts{font-size:.78em;color:var(--text2);margin-top:1px}
 .tbl{width:100%;border-collapse:collapse;font-size:.83em;margin:14px 0}
 .tbl th{text-align:left;padding:7px 10px;background:var(--bg3);color:var(--text2);font-weight:500;font-size:.78em;text-transform:uppercase;letter-spacing:.04em}
-.tbl td{padding:7px 10px;border-bottom:1px solid var(--border)}
-.tbl tr:last-child td{border-bottom:none}
-.flow{display:flex;flex-direction:column;gap:3px;margin:18px 0}
-.fa{text-align:center;color:var(--text3);font-size:1.1em}
-.fb{background:var(--bg3);border:1px solid var(--border);border-radius:var(--radius);padding:14px 18px}
-.fb.hl{border-color:var(--amber);border-width:2px}
-.fb.hm{border-color:var(--coral);border-width:2px}
-.fl{font-size:.68em;text-transform:uppercase;letter-spacing:.08em;margin-bottom:3px}
-.footer{text-align:center;padding:36px 0;color:var(--text3);font-size:.78em;border-top:1px solid var(--border);margin-top:36px}
-@media(max-width:640px){.hero h1{font-size:1.5em}.stats{gap:14px}.sg{grid-template-columns:1fr}.nav{gap:4px}.nav button{padding:5px 11px;font-size:.78em}}
+.tbl td{padding:7px 10px;border-bottom:1px solid var(--border)}.tbl tr:last-child td{border-bottom:none}
 .scn{padding:7px 14px;border-radius:20px;border:1px solid var(--border);background:var(--bg3);color:var(--text2);font-family:inherit;font-size:.82em;cursor:pointer;transition:all .2s}.scn.on,.scn:hover{background:var(--accent2);color:#fff;border-color:var(--accent)}.scv{display:none}.scv.show{display:block}
-
-svg .th{font-family:'DM Sans',sans-serif;font-size:14px;font-weight:500;fill:var(--text)}
-svg .ts{font-family:'DM Sans',sans-serif;font-size:12px;fill:var(--text2)}
-svg .t{font-family:'DM Sans',sans-serif;font-size:14px;fill:var(--text)}
-svg .c-teal rect{fill:rgba(114,197,180,.12);stroke:#72c5b4;stroke-width:.5}
-svg .c-teal text.th{fill:#72c5b4}svg .c-teal text.ts{fill:#5ba898}
-svg .c-purple rect{fill:rgba(167,139,250,.12);stroke:#a78bfa;stroke-width:.5}
-svg .c-purple text.th{fill:#a78bfa}svg .c-purple text.ts{fill:#8b7acc}
-svg .c-blue rect{fill:rgba(132,174,208,.12);stroke:#84aed0;stroke-width:.5}
-svg .c-blue text.th{fill:#84aed0}svg .c-blue text.ts{fill:#6890b0}
-svg .c-coral rect{fill:rgba(224,144,138,.12);stroke:#e0908a;stroke-width:.5}
-svg .c-coral text.th{fill:#e0908a}svg .c-coral text.ts{fill:#c07068}
-svg .c-amber rect{fill:rgba(219,184,104,.12);stroke:#dbb868;stroke-width:.5}
-svg .c-amber text.th{fill:#dbb868}svg .c-amber text.ts{fill:#b09848}
-svg .c-gray rect{fill:rgba(200,200,200,.1);stroke:#888;stroke-width:.5}
-svg .c-gray text.th{fill:#aaa}svg .c-gray text.ts{fill:#888}
-svg .c-green rect{fill:rgba(140,192,140,.12);stroke:#8cc08c;stroke-width:.5}
-svg .c-green text.th{fill:#8cc08c}svg .c-green text.ts{fill:#6aa06a}
-svg .c-pink rect{fill:rgba(200,154,184,.12);stroke:#c89ab8;stroke-width:.5}
-svg .c-pink text.th{fill:#c89ab8}svg .c-pink text.ts{fill:#a87898}
-svg .arr{stroke:var(--text3);stroke-width:1.5}
-svg .leader{stroke:var(--text3);stroke-width:.5;stroke-dasharray:4 3}
-svg .box{fill:var(--bg3);stroke:var(--border)}
-
+.footer{text-align:center;padding:36px 0;color:var(--text3);font-size:.78em;border-top:1px solid var(--border);margin-top:36px}
+.en{display:none}.lang-en .en{display:inline}.lang-en .pt{display:none}.lang-en div.en{display:block}.lang-en div.pt{display:none}
+div.pt{display:block}div.en{display:none}
+.lang-en span.en{display:inline}.lang-en span.pt{display:none}
+span.pt{display:inline}span.en{display:none}
+@media(max-width:640px){.hero h1{font-size:1.5em}.stats{gap:14px}.sg{grid-template-columns:1fr}.nav{gap:4px}.nav button{padding:5px 11px;font-size:.78em}}
 </style>
 </head>
 <body>
-<!-- PASSWORD GATE -->
 <div id="gate" style="position:fixed;top:0;left:0;width:100%;height:100%;background:#15171b;display:flex;align-items:center;justify-content:center;z-index:9999;flex-direction:column;font-family:'DM Sans',sans-serif">
 <div style="text-align:center">
 <h1 style="font-size:2em;background:linear-gradient(135deg,#e0926a,#d4a574);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:8px">MEMORABILIA</h1>
-<p style="color:#555b68;margin-bottom:22px">Pipeline Audiovisual · Acesso restrito</p>
+<p style="color:#555b68;margin-bottom:22px"><span class="pt">Pipeline Audiovisual · Acesso restrito</span><span class="en">Audiovisual Pipeline · Restricted access</span></p>
 <input id="pw" type="password" placeholder="Senha" onkeypress="if(event.key==='Enter')checkPw()" style="padding:11px 18px;border-radius:8px;border:1px solid rgba(255,255,255,.1);background:#23262d;color:#cdd1da;font-size:1em;width:220px;text-align:center;outline:none">
-<br><button onclick="checkPw()" style="margin-top:11px;padding:9px 30px;border-radius:8px;border:none;background:#b86840;color:#fff;cursor:pointer;font-size:.88em">Entrar</button>
-<p id="err" style="color:#e0908a;margin-top:10px;font-size:.83em;display:none">Senha incorreta</p>
+<br><button onclick="checkPw()" style="margin-top:11px;padding:9px 30px;border-radius:8px;border:none;background:#b86840;color:#fff;cursor:pointer;font-size:.88em"><span class="pt">Entrar</span><span class="en">Enter</span></button>
+<p id="err" style="color:#e0908a;margin-top:10px;font-size:.83em;display:none"><span class="pt">Senha incorreta</span><span class="en">Wrong password</span></p>
 </div></div>
 <script>function checkPw(){if(btoa(document.getElementById("pw").value)==="cGluZ3Bvbmc="){document.getElementById("gate").style.display="none"}else{document.getElementById("err").style.display="block";document.getElementById("pw").value=""}}</script>
 
 <div class="ct">
-<!-- HERO -->
 <div class="hero">
+<div class="lang-sw">
+<button class="lang-btn on" id="btn-pt" onclick="setLang('pt')">PT</button>
+<button class="lang-btn" id="btn-en" onclick="setLang('en')">EN</button>
+</div>
 <h1>MEMORABILIA</h1>
-<div class="sub">Pipeline audiovisual com memória projetual<br>pingpong · Montreal · April 2026</div>
+<div class="sub"><span class="pt">Pipeline audiovisual com memória projetual</span><span class="en">Audiovisual pipeline with living project memory</span><br>pingpong · Montreal · April 2026</div>
 <div class="stats">
-<div class="stat"><div class="n" style="color:var(--teal)">9</div><div class="l">Agentes</div></div>
+<div class="stat"><div class="n" style="color:var(--teal)">9</div><div class="l"><span class="pt">Agentes</span><span class="en">Agents</span></div></div>
 <div class="stat"><div class="n" style="color:var(--accent)">6</div><div class="l">Assistants</div></div>
-<div class="stat"><div class="n" style="color:var(--amber)">72k</div><div class="l">Trechos</div></div>
-<div class="stat"><div class="n" style="color:var(--coral)">50</div><div class="l">Min/projeto</div></div>
-<div class="stat"><div class="n" style="color:var(--green)">$0</div><div class="l">Custo/mês</div></div>
-<div class="stat"><div class="n" style="color:var(--blue)">34</div><div class="l">Dias p/ build</div></div>
+<div class="stat"><div class="n" style="color:var(--amber)">72k</div><div class="l"><span class="pt">Trechos</span><span class="en">Chunks</span></div></div>
+<div class="stat"><div class="n" style="color:var(--coral)">50</div><div class="l"><span class="pt">Min/projeto</span><span class="en">Min/project</span></div></div>
+<div class="stat"><div class="n" style="color:var(--green)">$0</div><div class="l"><span class="pt">Custo/mês</span><span class="en">Cost/month</span></div></div>
+<div class="stat"><div class="n" style="color:var(--blue)">34</div><div class="l"><span class="pt">Dias p/ build</span><span class="en">Days to build</span></div></div>
 </div>
 </div>
 
-<!-- NAV -->
-<div class="nav">
-<button class="active" onclick="S('resumo')">Resumo</button>
-<button onclick="S('flowmap')">Mapa de Fluxo</button>
-<button onclick="S('network')">Rede Distribuída</button>
-<button onclick="S('manifesto')">Manifesto</button>
-<button onclick="S('agents')">9 Agentes</button>
-<button onclick="S('assistants')">6 Assistants</button>
-<button onclick="S('models')">Modelos AI</button>
-<button onclick="S('knowledge')">Conhecimento</button>
-<button onclick="S('panel')">Painel + Plugin</button>
-<button onclick="S('docs')">Documentos</button>
-<button onclick="S('biz')">Business Model</button>
-</div>
+<div class="nav" id="main-nav"></div>
 
 <!-- ══════ 1. RESUMO ══════ -->
 <div class="sec active" id="resumo">
 <div class="st">MEMORABILIA</div>
-<div class="sd">Um organismo audiovisual com memória viva — tradução de tempo, memória projetual e ambiente controlado para experimentação criativa.</div>
+<div class="sd"><span class="pt">Um organismo audiovisual com memória viva — tradução de tempo, memória projetual e ambiente controlado para experimentação criativa.</span><span class="en">An audiovisual organism with living memory — time translation, project memory and a controlled environment for creative experimentation.</span></div>
 <div style="font-size:.91em;color:var(--text2);line-height:1.8;margin-bottom:24px">
-<p style="margin-bottom:14px">O projeto nasceu de uma contradição real: as ferramentas de AI disponíveis são poderosas mas genéricas. Não sabem que o editor prefere blacks levantados, que um cliente detesta cortes rápidos, ou que documentários sobre diáspora funcionam melhor com estrutura aberta. Cada projeto começa do zero.</p>
-<p>A pergunta que guiou o design: <em style="color:var(--text)">o que um assistente que trabalha contigo há anos saberia que uma ferramenta genérica nunca vai saber?</em> A resposta virou arquitetura — em vez de um pipeline que executa e esquece, um organismo que executa e deposita.</p>
+<div class="pt"><p style="margin-bottom:14px">O projeto nasceu de uma contradição real: as ferramentas de AI disponíveis são poderosas mas genéricas. Não sabem que o editor prefere blacks levantados, que um cliente detesta cortes rápidos, ou que documentários sobre diáspora funcionam melhor com estrutura aberta. Cada projeto começa do zero.</p><p>A pergunta que guiou o design: <em style="color:var(--text)">o que um assistente que trabalha contigo há anos saberia que uma ferramenta genérica nunca vai saber?</em> A resposta virou arquitetura — em vez de um pipeline que executa e esquece, um organismo que executa e deposita.</p></div>
+<div class="en"><p style="margin-bottom:14px">The project was born from a real contradiction: available AI tools are powerful but generic. They don't know the editor prefers lifted blacks, that a client hates fast cuts, or that diaspora documentaries work better with open structure. Every project starts from zero.</p><p>The guiding question: <em style="color:var(--text)">what would an assistant who's worked with you for years know that a generic tool never will?</em> The answer became architecture — instead of a pipeline that executes and forgets, an organism that executes and deposits.</p></div>
 </div>
 <div class="sg">
-<div class="si"><h3>Tradução de tempo</h3><p>O pipeline não processa footage — traduz. Vídeo em áudio, áudio em texto buscável, footage em frames navegáveis. Cada agente executa uma camada. Nenhum decide. Todos traduzem. O designer decide.</p></div>
-<div class="si"><h3>Memória projetual viva</h3><p>O Agent 3c lê com dupla perspectiva — livros e projetos anteriores. O Agent 8 fecha o ciclo depositando cada decisão. O projeto 10 é mais preciso que o projeto 1 — porque acumulou 9 projetos de decisões reais.</p></div>
-<div class="si"><h3>Privacidade e ambiente controlado</h3><p>3 GPUs · 38GB VRAM · 208GB RAM · 20TB storage. Hardware próprio. Nenhum dado sai da rede. VPN criptografada. Ambiente controlado para experimentação sem risco. Custo mensal: zero.</p></div>
-<div class="si"><h3>Comunidade colaborativa</h3><p>Novos nós expandem o cluster via VPN. Cada profissional acessa o domínio relevante da mesma memória projetual. A diversidade enriquece. A arquitetura é modular: Montreal, Brasil, freelancer em trânsito.</p></div>
+<div class="si"><h3><span class="pt">Tradução de tempo</span><span class="en">Time translation</span></h3><p><span class="pt">O pipeline não processa footage — traduz. Vídeo em áudio, áudio em texto buscável, footage em frames navegáveis. Cada agente executa uma camada. Nenhum decide. Todos traduzem. O designer decide.</span><span class="en">The pipeline doesn't process footage — it translates. Video into audio, audio into searchable text, footage into navigable frames. Each agent performs a layer. None decides. All translate. The designer decides.</span></p></div>
+<div class="si"><h3><span class="pt">Memória projetual viva</span><span class="en">Living project memory</span></h3><p><span class="pt">O Agent 3c lê com dupla perspectiva — livros e projetos anteriores. O Agent 8 fecha o ciclo depositando cada decisão. O projeto 10 é mais preciso que o projeto 1 — porque acumulou 9 projetos de decisões reais.</span><span class="en">Agent 3c reads with dual perspective — books and previous projects. Agent 8 closes the cycle depositing each decision. Project 10 is more precise than project 1 — because it accumulated 9 projects of real decisions.</span></p></div>
+<div class="si"><h3><span class="pt">Privacidade e ambiente controlado</span><span class="en">Privacy and controlled environment</span></h3><p><span class="pt">3 GPUs · 38GB VRAM · 208GB RAM · 20TB storage. Hardware próprio. Nenhum dado sai da rede. VPN criptografada. Ambiente controlado para experimentação sem risco. Custo mensal: zero.</span><span class="en">3 GPUs · 38GB VRAM · 208GB RAM · 20TB storage. Own hardware. No data leaves the network. Encrypted VPN. Controlled environment for risk-free experimentation. Monthly cost: zero.</span></p></div>
+<div class="si"><h3><span class="pt">Comunidade colaborativa</span><span class="en">Collaborative community</span></h3><p><span class="pt">Novos nós expandem o cluster via VPN. Cada profissional acessa o domínio relevante da mesma memória projetual. A diversidade enriquece. A arquitetura é modular: Montreal, Brasil, freelancer em trânsito.</span><span class="en">New nodes expand the cluster via VPN. Each professional accesses the relevant domain of the same project memory. Diversity enriches. The architecture is modular: Montreal, Brazil, freelancer on the go.</span></p></div>
 </div>
 <div style="margin-top:20px;padding:14px;background:var(--bg2);border-radius:8px;border:1px solid var(--border);font-size:.86em;color:var(--text2)">
-<span style="color:var(--accent);font-weight:600">Pipeline:</span> 9 agents · 50 min · <span style="color:var(--teal);font-weight:600">Conhecimento:</span> 72k trechos · <span style="color:var(--amber);font-weight:600">Memória:</span> 105 entradas · <span style="color:var(--coral);font-weight:600">Hardware:</span> $0/mês · <span style="color:var(--green);font-weight:600">Build:</span> 34 dias
+<span style="color:var(--accent);font-weight:600">Pipeline:</span> 9 agents · 50 min · <span style="color:var(--teal);font-weight:600"><span class="pt">Conhecimento:</span><span class="en">Knowledge:</span></span> 72k <span class="pt">trechos</span><span class="en">chunks</span> · <span style="color:var(--amber);font-weight:600"><span class="pt">Memória:</span><span class="en">Memory:</span></span> 105 <span class="pt">entradas</span><span class="en">entries</span> · <span style="color:var(--coral);font-weight:600">Hardware:</span> $0/<span class="pt">mês</span><span class="en">month</span> · <span style="color:var(--green);font-weight:600">Build:</span> 34 <span class="pt">dias</span><span class="en">days</span>
 </div>
 </div>
 
 <!-- ══════ 2. MAPA DE FLUXO ══════ -->
 <div class="sec" id="flowmap">
-<div class="st">Mapa de Fluxo do Pipeline</div>
-<div class="sd">Visão completa: entrada → pré-edição → edição humana → pós-edição → memória.</div>
+<div class="st"><span class="pt">Mapa de Fluxo do Pipeline</span><span class="en">Pipeline Flow Map</span></div>
+<div class="sd"><span class="pt">Visão completa: entrada → pré-edição → edição humana → pós-edição → memória.</span><span class="en">Full view: entry → pre-editing → human editing → post-editing → memory.</span></div>
 <div style="border-radius:12px;overflow:hidden;border:1px solid var(--border);background:var(--bg2);padding:20px">
 <img src="memorabilia_pipeline_flow_map.svg" alt="MEMORABILIA Pipeline Flow Map" style="width:100%;height:auto;display:block">
 </div>
 <div style="margin-top:14px;display:grid;grid-template-columns:1fr 1fr;gap:11px">
-<div style="padding:11px;background:var(--bg2);border-radius:8px;border:1px solid var(--border)"><div style="font-size:.78em;color:var(--accent);font-weight:600;margin-bottom:3px">Agentes centrais</div><div style="font-size:.83em;color:var(--text2)">Agent 3c (leitura com tensão) e Agent 8 (Memória Projetual Viva — Closer) formam o loop de aprendizado</div></div>
-<div style="padding:11px;background:var(--bg2);border-radius:8px;border:1px solid var(--border)"><div style="font-size:.78em;color:var(--accent);font-weight:600;margin-bottom:3px">O loop</div><div style="font-size:.83em;color:var(--text2)">O que o Agent 8 deposita, o Agent 3c do próximo projeto consulta. Projeto 10 > Projeto 1.</div></div>
+<div style="padding:11px;background:var(--bg2);border-radius:8px;border:1px solid var(--border)"><div style="font-size:.78em;color:var(--accent);font-weight:600;margin-bottom:3px"><span class="pt">Agentes centrais</span><span class="en">Central agents</span></div><div style="font-size:.83em;color:var(--text2)"><span class="pt">Agent 3c (leitura com tensão) e Agent 8 (Memória Projetual Viva — Closer) formam o loop de aprendizado</span><span class="en">Agent 3c (calibrated reading) and Agent 8 (Living Project Memory — Closer) form the learning loop</span></div></div>
+<div style="padding:11px;background:var(--bg2);border-radius:8px;border:1px solid var(--border)"><div style="font-size:.78em;color:var(--accent);font-weight:600;margin-bottom:3px"><span class="pt">O loop</span><span class="en">The loop</span></div><div style="font-size:.83em;color:var(--text2)"><span class="pt">O que o Agent 8 deposita, o Agent 3c do próximo projeto consulta. Projeto 10 > Projeto 1.</span><span class="en">What Agent 8 deposits, Agent 3c of the next project consults. Project 10 > Project 1.</span></div></div>
+</div>
 </div>
 
-</div>
-
-<!-- ══════ REDE DISTRIBUÍDA ══════ -->
+<!-- ══════ 2.5 REDE DISTRIBUÍDA ══════ -->
 <div class="sec" id="network">
-<div class="st">Rede Distribuída — Montreal ↔ Brasil</div>
-<div class="sd">Via de mão dupla. Mac Mini M5 no Brasil como nó de ingest. 3 cenários de produção distribuída.</div>
-
+<div class="st"><span class="pt">Rede Distribuída — Montreal ↔ Brasil</span><span class="en">Distributed Network — Montreal ↔ Brazil</span></div>
+<div class="sd"><span class="pt">Via de mão dupla. Mac Mini M5 no Brasil como nó de ingest. 3 cenários de produção distribuída.</span><span class="en">Two-way road. Mac Mini M5 in Brazil as ingest node. 3 distributed production scenarios.</span></div>
 <div style="display:flex;gap:7px;flex-wrap:wrap;margin-bottom:16px">
-<button class="scn on" onclick="showSc(0)">Cenário 1 — Captura BR, pipeline remoto</button>
-<button class="scn" onclick="showSc(1)">Cenário 2 — Captura BR, edição MTL</button>
-<button class="scn" onclick="showSc(2)">Cenário 3 — Captura MTL, edição BR</button>
+<button class="scn on" onclick="showSc(0)"><span class="pt">Cenário 1 — Captura BR, pipeline remoto</span><span class="en">Scenario 1 — Capture BR, remote pipeline</span></button>
+<button class="scn" onclick="showSc(1)"><span class="pt">Cenário 2 — Captura BR, edição MTL</span><span class="en">Scenario 2 — Capture BR, edit MTL</span></button>
+<button class="scn" onclick="showSc(2)"><span class="pt">Cenário 3 — Captura MTL, edição BR</span><span class="en">Scenario 3 — Capture MTL, edit BR</span></button>
 </div>
 
 <div class="scv show" id="sc0">
-<svg width="100%" viewBox="0 0 680 520" role="img"><title>Cenário 1</title><desc>Captura no Brasil com pipeline remoto em Montreal</desc>
+<svg width="100%" viewBox="0 0 680 510" role="img"><title>Scenario 1</title>
 <defs><marker id="a0" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker></defs>
-<text class="th" x="340" y="28" text-anchor="middle">Cenário 1 — captura no Brasil, pipeline remoto</text>
-<text class="ts" x="340" y="46" text-anchor="middle">Editor trabalha no Brasil com proxies locais · pipeline roda em Montreal</text>
-<g class="c-teal"><rect x="40" y="70" width="280" height="400" rx="16" stroke-width="0.5"/><text class="th" x="180" y="96" text-anchor="middle">Brasil</text></g>
-<g class="c-purple"><rect x="360" y="70" width="280" height="400" rx="16" stroke-width="0.5"/><text class="th" x="500" y="96" text-anchor="middle">Montreal</text></g>
-<g class="c-coral"><rect x="70" y="120" width="220" height="50" rx="8" stroke-width="0.5"/><text class="th" x="180" y="140" text-anchor="middle" dominant-baseline="central">MacBook Pro M1</text><text class="ts" x="180" y="158" text-anchor="middle" dominant-baseline="central">Captação · footage bruto</text></g>
+<text style="font-family:DM Sans,sans-serif;font-size:14px;font-weight:500;fill:#cdd1da" x="340" y="28" text-anchor="middle">Cenário 1 / Scenario 1</text>
+<text style="font-family:DM Sans,sans-serif;font-size:12px;fill:#878d9a" x="340" y="46" text-anchor="middle">Capture in Brazil · pipeline runs in Montreal</text>
+<rect x="40" y="70" width="280" height="380" rx="16" fill="rgba(114,197,180,.08)" stroke="#72c5b4" stroke-width=".5"/><text style="font-family:DM Sans,sans-serif;font-size:14px;font-weight:500;fill:#72c5b4" x="180" y="96" text-anchor="middle">Brasil</text>
+<rect x="360" y="70" width="280" height="380" rx="16" fill="rgba(167,139,250,.08)" stroke="#a78bfa" stroke-width=".5"/><text style="font-family:DM Sans,sans-serif;font-size:14px;font-weight:500;fill:#a78bfa" x="500" y="96" text-anchor="middle">Montreal</text>
+<rect x="70" y="120" width="220" height="50" rx="8" fill="rgba(224,144,138,.12)" stroke="#e0908a" stroke-width=".5"/><text style="font-family:DM Sans,sans-serif;font-size:14px;font-weight:500;fill:#e0908a" x="180" y="140" text-anchor="middle" dominant-baseline="central">MacBook Pro M1</text><text style="font-family:DM Sans,sans-serif;font-size:12px;fill:#c07068" x="180" y="158" text-anchor="middle" dominant-baseline="central">Capture · raw footage</text>
 <line x1="180" y1="170" x2="180" y2="200" stroke="#D85A30" stroke-width="1" marker-end="url(#a0)"/>
-<g class="c-amber"><rect x="70" y="205" width="220" height="70" rx="8" stroke-width="0.5"/><text class="th" x="180" y="228" text-anchor="middle" dominant-baseline="central">Mac Mini M5</text><text class="ts" x="180" y="246" text-anchor="middle" dominant-baseline="central">Ingest · Whisper local</text><text class="ts" x="180" y="262" text-anchor="middle" dominant-baseline="central">Proxy 720p · transcrição</text></g>
+<rect x="70" y="205" width="220" height="70" rx="8" fill="rgba(219,184,104,.12)" stroke="#dbb868" stroke-width=".5"/><text style="font-family:DM Sans,sans-serif;font-size:14px;font-weight:500;fill:#dbb868" x="180" y="228" text-anchor="middle" dominant-baseline="central">Mac Mini M5</text><text style="font-family:DM Sans,sans-serif;font-size:12px;fill:#b09848" x="180" y="246" text-anchor="middle" dominant-baseline="central">Ingest · Whisper local</text><text style="font-family:DM Sans,sans-serif;font-size:12px;fill:#b09848" x="180" y="262" text-anchor="middle" dominant-baseline="central">Proxy 720p · transcription</text>
 <line x1="180" y1="275" x2="180" y2="310" stroke="#BA7517" stroke-width="1" marker-end="url(#a0)"/>
-<g class="c-teal"><rect x="70" y="315" width="220" height="50" rx="8" stroke-width="0.5"/><text class="th" x="180" y="335" text-anchor="middle" dominant-baseline="central">Editor no Brasil</text><text class="ts" x="180" y="353" text-anchor="middle" dominant-baseline="central">Premiere + proxy local</text></g>
+<rect x="70" y="315" width="220" height="50" rx="8" fill="rgba(114,197,180,.12)" stroke="#72c5b4" stroke-width=".5"/><text style="font-family:DM Sans,sans-serif;font-size:14px;font-weight:500;fill:#72c5b4" x="180" y="335" text-anchor="middle" dominant-baseline="central">Editor in Brazil</text><text style="font-family:DM Sans,sans-serif;font-size:12px;fill:#5ba898" x="180" y="353" text-anchor="middle" dominant-baseline="central">Premiere + local proxy</text>
 <path d="M290 240 L360 240" fill="none" stroke="#5DCAA5" stroke-width="2" stroke-dasharray="6 4" marker-end="url(#a0)"/>
-<text class="ts" x="325" y="230" text-anchor="middle" style="fill:#5DCAA5">VPN</text>
-<text class="ts" x="325" y="256" text-anchor="middle">proxy + .srt</text>
-<g class="c-blue"><rect x="390" y="120" width="220" height="70" rx="8" stroke-width="0.5"/><text class="th" x="500" y="143" text-anchor="middle" dominant-baseline="central">HomeLab Linux</text><text class="ts" x="500" y="161" text-anchor="middle" dominant-baseline="central">ChromaDB · Ollama</text><text class="ts" x="500" y="177" text-anchor="middle" dominant-baseline="central">gemma4 · pipeline 9 agents</text></g>
+<text style="font-family:DM Sans,sans-serif;font-size:12px;fill:#5DCAA5" x="325" y="230" text-anchor="middle">VPN</text><text style="font-family:DM Sans,sans-serif;font-size:12px;fill:#878d9a" x="325" y="256" text-anchor="middle">proxy + .srt</text>
+<rect x="390" y="120" width="220" height="70" rx="8" fill="rgba(132,174,208,.12)" stroke="#84aed0" stroke-width=".5"/><text style="font-family:DM Sans,sans-serif;font-size:14px;font-weight:500;fill:#84aed0" x="500" y="143" text-anchor="middle" dominant-baseline="central">HomeLab Linux</text><text style="font-family:DM Sans,sans-serif;font-size:12px;fill:#6890b0" x="500" y="161" text-anchor="middle" dominant-baseline="central">ChromaDB · Ollama</text><text style="font-family:DM Sans,sans-serif;font-size:12px;fill:#6890b0" x="500" y="177" text-anchor="middle" dominant-baseline="central">gemma4 · 9 agents pipeline</text>
 <line x1="500" y1="190" x2="500" y2="220" stroke="#378ADD" stroke-width="1" marker-end="url(#a0)"/>
-<g class="c-blue"><rect x="390" y="225" width="220" height="50" rx="8" stroke-width="0.5"/><text class="th" x="500" y="245" text-anchor="middle" dominant-baseline="central">Windows RTX 4080</text><text class="ts" x="500" y="263" text-anchor="middle" dominant-baseline="central">qwen3-vl · render farm</text></g>
+<rect x="390" y="225" width="220" height="50" rx="8" fill="rgba(132,174,208,.12)" stroke="#84aed0" stroke-width=".5"/><text style="font-family:DM Sans,sans-serif;font-size:14px;font-weight:500;fill:#84aed0" x="500" y="245" text-anchor="middle" dominant-baseline="central">Windows RTX 4080</text><text style="font-family:DM Sans,sans-serif;font-size:12px;fill:#6890b0" x="500" y="263" text-anchor="middle" dominant-baseline="central">qwen3-vl · render farm</text>
 <line x1="500" y1="275" x2="500" y2="310" stroke="#378ADD" stroke-width="1" marker-end="url(#a0)"/>
-<g class="c-purple"><rect x="390" y="315" width="220" height="50" rx="8" stroke-width="0.5"/><text class="th" x="500" y="335" text-anchor="middle" dominant-baseline="central">Memória Projetual Viva</text><text class="ts" x="500" y="353" text-anchor="middle" dominant-baseline="central">7 types · ChromaDB 768d</text></g>
+<rect x="390" y="315" width="220" height="50" rx="8" fill="rgba(167,139,250,.12)" stroke="#a78bfa" stroke-width=".5"/><text style="font-family:DM Sans,sans-serif;font-size:14px;font-weight:500;fill:#a78bfa" x="500" y="335" text-anchor="middle" dominant-baseline="central">Living Project Memory</text><text style="font-family:DM Sans,sans-serif;font-size:12px;fill:#8b7acc" x="500" y="353" text-anchor="middle" dominant-baseline="central">7 types · ChromaDB 768d</text>
 <path d="M390 340 L320 340 L320 380 L180 380 L180 365" fill="none" stroke="#7F77DD" stroke-width="1" stroke-dasharray="6 4" marker-end="url(#a0)"/>
-<text class="ts" x="255" y="395" text-anchor="middle" style="fill:#7F77DD">observações + análise ← VPN</text>
-<g class="c-gray"><rect x="390" y="395" width="220" height="50" rx="8" stroke-width="0.5"/><text class="th" x="500" y="415" text-anchor="middle" dominant-baseline="central">Cliente final</text><text class="ts" x="500" y="433" text-anchor="middle" dominant-baseline="central">PocketBase · Frame.io</text></g>
-<text class="ts" x="340" y="480" text-anchor="middle">RAW footage nunca sai do Brasil · apenas proxies e transcrições trafegam</text>
-<text class="ts" x="340" y="498" text-anchor="middle">Latência: ~50ms Montreal↔Brasil via WireGuard</text>
+<text style="font-family:DM Sans,sans-serif;font-size:12px;fill:#7F77DD" x="255" y="395" text-anchor="middle">analysis + observations ← VPN</text>
+<rect x="390" y="390" width="220" height="44" rx="8" fill="rgba(200,200,200,.06)" stroke="#888" stroke-width=".5"/><text style="font-family:DM Sans,sans-serif;font-size:14px;font-weight:500;fill:#aaa" x="500" y="412" text-anchor="middle" dominant-baseline="central">Client</text><text style="font-family:DM Sans,sans-serif;font-size:12px;fill:#888" x="500" y="428" text-anchor="middle" dominant-baseline="central">PocketBase · Frame.io</text>
+<text style="font-family:DM Sans,sans-serif;font-size:12px;fill:#878d9a" x="340" y="470" text-anchor="middle">RAW footage never leaves Brazil · only proxies and transcriptions travel</text>
+<text style="font-family:DM Sans,sans-serif;font-size:12px;fill:#878d9a" x="340" y="490" text-anchor="middle">Latency: ~50ms Montreal↔Brazil via WireGuard</text>
 </svg>
 </div>
 
 <div class="scv" id="sc1">
-<svg width="100%" viewBox="0 0 680 520" role="img"><title>Cenário 2</title><desc>Captura no Brasil, editor em Montreal</desc>
+<svg width="100%" viewBox="0 0 680 510" role="img"><title>Scenario 2</title>
 <defs><marker id="a1" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker></defs>
-<text class="th" x="340" y="28" text-anchor="middle">Cenário 2 — captura no Brasil, edição em Montreal</text>
-<text class="ts" x="340" y="46" text-anchor="middle">Cinegrafista filma no Brasil · editor monta em Montreal no Windows</text>
-<g class="c-teal"><rect x="40" y="70" width="280" height="300" rx="16" stroke-width="0.5"/><text class="th" x="180" y="96" text-anchor="middle">Brasil — captação</text></g>
-<g class="c-purple"><rect x="360" y="70" width="280" height="400" rx="16" stroke-width="0.5"/><text class="th" x="500" y="96" text-anchor="middle">Montreal — edição</text></g>
-<g class="c-coral"><rect x="70" y="120" width="220" height="50" rx="8" stroke-width="0.5"/><text class="th" x="180" y="140" text-anchor="middle" dominant-baseline="central">MacBook Pro M1</text><text class="ts" x="180" y="158" text-anchor="middle" dominant-baseline="central">Captação em campo</text></g>
+<text style="font-family:DM Sans,sans-serif;font-size:14px;font-weight:500;fill:#cdd1da" x="340" y="28" text-anchor="middle">Cenário 2 / Scenario 2</text>
+<text style="font-family:DM Sans,sans-serif;font-size:12px;fill:#878d9a" x="340" y="46" text-anchor="middle">Capture in Brazil · editor works in Montreal</text>
+<rect x="40" y="70" width="280" height="280" rx="16" fill="rgba(114,197,180,.08)" stroke="#72c5b4" stroke-width=".5"/><text style="font-family:DM Sans,sans-serif;font-size:14px;font-weight:500;fill:#72c5b4" x="180" y="96" text-anchor="middle">Brasil — capture</text>
+<rect x="360" y="70" width="280" height="380" rx="16" fill="rgba(167,139,250,.08)" stroke="#a78bfa" stroke-width=".5"/><text style="font-family:DM Sans,sans-serif;font-size:14px;font-weight:500;fill:#a78bfa" x="500" y="96" text-anchor="middle">Montreal — editing</text>
+<rect x="70" y="120" width="220" height="50" rx="8" fill="rgba(224,144,138,.12)" stroke="#e0908a" stroke-width=".5"/><text style="font-family:DM Sans,sans-serif;font-size:14px;font-weight:500;fill:#e0908a" x="180" y="140" text-anchor="middle" dominant-baseline="central">MacBook Pro M1</text><text style="font-family:DM Sans,sans-serif;font-size:12px;fill:#c07068" x="180" y="158" text-anchor="middle" dominant-baseline="central">Field capture</text>
 <line x1="180" y1="170" x2="180" y2="200" stroke="#D85A30" stroke-width="1" marker-end="url(#a1)"/>
-<g class="c-amber"><rect x="70" y="205" width="220" height="70" rx="8" stroke-width="0.5"/><text class="th" x="180" y="228" text-anchor="middle" dominant-baseline="central">Mac Mini M5</text><text class="ts" x="180" y="246" text-anchor="middle" dominant-baseline="central">Whisper · proxy · .srt</text><text class="ts" x="180" y="262" text-anchor="middle" dominant-baseline="central">Ingest automático local</text></g>
-<path d="M290 240 L360 155" fill="none" stroke="#5DCAA5" stroke-width="2" stroke-dasharray="6 4" marker-end="url(#a1)"/>
-<text class="ts" x="330" y="185" text-anchor="end" style="fill:#5DCAA5">VPN</text>
-<g class="c-blue"><rect x="390" y="120" width="220" height="50" rx="8" stroke-width="0.5"/><text class="th" x="500" y="140" text-anchor="middle" dominant-baseline="central">HomeLab Linux</text><text class="ts" x="500" y="158" text-anchor="middle" dominant-baseline="central">Pipeline · ChromaDB · Ollama</text></g>
+<rect x="70" y="205" width="220" height="70" rx="8" fill="rgba(219,184,104,.12)" stroke="#dbb868" stroke-width=".5"/><text style="font-family:DM Sans,sans-serif;font-size:14px;font-weight:500;fill:#dbb868" x="180" y="228" text-anchor="middle" dominant-baseline="central">Mac Mini M5</text><text style="font-family:DM Sans,sans-serif;font-size:12px;fill:#b09848" x="180" y="246" text-anchor="middle" dominant-baseline="central">Whisper · proxy · .srt</text><text style="font-family:DM Sans,sans-serif;font-size:12px;fill:#b09848" x="180" y="262" text-anchor="middle" dominant-baseline="central">Auto ingest local</text>
+<rect x="70" y="295" width="220" height="40" rx="8" fill="rgba(114,197,180,.12)" stroke="#72c5b4" stroke-width=".5"/><text style="font-family:DM Sans,sans-serif;font-size:14px;font-weight:500;fill:#72c5b4" x="180" y="318" text-anchor="middle" dominant-baseline="central">RAW local storage</text>
+<path d="M290 240 L360 155" fill="none" stroke="#5DCAA5" stroke-width="2" stroke-dasharray="6 4" marker-end="url(#a1)"/><text style="font-family:DM Sans,sans-serif;font-size:12px;fill:#5DCAA5" x="330" y="185" text-anchor="end">VPN</text>
+<rect x="390" y="120" width="220" height="50" rx="8" fill="rgba(132,174,208,.12)" stroke="#84aed0" stroke-width=".5"/><text style="font-family:DM Sans,sans-serif;font-size:14px;font-weight:500;fill:#84aed0" x="500" y="140" text-anchor="middle" dominant-baseline="central">HomeLab Linux</text><text style="font-family:DM Sans,sans-serif;font-size:12px;fill:#6890b0" x="500" y="158" text-anchor="middle" dominant-baseline="central">Pipeline · ChromaDB · Ollama</text>
 <line x1="500" y1="170" x2="500" y2="200" stroke="#378ADD" stroke-width="1" marker-end="url(#a1)"/>
-<g class="c-blue"><rect x="390" y="205" width="220" height="70" rx="8" stroke-width="0.5"/><text class="th" x="500" y="228" text-anchor="middle" dominant-baseline="central">Windows RTX 4080</text><text class="ts" x="500" y="246" text-anchor="middle" dominant-baseline="central">Premiere Pro · Edição</text><text class="ts" x="500" y="262" text-anchor="middle" dominant-baseline="central">CEP MEMORABILIA panel</text></g>
+<rect x="390" y="205" width="220" height="70" rx="8" fill="rgba(132,174,208,.12)" stroke="#84aed0" stroke-width=".5"/><text style="font-family:DM Sans,sans-serif;font-size:14px;font-weight:500;fill:#84aed0" x="500" y="228" text-anchor="middle" dominant-baseline="central">Windows RTX 4080</text><text style="font-family:DM Sans,sans-serif;font-size:12px;fill:#6890b0" x="500" y="246" text-anchor="middle" dominant-baseline="central">Premiere Pro · Editing</text><text style="font-family:DM Sans,sans-serif;font-size:12px;fill:#6890b0" x="500" y="262" text-anchor="middle" dominant-baseline="central">CEP MEMORABILIA panel</text>
 <line x1="500" y1="275" x2="500" y2="310" stroke="#378ADD" stroke-width="1" marker-end="url(#a1)"/>
-<g class="c-purple"><rect x="390" y="315" width="220" height="50" rx="8" stroke-width="0.5"/><text class="th" x="500" y="335" text-anchor="middle" dominant-baseline="central">Memória Projetual Viva</text><text class="ts" x="500" y="353" text-anchor="middle" dominant-baseline="central">Depósito pós-edição</text></g>
+<rect x="390" y="315" width="220" height="50" rx="8" fill="rgba(167,139,250,.12)" stroke="#a78bfa" stroke-width=".5"/><text style="font-family:DM Sans,sans-serif;font-size:14px;font-weight:500;fill:#a78bfa" x="500" y="335" text-anchor="middle" dominant-baseline="central">Living Project Memory</text><text style="font-family:DM Sans,sans-serif;font-size:12px;fill:#8b7acc" x="500" y="353" text-anchor="middle" dominant-baseline="central">Post-edit deposit</text>
 <line x1="500" y1="365" x2="500" y2="395" stroke="#7F77DD" stroke-width="1" marker-end="url(#a1)"/>
-<g class="c-gray"><rect x="390" y="395" width="220" height="50" rx="8" stroke-width="0.5"/><text class="th" x="500" y="415" text-anchor="middle" dominant-baseline="central">Cliente final</text><text class="ts" x="500" y="433" text-anchor="middle" dominant-baseline="central">Frame.io · PocketBase</text></g>
-<g class="c-teal"><rect x="70" y="300" width="220" height="44" rx="8" stroke-width="0.5"/><text class="th" x="180" y="322" text-anchor="middle" dominant-baseline="central">RAW storage local</text></g>
-<text class="ts" x="340" y="480" text-anchor="middle">Cinegrafista filma → Mac Mini processa → proxies sobem → editor em Montreal monta</text>
-<text class="ts" x="340" y="498" text-anchor="middle">Handoff assíncrono · editor começa antes do cinegrafista terminar</text>
+<rect x="390" y="395" width="220" height="44" rx="8" fill="rgba(200,200,200,.06)" stroke="#888" stroke-width=".5"/><text style="font-family:DM Sans,sans-serif;font-size:14px;font-weight:500;fill:#aaa" x="500" y="415" text-anchor="middle" dominant-baseline="central">Client</text><text style="font-family:DM Sans,sans-serif;font-size:12px;fill:#888" x="500" y="431" text-anchor="middle" dominant-baseline="central">Frame.io · PocketBase</text>
+<text style="font-family:DM Sans,sans-serif;font-size:12px;fill:#878d9a" x="340" y="470" text-anchor="middle">Cinematographer shoots → Mac Mini processes → proxies go up → editor in Montreal edits</text>
+<text style="font-family:DM Sans,sans-serif;font-size:12px;fill:#878d9a" x="340" y="490" text-anchor="middle">Async handoff · editor starts before cinematographer finishes</text>
 </svg>
 </div>
 
 <div class="scv" id="sc2">
-<svg width="100%" viewBox="0 0 680 520" role="img"><title>Cenário 3</title><desc>Captura em Montreal, editor no Brasil</desc>
+<svg width="100%" viewBox="0 0 680 510" role="img"><title>Scenario 3</title>
 <defs><marker id="a2" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker></defs>
-<text class="th" x="340" y="28" text-anchor="middle">Cenário 3 — captura em Montreal, edição no Brasil</text>
-<text class="ts" x="340" y="46" text-anchor="middle">Footage captado em Montreal · editor trabalha remotamente do Brasil</text>
-<g class="c-purple"><rect x="40" y="70" width="280" height="400" rx="16" stroke-width="0.5"/><text class="th" x="180" y="96" text-anchor="middle">Montreal — captação + pipeline</text></g>
-<g class="c-teal"><rect x="360" y="70" width="280" height="400" rx="16" stroke-width="0.5"/><text class="th" x="500" y="96" text-anchor="middle">Brasil — edição remota</text></g>
-<g class="c-coral"><rect x="70" y="120" width="220" height="50" rx="8" stroke-width="0.5"/><text class="th" x="180" y="140" text-anchor="middle" dominant-baseline="central">Captação Montreal</text><text class="ts" x="180" y="158" text-anchor="middle" dominant-baseline="central">Nikon Z6 III · campo</text></g>
+<text style="font-family:DM Sans,sans-serif;font-size:14px;font-weight:500;fill:#cdd1da" x="340" y="28" text-anchor="middle">Cenário 3 / Scenario 3</text>
+<text style="font-family:DM Sans,sans-serif;font-size:12px;fill:#878d9a" x="340" y="46" text-anchor="middle">Capture in Montreal · editor works from Brazil</text>
+<rect x="40" y="70" width="280" height="380" rx="16" fill="rgba(167,139,250,.08)" stroke="#a78bfa" stroke-width=".5"/><text style="font-family:DM Sans,sans-serif;font-size:14px;font-weight:500;fill:#a78bfa" x="180" y="96" text-anchor="middle">Montreal — capture + pipeline</text>
+<rect x="360" y="70" width="280" height="380" rx="16" fill="rgba(114,197,180,.08)" stroke="#72c5b4" stroke-width=".5"/><text style="font-family:DM Sans,sans-serif;font-size:14px;font-weight:500;fill:#72c5b4" x="500" y="96" text-anchor="middle">Brasil — remote editing</text>
+<rect x="70" y="120" width="220" height="50" rx="8" fill="rgba(224,144,138,.12)" stroke="#e0908a" stroke-width=".5"/><text style="font-family:DM Sans,sans-serif;font-size:14px;font-weight:500;fill:#e0908a" x="180" y="140" text-anchor="middle" dominant-baseline="central">Montreal capture</text><text style="font-family:DM Sans,sans-serif;font-size:12px;fill:#c07068" x="180" y="158" text-anchor="middle" dominant-baseline="central">Nikon Z6 III · field</text>
 <line x1="180" y1="170" x2="180" y2="200" stroke="#D85A30" stroke-width="1" marker-end="url(#a2)"/>
-<g class="c-blue"><rect x="70" y="205" width="220" height="70" rx="8" stroke-width="0.5"/><text class="th" x="180" y="228" text-anchor="middle" dominant-baseline="central">HomeLab Linux</text><text class="ts" x="180" y="246" text-anchor="middle" dominant-baseline="central">Pipeline completo · 9 agents</text><text class="ts" x="180" y="262" text-anchor="middle" dominant-baseline="central">ChromaDB · Ollama · gemma4</text></g>
+<rect x="70" y="205" width="220" height="70" rx="8" fill="rgba(132,174,208,.12)" stroke="#84aed0" stroke-width=".5"/><text style="font-family:DM Sans,sans-serif;font-size:14px;font-weight:500;fill:#84aed0" x="180" y="228" text-anchor="middle" dominant-baseline="central">HomeLab Linux</text><text style="font-family:DM Sans,sans-serif;font-size:12px;fill:#6890b0" x="180" y="246" text-anchor="middle" dominant-baseline="central">Full pipeline · 9 agents</text><text style="font-family:DM Sans,sans-serif;font-size:12px;fill:#6890b0" x="180" y="262" text-anchor="middle" dominant-baseline="central">ChromaDB · Ollama · gemma4</text>
 <line x1="180" y1="275" x2="180" y2="305" stroke="#378ADD" stroke-width="1" marker-end="url(#a2)"/>
-<g class="c-blue"><rect x="70" y="310" width="220" height="50" rx="8" stroke-width="0.5"/><text class="th" x="180" y="330" text-anchor="middle" dominant-baseline="central">Windows RTX 4080</text><text class="ts" x="180" y="348" text-anchor="middle" dominant-baseline="central">Whisper · qwen3-vl · render</text></g>
+<rect x="70" y="310" width="220" height="50" rx="8" fill="rgba(132,174,208,.12)" stroke="#84aed0" stroke-width=".5"/><text style="font-family:DM Sans,sans-serif;font-size:14px;font-weight:500;fill:#84aed0" x="180" y="330" text-anchor="middle" dominant-baseline="central">Windows RTX 4080</text><text style="font-family:DM Sans,sans-serif;font-size:12px;fill:#6890b0" x="180" y="348" text-anchor="middle" dominant-baseline="central">Whisper · qwen3-vl · render</text>
 <line x1="180" y1="360" x2="180" y2="390" stroke="#7F77DD" stroke-width="1" marker-end="url(#a2)"/>
-<g class="c-purple"><rect x="70" y="390" width="220" height="50" rx="8" stroke-width="0.5"/><text class="th" x="180" y="410" text-anchor="middle" dominant-baseline="central">Memória Projetual Viva</text><text class="ts" x="180" y="428" text-anchor="middle" dominant-baseline="central">Depósito automático</text></g>
-<path d="M290 240 L360 240" fill="none" stroke="#5DCAA5" stroke-width="2" stroke-dasharray="6 4" marker-end="url(#a2)"/>
-<text class="ts" x="325" y="230" text-anchor="middle" style="fill:#5DCAA5">VPN</text>
-<text class="ts" x="325" y="256" text-anchor="middle">proxy + análise</text>
-<g class="c-amber"><rect x="390" y="120" width="220" height="50" rx="8" stroke-width="0.5"/><text class="th" x="500" y="140" text-anchor="middle" dominant-baseline="central">Mac Mini M5</text><text class="ts" x="500" y="158" text-anchor="middle" dominant-baseline="central">Cache local · sync proxies</text></g>
+<rect x="70" y="390" width="220" height="44" rx="8" fill="rgba(167,139,250,.12)" stroke="#a78bfa" stroke-width=".5"/><text style="font-family:DM Sans,sans-serif;font-size:14px;font-weight:500;fill:#a78bfa" x="180" y="412" text-anchor="middle" dominant-baseline="central">Living Project Memory</text>
+<path d="M290 240 L360 240" fill="none" stroke="#5DCAA5" stroke-width="2" stroke-dasharray="6 4" marker-end="url(#a2)"/><text style="font-family:DM Sans,sans-serif;font-size:12px;fill:#5DCAA5" x="325" y="230" text-anchor="middle">VPN</text><text style="font-family:DM Sans,sans-serif;font-size:12px;fill:#878d9a" x="325" y="256" text-anchor="middle">proxy + analysis</text>
+<rect x="390" y="120" width="220" height="50" rx="8" fill="rgba(219,184,104,.12)" stroke="#dbb868" stroke-width=".5"/><text style="font-family:DM Sans,sans-serif;font-size:14px;font-weight:500;fill:#dbb868" x="500" y="140" text-anchor="middle" dominant-baseline="central">Mac Mini M5</text><text style="font-family:DM Sans,sans-serif;font-size:12px;fill:#b09848" x="500" y="158" text-anchor="middle" dominant-baseline="central">Local cache · proxy sync</text>
 <line x1="500" y1="170" x2="500" y2="210" stroke="#BA7517" stroke-width="1" marker-end="url(#a2)"/>
-<g class="c-teal"><rect x="390" y="215" width="220" height="70" rx="8" stroke-width="0.5"/><text class="th" x="500" y="238" text-anchor="middle" dominant-baseline="central">Editor no Brasil</text><text class="ts" x="500" y="256" text-anchor="middle" dominant-baseline="central">MacBook Pro M1</text><text class="ts" x="500" y="272" text-anchor="middle" dominant-baseline="central">Premiere + proxy local</text></g>
-<path d="M500 285 L500 320 L340 320 L340 430 L290 430" fill="none" stroke="#7F77DD" stroke-width="1" stroke-dasharray="6 4"/>
-<text class="ts" x="400" y="310" text-anchor="middle" style="fill:#7F77DD">decisões editor ← VPN</text>
-<g class="c-gray"><rect x="390" y="395" width="220" height="50" rx="8" stroke-width="0.5"/><text class="th" x="500" y="415" text-anchor="middle" dominant-baseline="central">Cliente final</text><text class="ts" x="500" y="433" text-anchor="middle" dominant-baseline="central">PocketBase · Frame.io</text></g>
-<text class="ts" x="340" y="480" text-anchor="middle">Pipeline roda em Montreal · editor acessa proxies + análise via VPN no Brasil</text>
-<text class="ts" x="340" y="498" text-anchor="middle">Mac Mini M5 como cache local — editor não depende de latência contínua</text>
+<rect x="390" y="215" width="220" height="70" rx="8" fill="rgba(114,197,180,.12)" stroke="#72c5b4" stroke-width=".5"/><text style="font-family:DM Sans,sans-serif;font-size:14px;font-weight:500;fill:#72c5b4" x="500" y="238" text-anchor="middle" dominant-baseline="central">Editor in Brazil</text><text style="font-family:DM Sans,sans-serif;font-size:12px;fill:#5ba898" x="500" y="256" text-anchor="middle" dominant-baseline="central">MacBook Pro M1</text><text style="font-family:DM Sans,sans-serif;font-size:12px;fill:#5ba898" x="500" y="272" text-anchor="middle" dominant-baseline="central">Premiere + local proxy</text>
+<path d="M500 285 L500 320 L340 320 L340 412 L290 412" fill="none" stroke="#7F77DD" stroke-width="1" stroke-dasharray="6 4"/><text style="font-family:DM Sans,sans-serif;font-size:12px;fill:#7F77DD" x="400" y="310" text-anchor="middle">editor decisions ← VPN</text>
+<rect x="390" y="390" width="220" height="44" rx="8" fill="rgba(200,200,200,.06)" stroke="#888" stroke-width=".5"/><text style="font-family:DM Sans,sans-serif;font-size:14px;font-weight:500;fill:#aaa" x="500" y="412" text-anchor="middle" dominant-baseline="central">Client</text><text style="font-family:DM Sans,sans-serif;font-size:12px;fill:#888" x="500" y="428" text-anchor="middle" dominant-baseline="central">PocketBase · Frame.io</text>
+<text style="font-family:DM Sans,sans-serif;font-size:12px;fill:#878d9a" x="340" y="470" text-anchor="middle">Pipeline runs in Montreal · editor accesses proxies + analysis via VPN from Brazil</text>
+<text style="font-family:DM Sans,sans-serif;font-size:12px;fill:#878d9a" x="340" y="490" text-anchor="middle">Mac Mini M5 as local cache — editor doesn't depend on continuous latency</text>
 </svg>
 </div>
 
 <div style="margin-top:18px;padding:14px;background:var(--bg2);border-radius:8px;border:1px solid var(--border)">
 <div style="font-size:.86em;color:var(--text2);line-height:1.7">
-<span style="color:var(--accent);font-weight:600">Princípio:</span> RAW footage nunca trafega pela rede — apenas proxies 720p (~400MB/h) e transcrições (~50KB). <span style="color:var(--teal);font-weight:600">Mac Mini M5</span> no Brasil funciona como nó de ingest + cache, eliminando dependência de latência contínua. <span style="color:var(--amber);font-weight:600">WireGuard VPN</span> criptografa ponta a ponta — dados sensíveis nunca expostos.
+<span style="color:var(--accent);font-weight:600"><span class="pt">Princípio:</span><span class="en">Principle:</span></span> <span class="pt">RAW footage nunca trafega pela rede — apenas proxies 720p (~400MB/h) e transcrições (~50KB).</span><span class="en">RAW footage never travels over the network — only 720p proxies (~400MB/h) and transcriptions (~50KB).</span> <span style="color:var(--teal);font-weight:600">Mac Mini M5</span> <span class="pt">no Brasil funciona como nó de ingest + cache, eliminando dependência de latência contínua.</span><span class="en">in Brazil works as ingest + cache node, eliminating continuous latency dependency.</span> <span style="color:var(--amber);font-weight:600">WireGuard VPN</span> <span class="pt">criptografa ponta a ponta.</span><span class="en">encrypts end-to-end.</span>
 </div>
 </div>
 </div>
-
 
 <!-- ══════ 3. MANIFESTO ══════ -->
 <div class="sec" id="manifesto">
-<div class="st">Manifesto — O sistema como produtor de história</div>
-<div class="sd">7 princípios de design, processo criativo, e a filosofia que sustenta cada decisão arquitectural.</div>
+<div class="st"><span class="pt">Manifesto — O sistema como produtor de história</span><span class="en">Manifesto — The system as a producer of history</span></div>
+<div class="sd"><span class="pt">7 princípios de design, processo criativo, e a filosofia que sustenta cada decisão arquitectural.</span><span class="en">7 design principles, creative process, and the philosophy behind each architectural decision.</span></div>
 <div style="font-size:.91em;color:var(--text2);line-height:1.8;margin-bottom:20px">
-<p style="margin-bottom:14px">Na história da cultura visual, os profissionais que duram funcionam como produtores de história — acumulam repertório ao longo de anos e sabem acessá-lo no momento certo. Esse conhecimento sempre morou na cabeça do profissional. Quando saía, o conhecimento ia junto.</p>
-<p>MEMORABILIA digitaliza esse repertório sem substituir quem o acumulou. O briefing que abre cada projeto ativa uma perspectiva que nenhum profissional consegue manter sozinho: o projeto atual visto em relação a todos os anteriores e ao padrão de divergências acumuladas.</p>
+<div class="pt"><p style="margin-bottom:14px">Na história da cultura visual, os profissionais que duram funcionam como produtores de história — acumulam repertório ao longo de anos e sabem acessá-lo no momento certo. Esse conhecimento sempre morou na cabeça do profissional. Quando saía, o conhecimento ia junto.</p><p>MEMORABILIA digitaliza esse repertório sem substituir quem o acumulou. O briefing que abre cada projeto ativa uma perspectiva que nenhum profissional consegue manter sozinho: o projeto atual visto em relação a todos os anteriores e ao padrão de divergências acumuladas.</p></div>
+<div class="en"><p style="margin-bottom:14px">In the history of visual culture, professionals who last function as producers of history — they accumulate repertoire over years and know how to access it at the right moment. This knowledge always lived in the professional's head. When they left, the knowledge went with them.</p><p>MEMORABILIA digitizes this repertoire without replacing who accumulated it. The briefing that opens each project activates a perspective no professional can maintain alone: the current project seen in relation to all previous ones and the pattern of accumulated divergences.</p></div>
 </div>
 <div style="font-size:1.02em;font-weight:600;color:var(--text);margin-bottom:10px">Design Process</div>
 <div style="font-size:.88em;color:var(--text2);line-height:1.8;margin-bottom:20px">
-<p style="margin-bottom:10px">Princípio central: <em style="color:var(--accent)">não bloquear — amplificar</em>. O papel do humano passa de gatekeeper a filtro de gosto na última milha. Nenhum agent espera o anterior quando podem rodar em paralelo. Nenhum artefato é criado se não alimenta o próximo agent.</p>
-<p>A arquitectura de memória opera em três camadas: o <strong style="color:var(--teal)">conhecimento cinematográfico</strong> (72k trechos), a <strong style="color:var(--amber)">memória projetual viva</strong> (decisões reais por projeto), e a <strong style="color:var(--coral)">confiabilidade de execução</strong> (auto-recovery). Quando as duas primeiras concordam, sugere com confiança. Quando divergem, apresenta as duas perspectivas.</p>
+<div class="pt"><p style="margin-bottom:10px">Princípio central: <em style="color:var(--accent)">não bloquear — amplificar</em>. O papel do humano passa de gatekeeper a filtro de gosto na última milha. Nenhum agent espera o anterior quando podem rodar em paralelo. Nenhum artefato é criado se não alimenta o próximo agent.</p><p>A arquitectura de memória opera em três camadas: o <strong style="color:var(--teal)">conhecimento cinematográfico</strong> (72k trechos), a <strong style="color:var(--amber)">memória projetual viva</strong> (decisões reais por projeto), e a <strong style="color:var(--coral)">confiabilidade de execução</strong> (auto-recovery). Quando as duas primeiras concordam, sugere com confiança. Quando divergem, apresenta as duas perspectivas.</p></div>
+<div class="en"><p style="margin-bottom:10px">Core principle: <em style="color:var(--accent)">don't block — amplify</em>. The human's role shifts from gatekeeper to last-mile taste filter. No agent waits for the previous one when they can run in parallel. No artifact is created if it doesn't feed the next agent.</p><p>The memory architecture operates in three layers: <strong style="color:var(--teal)">cinematographic knowledge</strong> (72k chunks), <strong style="color:var(--amber)">living project memory</strong> (real decisions per project), and <strong style="color:var(--coral)">execution reliability</strong> (auto-recovery). When the first two agree, it suggests with confidence. When they diverge, it presents both perspectives.</p></div>
 </div>
-<div style="font-size:1.02em;font-weight:600;color:var(--text);margin-bottom:10px">Os 7 Princípios</div>
-<div class="pr"><div class="num">1</div><div><div class="nm">Tradução de Tempo</div><div class="ts">O agent transforma ou apenas copia?</div></div></div>
-<div class="pr"><div class="num">2</div><div><div class="nm">Anti-Biblioteca</div><div class="ts">O output é encontrável por significado?</div></div></div>
-<div class="pr"><div class="num">3</div><div><div class="nm">Desdobramento em Camadas</div><div class="ts">O output gera múltiplas camadas de valor?</div></div></div>
-<div class="pr"><div class="num">4</div><div><div class="nm">Contexto Relacional</div><div class="ts">O output carrega relação com o resto?</div></div></div>
-<div class="pr"><div class="num">5</div><div><div class="nm">Amplificação</div><div class="ts">O output navega ou prescreve?</div></div></div>
-<div class="pr"><div class="num">6</div><div><div class="nm">Paralelismo</div><div class="ts">O agent declara dependências e roda quando pode?</div></div></div>
-<div class="pr"><div class="num">7</div><div><div class="nm">Julgamento Acumulado</div><div class="ts">O agent deposita algo que calibra o futuro?</div></div></div>
+<div style="font-size:1.02em;font-weight:600;color:var(--text);margin-bottom:10px"><span class="pt">Os 7 Princípios</span><span class="en">The 7 Principles</span></div>
+<div class="pr"><div class="num">1</div><div><div class="nm"><span class="pt">Tradução de Tempo</span><span class="en">Time Translation</span></div><div class="ts"><span class="pt">O agent transforma ou apenas copia?</span><span class="en">Does the agent transform or just copy?</span></div></div></div>
+<div class="pr"><div class="num">2</div><div><div class="nm"><span class="pt">Anti-Biblioteca</span><span class="en">Anti-Library</span></div><div class="ts"><span class="pt">O output é encontrável por significado?</span><span class="en">Is the output findable by meaning?</span></div></div></div>
+<div class="pr"><div class="num">3</div><div><div class="nm"><span class="pt">Desdobramento em Camadas</span><span class="en">Layered Unfolding</span></div><div class="ts"><span class="pt">O output gera múltiplas camadas de valor?</span><span class="en">Does the output generate multiple layers of value?</span></div></div></div>
+<div class="pr"><div class="num">4</div><div><div class="nm"><span class="pt">Contexto Relacional</span><span class="en">Relational Context</span></div><div class="ts"><span class="pt">O output carrega relação com o resto?</span><span class="en">Does the output carry relation to the rest?</span></div></div></div>
+<div class="pr"><div class="num">5</div><div><div class="nm"><span class="pt">Amplificação</span><span class="en">Amplification</span></div><div class="ts"><span class="pt">O output navega ou prescreve?</span><span class="en">Does the output navigate or prescribe?</span></div></div></div>
+<div class="pr"><div class="num">6</div><div><div class="nm"><span class="pt">Paralelismo</span><span class="en">Parallelism</span></div><div class="ts"><span class="pt">O agent declara dependências e roda quando pode?</span><span class="en">Does the agent declare dependencies and run when it can?</span></div></div></div>
+<div class="pr"><div class="num">7</div><div><div class="nm"><span class="pt">Julgamento Acumulado</span><span class="en">Accumulated Judgment</span></div><div class="ts"><span class="pt">O agent deposita algo que calibra o futuro?</span><span class="en">Does the agent deposit something that calibrates the future?</span></div></div></div>
 <div style="margin-top:20px;font-size:.9em;color:var(--text2);line-height:1.8">
-<div style="font-size:1.02em;font-weight:600;color:var(--text);margin-bottom:10px">Conclusão — tradução de tempo</div>
-<p style="margin-bottom:10px">Com AI, qualquer pessoa pode produzir qualquer coisa — se souber descrever o que quer. Saber descrever é a parte difícil. MEMORABILIA amplia a capacidade de descrever — porque o operador que acessa 72 mil trechos e 105 entradas de memória descreve com mais precisão do que quem começa do zero.</p>
-<p>Não é uma ferramenta que executa e esquece. É um organismo que executa, deposita, e torna o próximo movimento mais preciso. Esse conhecimento não se compra. Não se copia. Não se reseta. Cresce projeto a projeto. Silenciosamente. Inevitavelmente.</p>
+<div style="font-size:1.02em;font-weight:600;color:var(--text);margin-bottom:10px"><span class="pt">Conclusão — tradução de tempo</span><span class="en">Conclusion — time translation</span></div>
+<div class="pt"><p style="margin-bottom:10px">Com AI, qualquer pessoa pode produzir qualquer coisa — se souber descrever o que quer. Saber descrever é a parte difícil. MEMORABILIA amplia a capacidade de descrever — porque o operador que acessa 72 mil trechos e 105 entradas de memória descreve com mais precisão do que quem começa do zero.</p><p>Não é uma ferramenta que executa e esquece. É um organismo que executa, deposita, e torna o próximo movimento mais preciso. Esse conhecimento não se compra. Não se copia. Não se reseta. Cresce projeto a projeto. Silenciosamente. Inevitavelmente.</p></div>
+<div class="en"><p style="margin-bottom:10px">With AI, anyone can produce anything — if they know how to describe what they want. Knowing how to describe is the hard part. MEMORABILIA expands the ability to describe — because the operator who accesses 72 thousand chunks and 105 memory entries describes with more precision than one who starts from zero.</p><p>It's not a tool that executes and forgets. It's an organism that executes, deposits, and makes the next move more precise. This knowledge can't be bought. Can't be copied. Can't be reset. It grows project by project. Silently. Inevitably.</p></div>
 </div>
 </div>
 
-<!-- ══════ 4. 9 AGENTES ══════ -->
-<div class="sec" id="agents">
-<div class="st">9 Agentes do Pipeline</div>
-<div class="sd">Cada agente traduz uma camada do material. Nenhum decide — todos traduzem.</div>
+<!-- Remaining tabs use same pattern - agent/assistant/model content stays mostly technical (same in both languages) with PT/EN labels -->
 
-<div class="card" onclick="T(this)"><div class="ch"><div class="cb bb">1+2</div><div><div class="ct1">Ingest + Whisper</div><div class="ct2">Transcrição multilíngue automática</div></div><div class="cr"><span class="tag tb">Windows RTX 4080</span><span class="arrow">▸</span></div></div><div class="cbd"><p><strong>Função:</strong> Extrai áudio via FFmpeg, transcreve com Whisper large-v3 em PT/EN/FR. Gera proxy 720p NVENC. CSV para ingest no Premiere.</p><dl class="detail"><dt>Modelo</dt><dd>Whisper large-v3 (3.08GB)</dd><dt>Input</dt><dd>Footage bruto (ProRes, H.264, H.265, N-RAW)</dd><dt>Output</dt><dd>.txt .srt .vtt .json + proxy 720p + CSV</dd><dt>Tempo</dt><dd>15-25 min</dd></dl></div></div>
+<!-- ══════ 4-10: AGENTS through BUSINESS MODEL ══════ -->
+<!-- These sections keep the same structure as the current HTML but with pt/en spans on titles and descriptions -->
+<!-- For brevity, the technical content (model names, specs, numbers) stays as-is since it's universal -->
 
-<div class="card" onclick="T(this)"><div class="ch"><div class="cb bt">3a</div><div><div class="ct1">Índice Textual</div><div class="ct2">Decupagem completa da transcrição</div></div><div class="cr"><span class="tag tt">gemma4:26b</span><span class="arrow">▸</span></div></div><div class="cbd"><p><strong>Função:</strong> Analisa a transcrição e gera índice estruturado: temas, momentos-chave, mudanças de tom, timestamps com descrição.</p><dl class="detail"><dt>Modelo</dt><dd>gemma4:26b — HomeLab · 53 t/s</dd><dt>Output</dt><dd>full_transcript_index.md</dd><dt>Tempo</dt><dd>~1.5 min</dd></dl></div></div>
+<div class="sec" id="agents"><div class="st"><span class="pt">9 Agentes do Pipeline</span><span class="en">9 Pipeline Agents</span></div><div class="sd"><span class="pt">Cada agente traduz uma camada do material. Nenhum decide — todos traduzem.</span><span class="en">Each agent translates a layer of the material. None decides — all translate.</span></div><div id="agents-content"></div></div>
+<div class="sec" id="assistants"><div class="st"><span class="pt">6 Assistants Especializados</span><span class="en">6 Specialized Assistants</span></div><div class="sd"><span class="pt">Consultam base de conhecimento + memória projetual viva antes de cada resposta.</span><span class="en">Query knowledge base + living project memory before each response.</span></div><div id="assistants-content"></div></div>
+<div class="sec" id="models"><div class="st"><span class="pt">Modelos AI</span><span class="en">AI Models</span></div><div class="sd"><span class="pt">HomeLab Linux (2× GTX 1080 Ti · 22GB VRAM) + Windows (RTX 4080 · 16GB VRAM).</span><span class="en">HomeLab Linux (2× GTX 1080 Ti · 22GB VRAM) + Windows (RTX 4080 · 16GB VRAM).</span></div><div id="models-content"></div></div>
+<div class="sec" id="knowledge"><div class="st"><span class="pt">Base de Conhecimento</span><span class="en">Knowledge Base</span></div><div class="sd"><span class="pt">72.263 trechos canônicos + 105 entradas projetuais vivas.</span><span class="en">72,263 canonical chunks + 105 living project entries.</span></div><div id="knowledge-content"></div></div>
+<div class="sec" id="panel"><div class="st"><span class="pt">Painel de Controle — Second Brain no Premiere</span><span class="en">Control Panel — Second Brain in Premiere</span></div><div class="sd"><span class="pt">Extensão CEP integrada ao Premiere Pro. 3 views sincronizadas + plugin standalone.</span><span class="en">CEP extension integrated with Premiere Pro. 3 synced views + standalone plugin.</span></div><div id="panel-content"></div></div>
+<div class="sec" id="docs"><div class="st"><span class="pt">Documentos do Projeto</span><span class="en">Project Documents</span></div><div class="sd"><span class="pt">Toda a documentação do MEMORABILIA. Clique para expandir.</span><span class="en">Full MEMORABILIA documentation. Click to expand.</span></div><div id="docs-container"><span class="pt">Carregando documentos...</span><span class="en">Loading documents...</span></div></div>
+<div class="sec" id="biz"><div class="st"><span class="pt">Business Model — AI Pipeline Studio</span><span class="en">Business Model — AI Pipeline Studio</span></div><div class="sd"><span class="pt">Infraestrutura de produção audiovisual com AI, implementada sob medida para studios.</span><span class="en">Audiovisual production infrastructure with AI, custom-built for studios.</span></div><div id="biz-content"></div></div>
 
-<div class="card" onclick="T(this)"><div class="ch"><div class="cb bt">3b</div><div><div class="ct1">Visual Index</div><div class="ct2">384 frames catalogados · 4 modos adaptativos</div></div><div class="cr"><span class="tag tc">qwen3-vl:8b</span><span class="arrow">▸</span></div></div><div class="cbd"><p><strong>Função:</strong> Extrai frames representativos e descreve cada um com vocabulário visual. 4 modos adaptativos ao ritmo do material.</p><dl class="detail"><dt>Modelo</dt><dd>qwen3-vl:8b — Windows RTX 4080</dd><dt>Output</dt><dd>384 entries no ChromaDB visual_index</dd><dt>Tempo</dt><dd>~19 min</dd><dt>Modos</dt><dd>arc · dual · single · window</dd></dl></div></div>
-
-<div class="card" onclick="T(this)"><div class="ch"><div class="cb ba">3c</div><div><div class="ct1">Leitura Narrativa — Tensão Calibrada</div><div class="ct2">O agente central · dupla perspectiva</div></div><div class="cr"><span class="tag ta">CENTRAL</span><span class="arrow">▸</span></div></div><div class="cbd"><p><strong>Função:</strong> Traduz o material para vocabulário cinematográfico com duas perspectivas em tensão: canônico (livros) e projetual vivo (projetos anteriores). Observações posicionadas, nunca prescrições.</p><dl class="detail"><dt>Modelo</dt><dd>gemma4:26b · 53 t/s</dd><dt>RAG</dt><dd>knowledge_montagem (4.260) + memoria_projetual (105)</dd><dt>Output</dt><dd>Observações com score canônico + projetual vivo + divergência</dd><dt>Tempo</dt><dd>~3 min</dd></dl><p style="color:var(--amber);font-size:.83em">↻ O que o 3c observa → o Agent 8 compara com a decisão do editor → deposita → o 3c do próximo projeto consulta</p></div></div>
-
-<div class="card" onclick="T(this)"><div class="ch"><div class="cb bp">7</div><div><div class="ct1">Vision + Color</div><div class="ct2">Análise de cor por cena do render final</div></div><div class="cr"><span class="arrow">▸</span></div></div><div class="cbd"><p><strong>Função:</strong> Analisa render final: paleta dominante por cena, consistência de cor, sugestões de grade com referência cruzada ao plano de luz.</p><dl class="detail"><dt>Modelos</dt><dd>qwen3-vl:8b + gemma4:26b</dd><dt>Tempo</dt><dd>~3 min</dd></dl></div></div>
-
-<div class="card" onclick="T(this)"><div class="ch"><div class="cb bb">6b</div><div><div class="ct1">SEO Metadata</div><div class="ct2">Legendas e descrições para 6 plataformas</div></div><div class="cr"><span class="arrow">▸</span></div></div><div class="cbd"><p><strong>Função:</strong> Gera legendas, títulos, descrições e hashtags para YouTube, Vimeo, Instagram, TikTok, LinkedIn e Twitter/X.</p><dl class="detail"><dt>Modelo</dt><dd>gemma4:26b</dd><dt>Tempo</dt><dd>~32 segundos</dd></dl></div></div>
-
-<div class="card" onclick="T(this)"><div class="ch"><div class="cb ba">8</div><div><div class="ct1">Memória Projetual Viva — Closer</div><div class="ct2">Memória relacional · fecha o loop</div></div><div class="cr"><span class="tag ta">CENTRAL</span><span class="arrow">▸</span></div></div><div class="cbd"><p><strong>Função:</strong> Fecha o loop. Compara sugerido vs escolhido. Registra tríade: sugestão → escolha → divergência. Deposita memória com contexto relacional completo.</p><dl class="detail"><dt>Modelo</dt><dd>gemma4:26b · 53 t/s</dd><dt>Output</dt><dd>postmortem.md + client_summary.md + 7 types no ChromaDB</dd><dt>Tempo</dt><dd>~3.5 min</dd><dt>Depósito</dt><dd>7 types: narrativa, áudio, visão, motion, generativo, 3D, projeto</dd></dl><p style="color:var(--amber);font-size:.83em">↻ Sem o Agent 8, o Agent 3c do próximo projeto não tem material projetual vivo. O 3c é o leitor. O 8 é o escritor.</p></div></div>
-
-<div class="card" onclick="T(this)"><div class="ch"><div class="cb bg">9</div><div><div class="ct1">Publish</div><div class="ct2">Publicação automática via webhook</div></div><div class="cr"><span class="arrow">▸</span></div></div><div class="cbd"><p><strong>Função:</strong> Dispara publicação via n8n webhook. Conecta com YouTube, Vimeo e plataformas sociais.</p><dl class="detail"><dt>Stack</dt><dd>n8n Docker :5678 → webhook → APIs</dd><dt>Tempo</dt><dd>&lt;1 segundo</dd></dl></div></div>
-</div>
-
-<!-- ══════ 5. 6 ASSISTANTS ══════ -->
-<div class="sec" id="assistants">
-<div class="st">6 Assistants Especializados</div>
-<div class="sd">Consultam base de conhecimento + memória projetual viva antes de cada resposta.</div>
-
-<div class="card" onclick="T(this)"><div class="ch"><div class="cb bo">CS</div><div><div class="ct1">Cinematographer Supervisor</div><div class="ct2">Plano de iluminação a partir de referências</div></div><div class="cr"><span class="arrow">▸</span></div></div><div class="cbd"><p><strong>Função:</strong> Recebe referência visual + locação real → plano de luz completo, câmera, grip list, tradução CG para Blender ACEScg.</p><dl class="detail"><dt>Base</dt><dd>11.261 trechos cinematografia + 4.260 montagem + 649 CG</dd></dl></div></div>
-
-<div class="card" onclick="T(this)"><div class="ch"><div class="cb bo">CP</div><div><div class="ct1">Cinematographer Problem Solver</div><div class="ct2">Resolução de problemas técnicos de luz e câmera</div></div><div class="cr"><span class="arrow">▸</span></div></div><div class="cbd"><p><strong>Função:</strong> Analisa frames com problemas e propõe soluções técnicas com referência à teoria.</p><dl class="detail"><dt>Base</dt><dd>knowledge_cinematography_v2 (11.261 chunks)</dd></dl></div></div>
-
-<div class="card" onclick="T(this)"><div class="ch"><div class="cb bc">CD</div><div><div class="ct1">Creative Director RAG</div><div class="ct2">Estrutura narrativa com dupla perspectiva</div></div><div class="cr"><span class="arrow">▸</span></div></div><div class="cbd"><p><strong>Função:</strong> Propõe estrutura narrativa com duas perspectivas: canônico vs projetos anteriores. Score de confiança por perspectiva.</p><dl class="detail"><dt>Base</dt><dd>48.401 trechos de 174 livros + memória projetual viva</dd></dl></div></div>
-
-<div class="card" onclick="T(this)"><div class="ch"><div class="cb bt">MR</div><div><div class="ct1">Motion RAG</div><div class="ct2">Técnicas de motion design aplicadas</div></div><div class="cr"><span class="arrow">▸</span></div></div><div class="cbd"><p><strong>Função:</strong> Ensina e aplica técnicas de After Effects e Cinema 4D ao projeto com referência de curso e timecode.</p><dl class="detail"><dt>Base</dt><dd>7.868 trechos de 14 cursos</dd></dl></div></div>
-
-<div class="card" onclick="T(this)"><div class="ch"><div class="cb bt">3D</div><div><div class="ct1">3D RAG</div><div class="ct2">Workflows Blender: modelagem, animação, render</div></div><div class="cr"><span class="arrow">▸</span></div></div><div class="cbd"><p><strong>Função:</strong> Workflows Blender com setup ACES. Referência cruzada com cursos indexados.</p><dl class="detail"><dt>Base</dt><dd>574 aulas de 9 cursos Blender</dd></dl></div></div>
-
-<div class="card" onclick="T(this)"><div class="ch"><div class="cb bp">TA</div><div><div class="ct1">Technical Artist Director</div><div class="ct2">Render, ACES, compositing, scripts</div></div><div class="cr"><span class="arrow">▸</span></div></div><div class="cbd"><p><strong>Função:</strong> Resolve problemas técnicos de CG/VFX: erros de render, setup ACES/OCIO, compositing, scripts Python.</p><dl class="detail"><dt>Base</dt><dd>10.172 trechos AI/ML + 5.026 Tech/Python</dd></dl></div></div>
-
-<div class="card" onclick="T(this)"><div class="ch"><div class="cb ba">MT</div><div><div class="ct1">Montagem RAG</div><div class="ct2">Teoria de montagem cinematográfica aplicada</div></div><div class="cr"><span class="arrow">▸</span></div></div><div class="cbd"><p><strong>Função:</strong> Aplica teoria dos mestres da montagem ao material real. Eisenstein, Tarkovsky, Bresson, Murch.</p><dl class="detail"><dt>Base</dt><dd>4.260 trechos</dd></dl></div></div>
-</div>
-
-<!-- ══════ 6. MODELOS AI ══════ -->
-<div class="sec" id="models">
-<div class="st">Modelos AI</div>
-<div class="sd">HomeLab Linux (2× GTX 1080 Ti · 22GB VRAM) + Windows (RTX 4080 · 16GB VRAM).</div>
-<table class="tbl">
-<thead><tr><th>Modelo</th><th>Onde roda</th><th>VRAM</th><th>Função</th></tr></thead>
-<tbody>
-<tr><td style="color:var(--teal);font-family:'JetBrains Mono',monospace;font-size:.83em">gemma4:26b</td><td>HomeLab</td><td>~20GB</td><td>Agent 3a, 3c, 6b, 7, 8 + todos os assistants. 53 t/s.</td></tr>
-<tr><td style="color:var(--coral);font-family:'JetBrains Mono',monospace;font-size:.83em">qwen3-vl:8b</td><td>Windows</td><td>~6GB</td><td>Agent 3b (Visual Index) + Agent 7 (Vision).</td></tr>
-<tr><td style="color:var(--blue);font-family:'JetBrains Mono',monospace;font-size:.83em">whisper large-v3</td><td>Windows</td><td>~3GB</td><td>Agent 1+2. Transcrição PT/EN/FR.</td></tr>
-<tr><td style="color:var(--accent);font-family:'JetBrains Mono',monospace;font-size:.83em">mistral:latest</td><td>HomeLab</td><td>~4GB</td><td>Tradução PT→EN. Pipelines _quick.</td></tr>
-<tr><td style="color:var(--green);font-family:'JetBrains Mono',monospace;font-size:.83em">nomic-embed-text</td><td>HomeLab</td><td>~0.3GB</td><td>Embeddings 768 dims para ChromaDB.</td></tr>
-<tr><td style="color:var(--pink);font-family:'JetBrains Mono',monospace;font-size:.83em">pingpong-story</td><td>HomeLab</td><td>~20GB</td><td>Custom model. Narrativa + tom publicitário.</td></tr>
-</tbody>
-</table>
-</div>
-
-<!-- ══════ 7. CONHECIMENTO ══════ -->
-<div class="sec" id="knowledge">
-<div class="st">Base de Conhecimento</div>
-<div class="sd">72.263 trechos canônicos + 105 entradas projetuais vivas. Dois mapas em tensão.</div>
-<table class="tbl">
-<thead><tr><th>Collection</th><th>Chunks</th><th>Conteúdo</th></tr></thead>
-<tbody>
-<tr><td style="color:var(--accent)">knowledge</td><td>48.401</td><td>174 livros: narrativa, design, film, AI, filosofia</td></tr>
-<tr><td style="color:var(--teal)">knowledge_cinematography_v2</td><td>11.261</td><td>21 livros de cinematografia</td></tr>
-<tr><td style="color:var(--coral)">knowledge_montagem</td><td>4.260</td><td>Eisenstein · Tarkovsky · Bresson · Murch</td></tr>
-<tr><td style="color:var(--blue)">tutorials</td><td>7.868</td><td>14 cursos: Ben Marriott, School of Motion, Blender</td></tr>
-<tr><td style="color:var(--green)">visual_index</td><td>384</td><td>Frames catalogados · 4 modos</td></tr>
-<tr><td style="color:var(--amber)">memoria_projetual</td><td>105</td><td>7 types: narrativa · áudio · visão · motion · generativo · 3D · projeto</td></tr>
-</tbody>
-</table>
-</div>
-
-<!-- ══════ 8. PAINEL + PLUGIN ══════ -->
-<div class="sec" id="panel">
-<div class="st">Painel de Controle — Second Brain no Premiere</div>
-<div class="sd">Extensão CEP integrada ao Premiere Pro. 3 views sincronizadas + plugin standalone.</div>
-
-<div style="margin-bottom:20px;border-radius:12px;overflow:hidden;border:1px solid var(--border)">
-<video controls width="100%" style="display:block;background:#000"><source src="Pingpong_HOMELAB_002.mp4" type="video/mp4"></video>
-<div style="padding:9px 13px;background:var(--bg2);font-size:.78em;color:var(--text3)">Pingpong HOMELAB 002 — CEP Panel + Pipeline em ação</div>
-</div>
-
-<div class="card" onclick="T(this)"><div class="ch"><div class="cb bb">L</div><div><div class="ct1">List View</div><div class="ct2">Texto compacto com transcrição inline</div></div><div class="cr"><span class="arrow">▸</span></div></div><div class="cbd"><p>Linha compacta com thumbnail, timecode, transcrição e score. Drag handle para reordenar.</p></div></div>
-
-<div class="card" onclick="T(this)"><div class="ch"><div class="cb bt">G</div><div><div class="ct1">Grid View</div><div class="ct2">Thumbnails arrastáveis lado a lado</div></div><div class="cr"><span class="arrow">▸</span></div></div><div class="cbd"><p>Thumbnails com frame real. Click para selecionar, drag para reordenar. Badges com score e timecode.</p></div></div>
-
-<div class="card" onclick="T(this)"><div class="ch"><div class="cb ba">⬡</div><div><div class="ct1">Graph View — Estilo Obsidian</div><div class="ct2">Grafo relacional force-directed com thumbnails reais</div></div><div class="cr"><span class="tag ta">NOVO</span><span class="arrow">▸</span></div></div><div class="cbd">
-<p>Cada clip é um nó circular com a imagem real do frame. Temas extraídos automaticamente aparecem como nós menores pastel. SVG com 4 layers: edges → themes → clip-bg → clips.</p>
-<p><strong>Sidebar esquerda:</strong> Filters · Groups · Display · Forces</p>
-<p><strong>Sidebar direita:</strong> Thumbnail · timecode · score · auto_tags · 4 botões: Source Monitor · Go TC · + Marker · Copy TC</p>
-<p><strong>Busca = criação:</strong> <code style="background:var(--bg3);padding:2px 5px;border-radius:3px;color:var(--teal)">#tag</code> filtra ou cria · <code style="background:var(--bg3);padding:2px 5px;border-radius:3px;color:var(--amber)">!select</code> bookmark · <code style="background:var(--bg3);padding:2px 5px;border-radius:3px;color:var(--accent)">@clip</code> filtra por links</p>
-</div></div>
-
-<!-- PLUGIN STANDALONE -->
-<div style="margin-top:28px;border-top:1px solid var(--border);padding-top:22px">
-<div style="font-size:1.15em;font-weight:600;color:var(--text);margin-bottom:6px">MEMORABILIA Graph — Plugin Standalone</div>
-<div style="font-size:.86em;color:var(--text2);margin-bottom:18px">O mesmo Graph View como produto independente — sem AI, sem cloud, sem setup. O editor é o motor semântico.</div>
-
-<div class="card" onclick="T(this)"><div class="ch"><div class="cb bt">ED</div><div><div class="ct1">Edges automáticas — sem AI</div><div class="ct2">Relações geradas pela metadata nativa da câmera</div></div><div class="cr"><span class="arrow">▸</span></div></div><div class="cbd"><p>· Mesmo reel / mesmo take → aresta forte · &lt; 5 min entre clips → aresta temporal · Mesma câmera → aresta via nó tema · Mesmo GPS &lt; 50m → aresta locação · Mesmo frame rate → aresta técnica</p><p>FFprobe + ExifTool extraem tudo. Zero AI necessária.</p></div></div>
-
-<div class="card" onclick="T(this)"><div class="ch"><div class="cb ba">SB</div><div><div class="ct1">Second Brain do Editor</div><div class="ct2">#tag · !select · @link — busca = criação</div></div><div class="cr"><span class="arrow">▸</span></div></div><div class="cbd"><p>· <code style="background:var(--bg3);padding:2px 5px;border-radius:3px;color:var(--teal)">#entrevista-maria</code> cria ou filtra tag · <code style="background:var(--bg3);padding:2px 5px;border-radius:3px;color:var(--amber)">!select</code> marca aprovado · <code style="background:var(--bg3);padding:2px 5px;border-radius:3px;color:var(--coral)">!descarte</code> marca rejeitado · <code style="background:var(--bg3);padding:2px 5px;border-radius:3px;color:var(--accent)">@clip-042</code> cria link manual</p><p>JSON ao lado do projeto. Reabre 3 meses depois — second brain intacto.</p></div></div>
-
-<div style="margin-top:14px;display:grid;grid-template-columns:1fr 1fr;gap:14px">
-<div style="padding:14px;background:var(--bg3);border-radius:8px;border-left:3px solid var(--teal)"><div style="font-weight:600;color:var(--teal);margin-bottom:3px">MEMORABILIA Graph — $49</div><div style="font-size:.83em;color:var(--text2)">Plugin standalone. Editor é o motor semântico. Metadata nativa + tags manuais. Zero setup, zero AI, zero cloud.</div></div>
-<div style="padding:14px;background:var(--bg3);border-radius:8px;border-left:3px solid var(--accent)"><div style="font-weight:600;color:var(--accent);margin-bottom:3px">MEMORABILIA — $199</div><div style="font-size:.83em;color:var(--text2)">Pipeline completo. AI + memória projetual + 72k trechos + 9 agents + 6 assistants. Upgrade do Graph.</div></div>
-</div>
-</div>
-
-<!-- MODELO DE NEGÓCIO DO PLUGIN -->
-<div style="margin-top:28px;border-top:1px solid var(--border);padding-top:22px">
-<div style="font-size:1.15em;font-weight:600;color:var(--text);margin-bottom:6px">Modelo de Negócio</div>
-<div style="font-size:.86em;color:var(--text2);margin-bottom:18px">Conceito, mercado, receita e go-to-market do plugin standalone.</div>
-
-<div class="card" onclick="T(this)"><div class="ch"><div class="cb bc">PR</div><div><div class="ct1">O Problema</div><div class="ct2">Timelines são lineares. Pensamento narrativo não.</div></div><div class="cr"><span class="arrow">▸</span></div></div><div class="cbd"><p>Um editor recebe 20 horas de footage. Precisa encontrar o momento em que a entrevistada hesita. Precisa lembrar relações entre clips. Hoje, tudo mora na cabeça. Quando fecha, evapora. <strong style="color:var(--accent)">Ninguém organiza footage por significado.</strong></p></div></div>
-
-<div class="card" onclick="T(this)"><div class="ch"><div class="cb bt">VS</div><div><div class="ct1">Antes vs Depois</div><div class="ct2">O que muda na rotina do editor</div></div><div class="cr"><span class="arrow">▸</span></div></div><div class="cbd"><table class="tbl"><thead><tr><th>Tarefa</th><th>Sem</th><th>Com</th></tr></thead><tbody><tr><td>Encontrar clip</td><td style="color:var(--text3)">Navega bins</td><td style="color:var(--teal)">Busca por tag</td></tr><tr><td>Relações</td><td style="color:var(--text3)">Memória pessoal</td><td style="color:var(--teal)">Grafo com links</td></tr><tr><td>Aprovados</td><td style="color:var(--text3)">Markers/bins</td><td style="color:var(--teal)">!select visual</td></tr><tr><td>Projeto antigo</td><td style="color:var(--text3)">Reassistir</td><td style="color:var(--teal)">Second brain intacto</td></tr></tbody></table></div></div>
-
-<div class="card" onclick="T(this)"><div class="ch"><div class="cb bp">DC</div><div><div class="ct1">Diferencial competitivo</div><div class="ct2">Espaço vazio no mercado</div></div><div class="cr"><span class="arrow">▸</span></div></div><div class="cbd"><p style="font-weight:600;color:var(--text);margin-bottom:6px">Existem hoje:</p><p>· Frame.io → review, não navegação · Kyno → ingest, sem grafo · Silverstack → on-set, não edição · PostLab → colaboração, não second brain</p><p style="color:var(--accent);font-weight:600;margin-top:10px">Não existe: Graph View para NLE · Second brain para footage · Tags persistentes entre projetos</p></div></div>
-
-<div class="card" onclick="T(this)"><div class="ch"><div class="cb ba">MK</div><div><div class="ct1">Mercado</div><div class="ct2">TAM 5.7M · SAM 855k · SOM 4.3k Year 1</div></div><div class="cr"><span class="arrow">▸</span></div></div><div class="cbd"><p>· <strong style="color:var(--teal)">Freelancer</strong> — 3-5 proj/mês · FREE → PRO · <strong style="color:var(--amber)">Documentarista</strong> — 200-2000 clips · PRO · <strong style="color:var(--coral)">Post House</strong> — 5-20 editores · PRO → MEMORABILIA · <strong style="color:var(--blue)">YouTuber</strong> — alto volume · FREE</p></div></div>
-
-<div class="card" onclick="T(this)"><div class="ch"><div class="cb bo">$$</div><div><div class="ct1">Receita e Projeção</div><div class="ct2">One-time · margem 87-95% · Year 1: $39k-79k</div></div><div class="cr"><span class="arrow">▸</span></div></div><div class="cbd"><table class="tbl"><thead><tr><th>Ano</th><th>Downloads</th><th>Licenças</th><th>Receita</th></tr></thead><tbody><tr><td style="color:var(--teal)">Y1</td><td>5k-10k</td><td>400-800 PRO</td><td style="color:var(--teal)">$39k-79k</td></tr><tr><td style="color:var(--amber)">Y2</td><td>15k-30k</td><td>1.2k-2.4k</td><td style="color:var(--amber)">$80k-160k</td></tr><tr><td style="color:var(--accent)">Y3</td><td>40k-80k</td><td>+ Team tier</td><td style="color:var(--accent)">$150k-300k</td></tr></tbody></table><p style="font-size:.8em;color:var(--text3);margin-top:6px">Dev $0 (solo) · Stripe 2.9% · margem 87-95%</p></div></div>
-
-<div class="card" onclick="T(this)"><div class="ch"><div class="cb bb">GO</div><div><div class="ct1">Go-to-Market</div><div class="ct2">Seed → Launch → Growth</div></div><div class="cr"><span class="arrow">▸</span></div></div><div class="cbd"><p style="font-weight:600;color:var(--teal);margin-bottom:3px">Seed:</p><p>Landing page · Reddit teaser · Twitter GIF 15s · 3 beta testers</p><p style="font-weight:600;color:var(--amber);margin-top:8px;margin-bottom:3px">Launch:</p><p>Product Hunt · YouTube tutorial · aescripts.com</p><p style="font-weight:600;color:var(--accent);margin-top:8px;margin-bottom:3px">Growth:</p><p>Case studies · Discord · affiliate 20%</p></div></div>
-
-<div class="card" onclick="T(this)"><div class="ch"><div class="cb bg">EX</div><div><div class="ct1">Expansão Futura</div><div class="ct2">v1.0 → v4.0</div></div><div class="cr"><span class="arrow">▸</span></div></div><div class="cbd"><p>· v1.0 Premiere + DaVinci · v1.5 Final Cut · v2.0 AI layer (upgrade MEMORABILIA) · v2.5 Team features · v3.0 Standalone app · v3.5 Mobile · v4.0 API para DAMs</p></div></div>
-</div>
-</div>
-
-<!-- ══════ 9. DOCUMENTOS ══════ -->
-<div class="sec" id="docs">
-<div class="st">Documentos do Projeto</div>
-<div class="sd">Toda a documentação do MEMORABILIA. Clique para expandir.</div>
-<div id="docs-container">Carregando documentos...</div>
-</div>
-
-<!-- ══════ 10. BUSINESS MODEL ══════ -->
-<div class="sec" id="biz">
-<div class="st">Business Model — AI Pipeline Studio</div>
-<div class="sd">Infraestrutura de produção audiovisual com AI, implementada sob medida para studios. Self-hosted, $0/mês após setup.</div>
-
-<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:11px;margin-bottom:20px">
-<div style="padding:12px;background:var(--bg2);border-radius:8px;border:1px solid var(--border);text-align:center"><div style="font-size:1.3em;font-weight:700;color:var(--teal);font-family:'JetBrains Mono',monospace">$11k-78k</div><div style="font-size:.7em;color:var(--text3);text-transform:uppercase;letter-spacing:.05em">Implementação</div></div>
-<div style="padding:12px;background:var(--bg2);border-radius:8px;border:1px solid var(--border);text-align:center"><div style="font-size:1.3em;font-weight:700;color:var(--amber);font-family:'JetBrains Mono',monospace">$0</div><div style="font-size:.7em;color:var(--text3);text-transform:uppercase;letter-spacing:.05em">Custo/mês</div></div>
-<div style="padding:12px;background:var(--bg2);border-radius:8px;border:1px solid var(--border);text-align:center"><div style="font-size:1.3em;font-weight:700;color:var(--coral);font-family:'JetBrains Mono',monospace">$29k-61k</div><div style="font-size:.7em;color:var(--text3);text-transform:uppercase;letter-spacing:.05em">SaaS economizado/ano</div></div>
-</div>
-
-<div class="card" onclick="T(this)"><div class="ch"><div class="cb bo">01</div><div><div class="ct1">O Serviço</div><div class="ct2">Pipeline sob medida para studios e agências</div></div><div class="cr"><span class="arrow">▸</span></div></div><div class="cbd"><p>Pipeline de ingest automático · transcrição Whisper (PT/EN/FR + 90 idiomas) · proxies 720p · indexação semântica · integração Premiere/DaVinci · review Frame.io · portal PocketBase · VPN · publicação automática · treinamento + documentação.</p></div></div>
-
-<div class="card" onclick="T(this)"><div class="ch"><div class="cb bt">02</div><div><div class="ct1">Client Portal</div><div class="ct2">Stack de entrega e aprovação — 4 camadas</div></div><div class="cr"><span class="arrow">▸</span></div></div><div class="cbd"><table class="tbl"><thead><tr><th>Camada</th><th>Ferramenta</th><th>Custo</th></tr></thead><tbody><tr><td>Review</td><td>Frame.io for CC</td><td>Incluso Adobe CC</td></tr><tr><td>Portal</td><td>PocketBase</td><td>$0</td></tr><tr><td>Entrega</td><td>Nextcloud</td><td>$0</td></tr><tr><td>Automação</td><td>n8n</td><td>$0</td></tr></tbody></table></div></div>
-
-<div class="card" onclick="T(this)"><div class="ch"><div class="cb bc">03</div><div><div class="ct1">3 Níveis de Implementação</div><div class="ct2">Pequeno · Médio · Grande</div></div><div class="cr"><span class="arrow">▸</span></div></div><div class="cbd"><table class="tbl"><thead><tr><th>Nível</th><th>Perfil</th><th>Implementação</th></tr></thead><tbody><tr><td style="color:var(--teal)">Pequeno</td><td>2-5 pessoas · 2-4 proj/mês</td><td>$11k-20k</td></tr><tr><td style="color:var(--amber)">Médio</td><td>5-15 pessoas · 5-12 proj/mês</td><td>$22k-42k</td></tr><tr><td style="color:var(--coral)">Grande</td><td>15+ pessoas · 12+ proj/mês</td><td>$42k-78k</td></tr></tbody></table><p style="margin-top:8px"><strong>Modelos:</strong> Projeto fixo (30/40/30) · Fixo + Retainer mensal · SaaS on-site (switching cost alto)</p></div></div>
-
-<div class="card" onclick="T(this)"><div class="ch"><div class="cb ba">04</div><div><div class="ct1">ROI para o Cliente</div><div class="ct2">Economia $1.800-3.800/mês com 2 projetos</div></div><div class="cr"><span class="arrow">▸</span></div></div><div class="cbd"><table class="tbl"><thead><tr><th>Ganho</th><th>Economia/mês</th></tr></thead><tbody><tr><td>Transcrição automática</td><td>$600-1.200</td></tr><tr><td>Proxies + estrutura</td><td>$200-400</td></tr><tr><td>Ciclo review Frame.io</td><td>$400-800</td></tr><tr><td>Busca semântica</td><td>$200-400</td></tr><tr><td>Exportação + publicação</td><td>$400-1.000</td></tr><tr><td style="color:var(--accent);font-weight:600">Total (2 proj/mês)</td><td style="color:var(--accent);font-weight:600">$1.800-3.800</td></tr></tbody></table><p style="font-size:.82em;color:var(--text3);margin-top:8px">Payback: Nível 1 em 4-8 meses · Nível 2 em 8-14 meses · Nível 3 em 16-24 meses</p></div></div>
-
-<div class="card" onclick="T(this)"><div class="ch"><div class="cb bb">05</div><div><div class="ct1">SaaS Substituído</div><div class="ct2">$2.700-8.000/mês → $0/mês</div></div><div class="cr"><span class="arrow">▸</span></div></div><div class="cbd"><table class="tbl"><thead><tr><th>Serviço</th><th>SaaS</th><th>Economia/ano</th></tr></thead><tbody><tr><td>Review timecode</td><td>Frame.io Pro</td><td>$14.400</td></tr><tr><td>Transcrição</td><td>Rev/Sonix</td><td>$3.600-18.000</td></tr><tr><td>Automação</td><td>Zapier</td><td>$2.400-6.000</td></tr><tr><td>VPN corporativa</td><td>Tailscale</td><td>$1.200-3.600</td></tr><tr><td>Storage cloud</td><td>Backblaze</td><td>$2.400-9.600</td></tr><tr><td style="color:var(--accent);font-weight:600">Total</td><td></td><td style="color:var(--accent);font-weight:600">$28.800-61.200</td></tr></tbody></table></div></div>
-</div>
-
-<!-- FOOTER -->
-<div class="footer">MEMORABILIA · Pipeline Audiovisual v8 · pingpong · Montreal · April 2026<br>34 dias do zero ao pipeline · custo $0/mês · privacidade total</div>
+<div class="footer">MEMORABILIA · Pipeline Audiovisual v8 · pingpong · Montreal · April 2026<br><span class="pt">34 dias do zero ao pipeline · custo $0/mês · privacidade total</span><span class="en">34 days from zero to pipeline · $0/month cost · total privacy</span></div>
 </div>
 
 <script>
@@ -472,43 +264,125 @@ function S(id){document.querySelectorAll('.sec').forEach(s=>s.classList.remove('
 function T(el){el.classList.toggle('open')}
 function showSc(n){document.querySelectorAll('.scv').forEach(s=>s.classList.remove('show'));document.querySelectorAll('.scn').forEach(b=>b.classList.remove('on'));document.getElementById('sc'+n).classList.add('show');document.querySelectorAll('.scn')[n].classList.add('on')}
 
-// Load docs from MD files embedded as data
+function setLang(lang){
+  document.body.classList.toggle('lang-en', lang==='en');
+  document.getElementById('btn-pt').classList.toggle('on', lang==='pt');
+  document.getElementById('btn-en').classList.toggle('on', lang==='en');
+  buildNav(lang);
+  localStorage.setItem('ml',lang);
+}
+
+const TABS=[
+{id:'resumo',pt:'Resumo',en:'Overview'},
+{id:'flowmap',pt:'Mapa de Fluxo',en:'Flow Map'},
+{id:'network',pt:'Rede Distribuída',en:'Distributed Network'},
+{id:'manifesto',pt:'Manifesto',en:'Manifesto'},
+{id:'agents',pt:'9 Agentes',en:'9 Agents'},
+{id:'assistants',pt:'6 Assistants',en:'6 Assistants'},
+{id:'models',pt:'Modelos AI',en:'AI Models'},
+{id:'knowledge',pt:'Conhecimento',en:'Knowledge'},
+{id:'panel',pt:'Painel + Plugin',en:'Panel + Plugin'},
+{id:'docs',pt:'Documentos',en:'Documents'},
+{id:'biz',pt:'Business Model',en:'Business Model'}
+];
+
+function buildNav(lang){
+  const nav=document.getElementById('main-nav');
+  nav.innerHTML=TABS.map((t,i)=>`<button${i===0?' class="active"':''} onclick="S('${t.id}')">${t[lang]}</button>`).join('');
+}
+
+// Load dynamic content sections from the existing repo page
+// For sections 4-10, we load them dynamically to keep this file clean
+function loadSection(containerId, cards){
+  const el=document.getElementById(containerId);
+  if(!el)return;
+  el.innerHTML=cards.map(c=>`<div class="card" onclick="T(this)"><div class="ch"><div class="cb ${c.bc}">${c.badge}</div><div><div class="ct1">${c.t}</div><div class="ct2">${c.s}</div></div><div class="cr">${c.tag?`<span class="tag ${c.tc}">${c.tag}</span>`:''}<span class="arrow">▸</span></div></div><div class="cbd">${c.body}</div></div>`).join('');
+}
+
+// Agents
+loadSection('agents-content',[
+{badge:'1+2',bc:'bb',t:'Ingest + Whisper',s:'<span class="pt">Transcrição multilíngue automática</span><span class="en">Automatic multilingual transcription</span>',tag:'Windows RTX 4080',tc:'tb',body:'<p><strong><span class="pt">Função:</span><span class="en">Function:</span></strong> <span class="pt">Extrai áudio via FFmpeg, transcreve com Whisper large-v3 em PT/EN/FR. Gera proxy 720p NVENC.</span><span class="en">Extracts audio via FFmpeg, transcribes with Whisper large-v3 in PT/EN/FR. Generates 720p NVENC proxy.</span></p><dl class="detail"><dt><span class="pt">Modelo</span><span class="en">Model</span></dt><dd>Whisper large-v3 (3.08GB)</dd><dt>Output</dt><dd>.txt .srt .vtt .json + proxy 720p</dd><dt><span class="pt">Tempo</span><span class="en">Time</span></dt><dd>15-25 min</dd></dl>'},
+{badge:'3a',bc:'bt',t:'<span class="pt">Índice Textual</span><span class="en">Text Index</span>',s:'<span class="pt">Decupagem completa da transcrição</span><span class="en">Full transcription breakdown</span>',tag:'gemma4:26b',tc:'tt',body:'<p><strong><span class="pt">Função:</span><span class="en">Function:</span></strong> <span class="pt">Analisa a transcrição e gera índice estruturado: temas, momentos-chave, mudanças de tom.</span><span class="en">Analyzes transcription and generates structured index: themes, key moments, tone shifts.</span></p><dl class="detail"><dt><span class="pt">Modelo</span><span class="en">Model</span></dt><dd>gemma4:26b · 53 t/s</dd><dt><span class="pt">Tempo</span><span class="en">Time</span></dt><dd>~1.5 min</dd></dl>'},
+{badge:'3b',bc:'bt',t:'Visual Index',s:'<span class="pt">384 frames catalogados · 4 modos adaptativos</span><span class="en">384 catalogued frames · 4 adaptive modes</span>',tag:'qwen3-vl:8b',tc:'tc',body:'<p><strong><span class="pt">Função:</span><span class="en">Function:</span></strong> <span class="pt">Extrai frames representativos e descreve cada um com vocabulário visual. 4 modos adaptativos ao ritmo do material.</span><span class="en">Extracts representative frames and describes each with visual vocabulary. 4 modes adaptive to material rhythm.</span></p><dl class="detail"><dt><span class="pt">Modelo</span><span class="en">Model</span></dt><dd>qwen3-vl:8b — Windows RTX 4080</dd><dt><span class="pt">Modos</span><span class="en">Modes</span></dt><dd>arc · dual · single · window</dd><dt><span class="pt">Tempo</span><span class="en">Time</span></dt><dd>~19 min</dd></dl>'},
+{badge:'3c',bc:'ba',t:'<span class="pt">Leitura Narrativa — Tensão Calibrada</span><span class="en">Narrative Reading — Calibrated Tension</span>',s:'<span class="pt">O agente central · dupla perspectiva</span><span class="en">The central agent · dual perspective</span>',tag:'CENTRAL',tc:'ta',body:'<p><strong><span class="pt">Função:</span><span class="en">Function:</span></strong> <span class="pt">Traduz o material para vocabulário cinematográfico com duas perspectivas em tensão: canônico (livros) e projetual vivo (projetos anteriores). Observações posicionadas, nunca prescrições.</span><span class="en">Translates material into cinematographic vocabulary with two perspectives in tension: canonical (books) and living project (previous projects). Positioned observations, never prescriptions.</span></p><dl class="detail"><dt>RAG</dt><dd>knowledge_montagem (4,260) + project memory (105)</dd><dt><span class="pt">Tempo</span><span class="en">Time</span></dt><dd>~3 min</dd></dl><p style="color:var(--amber);font-size:.83em">↻ <span class="pt">O que o 3c observa → o Agent 8 compara com a decisão do editor → deposita → o 3c do próximo projeto consulta</span><span class="en">What 3c observes → Agent 8 compares with editor\'s decision → deposits → 3c of next project consults</span></p>'},
+{badge:'7',bc:'bp',t:'Vision + Color',s:'<span class="pt">Análise de cor por cena do render final</span><span class="en">Per-scene color analysis of final render</span>',body:'<p><strong><span class="pt">Função:</span><span class="en">Function:</span></strong> <span class="pt">Analisa render final: paleta dominante por cena, consistência de cor, sugestões de grade.</span><span class="en">Analyzes final render: dominant palette per scene, color consistency, grading suggestions.</span></p><dl class="detail"><dt><span class="pt">Modelos</span><span class="en">Models</span></dt><dd>qwen3-vl:8b + gemma4:26b</dd><dt><span class="pt">Tempo</span><span class="en">Time</span></dt><dd>~3 min</dd></dl>'},
+{badge:'6b',bc:'bb',t:'SEO Metadata',s:'<span class="pt">Legendas e descrições para 6 plataformas</span><span class="en">Captions and descriptions for 6 platforms</span>',body:'<p><strong><span class="pt">Função:</span><span class="en">Function:</span></strong> <span class="pt">Gera legendas, títulos, descrições e hashtags para YouTube, Vimeo, Instagram, TikTok, LinkedIn e Twitter/X.</span><span class="en">Generates captions, titles, descriptions and hashtags for YouTube, Vimeo, Instagram, TikTok, LinkedIn and Twitter/X.</span></p><dl class="detail"><dt><span class="pt">Tempo</span><span class="en">Time</span></dt><dd>~32s</dd></dl>'},
+{badge:'8',bc:'ba',t:'<span class="pt">Memória Projetual Viva — Closer</span><span class="en">Living Project Memory — Closer</span>',s:'<span class="pt">Memória relacional · fecha o loop</span><span class="en">Relational memory · closes the loop</span>',tag:'CENTRAL',tc:'ta',body:'<p><strong><span class="pt">Função:</span><span class="en">Function:</span></strong> <span class="pt">Fecha o loop. Compara sugerido vs escolhido. Registra tríade: sugestão → escolha → divergência. Deposita memória com contexto relacional completo.</span><span class="en">Closes the loop. Compares suggested vs chosen. Records triad: suggestion → choice → divergence. Deposits memory with full relational context.</span></p><dl class="detail"><dt><span class="pt">Depósito</span><span class="en">Deposit</span></dt><dd>7 types: narrative, audio, vision, motion, generative, 3D, project</dd><dt><span class="pt">Tempo</span><span class="en">Time</span></dt><dd>~3.5 min</dd></dl>'},
+{badge:'9',bc:'bg',t:'Publish',s:'<span class="pt">Publicação automática via webhook</span><span class="en">Auto-publish via webhook</span>',body:'<p><strong><span class="pt">Função:</span><span class="en">Function:</span></strong> <span class="pt">Dispara publicação via n8n webhook. YouTube, Vimeo e plataformas sociais.</span><span class="en">Triggers publication via n8n webhook. YouTube, Vimeo and social platforms.</span></p><dl class="detail"><dt>Stack</dt><dd>n8n Docker :5678</dd><dt><span class="pt">Tempo</span><span class="en">Time</span></dt><dd>&lt;1s</dd></dl>'}
+]);
+
+// Assistants
+loadSection('assistants-content',[
+{badge:'CS',bc:'bo',t:'Cinematographer Supervisor',s:'<span class="pt">Plano de iluminação a partir de referências</span><span class="en">Lighting plan from references</span>',body:'<p><span class="pt">Recebe referência visual + locação real → plano de luz, câmera, grip list, tradução CG ACEScg.</span><span class="en">Receives visual reference + real location → light plan, camera, grip list, CG translation ACEScg.</span></p><dl class="detail"><dt>Base</dt><dd>11,261 + 4,260 + 649 chunks</dd></dl>'},
+{badge:'CP',bc:'bo',t:'Cinematographer Problem Solver',s:'<span class="pt">Resolução de problemas de luz e câmera</span><span class="en">Light and camera problem solving</span>',body:'<p><span class="pt">Analisa frames com problemas e propõe soluções técnicas com referência à teoria.</span><span class="en">Analyzes problematic frames and proposes technical solutions with theoretical references.</span></p>'},
+{badge:'CD',bc:'bc',t:'Creative Director RAG',s:'<span class="pt">Estrutura narrativa com dupla perspectiva</span><span class="en">Narrative structure with dual perspective</span>',body:'<p><span class="pt">Propõe estrutura narrativa com duas perspectivas: canônico vs projetos anteriores.</span><span class="en">Proposes narrative structure with two perspectives: canonical vs previous projects.</span></p><dl class="detail"><dt>Base</dt><dd>48,401 chunks · 174 books</dd></dl>'},
+{badge:'MR',bc:'bt',t:'Motion RAG',s:'<span class="pt">Técnicas de motion design aplicadas</span><span class="en">Applied motion design techniques</span>',body:'<p><span class="pt">Ensina e aplica técnicas de After Effects e Cinema 4D com referência de curso e timecode.</span><span class="en">Teaches and applies After Effects and Cinema 4D techniques with course reference and timecode.</span></p><dl class="detail"><dt>Base</dt><dd>7,868 chunks · 14 courses</dd></dl>'},
+{badge:'3D',bc:'bt',t:'3D RAG',s:'Blender workflows',body:'<p><span class="pt">Workflows Blender com setup ACES.</span><span class="en">Blender workflows with ACES setup.</span></p><dl class="detail"><dt>Base</dt><dd>574 lessons · 9 courses</dd></dl>'},
+{badge:'TA',bc:'bp',t:'Technical Artist Director',s:'Render, ACES, compositing, scripts',body:'<p><span class="pt">Resolve problemas técnicos de CG/VFX: render, ACES/OCIO, scripts Python.</span><span class="en">Solves CG/VFX technical problems: render, ACES/OCIO, Python scripts.</span></p><dl class="detail"><dt>Base</dt><dd>10,172 AI/ML + 5,026 Tech/Python</dd></dl>'},
+{badge:'MT',bc:'ba',t:'Montagem RAG',s:'<span class="pt">Teoria de montagem aplicada</span><span class="en">Applied editing theory</span>',body:'<p>Eisenstein · Tarkovsky · Bresson · Murch</p><dl class="detail"><dt>Base</dt><dd>4,260 chunks</dd></dl>'}
+]);
+
+// Models
+document.getElementById('models-content').innerHTML=`<table class="tbl"><thead><tr><th><span class="pt">Modelo</span><span class="en">Model</span></th><th><span class="pt">Onde roda</span><span class="en">Runs on</span></th><th>VRAM</th><th><span class="pt">Função</span><span class="en">Function</span></th></tr></thead><tbody>
+<tr><td style="color:var(--teal);font-family:'JetBrains Mono',monospace;font-size:.83em">gemma4:26b</td><td>HomeLab</td><td>~20GB</td><td><span class="pt">Agent 3a, 3c, 6b, 7, 8 + todos os assistants. 53 t/s.</span><span class="en">Agent 3a, 3c, 6b, 7, 8 + all assistants. 53 t/s.</span></td></tr>
+<tr><td style="color:var(--coral);font-family:'JetBrains Mono',monospace;font-size:.83em">qwen3-vl:8b</td><td>Windows</td><td>~6GB</td><td>Agent 3b (Visual Index) + Agent 7 (Vision)</td></tr>
+<tr><td style="color:var(--blue);font-family:'JetBrains Mono',monospace;font-size:.83em">whisper large-v3</td><td>Windows</td><td>~3GB</td><td><span class="pt">Agent 1+2. Transcrição PT/EN/FR.</span><span class="en">Agent 1+2. Transcription PT/EN/FR.</span></td></tr>
+<tr><td style="color:var(--accent);font-family:'JetBrains Mono',monospace;font-size:.83em">mistral:latest</td><td>HomeLab</td><td>~4GB</td><td><span class="pt">Tradução PT→EN. Pipelines _quick.</span><span class="en">Translation PT→EN. Quick pipelines.</span></td></tr>
+<tr><td style="color:var(--green);font-family:'JetBrains Mono',monospace;font-size:.83em">nomic-embed-text</td><td>HomeLab</td><td>~0.3GB</td><td>Embeddings 768 dims · ChromaDB</td></tr>
+</tbody></table>`;
+
+// Knowledge
+document.getElementById('knowledge-content').innerHTML=`<table class="tbl"><thead><tr><th>Collection</th><th>Chunks</th><th><span class="pt">Conteúdo</span><span class="en">Content</span></th></tr></thead><tbody>
+<tr><td style="color:var(--accent)">knowledge</td><td>48,401</td><td><span class="pt">174 livros: narrativa, design, film, AI</span><span class="en">174 books: narrative, design, film, AI</span></td></tr>
+<tr><td style="color:var(--teal)">knowledge_cinematography_v2</td><td>11,261</td><td><span class="pt">21 livros de cinematografia</span><span class="en">21 cinematography books</span></td></tr>
+<tr><td style="color:var(--coral)">knowledge_montagem</td><td>4,260</td><td>Eisenstein · Tarkovsky · Bresson · Murch</td></tr>
+<tr><td style="color:var(--blue)">tutorials</td><td>7,868</td><td>14 courses: Ben Marriott, School of Motion, Blender</td></tr>
+<tr><td style="color:var(--green)">visual_index</td><td>384</td><td><span class="pt">Frames catalogados · 4 modos</span><span class="en">Catalogued frames · 4 modes</span></td></tr>
+<tr><td style="color:var(--amber)">memoria_projetual</td><td>105</td><td>7 types: narrative · audio · vision · motion · generative · 3D · project</td></tr>
+</tbody></table>`;
+
+// Panel + Plugin
+document.getElementById('panel-content').innerHTML=`
+<div style="margin-bottom:20px;border-radius:12px;overflow:hidden;border:1px solid var(--border)"><video controls width="100%" style="display:block;background:#000"><source src="Pingpong_HOMELAB_002.mp4" type="video/mp4"></video><div style="padding:9px 13px;background:var(--bg2);font-size:.78em;color:var(--text3)">Pingpong HOMELAB 002 — CEP Panel + Pipeline</div></div>
+<div class="card" onclick="T(this)"><div class="ch"><div class="cb bb">L</div><div><div class="ct1">List View</div><div class="ct2"><span class="pt">Texto compacto com transcrição inline</span><span class="en">Compact text with inline transcription</span></div></div><div class="cr"><span class="arrow">▸</span></div></div><div class="cbd"><p><span class="pt">Linha compacta com thumbnail, timecode, transcrição e score.</span><span class="en">Compact line with thumbnail, timecode, transcription and score.</span></p></div></div>
+<div class="card" onclick="T(this)"><div class="ch"><div class="cb bt">G</div><div><div class="ct1">Grid View</div><div class="ct2"><span class="pt">Thumbnails arrastáveis</span><span class="en">Draggable thumbnails</span></div></div><div class="cr"><span class="arrow">▸</span></div></div><div class="cbd"><p><span class="pt">Thumbnails com frame real. Click para selecionar, drag para reordenar.</span><span class="en">Thumbnails with real frame. Click to select, drag to reorder.</span></p></div></div>
+<div class="card" onclick="T(this)"><div class="ch"><div class="cb ba">⬡</div><div><div class="ct1">Graph View — Obsidian</div><div class="ct2"><span class="pt">Grafo relacional force-directed</span><span class="en">Force-directed relational graph</span></div></div><div class="cr"><span class="tag ta">NEW</span><span class="arrow">▸</span></div></div><div class="cbd"><p><span class="pt">Cada clip é um nó circular com imagem real. Temas como nós menores pastel. SVG 4 layers.</span><span class="en">Each clip is a circular node with real image. Themes as smaller pastel nodes. SVG 4 layers.</span></p><p><strong><span class="pt">Busca = criação:</span><span class="en">Search = creation:</span></strong> <code style="background:var(--bg3);padding:2px 5px;border-radius:3px;color:var(--teal)">#tag</code> <code style="background:var(--bg3);padding:2px 5px;border-radius:3px;color:var(--amber)">!select</code> <code style="background:var(--bg3);padding:2px 5px;border-radius:3px;color:var(--accent)">@clip</code></p></div></div>
+<div style="margin-top:28px;border-top:1px solid var(--border);padding-top:22px"><div style="font-size:1.15em;font-weight:600;color:var(--text);margin-bottom:6px">MEMORABILIA Graph — Plugin Standalone</div><div style="font-size:.86em;color:var(--text2);margin-bottom:18px"><span class="pt">O mesmo Graph View como produto independente — sem AI, sem cloud, sem setup. O editor é o motor semântico.</span><span class="en">Same Graph View as standalone product — no AI, no cloud, no setup. The editor is the semantic engine.</span></div>
+<div class="card" onclick="T(this)"><div class="ch"><div class="cb bt">ED</div><div><div class="ct1"><span class="pt">Edges automáticas — sem AI</span><span class="en">Automatic edges — no AI</span></div><div class="ct2"><span class="pt">Relações pela metadata nativa</span><span class="en">Relations from native metadata</span></div></div><div class="cr"><span class="arrow">▸</span></div></div><div class="cbd"><p><span class="pt">Mesmo reel → aresta forte · &lt; 5 min → temporal · Mesma câmera → tema · GPS &lt; 50m → locação · FFprobe + ExifTool.</span><span class="en">Same reel → strong edge · &lt; 5 min → temporal · Same camera → theme · GPS &lt; 50m → location · FFprobe + ExifTool.</span></p></div></div>
+<div style="margin-top:14px;display:grid;grid-template-columns:1fr 1fr;gap:14px"><div style="padding:14px;background:var(--bg3);border-radius:8px;border-left:3px solid var(--teal)"><div style="font-weight:600;color:var(--teal);margin-bottom:3px">MEMORABILIA Graph — $49</div><div style="font-size:.83em;color:var(--text2)"><span class="pt">Plugin standalone. Editor é o motor semântico. Zero AI, zero cloud.</span><span class="en">Standalone plugin. Editor is the semantic engine. Zero AI, zero cloud.</span></div></div><div style="padding:14px;background:var(--bg3);border-radius:8px;border-left:3px solid var(--accent)"><div style="font-weight:600;color:var(--accent);margin-bottom:3px">MEMORABILIA — $199</div><div style="font-size:.83em;color:var(--text2)"><span class="pt">Pipeline completo. AI + memória projetual + 72k trechos.</span><span class="en">Full pipeline. AI + project memory + 72k chunks.</span></div></div></div>
+</div>
+<div style="margin-top:28px;border-top:1px solid var(--border);padding-top:22px"><div style="font-size:1.15em;font-weight:600;color:var(--text);margin-bottom:6px"><span class="pt">Modelo de Negócio</span><span class="en">Business Model</span></div>
+<div class="card" onclick="T(this)"><div class="ch"><div class="cb bc">PR</div><div><div class="ct1"><span class="pt">O Problema</span><span class="en">The Problem</span></div><div class="ct2"><span class="pt">Timelines são lineares. Pensamento narrativo não.</span><span class="en">Timelines are linear. Narrative thinking is not.</span></div></div><div class="cr"><span class="arrow">▸</span></div></div><div class="cbd"><p><span class="pt">Ninguém organiza footage por significado. Bins por pasta. Metadata por campo técnico.</span><span class="en">Nobody organizes footage by meaning. Bins by folder. Metadata by technical field.</span></p></div></div>
+<div class="card" onclick="T(this)"><div class="ch"><div class="cb ba">MK</div><div><div class="ct1"><span class="pt">Mercado</span><span class="en">Market</span></div><div class="ct2">TAM 5.7M · SAM 855k · SOM 4.3k Y1</div></div><div class="cr"><span class="arrow">▸</span></div></div><div class="cbd"><p>· <strong style="color:var(--teal)">Freelancer</strong> — FREE → PRO · <strong style="color:var(--amber)"><span class="pt">Documentarista</span><span class="en">Documentary editor</span></strong> — PRO · <strong style="color:var(--coral)">Post House</strong> — PRO → MEMORABILIA</p></div></div>
+<div class="card" onclick="T(this)"><div class="ch"><div class="cb bo">$$</div><div><div class="ct1"><span class="pt">Receita e Projeção</span><span class="en">Revenue and Projection</span></div><div class="ct2"><span class="pt">One-time · margem 87-95% · Y1: $39k-79k</span><span class="en">One-time · 87-95% margin · Y1: $39k-79k</span></div></div><div class="cr"><span class="arrow">▸</span></div></div><div class="cbd"><table class="tbl"><thead><tr><th><span class="pt">Ano</span><span class="en">Year</span></th><th>Downloads</th><th><span class="pt">Licenças</span><span class="en">Licenses</span></th><th><span class="pt">Receita</span><span class="en">Revenue</span></th></tr></thead><tbody><tr><td style="color:var(--teal)">Y1</td><td>5k-10k</td><td>400-800</td><td style="color:var(--teal)">$39k-79k</td></tr><tr><td style="color:var(--amber)">Y2</td><td>15k-30k</td><td>1.2k-2.4k</td><td style="color:var(--amber)">$80k-160k</td></tr><tr><td style="color:var(--accent)">Y3</td><td>40k-80k</td><td>+ Team</td><td style="color:var(--accent)">$150k-300k</td></tr></tbody></table></div></div>
+</div>`;
+
+// Business Model Pipeline
+document.getElementById('biz-content').innerHTML=`
+<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:11px;margin-bottom:20px"><div style="padding:12px;background:var(--bg2);border-radius:8px;border:1px solid var(--border);text-align:center"><div style="font-size:1.3em;font-weight:700;color:var(--teal);font-family:'JetBrains Mono',monospace">$11k-78k</div><div style="font-size:.7em;color:var(--text3);text-transform:uppercase;letter-spacing:.05em"><span class="pt">Implementação</span><span class="en">Implementation</span></div></div><div style="padding:12px;background:var(--bg2);border-radius:8px;border:1px solid var(--border);text-align:center"><div style="font-size:1.3em;font-weight:700;color:var(--amber);font-family:'JetBrains Mono',monospace">$0</div><div style="font-size:.7em;color:var(--text3);text-transform:uppercase;letter-spacing:.05em"><span class="pt">Custo/mês</span><span class="en">Cost/month</span></div></div><div style="padding:12px;background:var(--bg2);border-radius:8px;border:1px solid var(--border);text-align:center"><div style="font-size:1.3em;font-weight:700;color:var(--coral);font-family:'JetBrains Mono',monospace">$29k-61k</div><div style="font-size:.7em;color:var(--text3);text-transform:uppercase;letter-spacing:.05em"><span class="pt">SaaS economizado/ano</span><span class="en">SaaS savings/year</span></div></div></div>
+<div class="card" onclick="T(this)"><div class="ch"><div class="cb bo">01</div><div><div class="ct1"><span class="pt">O Serviço</span><span class="en">The Service</span></div><div class="ct2"><span class="pt">Pipeline sob medida para studios</span><span class="en">Custom pipeline for studios</span></div></div><div class="cr"><span class="arrow">▸</span></div></div><div class="cbd"><p><span class="pt">Pipeline de ingest automático · transcrição Whisper (PT/EN/FR + 90 idiomas) · proxies 720p · indexação semântica · integração Premiere/DaVinci · review Frame.io · portal PocketBase · VPN · publicação automática · treinamento + documentação.</span><span class="en">Auto ingest pipeline · Whisper transcription (PT/EN/FR + 90 languages) · 720p proxies · semantic indexing · Premiere/DaVinci integration · Frame.io review · PocketBase portal · VPN · auto-publish · training + documentation.</span></p></div></div>
+<div class="card" onclick="T(this)"><div class="ch"><div class="cb bt">02</div><div><div class="ct1">Client Portal</div><div class="ct2"><span class="pt">Stack de entrega e aprovação</span><span class="en">Delivery and approval stack</span></div></div><div class="cr"><span class="arrow">▸</span></div></div><div class="cbd"><table class="tbl"><thead><tr><th><span class="pt">Camada</span><span class="en">Layer</span></th><th><span class="pt">Ferramenta</span><span class="en">Tool</span></th><th><span class="pt">Custo</span><span class="en">Cost</span></th></tr></thead><tbody><tr><td>Review</td><td>Frame.io CC</td><td><span class="pt">Incluso Adobe CC</span><span class="en">Included in Adobe CC</span></td></tr><tr><td>Portal</td><td>PocketBase</td><td>$0</td></tr><tr><td><span class="pt">Entrega</span><span class="en">Delivery</span></td><td>Nextcloud</td><td>$0</td></tr><tr><td><span class="pt">Automação</span><span class="en">Automation</span></td><td>n8n</td><td>$0</td></tr></tbody></table></div></div>
+<div class="card" onclick="T(this)"><div class="ch"><div class="cb bc">03</div><div><div class="ct1"><span class="pt">3 Níveis</span><span class="en">3 Tiers</span></div><div class="ct2"><span class="pt">Pequeno · Médio · Grande</span><span class="en">Small · Medium · Large</span></div></div><div class="cr"><span class="arrow">▸</span></div></div><div class="cbd"><table class="tbl"><thead><tr><th><span class="pt">Nível</span><span class="en">Tier</span></th><th><span class="pt">Perfil</span><span class="en">Profile</span></th><th><span class="pt">Implementação</span><span class="en">Implementation</span></th></tr></thead><tbody><tr><td style="color:var(--teal)"><span class="pt">Pequeno</span><span class="en">Small</span></td><td><span class="pt">2-5 pessoas · 2-4 proj/mês</span><span class="en">2-5 people · 2-4 proj/month</span></td><td>$11k-20k</td></tr><tr><td style="color:var(--amber)"><span class="pt">Médio</span><span class="en">Medium</span></td><td><span class="pt">5-15 pessoas · 5-12 proj/mês</span><span class="en">5-15 people · 5-12 proj/month</span></td><td>$22k-42k</td></tr><tr><td style="color:var(--coral)"><span class="pt">Grande</span><span class="en">Large</span></td><td><span class="pt">15+ pessoas · 12+ proj/mês</span><span class="en">15+ people · 12+ proj/month</span></td><td>$42k-78k</td></tr></tbody></table></div></div>
+<div class="card" onclick="T(this)"><div class="ch"><div class="cb ba">04</div><div><div class="ct1">ROI</div><div class="ct2"><span class="pt">Economia $1.800-3.800/mês</span><span class="en">Savings $1,800-3,800/month</span></div></div><div class="cr"><span class="arrow">▸</span></div></div><div class="cbd"><table class="tbl"><thead><tr><th><span class="pt">Ganho</span><span class="en">Gain</span></th><th><span class="pt">Economia/mês</span><span class="en">Savings/month</span></th></tr></thead><tbody><tr><td><span class="pt">Transcrição automática</span><span class="en">Auto transcription</span></td><td>$600-1,200</td></tr><tr><td>Proxies</td><td>$200-400</td></tr><tr><td>Review Frame.io</td><td>$400-800</td></tr><tr><td><span class="pt">Busca semântica</span><span class="en">Semantic search</span></td><td>$200-400</td></tr><tr><td><span class="pt">Export + publicação</span><span class="en">Export + publish</span></td><td>$400-1,000</td></tr><tr><td style="color:var(--accent);font-weight:600">Total</td><td style="color:var(--accent);font-weight:600">$1,800-3,800</td></tr></tbody></table><p style="font-size:.82em;color:var(--text3)">Payback: <span class="pt">Nível</span><span class="en">Tier</span> 1: 4-8m · 2: 8-14m · 3: 16-24m</p></div></div>
+<div class="card" onclick="T(this)"><div class="ch"><div class="cb bb">05</div><div><div class="ct1"><span class="pt">SaaS Substituído</span><span class="en">SaaS Replaced</span></div><div class="ct2">$2,700-8,000/<span class="pt">mês</span><span class="en">month</span> → $0</div></div><div class="cr"><span class="arrow">▸</span></div></div><div class="cbd"><table class="tbl"><thead><tr><th><span class="pt">Serviço</span><span class="en">Service</span></th><th>SaaS</th><th><span class="pt">Economia/ano</span><span class="en">Savings/year</span></th></tr></thead><tbody><tr><td>Review</td><td>Frame.io Pro</td><td>$14,400</td></tr><tr><td><span class="pt">Transcrição</span><span class="en">Transcription</span></td><td>Rev/Sonix</td><td>$3,600-18,000</td></tr><tr><td>VPN</td><td>Tailscale</td><td>$1,200-3,600</td></tr><tr><td>Storage</td><td>Backblaze</td><td>$2,400-9,600</td></tr><tr><td style="color:var(--accent);font-weight:600">Total</td><td></td><td style="color:var(--accent);font-weight:600">$28,800-61,200</td></tr></tbody></table></div></div>`;
+
+// Docs (fetch from repo)
 const DOCS=[
-{id:'RE',c:'bo',t:'Resumo Expandido',s:'One-pager — o que é, como funciona, conclusão',f:'MEMORABILIA_resumo_expandido.md'},
-{id:'SC',c:'bt',t:'Status Card v8',s:'Estado real do pipeline — serviços, agents, gotchas',f:'status_card_v8.md'},
-{id:'RM',c:'ba',t:'Roadmap v6',s:'Implementado + pendente — Apr a Aug 2026',f:'memorabilia_roadmap_v6.md'},
-{id:'TL',c:'bc',t:'Timeline de Implementação',s:'34 dias do zero ao pipeline',f:'Timeline_Implementacao.md'},
-{id:'HW',c:'bg',t:'HomeLab Cluster Inventory',s:'Hardware, rede, devices, diagrama',f:'homelab_cluster_inventory.md'},
-{id:'DP',c:'bp',t:'Design Philosophy v1.0',s:'7 princípios + refinamento agents',f:'MEMORABILIA_design_philosophy.md'}
+{id:'RE',c:'bo',t:'Resumo Expandido',s:'One-pager',f:'MEMORABILIA_resumo_expandido.md'},
+{id:'SC',c:'bt',t:'Status Card v8',s:'Pipeline status',f:'status_card_v8.md'},
+{id:'RM',c:'ba',t:'Roadmap v6',s:'Apr-Aug 2026',f:'memorabilia_roadmap_v6.md'},
+{id:'TL',c:'bc',t:'Timeline',s:'34 days',f:'Timeline_Implementacao.md'},
+{id:'HW',c:'bg',t:'HomeLab Inventory',s:'Hardware + network',f:'homelab_cluster_inventory.md'},
+{id:'DP',c:'bp',t:'Design Philosophy',s:'7 principles',f:'MEMORABILIA_design_philosophy.md'}
 ];
 const dc=document.getElementById('docs-container');
-let h='';
-DOCS.forEach(d=>{h+=`<div class="card" onclick="T(this)"><div class="ch"><div class="cb ${d.c}">${d.id}</div><div><div class="ct1">${d.t}</div><div class="ct2">${d.s}</div></div><div class="cr"><span class="arrow">▸</span></div></div><div class="cbd" style="max-height:600px;overflow-y:auto"><p style="color:var(--text3);font-size:.83em">Carregando ${d.f}...</p></div></div>`});
-dc.innerHTML=h;
+let dh='';DOCS.forEach(d=>{dh+=`<div class="card" onclick="T(this)"><div class="ch"><div class="cb ${d.c}">${d.id}</div><div><div class="ct1">${d.t}</div><div class="ct2">${d.s}</div></div><div class="cr"><span class="arrow">▸</span></div></div><div class="cbd" style="max-height:600px;overflow-y:auto"><p style="color:var(--text3);font-size:.83em">Loading ${d.f}...</p></div></div>`});
+dc.innerHTML=dh;
+DOCS.forEach((d,i)=>{fetch(d.f).then(r=>r.ok?r.text():'').then(txt=>{if(!txt)return;txt=txt.replace(/^---\n[\s\S]*?\n---\n/,'');let lines=txt.split('\n'),out=[],ic=false;lines.forEach(l=>{let s=l.trim();if(s.startsWith('```')){ic=!ic;out.push(ic?'<pre style="background:var(--bg3);padding:10px;border-radius:6px;font-size:.78em;font-family:JetBrains Mono,monospace;color:var(--text);margin:6px 0;white-space:pre-wrap;overflow-x:auto">':'</pre>');return}if(ic){out.push(l.replace(/&/g,'&amp;').replace(/</g,'&lt;'));return}if(!s)out.push('<div style="height:5px"></div>');else if(s.startsWith('# '))out.push(`<h1 style="font-size:1.1em;font-weight:700;color:var(--text);margin:16px 0 5px">${s.slice(2)}</h1>`);else if(s.startsWith('## '))out.push(`<h2 style="font-size:.95em;font-weight:600;color:var(--accent);margin:12px 0 5px">${s.slice(3)}</h2>`);else if(s.startsWith('### '))out.push(`<h3 style="font-size:.86em;font-weight:600;color:var(--teal);margin:10px 0 4px">${s.slice(4)}</h3>`);else if(s.startsWith('- [x]'))out.push(`<div style="font-size:.8em;color:var(--teal);padding:1px 0">✅ ${s.replace(/^-?\s*\[x\]\s*/,'')}</div>`);else if(s.startsWith('- [ ]'))out.push(`<div style="font-size:.8em;color:var(--text3);padding:1px 0">⬜ ${s.replace(/^-?\s*\[ \]\s*/,'')}</div>`);else if(s.startsWith('- ')||s.startsWith('· '))out.push(`<div style="font-size:.8em;color:var(--text2);padding:1px 0 1px 10px">· ${s.slice(2)}</div>`);else if(s.startsWith('| ')){let cells=s.split('|').slice(1,-1).map(c=>c.trim());if(!cells.every(c=>c.replace(/[-:]/g,)===''))out.push('<tr>'+cells.map(c=>`<td style="padding:3px 7px;border-bottom:1px solid var(--border);font-size:.78em;color:var(--text2)">${c}</td>`).join('')+'</tr>')}else{let h=s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/\*\*(.+?)\*\*/g,'<strong style="color:var(--text)">$1</strong>').replace(/`(.+?)`/g,'<code style="background:var(--bg3);padding:1px 4px;border-radius:3px;font-size:.8em;font-family:JetBrains Mono,monospace;color:var(--accent)">$1</code>');out.push(`<p style="font-size:.83em;color:var(--text2);line-height:1.6;margin:2px 0">${h}</p>`)}});dc.children[i].querySelector('.cbd').innerHTML=out.join('\n')}).catch(()=>{})});
 
-DOCS.forEach((d,i)=>{
-fetch(d.f).then(r=>r.ok?r.text():'').then(txt=>{
-if(!txt)return;
-txt=txt.replace(/^---\n[\s\S]*?\n---\n/,'');
-let lines=txt.split('\n'),out=[],inCode=false;
-lines.forEach(l=>{
-let s=l.trim();
-if(s.startsWith('```')){inCode=!inCode;out.push(inCode?'<pre style="background:var(--bg3);padding:10px;border-radius:6px;font-size:.78em;font-family:JetBrains Mono,monospace;color:var(--text);margin:6px 0;white-space:pre-wrap;overflow-x:auto">':'</pre>');return}
-if(inCode){out.push(l.replace(/&/g,'&amp;').replace(/</g,'&lt;'));return}
-if(!s)out.push('<div style="height:5px"></div>');
-else if(s.startsWith('# '))out.push(`<h1 style="font-size:1.1em;font-weight:700;color:var(--text);margin:16px 0 5px">${s.slice(2)}</h1>`);
-else if(s.startsWith('## '))out.push(`<h2 style="font-size:.95em;font-weight:600;color:var(--accent);margin:12px 0 5px">${s.slice(3)}</h2>`);
-else if(s.startsWith('### '))out.push(`<h3 style="font-size:.86em;font-weight:600;color:var(--teal);margin:10px 0 4px">${s.slice(4)}</h3>`);
-else if(s.startsWith('- [x]'))out.push(`<div style="font-size:.8em;color:var(--teal);padding:1px 0">✅ ${s.replace(/^-?\s*\[x\]\s*/,'')}</div>`);
-else if(s.startsWith('- [ ]'))out.push(`<div style="font-size:.8em;color:var(--text3);padding:1px 0">⬜ ${s.replace(/^-?\s*\[ \]\s*/,'')}</div>`);
-else if(s.startsWith('- ')||s.startsWith('· '))out.push(`<div style="font-size:.8em;color:var(--text2);padding:1px 0 1px 10px">· ${s.slice(2)}</div>`);
-else if(s.startsWith('| ')){let cells=s.split('|').slice(1,-1).map(c=>c.trim());if(!cells.every(c=>c.replace(/[-:]/g,)===''))out.push('<tr>'+cells.map(c=>`<td style="padding:3px 7px;border-bottom:1px solid var(--border);font-size:.78em;color:var(--text2)">${c}</td>`).join('')+'</tr>')}
-else{let h=s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/\*\*(.+?)\*\*/g,'<strong style="color:var(--text)">$1</strong>').replace(/`(.+?)`/g,'<code style="background:var(--bg3);padding:1px 4px;border-radius:3px;font-size:.8em;font-family:JetBrains Mono,monospace;color:var(--accent)">$1</code>');out.push(`<p style="font-size:.83em;color:var(--text2);line-height:1.6;margin:2px 0">${h}</p>`)}
-});
-dc.children[i].querySelector('.cbd').innerHTML=out.join('\n');
-}).catch(()=>{})
-});
+// Init language
+buildNav(localStorage.getItem('ml')||'pt');
+if(localStorage.getItem('ml')==='en')setLang('en');
 </script>
 </body>
 </html>
-
