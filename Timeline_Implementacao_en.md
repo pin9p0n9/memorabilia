@@ -10,7 +10,7 @@ tags:
 status: atual
 ---
 
-# MEMORABILIA — Implementation Timeline
+# MEMORABILIA — Timeline de Implementação
 
 Do zero ao pipeline audiovisual com memória viva.
 pingpong · Montreal · Janeiro–Abril 2026
@@ -27,17 +27,17 @@ pingpong · Montreal · Janeiro–Abril 2026
 
 ---
 
-## Março 2026 — Semana 1: Linux from zero
+## Março 2026 — Week 1: Linux from zero
 
-**09 Mar** — Ubuntu 24.04 LTS instalado no HomeLab (ASUS X99-A II · i7-6800K · 2× GTX 1080 Ti · 128GB RAM). Dia zero da infraestrutura.
+**09 Mar** — Ubuntu 24.04 LTS installed no HomeLab (ASUS X99-A II · i7-6800K · 2× GTX 1080 Ti · 128GB RAM). Dia zero da infraestrutura.
 
-**09–14 Mar** — 12 lições Linux completadas: terminal, arquivos, permissões, processos, pacotes, redes, .bashrc, scripts, cron, SSH. Driver NVIDIA 580 instalado. Wi-Fi RTL8812AU configurado. HD DATA 1.8TB formatado ext4.
+**09–14 Mar** — 12 lições Linux completadas: terminal, arquivos, permissões, processos, pacotes, redes, .bashrc, scripts, cron, SSH. Driver NVIDIA 580 installed. Wi-Fi RTL8812AU configurado. HD DATA 1.8TB formatado ext4.
 
-**14 Mar** — Primeiro documento de referência: `homelab_guia_LINUX_10`. Joplin instalado como sistema de notas.
+**14 Mar** — Primeiro documento de referência: `homelab_guia_LINUX_10`. Joplin installed como sistema de notas.
 
 ---
 
-## Março 2026 — Semana 2: Cloud + VPN + AI
+## Março 2026 — Week 2: Cloud + VPN + AI
 
 **15 Mar** — Docker + Nextcloud deployed. MariaDB + Redis. Dados no DATA 1.8TB.
 
@@ -49,7 +49,7 @@ pingpong · Montreal · Janeiro–Abril 2026
 
 **15 Mar** — Segurança: SSH key-only ED25519 · GPG backups · KeePassXC · Joplin E2E · 2FA Nextcloud · UFW firewall.
 
-**15 Mar** — Ollama instalado. Dual GPU tensor split (22GB VRAM). qwen2.5:32b @ 8.82 t/s. Open WebUI com HTTPS.
+**15 Mar** — Ollama installed. Dual GPU tensor split (22GB VRAM). qwen2.5:32b @ 8.82 t/s. Open WebUI com HTTPS.
 
 **15 Mar** — Persona "Jeremias" criada no Open WebUI. AI 100% offline (OLLAMA_NO_CLOUD=true).
 
@@ -57,7 +57,7 @@ pingpong · Montreal · Janeiro–Abril 2026
 
 ---
 
-## Março 2026 — Semana 3: Arquitetura + Pipeline design
+## Março 2026 — Week 3: Arquitetura + Pipeline design
 
 **18 Mar** — Pipeline híbrido desenhado: Luma Labs + HomeLab. Creative AI Learning Path documentado.
 
@@ -71,11 +71,11 @@ pingpong · Montreal · Janeiro–Abril 2026
 
 **24 Mar** — GPU stabilization. Plano de manutenção HomeLab. Runbook SRE criado.
 
-**25 Mar** — Roadmap completo atualizado. BLACKBOX formatado NTFS. Decisão: Docker Compose por agora, K3s quando 3+ nodes.
+**25 Mar** — Roadmap completo atualizado. BLACKBOX formatado NTFS. Decision: Docker Compose por agora, K3s quando 3+ nodes.
 
 ---
 
-## Março 2026 — Semana 4: Pipeline v1 + SMB + Windows
+## Março 2026 — Week 4: Pipeline v1 + SMB + Windows
 
 **27 Mar** — Windows PC hardening completo: BIOS atualizado, drivers verificados, Power Plan High Performance, startup limpo. Checklist de implementação criado.
 
@@ -87,7 +87,7 @@ pingpong · Montreal · Janeiro–Abril 2026
 
 ---
 
-## Março 2026 — Semana 5: RAG Pipeline
+## Março 2026 — Week 5: RAG Pipeline
 
 **29 Mar** — ChromaDB deployed (:8000). LLaVA frame indexing (685 docs). Whisper medium dual GPU chunking. Triple GPU pipeline. RAG query funcionando. NETFLICS Roku app 70% (BrightScript + Jellyfin backend). Navidrome deployed (:4533).
 
@@ -97,11 +97,11 @@ pingpong · Montreal · Janeiro–Abril 2026
 
 ---
 
-## Abril 2026 — Semana 1: RAG Full Library
+## Abril 2026 — Week 1: RAG Full Library
 
-**02 Apr** — Fix Ollama connection (192.168.68.112 → 172.17.0.1). RAG API multi-collection. Creative Director dual mode (CD + TD). Anti-alucinação implementada. Decisão: qwen2.5:32b é modelo de produção.
+**02 Apr** — Fix Ollama connection (192.168.68.112 → 172.17.0.1). RAG API multi-collection. Creative Director dual mode (CD + TD). Anti-alucinação implementada. Decision: qwen2.5:32b é modelo de produção.
 
-**03 Apr** — 174 livros organizados em 13 categorias. 48.401 chunks indexados com category. 65k chunks antigos deletados. Kiwix Wikipedia 49GB deployed (:8888). 11 pipelines RAG operacionais. Knowledge RAG Full Library funcional (cita fontes reais). English Tutor + Design Tutor funcionais.
+**03 Apr** — 174 livros organizados em 13 categorias. 48.401 chunks indexados com category. 65k chunks antigos deletados. Kiwix Wikipedia 49GB deployed (:8888). 11 pipelines RAG operacionais. Knowledge RAG Full Library funcional (cita fontes reais). English Tutor + Design Tutor functional.
 
 **04 Apr** — Cinematography RAG dedicado. Vision RAG (frame → análise → RAG técnico). Frame Star Wars testado → tutorial Blender EEVEE gerado. 10 pipelines testados e documentados.
 
@@ -111,19 +111,19 @@ pingpong · Montreal · Janeiro–Abril 2026
 
 ---
 
-## Abril 2026 — Semana 2: Pipeline Audiovisual completo
+## Abril 2026 — Week 2: Pipeline Audiovisual completo
 
-**07 Apr** — Agent 3 (Narrativa + RAG), Agent 4 (Vision Color), Agent 8 (Post Mortem + MPV) funcionais. Full pipeline ran: 22m20s. Confiança Memória Projetual Viva: 0.5 → 0.62. MemPalace instalado (138 drawers). Decisão: pipeline entrega navegação, não prescrição. MEMORABILIA name was born. Manifesto "O Pipeline como Organismo Vivo."
+**07 Apr** — Agent 3 (Narrativa + RAG), Agent 4 (Vision Color), Agent 8 (Post Mortem + MPV) functional. Full pipeline ran: 22m20s. Confidence Memória Projetual Viva: 0.5 → 0.62. MemPalace installed (138 drawers). Decision: pipeline delivers navigation, not prescription. MEMORABILIA name was born. Manifesto "O Pipeline como Organismo Vivo."
 
 **08 Apr** — Agent 8: compress_aaak() com 7 types. client_summary.md por cenário. MEMORABILIA Status Card v5. Roadmap completo.
 
 **09 Apr** — Ollama atualizado para 0.20.4. gemma4:26b a 53 t/s (vs 9.35 antes com qwen2.5:32b). 11 agents implementados. Visual Library v1.0. MusicGen audio guide. CEP Panel no Premiere Pro. DDV game trailer testado. Namespace architecture. Agent 4 + Agent 6 removidos — decisão arquitetural sem rough cut.
 
-**10 Apr** — scene_frame_indexer v2.0: 4 modos adaptativos (arc/dual/single/window). 384 frames indexados. raw vs edited automático. knowledge_montagem: 4.260 chunks (Eisenstein, Tarkovsky, Bresson, Murch). Montagem RAG integrado. Memory Bible verificada. win_tools SMB montado. Decisão: Agent 4 candidate_segments e Agent 6 suggested_cuts removidos permanentemente.
+**10 Apr** — scene_frame_indexer v2.0: 4 modos adaptativos (arc/dual/single/window). 384 frames indexados. raw vs edited automático. knowledge_montagem: 4.260 chunks (Eisenstein, Tarkovsky, Bresson, Murch). Montagem RAG integrado. Memory Bible verificada. win_tools SMB montado. Decision: Agent 4 candidate_segments e Agent 6 suggested_cuts removidos permanentemente.
 
 ---
 
-## Abril 2026 — Semana 2: Design + CEP Graph + Obsidian
+## Abril 2026 — Week 2: Design + CEP Graph + Obsidian
 
 **11 Apr** — Auditoria de segurança: 27 fixes. UFW full sweep, DOCKER-USER chain, SSH MaxAuth 3, fail2ban. Risco ALTO → BAIXO.
 
@@ -131,13 +131,13 @@ pingpong · Montreal · Janeiro–Abril 2026
 
 **11 Apr** — Agent 3c redesenhado: Leitura Narrativa com Tensão Calibrada. Query dupla canônico/episódico, score de confiança, divergência explícita.
 
-**11 Apr** — Agent 8 redesenhado: Memória Projetual Viva — Closer. Suggested vs chosen vs divergence, full relational context.
+**11 Apr** — Agent 8 redesenhado: Memória Projetual Viva — Closer. Sugerido vs escolhido vs divergência, full relational context.
 
 **11 Apr** — CEP v3 Spec: second brain do projeto (hyperlinks, tags editor, backlinks, aliases, embeds, bookmarks).
 
 **11 Apr** — CEP Panel real (index.html): Graph View adicionado com force-directed SVG, thumbnails reais da API, sidebar esquerda estilo Obsidian (Filters/Groups/Display/Forces), sidebar direita com clip info + 4 botões de ação.
 
-**11 Apr** — Obsidian instalado no Linux (AppImage --no-sandbox). Vault criado em /media/pingpong/DATA/memorabilia-vault. Plugins: Templater, Dataview, Calendar. Template briefing YAML com campos mapeados aos agents. Primeiro projeto: DOC_VIDIGAL_2026.
+**11 Apr** — Obsidian installed no Linux (AppImage --no-sandbox). Vault criado em /media/pingpong/DATA/memorabilia-vault. Plugins: Templater, Dataview, Calendar. Template briefing YAML com campos mapeados aos agents. Primeiro projeto: DOC_VIDIGAL_2026.
 
 **11 Apr** — Samba: share DATA adicionado. Obsidian acessível no Windows via \\192.168.68.113\DATA\memorabilia-vault.
 
@@ -157,7 +157,7 @@ pingpong · Montreal · Janeiro–Abril 2026
 
 ## Resumo — do zero em 34 days
 
-| Semana | Período | Marco |
+| Week | Período | Marco |
 |---|---|---|
 | 0 | Jan 28 | First digital note |
 | 1 | Mar 9–14 | Linux from zero (12 lições) |
@@ -189,4 +189,4 @@ Custo mensal:    $0
 ---
 
 *pingpong · Montreal · April 12, 2026*
-*MEMORABILIA · Implementation Timeline v1 · 34 days do zero ao pipeline*
+*MEMORABILIA · Timeline de Implementação v1 · 34 days do zero ao pipeline*

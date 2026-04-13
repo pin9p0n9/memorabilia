@@ -7,7 +7,7 @@ Operador: pingpong (Leo) · solo · Montreal
 
 ## Principle de implementação
 
-Cada camada só é construída depois que a anterior está working in production with real projects. The pipeline delivers navigation infrastructure — the material speaks for itself. The editor decides. O sistema é desenhado em torno de 7 princípios (Design Philosophy v1.0) e dois agentes centrais: Agent 3c (leitura com tensão calibrada) e Agent 8 (Memória Projetual Viva — Closer com contexto relacional).
+Cada camada só é construída depois que a anterior está working in production with real projects. The pipeline delivers navigation infrastructure — the material speaks for itself. The creative decides. O sistema é desenhado em torno de 7 principles (Design Philosophy v1.0) e dois agentes centrais: Agent 3c (leitura com calibrated tension) e Agent 8 (Memória Projetual Viva — Closer com relational context).
 
 ---
 
@@ -34,9 +34,9 @@ FUNCIONA EM PRODUÇÃO:
   session memory loop: session_start · log_episodic · session_close
 
 DESIGN:
-  Design Philosophy v1.0 — 7 princípios documentados
-  Agent 3c redesenhado — tensão calibrada (canônico vs episódico)
-  Agent 8 redesenhado — Memória Projetual Viva — Closer (sugerido vs escolhido vs divergência)
+  Design Philosophy v1.0 — 7 principles documentados
+  Agent 3c redesenhado — calibrated tension (canônico vs episódico)
+  Agent 8 redesenhado — Memória Projetual Viva — Closer (suggested vs chosen vs divergence)
   CEP v3 Spec — second brain do projeto (tags, links, bookmarks, aliases)
   MEMORABILIA v9 — documento compilado 2 páginas
 
@@ -66,7 +66,7 @@ Completed. 260406 com 7 types. Wake-up context verificado.
 Completed. musicgen_guide.py v1.1.
 
 ### AP-10 ✅ — Design Philosophy + Agent redesign
-Completed April 12. 7 princípios. Agent 3c tensão calibrada. Agent 8 Memória Projetual Viva — Closer.
+Completed April 12. 7 principles. Agent 3c calibrated tension. Agent 8 Memória Projetual Viva — Closer.
 
 ### AP-11 ✅ — CEP Graph View + auto_tags
 Completed April 12. Graph no Premiere. extract_tags() no API. Sidebar Obsidian-style.
@@ -87,7 +87,7 @@ Elimina necessidade de extract_tags() como fallback.
 Graph do CEP ganha links reais baseados em metadata.
 ```
 
-### AP-14 — Agent 3c tensão calibrada no pipeline real
+### AP-14 — Agent 3c calibrated tension no pipeline real
 Esforço: 4-6h · Impacto: alto · Prazo: Abril
 ```
 Implementar query dupla canônico/episódico com score.
@@ -118,7 +118,7 @@ P3: Zoom hierárquico por tags
 
 ```
 [ ] AP-13 — Re-indexar visual_index com metadata rico
-[ ] AP-14 — Agent 3c tensão calibrada (implementar no pipeline)
+[ ] AP-14 — Agent 3c calibrated tension (implementar no pipeline)
 [ ] AP-15 — Agent 8 depósito relacional (implementar no pipeline)
 [ ] AP-5 — wake-up context nos assistants RAG
 [ ] Whisper batch: Unity · Unreal · Math for VFX
@@ -159,7 +159,7 @@ Metadata + Remotion
 
 ```
 AP-6 — OpenSpace como runtime (se 2 projetos rodados)
-Memory Bible com 3+ projetos — medir calibração
+Memory Bible com 3+ projetos — measure calibration
 Creative Director RAG com motion completo (AE + C4D)
 ```
 
@@ -181,8 +181,8 @@ LoRA por cliente
 ```
 AP-9 — PINGPONG OS Dashboard
 Agent 9 — auto-publish YouTube + Vimeo
-Validação end-to-end (Cenário 1 + Cenário 3)
-MPV com 5+ projetos: medir calibração
+End-to-end validation (Cenário 1 + Cenário 3)
+MPV com 5+ projetos: measure calibration
 ```
 
 ---
@@ -191,7 +191,7 @@ MPV com 5+ projetos: medir calibração
 
 | Mês | Foco | Entrega real |
 |---|---|---|
-| Abril | Agent 3c/8 refinados + visual_index metadata | Pipeline com tensão calibrada · Graph com links reais |
+| Abril | Agent 3c/8 refinados + visual_index metadata | Pipeline com calibrated tension · Graph com links reais |
 | Maio | LightRAG · Memory Bible · Visual Library · CEP v3 | Second brain funcional · assistants calibrados |
 | Junho | OpenSpace · Motion RAG · CEP assistants | Recovery automático · assistants no Premiere |
 | Julho | Flamenco · Technical Director | Render farm · compositing pipeline (se demanda) |
