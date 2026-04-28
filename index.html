@@ -412,10 +412,10 @@ const TABS=[
 {id:'network',pt:'Rede Distribuída',en:'Distributed Network'},
 {id:'agents',pt:'9 Agentes',en:'9 Agents'},
 {id:'assistants',pt:'6 Assistants',en:'6 Assistants'},
-{id:'models',pt:'Modelos AI',en:'AI Models'},
-{id:'knowledge',pt:'Conhecimento',en:'Knowledge'},
-{id:'docs',pt:'Documentos',en:'Documents'},
-{id:'biz',pt:'Business Model',en:'Business Model'}
+
+
+
+
 ];
 
 function buildNav(lang){
@@ -484,18 +484,10 @@ document.getElementById('panel-content').innerHTML=`
 </div>
 <div style="margin-top:28px;border-top:1px solid var(--border);padding-top:22px"><div style="font-size:1.15em;font-weight:600;color:var(--text);margin-bottom:6px">MEMORABILIA Graph — Plugin Standalone</div><div style="font-size:.86em;color:var(--text2);margin-bottom:18px"><span class="pt">O mesmo Graph View como produto independente — sem AI, sem cloud, sem setup. O criativo é o motor semântico.</span><span class="en">Same Graph View as standalone product — no AI, no cloud, no setup. The creative is the semantic engine.</span></div>
 <div class="card" onclick="T(this)"><div class="ch"><div class="cb bt">ED</div><div><div class="ct1"><span class="pt">Edges automáticas — sem AI</span><span class="en">Automatic edges — no AI</span></div><div class="ct2"><span class="pt">Relações pela metadata nativa</span><span class="en">Relations from native metadata</span></div></div><div class="cr"><span class="arrow">▸</span></div></div><div class="cbd"><p><span class="pt">Mesmo reel → aresta forte · &lt; 5 min → temporal · Mesma câmera → tema · GPS &lt; 50m → locação · native camera metadata.</span><span class="en">Same reel → strong edge · &lt; 5 min → temporal · Same camera → theme · GPS &lt; 50m → location · native camera metadata.</span></p></div></div>
-<div style="margin-top:14px;display:grid;grid-template-columns:1fr 1fr;gap:14px"><div style="padding:14px;background:var(--bg3);border-radius:8px;border-left:3px solid var(--teal)"><div style="font-weight:600;color:var(--teal);margin-bottom:3px">MEMORABILIA Graph — $49</div><div style="font-size:.83em;color:var(--text2)"><span class="pt">Plugin standalone. Criativo é o motor semântico. Zero AI, zero cloud.</span><span class="en">Standalone plugin. Creative is the semantic engine. Zero AI, zero cloud.</span></div></div><div style="padding:14px;background:var(--bg3);border-radius:8px;border-left:3px solid var(--accent)"><div style="font-weight:600;color:var(--accent);margin-bottom:3px">MEMORABILIA — $199</div><div style="font-size:.83em;color:var(--text2)"><span class="pt">Pipeline completo. AI + memória projetual + 72k trechos.</span><span class="en">Full pipeline. AI + project memory + 72k chunks.</span></div></div></div>
-</div>
-<div style="margin-top:28px;border-top:1px solid var(--border);padding-top:22px">
-<div style="font-size:1.15em;font-weight:600;color:var(--text);margin-bottom:6px"><span class="pt">Modelo de Negócio — Plugin Graph</span><span class="en">Business Model — Graph Plugin</span></div>
-<div id="plugin-biz-md" style="padding:4px 0"><span class="pt">Carregando...</span><span class="en">Loading...</span></div>
-</div></div><div class="cbd"><p>· <strong>v1.0</strong> Premiere + DaVinci · <strong>v2.0</strong> AI layer ($199) · <strong>v2.5</strong> Team · <strong>v3.0</strong> Standalone · <strong>v4.0</strong> API → DAMs</p></div></div>
 
 </div>`;
 
 // Business Model Pipeline
-document.getElementById('biz-content').innerHTML='<div id="pipeline-biz-md" style="max-height:none;overflow-y:visible;padding:4px 0"><span class="pt">Carregando...</span><span class="en">Loading...</span></div>';
-fetch('MEMORABILIA_Pipeline_Business_Model_v2.md').then(r=>r.ok?r.text():'').then(txt=>{if(txt){document.getElementById('pipeline-biz-md').innerHTML=renderMD(txt)}}).catch(()=>{});
 
 // Docs (fetch from repo)
 const DOCS=[
